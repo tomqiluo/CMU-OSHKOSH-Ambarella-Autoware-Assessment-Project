@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory to store logs
-LOG_DIR="/path/to/log/directory"
+LOG_DIR="/home/lychee/oshkosh-ambarella-project"
 mkdir -p "$LOG_DIR"
 
 # Log file with timestamp
