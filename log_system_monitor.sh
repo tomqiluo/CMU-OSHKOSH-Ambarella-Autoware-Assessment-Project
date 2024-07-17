@@ -46,7 +46,7 @@ TOPICS=(
 log_topic() {
     local topic=$1
     echo "Logging $topic to $LOG_FILE"
-    rostopic echo -n 1 "$topic" >> "$LOG_FILE" &
+    ros2 topic echo -n 1 "$topic" >> "$LOG_FILE" &
 }
 
 # Start logging each topic

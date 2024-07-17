@@ -11,13 +11,9 @@
 - **GPU Monitor**
 - **Voltage Monitor**
 ### How to Use
-```sh
-colcon build
-
-source /opt/ros/iron/setup.bash
-
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-
-ros2 launch system_monitor system_monitor.launch.xml
+```
+source /opt/ros2/iron-20240422/setup.bash
+chmod +x log_system_monitor.sh
+./log_system_monitor.sh
 ```
 
