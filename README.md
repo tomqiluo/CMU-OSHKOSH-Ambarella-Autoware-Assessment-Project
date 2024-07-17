@@ -14,8 +14,9 @@
 ```sh
 colcon build
 
-cd /home/lychee/6v_yolop_yolov5/ros2/gstreamer/ros2_gst_6v_demo
-source /opt/ros2/iron-20231205/setup.bash
+source /opt/ros/iron/setup.bash
+
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 ros2 launch system_monitor system_monitor.launch.xml
 ```
