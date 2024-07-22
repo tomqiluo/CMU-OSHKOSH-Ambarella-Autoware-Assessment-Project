@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory to store logs
-LOG_DIR="/home/lychee/oshkosh-ambarella-project/system-monitor-logs"
+LOG_DIR="/home/cmu-oshkosh/oshkosh-ambarella-project/system-monitor-logs"
 mkdir -p "$LOG_DIR"
 
 # Log file with timestamp
@@ -46,7 +46,7 @@ TOPICS=(
 log_topic() {
     local topic=$1
     echo "Logging $topic to $LOG_FILE"
-    ros2 topic echo -n 1 "$topic" >> "$LOG_FILE" &
+    ros2 topic echo 1 "$topic" >> "$LOG_FILE" &
 }
 
 # Start logging each topic
