@@ -12,8 +12,24 @@
 - **Voltage Monitor**
 ### How to Use
 ```
-source /opt/ros2/iron-20240422/setup.bash
+source ~/autoware/install/setup.bash
+source /opt/ros2/humble/setup.bash
 chmod +x log_system_monitor.sh
 ./log_system_monitor.sh
+```
+
+## Autoware Topics Monitoring
+### Supported Topics
+- **/diagnostic/planning_evaluator/metrics**
+- **/diagnostics**
+- **/diagnostics_agg**
+- **/diagnostics_err**
+- **/diagnostics_toplevel_state**
+### How to Use
+```
+source ~/autoware/install/setup.bash
+source /opt/ros2/humble/setup.bash
+chmod +x diagnostics_logger.py
+./diagnostics_logger.py
 ```
 
