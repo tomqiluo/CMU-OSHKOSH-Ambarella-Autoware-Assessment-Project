@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import rospy
 from diagnostic_msgs.msg import DiagnosticArray, DiagnosticStatus
 from std_msgs.msg import String  # Assuming a generic message type for planning evaluator metrics
