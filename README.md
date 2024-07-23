@@ -10,6 +10,7 @@
 - **Process Monitor**
 - **GPU Monitor**
 - **Voltage Monitor**
+
 ### How to Use
 ```
 source ~/autoware/install/setup.bash
@@ -25,6 +26,10 @@ chmod +x log_system_monitor.sh
 - **/diagnostics_agg**
 - **/diagnostics_err**
 - **/diagnostics_toplevel_state**
+
+### Obtain topics list
+`ros2 topic list > topic_list.txt`
+
 ### How to Use
 ```
 source ~/autoware/install/setup.bash
@@ -33,3 +38,4 @@ chmod +x diagnostics_logger.py
 ./diagnostics_logger.py
 ```
 
+                                                                                                                                    
