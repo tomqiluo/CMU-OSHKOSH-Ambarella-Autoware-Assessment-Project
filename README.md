@@ -14,7 +14,7 @@
 ### How to Use
 ```
 source ~/autoware/install/setup.bash
-source /opt/ros2/humble/setup.bash
+source /opt/ros/humble/setup.bash
 chmod +x log_system_monitor.sh
 ./log_system_monitor.sh
 ```
@@ -33,7 +33,7 @@ chmod +x log_system_monitor.sh
 ### How to Use
 ```
 source ~/autoware/install/setup.bash
-source /opt/ros2/humble/setup.bash
+source /opt/ros/humble/setup.bash
 chmod +x diagnostics_logger.py
 ./diagnostics_logger.py
 ```
