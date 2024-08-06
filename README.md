@@ -3,20 +3,13 @@
 ## Autoware System Monitoring
 ### Supported Monitors
 - **CPU Monitor**
-- **HDD Monitor**
 - **Memory Monitor**
-- **Network Monitor**
-- **NTP Monitor**
-- **Process Monitor**
 - **GPU Monitor**
-- **Voltage Monitor**
 
 ### How to Use
 ```
-source ~/autoware/install/setup.bash
-source /opt/ros/humble/setup.bash
-chmod +x log_system_monitor.sh
-./log_system_monitor.sh
+chmod +x system_logger.py
+python3 log_system_monitor.sh
 ```
 
 ## Autoware Topics Monitoring
@@ -35,7 +28,7 @@ chmod +x log_system_monitor.sh
 source ~/autoware/install/setup.bash
 source /opt/ros/humble/setup.bash
 chmod +x diagnostics_logger.py
-./diagnostics_logger.py
+python3 diagnostics_logger.py
 ```
 
                                                                                                                                     
