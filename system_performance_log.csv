@@ -87,3 +87,9 @@ Timestamp,CPU Usage (%),Memory Usage (%),GPU Usage (%),GPU Memory Usage (%),Tota
 2024-08-08 16:32:03,39.6,34.7, 0 %, 0 %, 4096 MiB, 3796 MiB, 14 MiB
 2024-08-08 16:32:06,41.6,34.8, 0 %, 0 %, 4096 MiB, 3796 MiB, 14 MiB
 2024-08-08 16:32:08,44.8,34.8, 0 %, 0 %, 4096 MiB, 3796 MiB, 14 MiB
+Timestamp,CPU Usage (%),Memory Usage (%),GPU Usage (%),GPU Memory Usage (%),Total GPU Memory (MB),Free GPU Memory (MB),Used GPU Memory (MB)
+2024-08-08 16:35:39,6.8,63.6, 0 %, 20 %, 8192 MiB, 7734 MiB, 458 MiB
+2024-08-08 16:35:41,0.0,63.3, 0 %, 15 %, 8192 MiB, 7734 MiB, 458 MiB
+2024-08-08 16:35:43,0.8,63.3, 0 %, 23 %, 8192 MiB, 7734 MiB, 458 MiB
+2024-08-08 16:35:45,0.5,63.6, 4 %, 29 %, 8192 MiB, 7734 MiB, 458 MiB
+2024-08-08 16:35:47,0.8,63.9, 0 %, 17 %, 8192 MiB, 7734 MiB, 458 MiB
