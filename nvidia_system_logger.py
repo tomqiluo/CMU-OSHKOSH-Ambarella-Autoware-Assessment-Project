@@ -29,8 +29,7 @@ def system_metrics():
     return cpu_usage, memory.percent
 
 def log_metrics():
-    # filename = "nvidia_system_performance_log.csv"
-    filename = "system_performance_log.csv"
+    filename = "nvidia_system_performance_log.csv"
     fields = ['Timestamp', 'CPU Usage (%)', 'Memory Usage (%)', 'GPU Usage (%)', 'GPU Memory Usage (%)', 'Total GPU Memory (MB)', 'Free GPU Memory (MB)', 'Used GPU Memory (MB)']
     with open(filename, mode='a', newline='') as file:
         writer = csv.writer(file)
