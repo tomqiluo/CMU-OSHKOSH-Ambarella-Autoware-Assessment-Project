@@ -31,4 +31,9 @@ chmod +x diagnostics_logger.py
 python3 diagnostics_logger.py
 ```
 
+## Analyzation
+### Visualization
+`pip install pandas matplotlib`
+
+
                                                                                                                                     
