@@ -72,6 +72,21 @@ We would like to express our gratitude to:
 
 # Appendix 1: How-to Guides
 
+## Run Autoware through Docker
+First, follow the instruction on [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/) to install Autoware.
+
+In one terminal, run
+`rocker --nvidia --x11 --user --volume $HOME --volume /dev/dri -- ghcr.io autowarefoundation/autoware-universe:latest-cuda`
+
+In the second terminal, run
+`docker exec -it 3a98e177de62 bash`
+
+Once inside docker container:
+`source ~/autoware/install/setup.bash ros2 launch autoware_launch planning_simulator.launch.xml map _path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit`
+
+To run with reaction analyzer
+`ros2 launch reaction_analyzer reaction_analyzer.launch.xml running_mode:=planning_control vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit map_path:=$HOME/autoware_map/nishishinjuku_autoware_map `
+
 ## Autoware System Monitoring
 ### Supported Monitors
 - **CPU Monitor**
@@ -112,6 +127,4 @@ python3 Visualization\ambarella_cooper_home_visual.py
 python3 Visualization\ambarella_system_usage_visual.py
 python3 Visualization\nvidia_system_usage_visual.py
 ```
-
-
                                                                                                                                     
