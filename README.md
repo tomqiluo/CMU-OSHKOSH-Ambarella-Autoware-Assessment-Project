@@ -107,5 +107,11 @@ python3 diagnostics_logger.py
 ### Visualization
 `pip install pandas matplotlib`
 
+```
+python3 Visualization\ambarella_cooper_home_visual.py
+python3 Visualization\ambarella_system_usage_visual.py
+python3 Visualization\nvidia_system_usage_visual.py
+```
+
 
                                                                                                                                     
