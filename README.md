@@ -14,7 +14,7 @@ This project is a collaboration between Carnegie Mellon University and Oshkosh C
 
 ## Hardware Overview
 
-![Hardware Architecture](iamges\Ambarella_CV3x_SOC.png)
+![Hardware Architecture](iamges/Ambarella_CV3x_SOC.png)
 
 ### Ambarella CV3x SOC
 - **CPU**: Dual Core Arm Cortex A78AE
@@ -24,15 +24,15 @@ This project is a collaboration between Carnegie Mellon University and Oshkosh C
 
 ## Software Framework
 
-![Software Architecture](iamges\Ambarella_Software.png)
+![Software Architecture](iamges/Ambarella_Software.png)
 
 ### CV Flow/CNNGen
-![CV Flow](iamges\CVflow.png)
+![CV Flow](iamges/CVflow.png)
 - A comprehensive framework for the deployment of neural networks on Ambarella hardware.
 - Supports popular AI frameworks including Caffe, TensorFlow, and ONNX.
 
 ### Autoware
-![Autoware](iamges\autoware.png)
+![Autoware](iamges/autoware.png)
 - Deployed on Ambarella via Docker to avoid dependency conflicts and ensure smooth operation.
 - Focused on testing planning and control pipelines due to limited out-of-the-box support for hardware-accelerated perception.
 
