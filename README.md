@@ -73,18 +73,24 @@ We would like to express our gratitude to:
 # Appendix 1: How-to Guides
 
 ## Run Autoware through Docker
-First, follow the instruction on [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/) to install Autoware.
+First, follow the instructions on [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/) to install Autoware.
 
-In one terminal, run
-`rocker --nvidia --x11 --user --volume $HOME --volume /dev/dri -- ghcr.io autowarefoundation/autoware-universe:latest-cuda`
+To launch the container, run
+`rocker -e LIBGL_ALWAYS_SOFTWARE=1 --x11 --user --volume $HOME/autoware --volume $HOME/autoware_map --volume $HOME/autoware_data -- ghcr.io/autowarefoundation/autoware-universe:latest-cuda`
+
+Get the ID of the running container by running
+`docker ps -a`
 
 In the second terminal, run
-`docker exec -it 3a98e177de62 bash`
+`docker exec -it [ID OF RUNNING CONTAINER] bash`
 
-Once inside docker container:
-`source ~/autoware/install/setup.bash ros2 launch autoware_launch planning_simulator.launch.xml map _path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit`
+Once inside docker container, source your workspace
+`source ~/autoware/install/setup.bash`
 
-To run with reaction analyzer
+To test planning simulator
+`ros2 launch autoware_launch planning_simulator.launch.xml map _path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit`
+
+To run reaction analyzer
 `ros2 launch reaction_analyzer reaction_analyzer.launch.xml running_mode:=planning_control vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit map_path:=$HOME/autoware_map/nishishinjuku_autoware_map `
 
 ## Autoware System Monitoring
