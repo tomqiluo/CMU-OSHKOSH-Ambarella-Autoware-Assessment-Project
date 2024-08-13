@@ -99,6 +99,10 @@ To run reaction analyzer
 
 `ros2 launch reaction_analyzer reaction_analyzer.launch.xml running_mode:=planning_control vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit map_path:=$HOME/autoware_map/nishishinjuku_autoware_map `
 
+## Troubleshooting
+Simulation slow (0-1 FPS)? Rendering creates a lot of of overhead on Ambarella. Try disabling most elements in RViz to improve performance (~ 5 FPS) and latency
+
+
 ## Autoware System Monitoring
 ### Supported Monitors
 - **CPU Monitor**
