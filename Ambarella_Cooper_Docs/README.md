@@ -1,7 +1,7 @@
 # Generated N1 Cooper Max Documentation from Cooper SDK 1.6
 
 ## Section Links
-
+### Pull the repository and bookmark the following links
 - [Overview](/Ambarella_Cooper_Docs/doc_out/cv3_doc/doc/overview/index.html)
 - [Applications](/Ambarella_Cooper_Docs/doc_out/cv3_doc/doc/applications/index.html)
 - [Build System](/Ambarella_Cooper_Docs/doc_out/cv3_doc/doc/amyoc/index.html)
