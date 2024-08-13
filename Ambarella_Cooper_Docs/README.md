@@ -1,8 +1,22 @@
 # Generated N1 Cooper Max Documentation from Cooper SDK 1.6
 
-## Links
-1. **Pull **: Deploy the Autoware stack on Ambarella hardware, particularly focusing on testing compatibility and performance.
+## Section Links
+Bookmark the following files for future reference
 
-2. **Evaluate Ambarella Device Capabilities**: Assess the hardware’s efficiency in running autonomous driving workloads, especially focusing on perception, planning, and control tasks.
+### Build System
+- [Overview](/doc_out/cv3_doc/doc/overview/index.html)
+- [Applications](/doc_out/cv3_doc/doc/applications/index.html)
+- [Driver](/doc_out/cv3_doc/doc/driver/index.html)
+- [Hardware](/doc_out/cv3_doc/doc/hardware/index.html)
+- [Library](/doc_out/cv3_doc/doc/library/index.html)
+- [Peripherals](/doc_out/cv3_doc/doc/peripherals/index.html)
 
-3. **Benchmarking and Comparison**: Measure and compare the performance of the Ambarella device against a baseline NVIDIA device in terms of CPU/GPU usage, power consumption, frame rates, and overall processing efficiency.
+### Security
+- [Security](/doc_out/cv3_doc/doc/security/index.html)
+- [Style Guide](/doc_out/cv3_doc/doc/style/index.html)
+- [System](/doc_out/cv3_doc/doc/system/index.html)
+
+### Video
+- [Video](/doc_out/cv3_doc/doc/video/index.html)
+
+
