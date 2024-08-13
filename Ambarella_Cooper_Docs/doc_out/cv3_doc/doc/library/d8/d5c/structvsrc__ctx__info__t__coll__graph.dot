@@ -1,0 +1,9 @@
+digraph "vsrc_ctx_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vsrc_ctx_info_t\n|+ context_type\l+ context_num\l+ chan_map\l+ context_id\l+ fusion_paired_chan_idx\l+ fisheye_paired_chan_idx\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of image configuration information."];
+}

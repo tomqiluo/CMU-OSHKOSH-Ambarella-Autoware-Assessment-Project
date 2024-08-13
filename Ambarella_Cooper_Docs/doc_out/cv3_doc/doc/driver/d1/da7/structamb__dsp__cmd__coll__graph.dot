@@ -1,0 +1,12 @@
+digraph "amb_dsp_cmd"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{amb_dsp_cmd\n|+ dsp_cmd\l+ cmd_type\l+ flag\l+ keep_latest\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +head\n+node" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{list_head\n||}",height=0.2,width=0.4,color="black",URL="/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/library/library.tag$d9/d93/structlist__head",tooltip=" "];
+  Node2 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +next\n+prev" ,arrowhead="odiamond",fontname="Helvetica"];
+}

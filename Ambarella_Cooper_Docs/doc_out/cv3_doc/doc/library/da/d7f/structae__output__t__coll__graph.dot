@@ -1,0 +1,9 @@
+digraph "ae_output_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ae_output_t\n|+ shutter_update\l+ shutter_index\l+ agc_update\l+ agc_index\l+ dgain_update\l+ dgain\l+ iris_update\l+ iris_index\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of AE output structure."];
+}

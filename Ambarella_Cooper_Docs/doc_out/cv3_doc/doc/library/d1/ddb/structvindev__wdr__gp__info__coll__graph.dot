@@ -1,0 +1,11 @@
+digraph "vindev_wdr_gp_info"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vindev_wdr_gp_info\n|+ vsrc_id\l+ vsrc_ctx\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +again_gp\n+dgain_gp\n+rhs_gp\n+shutter_gp" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{vindev_wdr_gp_s\n|+ vsrc_id\l+ vsrc_ctx\l+ l\l+ s1\l+ s2\l+ s3\l+ s1_offset\l+ s2_offset\l|}",height=0.2,width=0.4,color="black",URL="$df/d81/structvindev__wdr__gp__s.html",tooltip=" "];
+}

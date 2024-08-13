@@ -1,0 +1,13 @@
+digraph "packages/nnctrl/cavalry_v3/inc"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_a6c16d3b50698a9fb117e1b23f61eea6 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="cavalry_v3", fontname="Helvetica", fontsize="10", URL="dir_a6c16d3b50698a9fb117e1b23f61eea6.html"]
+  dir_3308b2c700e29ce301f8c9aa53247b6d [shape=box, label="inc", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_3308b2c700e29ce301f8c9aa53247b6d.html"];
+  }
+}

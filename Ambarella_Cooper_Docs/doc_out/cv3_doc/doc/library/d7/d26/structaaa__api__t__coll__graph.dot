@@ -1,0 +1,9 @@
+digraph "aaa_api_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{aaa_api_t\n|+ p_ae_flow_control_init\l+ p_ae_flow_control\l+ p_awb_flow_control_init\l+ p_awb_flow_control\l+ p_calc_adj_index\l+ p_af_flow_control_init\l+ p_af_flow_control\l+ p_af_set_range\l+ p_af_set_calib_param\l+ p_cus_extra_ik_config\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of customer AAA APIs."];
+}

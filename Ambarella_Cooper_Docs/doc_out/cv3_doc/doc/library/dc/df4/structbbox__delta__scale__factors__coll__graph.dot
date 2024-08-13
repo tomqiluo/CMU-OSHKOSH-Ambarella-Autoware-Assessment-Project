@@ -1,0 +1,9 @@
+digraph "bbox_delta_scale_factors"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{bbox_delta_scale_factors\n|+ center_x_scale\l+ center_y_scale\l+ width_scale\l+ height_scale\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Bounding box delta scale factors."];
+}

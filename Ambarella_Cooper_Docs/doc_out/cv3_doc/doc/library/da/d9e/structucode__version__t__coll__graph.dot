@@ -1,0 +1,9 @@
+digraph "ucode_version_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ucode_version_t\n|+ year\l+ month\l+ day\l+ edition_num\l+ edition_ver\l+ chip_arch\l+ ucode_type\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

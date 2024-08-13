@@ -1,0 +1,9 @@
+digraph "data_statistics_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{data_statistics_t\n|+ tot_num\l+ tot_valid_num\l+ average\l+ tot_variance\l+ avg_variance\l+ standard_deviation\l+ ground_truth\l+ mean_absolute_error\l+ mean_square_error\l+ root_mean_square_error\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

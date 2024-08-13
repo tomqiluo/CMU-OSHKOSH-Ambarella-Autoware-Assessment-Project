@@ -1,0 +1,146 @@
+DSF_Graph
+ Config
+  domain_num = 2
+  stages_num = 10
+  dump = 0
+  dump_path = ./
+  thread_num_hint = 4
+ Sensor
+  name = IMX528
+  category = iTOF
+  width = 640
+  height = 480
+  vin_id = 1
+  enable_confidence = 1
+  fx = 513.6133634100554
+  fy = 513.6133634100554
+  cx = 342.8242453686895
+  cy = 246.0759997902838
+  k1 = -0.04544260539644419
+  k2 = 0.3089769280456539
+  k3 = -0.7618227789466491
+  p1 = 0.001979789423728918
+  p2 = 0.004543491564486492
+  iTOF
+   cw_freq_0 = 120000000
+   cw_freq_1 = 120000000
+   raw_channel_num = 4
+   raw_sub_interleave = 1
+   raw_rightshift_bits = 4
+   amp_cut_higher_bits = 0
+   depth_mantissa_bits = 10
+ Domain
+  name = raw
+  buffer_num = 4
+  alignment = 64
+  image_num = 1
+  Image
+   channel_num = 4
+   channel_interleave = 0
+   pixel_fmt = f32
+ Domain
+  name = depth_amplitude
+  buffer_num = 8
+  alignment = 64
+  image_num = 2
+  Image
+   channel_num = 1
+   channel_interleave = 0
+   pixel_fmt = f32
+  Image
+   channel_num = 1
+   channel_interleave = 0
+   pixel_fmt = u16
+ Domain
+  name = point_cloud
+  buffer_num = 4
+  alignment = 64
+  image_num = 1
+  Image
+   channel = 3
+   channel_interleave = 1
+   pixel_fmt = f32
+ Stage
+  name = itof_sensor_input
+  component = amba_itof_sensor_input
+  domain = raw
+  buffer_num = 3
+ Stage
+  name = cal_depth_amp
+  component = amba_itof_decoder
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = itof_sensor_input
+  raw_sub_interleave = 0
+  raw_rightshift_bits = 4
+  amp_cut_higher_bits = 0
+  depth_mantissa_bits = 10
+ Stage
+  name = compensation
+  component = amba_compensation
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = cal_depth_amp
+  bypass = 0
+  gen_com = 0
+  check_confidence = 0
+  conf_thresh = 20
+  depth_crop = 0
+  min_distance = 0
+  max_distance = 2
+  fit_num = 0
+  fit_start = 0
+ Stage
+  name = ae
+  component = amba_ae
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = cal_depth_amp
+  bypass = 0
+  use_hist = 0
+ Stage
+  name = ldc
+  component = amba_ldc
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = compensation
+  bypass = 0
+  use_depth_ldc = 1
+ Stage
+  name = phase_to_depth
+  component = amba_phase_to_depth
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = ldc
+  bypass = 0
+  depth_mm = 0
+ Stage
+  name = idsp_phase_ir
+  component = amba_idsp_phase_ir
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = cal_depth_amp
+  bypass = 0
+  show = 1
+  dump_calib = 0
+  frame_mean = 1
+  total_num = 40
+ Stage
+  name = draw
+  component = draw_depth
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = phase_to_depth
+  bypass = 0
+  depth_mm = 0
+  fb_dev_str = /dev/fb1
+ Stage
+  name = ros
+  component = send_to_ros
+  domain = depth_amplitude
+  buffer_num = 3
+  upstream_stage = phase_to_depth
+  bypass = 0
+  remote_port = 1555
+  remote_url = 10.0.0.101
+  convey_depth_bits = 16

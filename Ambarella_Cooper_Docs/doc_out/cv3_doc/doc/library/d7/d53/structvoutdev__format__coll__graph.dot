@@ -1,0 +1,9 @@
+digraph "voutdev_format"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{voutdev_format\n|+ id\l+ type\l+ mode\l+ interlaced\l+ fps\l+ display_watchdog_timer\l+ vout_append_enable\l+ vout_from_image\l+ default_img_yuv420\l+ hdmi_cs\l+ vout_max_osd_bit_depth\l+ mipi_cont_clk_mode\l+ input_yuv422\l+ virtual_channel_num\l+ mixer_output_format\l+ start_vout_immediately\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

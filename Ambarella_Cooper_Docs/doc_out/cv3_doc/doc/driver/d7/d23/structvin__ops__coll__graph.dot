@@ -1,0 +1,9 @@
+digraph "vin_ops"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_ops\n|+ init_device\l+ suspend\l+ resume\l+ set_format\l+ set_frame_rate\l+ set_agc_index\l+ set_pll\l+ set_mirror_mode\l+ set_stream_mode\l+ get_eis_info\l+ read_reg\l+ write_reg\l+ shutter2row\l+ set_shutter_row\l+ set_dgain_ratio\l+ get_dgain_ratio\l+ set_hold_mode\l+ get_chip_status\l+ get_aaa_info\l+ set_low_light_mode\l+ set_tp_mode\l+ set_pwr_mode\l+ set_gpio_ctrl\l+ set_trig_mode\l+ set_wdr_again_idx_gp\l+ get_wdr_again_idx_gp\l+ set_wdr_dgain_idx_gp\l+ get_wdr_dgain_idx_gp\l+ set_wdr_shutter_row_gp\l+ get_wdr_shutter_row_gp\l+ set_wdr_max_middle_gp\l+ get_wdr_max_middle_gp\l+ wdr_shutter2row\l+ set_wdr_shutter_agc_gp\l+ wdr_shutter2offset\l+ aaa_compensation\l+ get_format\l+ switch_vsrc_ctx\l+ set_agc_index_ctx\l+ set_shutter_row_ctx\l+ get_frame_cnt\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

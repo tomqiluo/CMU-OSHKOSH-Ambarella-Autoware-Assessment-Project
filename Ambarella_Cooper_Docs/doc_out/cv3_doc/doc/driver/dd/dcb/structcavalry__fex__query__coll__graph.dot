@@ -1,0 +1,9 @@
+digraph "cavalry_fex_query"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_fex_query\n|+ img_width\l+ img_height\l+ img_pitch\l+ harris_en\l+ stereo_en\l+ dump_harris_score\l+ reserved0\l+ dram_required\l+ disparity_force_pitch\l+ affinity\l+ priority\l+ reserved1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

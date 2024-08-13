@@ -1,0 +1,157 @@
+              Memory Layout
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+I- Introduction
+---------------
+
+This document describes the memory layout in below cases:
+a) Amboot
+b) BL2 + BL31 + BL33(Amboot)
+c) BL2 + BL31 + BL33(Amboot) + Image Signature
+d) BL2 + BL31 + BL33(Amboot) + Image Signature + DTB Signature
+e) BL2 + BL31 + BL32 + BL33(Amboot) + Image Signature + DTB Signature
+
+Note:
+  AMBOOT_BLD_RAM_START and KERNEL_RAM_START are critical to the memory layout,
+  and both of them are configured by menuconfig.
+  AMBOOT_BLD_RAM_END is defined in include/ambhw/memory.h
+
+Abbreviations:
+a) TZDRAM: TrustZone Dram, i.e., Secure Memory
+b) NSDRAM: NonSecure Dram, i.e., Non-secure Memory
+
+
+II - Amboot
+-----------
+
+  CONFIG_AARCH64_TRUSTZONE=n
+  CONFIG_TRUSTZONE_SECURE_BOOT=n
+  CONFIG_TRUSTZONE_DTB_SIGNED=n
+  CONFIG_TRUSTZONE_OPTEE=n
+
+  +---------+---------------------+
+  |         |        ......       |
+  |         +---------------------+
+  |         |     Linux memory    |
+  |         +---------------------+ KERNEL_RAM_START
+  | NSDRAM  |        ......       |
+  |         +---------------------+ AMBOOT_BLD_RAM_END
+  |         |        BL33         |
+  |         +---------------------+ AMBOOT_BLD_RAM_START
+  |         |        ......       |
+  +---------+---------------------+
+
+
+III - BL2 + BL31 + BL33(Amboot)
+-------------------------------
+
+  CONFIG_AARCH64_TRUSTZONE=y
+  CONFIG_TRUSTZONE_SECURE_BOOT=n
+  CONFIG_TRUSTZONE_DTB_SIGNED=n
+  CONFIG_TRUSTZONE_OPTEE=n
+
+  +---------+---------------------+
+  |         |        ......       |
+  |         +---------------------+
+  |         |     Linux memory    |
+  |         +---------------------+ KERNEL_RAM_START
+  |         |        ......       |
+  |         +---------------------+ AMBOOT_BLD_RAM_END
+  | NSDRAM  |        BL33         |
+  |         +---------------------+ AMBOOT_BLD_RAM_START
+  |         |        ......       |
+  |         +---------------------+ 0x0010_0000
+  |         |        BL31         |
+  |         +---------------------+ 0x0008_0000
+  |         |        BL2          |
+  +---------+---------------------+ 0x0000_0000
+
+
+IV - BL2 + BL31 + BL33(Amboot) + Image Signature
+------------------------------------------------
+
+  CONFIG_AARCH64_TRUSTZONE=y
+  CONFIG_TRUSTZONE_SECURE_BOOT=y
+  CONFIG_TRUSTZONE_DTB_SIGNED=n
+  CONFIG_TRUSTZONE_OPTEE=n
+
+  +---------+---------------------+
+  |         |        ......       |
+  |         +---------------------+
+  |         |     Linux memory    |
+  | NSDRAM  +---------------------+ KERNEL_RAM_START
+  |         |        ......       |
+  |         +---------------------+ AMBOOT_BLD_RAM_END
+  |         |        BL33         |
+  +---------+---------------------+ AMBOOT_BLD_RAM_START
+  |         |        ......       |
+  |         +---------------------+ 0x0010_0000
+  | TZDRAM  |        BL31         |
+  |         +---------------------+ 0x0008_0000
+  |         |        BL2          |
+  +---------+---------------------+ 0x0000_0000
+
+
+V - BL2 + BL31 + BL33(Amboot) + Image Signature + DTB Signature
+---------------------------------------------------------------
+
+  CONFIG_AARCH64_TRUSTZONE=y
+  CONFIG_TRUSTZONE_SECURE_BOOT=y
+  CONFIG_TRUSTZONE_DTB_SIGNED=y
+  CONFIG_TRUSTZONE_OPTEE=n
+
+  +---------+---------------------+
+  |         |     Linux memory    |
+  |         +---------------------+ KERNEL_RAM_START
+  |         |        ......       |
+  | NSDRAM  +---------------------+ AMBOOT_BLD_RAM_END
+  |         |        BL33         |
+  |         +---------------------+ AMBOOT_BLD_RAM_START
+  |         |   EL2 RSVDMEM 2MiB  |
+  +---------+---------------------+ AMBOOT_BLD_RAM_START - 2MiB
+  |         |        ......       |
+  |         +---------------------+ 0x0010_0000
+  | TZDRAM  |        BL31         |
+  |         +---------------------+ 0x0008_0000
+  |         |        BL2          |
+  +---------+---------------------+ 0x0000_0000
+
+
+VI - BL2 + BL31 + BL32 + BL33(Amboot) + Image Signature + DTB Signature
+-----------------------------------------------------------------------
+
+  CONFIG_AARCH64_TRUSTZONE=y
+  CONFIG_TRUSTZONE_SECURE_BOOT=y
+  CONFIG_TRUSTZONE_DTB_SIGNED=y
+  CONFIG_TRUSTZONE_OPTEE=y
+
+  +---------+---------------------+
+  |         |     Linux memory    |
+  |         +---------------------+ KERNEL_RAM_START
+  |         |        ......       |
+  |         +---------------------+ AMBOOT_BLD_RAM_END
+  | NSDRAM  |        BL33         |
+  |         +---------------------+ AMBOOT_BLD_RAM_START
+  |         |   EL2 RSVDMEM 2MiB  |
+  |         +---------------------+ AMBOOT_BLD_RAM_START - 2MiB
+  |         |   BL32 SHMEM 2MiB   |
+  +---------+------+--------------+ AMBOOT_BLD_RAM_START - 4MiB
+  |         |      |  TA_RAM ...  |
+  |         | BL32 +--------------+ 0x0020_0000
+  |         |      | TEE_RAM 1MiB |
+  | TZDRAM  +------+--------------+ 0x0010_0000
+  |         |        BL31         |
+  |         +---------------------+ 0x0008_0000
+  |         |        BL2          |
+  +---------+---------------------+ 0x0000_0000
+
+Note:
+    The minimal size of TA RAM is 10MiB, and the increase of AMBOOT_BLD_RAM_START
+    will lead to the increase of TA RAM size.
+

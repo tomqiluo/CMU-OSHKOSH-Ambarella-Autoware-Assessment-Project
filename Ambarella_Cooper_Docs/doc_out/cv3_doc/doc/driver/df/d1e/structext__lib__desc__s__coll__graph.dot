@@ -1,0 +1,9 @@
+digraph "ext_lib_desc_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ext_lib_desc_s\n|+ lib_id\l+ graph_node_id\l+ input_num\l+ output_num\l+ lib_size\l+ attr_len\l+ lib_name\l+ ext_type\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

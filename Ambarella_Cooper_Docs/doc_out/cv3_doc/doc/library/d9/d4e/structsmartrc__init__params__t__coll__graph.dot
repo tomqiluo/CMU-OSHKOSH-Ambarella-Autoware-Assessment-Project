@@ -1,0 +1,9 @@
+digraph "smartrc_init_params_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{smartrc_init_params_t\n|+ process_stream_map\l+ cv_enable_stream_map\l+ query_type_bits_map\l+ log_level\l+ reserved0\l+ cv_src\l+ disable_motion_from\l_cv_stream_map\l+ enable_roi_for_B_frame\l_stream_map\l+ disable_low_light_profile\l_stream_map\l+ enable_dsp_scale_me0\l_stream_map\l+ debug_flag_map\l+ reserved1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

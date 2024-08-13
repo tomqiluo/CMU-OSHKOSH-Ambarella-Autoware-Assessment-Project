@@ -1,0 +1,9 @@
+digraph "otp_query_setting"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{otp_query_setting\n|+ lock_bits\l+ invalid_bits\l+ sysconfig\l+ sysconfig_mask\l+ secure_boot_permanent_en\l+ jtag_efuse\l+ sysconfig_locked\l+ huk_locked\l+ customer_id_locked\l+ zone_a_locked\l+ cst_seed_cuk_locked\l+ usr_cuk_locked\l+ anti_rollback_en\l+ secure_usb_boot_dis\l+ all_rot_key_lock_together\l+ otp_layout_ver\l+ not_revokeable_key\l_index\l+ reserved\l+ rot_pubkey_lock_base\l+ aes_key_lock_base\l+ ecc_key_lock_base\l+ usr_slot_g0_lock_base\l+ usr_slot_g1_lock_base\l+ num_of_rot_pub_keys\l+ num_of_aes_keys\l+ num_of_ecc_keys\l+ num_of_usr_slot_g0\l+ num_of_usr_slot_g1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

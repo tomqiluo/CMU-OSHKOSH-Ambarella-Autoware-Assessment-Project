@@ -1,0 +1,26 @@
+var structdsp__boot__params =
+[
+    [ "dsp_max_fb_num", "d6/d3b/structdsp__boot__params.html#a8e5e45739db7464bef6cc46724c2d96f", null ],
+    [ "dsp_max_fb_num_flag", "d6/d3b/structdsp__boot__params.html#adbe701163b59dcc78b04dbc87cf5ecc6", null ],
+    [ "dsp_private_dram_addr", "d6/d3b/structdsp__boot__params.html#a1f347ad1b2b41759d5346aab7dccb6cd", null ],
+    [ "dsp_private_dram_flag", "d6/d3b/structdsp__boot__params.html#a8c12fddda2a0a892f39f1bff4a44c50b", null ],
+    [ "dsp_private_dram_size", "d6/d3b/structdsp__boot__params.html#afd029ba2c8d3dd809235740317ff9436", null ],
+    [ "max_dram_par_num", "d6/d3b/structdsp__boot__params.html#a12489bb70eef171347958112605b1e3e", null ],
+    [ "max_dram_par_num_flag", "d6/d3b/structdsp__boot__params.html#ab15541aab33f2e2cb9464dce023e6cc7", null ],
+    [ "osd_profile", "d6/d3b/structdsp__boot__params.html#aafe9ac7a4091bce32fcb2101a60ccbfe", null ],
+    [ "reserved0", "d6/d3b/structdsp__boot__params.html#aee03509477274f40b568384584388e88", null ],
+    [ "support_vout_rotate_flag", "d6/d3b/structdsp__boot__params.html#ad8a6faa8e5212e37ea5019e0a24b1c7f", null ],
+    [ "sync_first_vout_frame_mode", "d6/d3b/structdsp__boot__params.html#ab940e19308676004ae2e47359c2ced5d", null ],
+    [ "sync_first_vout_frame_mode_flag", "d6/d3b/structdsp__boot__params.html#aaaaa65c12dd6ca4a475a934dd9820f1b", null ],
+    [ "vout0_back_pressure_margin", "d6/d3b/structdsp__boot__params.html#aa95bd5b15507593db7e4e6d0dba60384", null ],
+    [ "vout0_support_rotate", "d6/d3b/structdsp__boot__params.html#a9ecdcee935b7d8846325c64cdd407a09", null ],
+    [ "vout1_back_pressure_margin", "d6/d3b/structdsp__boot__params.html#a8a0485753aefe4f7f2b83f54688d91c2", null ],
+    [ "vout1_support_rotate", "d6/d3b/structdsp__boot__params.html#a2f6ac62f42eccb705265eb8c3702052c", null ],
+    [ "vout_back_pressure_margin_flag", "d6/d3b/structdsp__boot__params.html#a82f8715f6816243f22c454d702a4eca9", null ],
+    [ "vout_osd_profile_flag", "d6/d3b/structdsp__boot__params.html#a5255b15878ba93da3ea4c2bc899e9894", null ],
+    [ "vout_profile", "d6/d3b/structdsp__boot__params.html#a9cda8c6f1977b5d89abf019bc24966b7", null ],
+    [ "vout_profile_cfg", "d6/d3b/structdsp__boot__params.html#a287d0b68dea2949e7f1c30549c143c8b", null ],
+    [ "vout_profile_flag", "d6/d3b/structdsp__boot__params.html#ae53ac10ff5ad932b5d121e7bd49ede6d", null ],
+    [ "vout_underflow_prevention", "d6/d3b/structdsp__boot__params.html#aff9741a986eace400a4bd4360d75e80f", null ],
+    [ "vout_underflow_prevention_flag", "d6/d3b/structdsp__boot__params.html#a8658f1ca06d09355b072bf013aa91ce3", null ]
+];

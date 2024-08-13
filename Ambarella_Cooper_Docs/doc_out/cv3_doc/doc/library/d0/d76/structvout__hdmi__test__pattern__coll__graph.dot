@@ -1,0 +1,9 @@
+digraph "vout_hdmi_test_pattern"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vout_hdmi_test_pattern\n|+ video_en\l+ audio_en\l+ colorbar_en\l+ bg_r\l+ bg_g\l+ bg_b\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

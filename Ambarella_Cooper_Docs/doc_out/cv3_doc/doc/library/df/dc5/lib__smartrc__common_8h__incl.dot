@@ -1,0 +1,41 @@
+digraph "prebuild/library/smartrc3/dsp_v6/include/lib_smartrc_common.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="prebuild/library/smartrc3\l/dsp_v6/include/lib_smartrc\l_common.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="basetypes.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="config.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="iav_ioctl.h",height=0.2,width=0.4,color="black",URL="$de/d89/iav__ioctl_8h.html",tooltip="This file defines IAV driver ioctl api."];
+  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="linux/ioctl.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="board_config.h",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="iav_common.h",height=0.2,width=0.4,color="black",URL="$d9/da5/iav__common_8h.html",tooltip="This file defines common enumerations used in all IAV driver and header files."];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="iav_vin_ioctl.h",height=0.2,width=0.4,color="black",URL="$de/d12/iav__vin__ioctl_8h.html",tooltip="This file defines IAV Video Input Configuration IOCTL api."];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="iav_vin_common.h",height=0.2,width=0.4,color="black",URL="$d9/d65/iav__vin__common_8h.html",tooltip="This file defines IAV Video Input Configuration structures."];
+  Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="iav_vout_ioctl.h",height=0.2,width=0.4,color="black",URL="$dd/d5e/iav__vout__ioctl_8h.html",tooltip="This file defines video output configuration ioctl."];
+  Node10 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="iav_vout_common.h",height=0.2,width=0.4,color="black",URL="$d7/db8/iav__vout__common_8h.html",tooltip="This file defines video output configuration ioctl."];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ambas_imgproc_arch.h",height=0.2,width=0.4,color="black",URL="$dd/d40/ambas__imgproc__arch_8h.html",tooltip=" "];
+  Node12 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="lib_smartrc_client\l_structure.h",height=0.2,width=0.4,color="black",URL="$dd/d89/lib__smartrc__client__structure_8h.html",tooltip=" "];
+  Node13 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

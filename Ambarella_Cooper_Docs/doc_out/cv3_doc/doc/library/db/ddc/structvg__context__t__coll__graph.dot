@@ -1,0 +1,15 @@
+digraph "vg_context_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vg_context_t\n|+ iav_fd\l+ exit_flag\l+ dsp_nl_thread\l+ check_thread\l+ handler_thread\l+ nl_sys\l+ vg_mutex\l+ vg_cond\l+ subscribe_map\l+ vg_status\l+ pub_name\l+ publisher_data\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +vsrc_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{vin_global_info\n|+ total_vsrc_num\l+ reserved\l+ vsrc_map\l+ active_vsrc_map\l|}",height=0.2,width=0.4,color="black",URL="$d7/d28/structvin__global__info.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +handler_sem" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{vg_sem\n|+ handle_sem\l+ handle_sem_created\l|}",height=0.2,width=0.4,color="black",URL="$da/dae/structvg__sem.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +transfer_data" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{vg_dds_data\n|+ version\l+ vinc_map\l+ vsrc_map\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d4/d2d/structvg__dds__data.html",tooltip=" "];
+}

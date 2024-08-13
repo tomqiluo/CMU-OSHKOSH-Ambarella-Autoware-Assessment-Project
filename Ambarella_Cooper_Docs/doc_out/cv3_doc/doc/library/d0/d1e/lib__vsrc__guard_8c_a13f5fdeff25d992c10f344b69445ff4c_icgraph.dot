@@ -1,0 +1,16 @@
+digraph "lib_vg_send_disconnect"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="lib_vg_send_disconnect",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="lib_vg_join_threads",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a56262ba55fa4a22ea420f69558aa39b4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="lib_vg_start",height=0.2,width=0.4,color="black",URL="$d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga555a1854e78bf261b3aa0688b5a12424",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="lib_vg_stop",height=0.2,width=0.4,color="black",URL="$d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga3f357804a2de736735e8b794f4ef9e66",tooltip=" "];
+}

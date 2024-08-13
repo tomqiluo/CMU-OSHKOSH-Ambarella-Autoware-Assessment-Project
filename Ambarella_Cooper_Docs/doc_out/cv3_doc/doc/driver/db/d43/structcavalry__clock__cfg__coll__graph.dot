@@ -1,0 +1,9 @@
+digraph "cavalry_clock_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_clock_cfg\n|+ vp_clk_flag\l+ reserved_1\l+ vp_clk_numerator\l+ vp_clk_denominator\l+ reserved_2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

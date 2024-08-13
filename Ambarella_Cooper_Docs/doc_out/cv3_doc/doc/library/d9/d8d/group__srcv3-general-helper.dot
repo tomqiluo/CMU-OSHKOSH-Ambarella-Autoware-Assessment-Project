@@ -1,0 +1,10 @@
+digraph "SmartRC Library General Helper"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="SmartRC Library General\l Helper",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="SmartRC Library General Helper, in file lib_smartrc_common.h."];
+  Node2 [label="SmartRC Library helper",height=0.2,width=0.4,color="black",URL="$db/d15/group__srcv3-helper.html",tooltip="SmartRC Library helper."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

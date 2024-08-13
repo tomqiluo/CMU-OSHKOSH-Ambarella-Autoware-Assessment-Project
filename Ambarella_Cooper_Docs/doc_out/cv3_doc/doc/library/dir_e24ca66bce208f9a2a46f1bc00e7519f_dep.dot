@@ -1,0 +1,13 @@
+digraph "packages/data_process"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_93501a11e921083efbd154e0cdff5f10 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="packages", fontname="Helvetica", fontsize="10", URL="dir_93501a11e921083efbd154e0cdff5f10.html"]
+  dir_e24ca66bce208f9a2a46f1bc00e7519f [shape=box, label="data_process", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_e24ca66bce208f9a2a46f1bc00e7519f.html"];
+  }
+}

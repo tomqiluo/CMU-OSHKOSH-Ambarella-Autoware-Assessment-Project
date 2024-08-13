@@ -1,0 +1,9 @@
+digraph "channel_cfg_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{channel_cfg_s\n|+ max_padding_width\l+ max_padding_width_changed_flag\l+ idsp_fps\l+ idsp_fps_changed_flag\l+ idsp_fps_locked_enable\l+ idsp_fps_locked_enable_flag\l+ lens_warp\l+ lens_warp_changed_flag\l+ max_main_input_width\l+ max_main_input_width\l_changed_flag\l+ mctf_cmpr\l+ mctf_cmpr_changed_flag\l+ mctf_10bit_ref_buf\l+ mctf_10bit_ref_changed_flag\l+ extra_downscale\l+ extra_downscale_changed_flag\l+ max_warp_region_input\l_width\l+ max_warp_region_input\l_width_flag\l+ max_warp_region_output\l_width\l+ max_warp_region_output\l_width_flag\l+ max_vwarp_wait_lines\l+ max_vwarp_wait_lines_flag\l+ max_vwarp_blk_height\l+ max_vwarp_blk_height_flag\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

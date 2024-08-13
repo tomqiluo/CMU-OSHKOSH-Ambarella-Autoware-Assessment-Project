@@ -1,0 +1,9 @@
+digraph "cvker_mfd_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cvker_mfd_t\n|+ ker_content\l+ ker_h\l+ ker_w\l+ mem_virt\l+ mem_size\l+ mem_mfd\l+ mem_addr_offset\l+ border_replicated\l+ reserved_bits\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The general configuration of kernel in mfd."];
+}

@@ -1,0 +1,9 @@
+digraph "iav_efm_handshake_frame"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_efm_handshake_frame\n|+ stream_id\l+ frame_idx\l+ frame_pts\l+ is_last_frame\l+ use_hw_pts\l+ skip_cache_sync\l+ hold_frame\l+ use_stream_map\l+ reserved\l+ stream_map\l+ frame_pts_msb\l+ yuv_ext_offset\l+ me_ext_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

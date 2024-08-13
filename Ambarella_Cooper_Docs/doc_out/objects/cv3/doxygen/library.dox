@@ -1,0 +1,457 @@
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/smartrc3/include
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6/include
+FILE_PATTERNS          += lib_smart*.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_src_v3
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6/unit_test
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/lib_vsrc_guard
+FILE_PATTERNS          += lib_vsrc_guard.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_vsrc_guard
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/cavalry_mem/inc
+FILE_PATTERNS          += cavalry_mem.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_cavalry_mem
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/multi_sensor_calib/include/armv8-a
+FILE_PATTERNS          += libsensor_calib.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/sensor_calib_user_guide
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/eis/include/dsp_v6
+FILE_PATTERNS          += lib_eis.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_eis
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/cavalry_opt_layers/inc
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/cavalry_opt_layers/inc
+FILE_PATTERNS          += opt_layers.hpp roi_pooling.hpp roi_align.hpp ps_roi_pooling.hpp data_fmt.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_cavalry_opt_layers
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/pvanet
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/ai_cam/cvflow/pvanet
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/roi_align_arm \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/psroipooling
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/amba_tof/include/armv8-a \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/depth_sensing_framework/include
+FILE_PATTERNS          += lib_tof.h amba_dsf_if.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_depth_framework/
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6 \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/depth_sensing_framework/unit_test
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/arch_v5/efm
+FILE_PATTERNS          += lib_efm.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_efm
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/inc \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/inc/accl/orb \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/inc/comm \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/inc/core \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/inc/utils \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test/nn_arm_task
+FILE_PATTERNS          += eazyai.h eazyai_*.h ea_*.h nn_arm.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_eazyai
+EXAMPLE_PATTERNS       += *.cpp
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps
+ALIASES                += ambalicyear=2024
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/smartfb/
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/smartfb/unit_test
+FILE_PATTERNS          += lib_smartfb.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_smartfb
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/nnctrl/cavalry_v3/inc
+FILE_PATTERNS          += nnctrl.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_nnctrl
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/video_sharing_service/include
+FILE_PATTERNS          += video_sharing_service_if.h vss_types.h vss_cfg_parser.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_vss
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/asf/include
+FILE_PATTERNS          += asf_core.h asf_structure.h asf_utils.h asf_parser.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_asf
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/include/dsp_v6
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_header/img_cv3/imgkernel \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_header/img_cv3/uapi \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6/include/uapi
+FILE_PATTERNS          += img_flow_api.h img_struct_arch.h iav_vin_common.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_image_flow
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/idsp_test/dsp_v6
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/idsp_test/img_cv3
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/imgproc/img_data/dsp_v6
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3
+
+
+
+##INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/
+##FILE_PATTERNS          +=
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_gstreamer/
+##EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/blade_runner/inc
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/blade_runner/dsp_v6/include
+FILE_PATTERNS          += blade_runner.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_blade_runner
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/access_control/sl_depth
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/dewarp/include/dsp_v6
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/dewarp/dsp_v6/include
+FILE_PATTERNS          += amba_lib_dewarp.h amba_lib_dewarp_header.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_dewarp
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/vfunc/cavalry_v3/inc
+FILE_PATTERNS          += vfunc.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_vfunc
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/vfunc
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/vproc/cavalry_v3/inc
+FILE_PATTERNS          += vproc.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_vproc
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/vproc
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/cnngen_prep/inc
+FILE_PATTERNS          += cnngen_prep.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_cgpp
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/cgpp
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/data_process/
+FILE_PATTERNS          += lib_data_process.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_data_process/
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/ssd/
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test/nn_arm_task/ssd/
+ALIASES                += ambalicyear=2024
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/multi_sensor_calib/include/armv8-a
+FILE_PATTERNS          += lib_sensor_calib.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_sensor_calib
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/privacymask
+FILE_PATTERNS          += lib_pm.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_pm
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/include/dsp_v6
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/include/image/arch_cv3
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_header/img_cv3/imgkernel \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_header/img_cv3/uapi \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6/include/uapi \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6/include/uapi/specific
+FILE_PATTERNS          += img_api_arch.h img_customer_interface_arch.h img_struct_arch.h ambas_imgproc_arch.h AmbaDSP_ImgFilter.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_image
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/idsp_test/dsp_v6
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/idsp_test/img_cv3
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/stitch_algo/include/armv8-a
+FILE_PATTERNS          += lib_stitch.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_stitch
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/ambarella/library/smartrc2/include/
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6/include/
+FILE_PATTERNS          += lib_smartrc*.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/lib_src
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/package_test/dsp_v6
+EXAMPLE_PATH           += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6/unit_test
+
+
+INPUT                  += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/objects/cv3/doxygen/library
+FILE_PATTERNS          += library_*_page.h
+IMAGE_PATH             += /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/ \
+                          /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/amba_overview
+
+DOXYFILE_ENCODING      = UTF-8
+PROJECT_NAME           = "Library"
+PROJECT_NUMBER         = Cooper_1.6.0 (CV72 & CV3) @ 2024.07.10 14:12:44
+PROJECT_BRIEF          = "placeholder"
+PROJECT_LOGO           = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/resources/Ambarella.png
+OUTPUT_DIRECTORY       = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/library
+CREATE_SUBDIRS         = YES
+ALLOW_UNICODE_NAMES    = YES
+OUTPUT_LANGUAGE        = English
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ABBREVIATE_BRIEF       =
+ALWAYS_DETAILED_SEC    = NO
+INLINE_INHERITED_MEMB  = NO
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella
+STRIP_FROM_INC_PATH    =
+SHORT_NAMES            = NO
+JAVADOC_AUTOBRIEF      = NO
+QT_AUTOBRIEF           = NO
+MULTILINE_CPP_IS_BRIEF = NO
+INHERIT_DOCS           = YES
+SEPARATE_MEMBER_PAGES  = NO
+TAB_SIZE               = 4
+ALIASES                += ambalicyear=2024
+TCL_SUBST              =
+OPTIMIZE_OUTPUT_FOR_C  = YES
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+EXTENSION_MAPPING      =
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = YES
+CPP_CLI_SUPPORT        = NO
+SIP_SUPPORT            = NO
+IDL_PROPERTY_SUPPORT   = YES
+DISTRIBUTE_GROUP_DOC   = NO
+SUBGROUPING            = YES
+INLINE_GROUPED_CLASSES = NO
+INLINE_SIMPLE_STRUCTS  = NO
+TYPEDEF_HIDES_STRUCT   = YES
+LOOKUP_CACHE_SIZE      = 0
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_PACKAGE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+EXTRACT_ANON_NSPACES   = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+HIDE_FRIEND_COMPOUNDS  = NO
+HIDE_IN_BODY_DOCS      = NO
+INTERNAL_DOCS          = NO
+CASE_SENSE_NAMES       = YES
+HIDE_SCOPE_NAMES       = YES
+HIDE_COMPOUND_REFERENCE= NO
+SHOW_INCLUDE_FILES     = YES
+SHOW_GROUPED_MEMB_INC  = NO
+FORCE_LOCAL_INCLUDES   = NO
+INLINE_INFO            = YES
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = NO
+SORT_MEMBERS_CTORS_1ST = NO
+SORT_GROUP_NAMES       = NO
+SORT_BY_SCOPE_NAME     = NO
+STRICT_PROTO_MATCHING  = NO
+GENERATE_TODOLIST      = YES
+GENERATE_TESTLIST      = YES
+GENERATE_BUGLIST       = YES
+GENERATE_DEPRECATEDLIST= YES
+ENABLED_SECTIONS       =
+MAX_INITIALIZER_LINES  = 30
+SHOW_USED_FILES        = YES
+SHOW_FILES             = YES
+SHOW_NAMESPACES        = YES
+FILE_VERSION_FILTER    =
+LAYOUT_FILE            =
+CITE_BIB_FILES         =
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_FORMAT            = "$file:$line: $text"
+WARN_LOGFILE           =
+INPUT_ENCODING         = UTF-8
+RECURSIVE              = NO
+EXCLUDE                =
+EXCLUDE_SYMLINKS       = NO
+EXCLUDE_PATTERNS       =
+EXCLUDE_SYMBOLS        =
+
+EXAMPLE_PATTERNS       = *.c
+EXAMPLE_RECURSIVE      = YES
+INPUT_FILTER           =
+FILTER_PATTERNS        =
+FILTER_SOURCE_FILES    = NO
+FILTER_SOURCE_PATTERNS =
+USE_MDFILE_AS_MAINPAGE =
+SOURCE_BROWSER         = NO
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = NO
+REFERENCES_RELATION    = NO
+REFERENCES_LINK_SOURCE = YES
+SOURCE_TOOLTIPS        = YES
+USE_HTAGS              = NO
+VERBATIM_HEADERS       = YES
+ALPHABETICAL_INDEX     = YES
+COLS_IN_ALPHA_INDEX    = 5
+IGNORE_PREFIX          =
+GENERATE_HTML          = YES
+HTML_OUTPUT            = .
+HTML_FILE_EXTENSION    = .html
+HTML_HEADER            =
+HTML_FOOTER            =
+HTML_STYLESHEET        =
+HTML_EXTRA_STYLESHEET  = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/doxygen/css/doxygen-awesome.css \
+	/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/doxygen/css/doxygen-awesome-sidebar-only.css \
+	/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/document/doxygen/css/doxygen-ambarella.css
+HTML_EXTRA_FILES       =
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = NO
+HTML_DYNAMIC_SECTIONS  = YES
+HTML_INDEX_NUM_ENTRIES = 100
+GENERATE_DOCSET        = NO
+DOCSET_FEEDNAME        =
+DOCSET_BUNDLE_ID       =
+DOCSET_PUBLISHER_ID    =
+DOCSET_PUBLISHER_NAME  = AMBA SDK Team
+GENERATE_HTMLHELP      = NO
+CHM_FILE               =
+HHC_LOCATION           =
+GENERATE_CHI           = YES
+CHM_INDEX_ENCODING     =
+BINARY_TOC             = NO
+TOC_EXPAND             = NO
+GENERATE_QHP           = NO
+QCH_FILE               =
+QHP_NAMESPACE          = library.doxygen.Project
+QHP_VIRTUAL_FOLDER     = doc
+QHP_CUST_FILTER_NAME   =
+QHP_CUST_FILTER_ATTRS  =
+QHP_SECT_FILTER_ATTRS  =
+QHG_LOCATION           =
+GENERATE_ECLIPSEHELP   = NO
+ECLIPSE_DOC_ID         = org.doxygen.Project
+DISABLE_INDEX          = NO
+GENERATE_TREEVIEW      = YES
+ENUM_VALUES_PER_LINE   = 1
+TREEVIEW_WIDTH         = 400
+EXT_LINKS_IN_WINDOW    = YES
+FORMULA_FONTSIZE       = 10
+FORMULA_TRANSPARENT    = YES
+USE_MATHJAX            = YES
+MATHJAX_FORMAT         = HTML-CSS
+MATHJAX_RELPATH        = ../library/mathjax
+MATHJAX_EXTENSIONS     =
+MATHJAX_CODEFILE       =
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = YES
+EXTERNAL_SEARCH        = YES
+SEARCHENGINE_URL       =
+SEARCHDATA_FILE        = searchdata.xml
+EXTERNAL_SEARCH_ID     =
+EXTRA_SEARCH_MAPPINGS  =
+GENERATE_LATEX         = NO
+LATEX_OUTPUT           = latex
+LATEX_CMD_NAME         = latex
+MAKEINDEX_CMD_NAME     = makeindex
+COMPACT_LATEX          = NO
+PAPER_TYPE             = a4
+EXTRA_PACKAGES         =
+LATEX_HEADER           =
+LATEX_FOOTER           =
+LATEX_EXTRA_STYLESHEET =
+LATEX_EXTRA_FILES      =
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = NO
+LATEX_BATCHMODE        = NO
+LATEX_HIDE_INDICES     = YES
+LATEX_SOURCE_CODE      = NO
+LATEX_BIB_STYLE        = plain
+GENERATE_RTF           = NO
+RTF_OUTPUT             = rtf
+COMPACT_RTF            = NO
+RTF_HYPERLINKS         = NO
+RTF_STYLESHEET_FILE    =
+RTF_EXTENSIONS_FILE    =
+RTF_SOURCE_CODE        = NO
+GENERATE_MAN           = NO
+MAN_OUTPUT             = man
+MAN_EXTENSION          = .3
+MAN_SUBDIR             =
+MAN_LINKS              = NO
+GENERATE_XML           = NO
+XML_OUTPUT             = xml
+XML_PROGRAMLISTING     = YES
+GENERATE_DOCBOOK       = NO
+DOCBOOK_OUTPUT         = docbook
+DOCBOOK_PROGRAMLISTING = NO
+GENERATE_AUTOGEN_DEF   = NO
+GENERATE_PERLMOD       = NO
+PERLMOD_LATEX          = NO
+PERLMOD_PRETTY         = YES
+PERLMOD_MAKEVAR_PREFIX =
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = NO
+EXPAND_ONLY_PREDEF     = NO
+SEARCH_INCLUDES        = YES
+INCLUDE_PATH           =
+INCLUDE_FILE_PATTERNS  =
+PREDEFINED             =
+EXPAND_AS_DEFINED      =
+SKIP_FUNCTION_MACROS   = YES
+TAGFILES               = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/video/video.tag=../video/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/peripherals/peripherals.tag=../peripherals/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/overview/overview.tag=../overview/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/library/driver.tag=../driver/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/spu/spu.tag=../spu/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/amrtos/amrtos.tag=../amrtos/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/system/system.tag=../system/ \
+                         /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/hardware/hardware.tag=../hardware/
+GENERATE_TAGFILE       = /root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/library/library.tag
+ALLEXTERNALS           = NO
+EXTERNAL_GROUPS        = NO
+EXTERNAL_PAGES         = NO
+PERL_PATH              = /usr/bin/perl
+CLASS_DIAGRAMS         = YES
+MSCGEN_PATH            =
+DIA_PATH               =
+HIDE_UNDOC_RELATIONS   = YES
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 8
+DOT_FONTNAME           = Helvetica
+DOT_FONTSIZE           = 10
+DOT_FONTPATH           =
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = YES
+UML_LIMIT_NUM_FIELDS   = 100
+TEMPLATE_RELATIONS     = NO
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_PATH               =
+DOTFILE_DIRS           =
+MSCFILE_DIRS           =
+DIAFILE_DIRS           =
+PLANTUML_JAR_PATH      =
+PLANTUML_INCLUDE_PATH  =
+DOT_GRAPH_MAX_NODES    = 200
+MAX_DOT_GRAPH_DEPTH    = 0
+DOT_TRANSPARENT        = YES
+DOT_MULTI_TARGETS      = YES
+GENERATE_LEGEND        = YES
+DOT_CLEANUP            = YES
+
+

@@ -1,0 +1,15 @@
+digraph "cavalry_run_dags_mfd"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_run_dags_mfd\n|+ rval\l+ start_tick\l+ end_tick\l+ finish_dags\l+ load_total_ticks\l+ exec_total_ticks\l+ dag_cnt\l+ reserved0\l+ is_encrypt\l+ is_resume\l+ reserved1\l+ sub_session_id\l+ session_id\l+ nid\l+ affinity\l+ priority\l+ hw_type\l+ reserved2\l+ no_auto_resume\l+ reserved2_0\l+ reserved3\l+ dvi_dram_addr_fd\l+ ucode_cmd_addr_fd\l+ ucode_cmd_addr_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +dag_desc" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{cavalry_dag_desc_mfd\n|+ dag_loop_cnt\l+ use_ping_pong_vmem\l+ reserved\l+ dep_cnt\l+ reserved2\l+ dvi_dram_addr_offset\l+ dvi_img_vaddr\l+ dvi_img_size\l+ dvi_dag_vaddr\l+ private_scratchpad\l_offset\l+ reverse_dep_dag_cnt\l+ port_cnt\l+ poke_cnt\l+ extra_poke_list_cnt\l+ extra_poke_list_dram\l_offset\l+ reserved1\l+ reverse_dep_dag_id\l+ port_dram_addr_fd\l|}",height=0.2,width=0.4,color="black",URL="$db/d01/structcavalry__dag__desc__mfd.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +port_desc" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{cavalry_port_desc\n|+ port_dram_addr\l+ port_dram_size\l+ port_boffset_in_dag\l+ port_daddr_increment\l|}",height=0.2,width=0.4,color="black",URL="$d0/d20/structcavalry__port__desc.html",tooltip=" "];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +poke_desc" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{cavalry_poke_desc\n|+ poke_val\l+ poke_vaddr\l+ poke_bsize\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$df/d99/structcavalry__poke__desc.html",tooltip=" "];
+}

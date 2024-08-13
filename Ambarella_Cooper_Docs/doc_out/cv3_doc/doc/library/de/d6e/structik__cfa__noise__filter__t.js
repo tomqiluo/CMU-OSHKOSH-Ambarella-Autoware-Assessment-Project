@@ -1,0 +1,28 @@
+var structik__cfa__noise__filter__t =
+[
+    [ "apply_to_color_diff_blue", "de/d6e/structik__cfa__noise__filter__t.html#a0b3343a9d46264279eadca04b70bfe0d", null ],
+    [ "apply_to_color_diff_red", "de/d6e/structik__cfa__noise__filter__t.html#aafc207abd7137ca89e283bb72cc09721", null ],
+    [ "dir_lev_max", "de/d6e/structik__cfa__noise__filter__t.html#a1627a8be4ebd33fa76f26520116a6c4f", null ],
+    [ "dir_lev_min", "de/d6e/structik__cfa__noise__filter__t.html#a88045c7e37e5103fa7f3a39b12c487a9", null ],
+    [ "dir_lev_mul", "de/d6e/structik__cfa__noise__filter__t.html#aee47c9c490ac5c573ee24e4f098797b6", null ],
+    [ "dir_lev_offset", "de/d6e/structik__cfa__noise__filter__t.html#a6ca2836da32abc44d952af397b99a340", null ],
+    [ "dir_lev_shift", "de/d6e/structik__cfa__noise__filter__t.html#a295ec3a46cbec133f5a16aec7a37ecfd", null ],
+    [ "directional_enable", "de/d6e/structik__cfa__noise__filter__t.html#af235899547216437e5fffadd4c7043c0", null ],
+    [ "directional_horvert_edge_strength", "de/d6e/structik__cfa__noise__filter__t.html#ab997bbbf23f98137f43ef515edb031b9", null ],
+    [ "directional_horvert_original_blend_strength", "de/d6e/structik__cfa__noise__filter__t.html#a365879d726e9e063513bbd12ab92d8d4", null ],
+    [ "directional_horvert_strength_bias", "de/d6e/structik__cfa__noise__filter__t.html#a603504e041555d89800dbb38d81576b5", null ],
+    [ "enable", "de/d6e/structik__cfa__noise__filter__t.html#a7f01f059aa65181248c2b73feca9968f", null ],
+    [ "extent_fine", "de/d6e/structik__cfa__noise__filter__t.html#ab3ae6d14a2041874abbfe42424e4f2ad", null ],
+    [ "extent_regular", "de/d6e/structik__cfa__noise__filter__t.html#a7457e38cae92f3540fee53ddd741316d", null ],
+    [ "lev_mul", "de/d6e/structik__cfa__noise__filter__t.html#a8dab794f83a90662a0cb8d6cbe23027f", null ],
+    [ "lev_offset", "de/d6e/structik__cfa__noise__filter__t.html#a76379881bae5f15346c7589025355690", null ],
+    [ "lev_shift", "de/d6e/structik__cfa__noise__filter__t.html#a2bc9cba9c0094124bb802c435de4fd86", null ],
+    [ "max_noise_level", "de/d6e/structik__cfa__noise__filter__t.html#a3b6955b2427034e8d56f3198e7f16ad2", null ],
+    [ "min_noise_level", "de/d6e/structik__cfa__noise__filter__t.html#a514eabf293641463df5efb34d929a04d", null ],
+    [ "opt_for_rccb_blue", "de/d6e/structik__cfa__noise__filter__t.html#ad738cb47573a8a5db56b5304632c93ae", null ],
+    [ "opt_for_rccb_red", "de/d6e/structik__cfa__noise__filter__t.html#a0a90db1be8ab676a866dbdec2997620b", null ],
+    [ "original_blend_str", "de/d6e/structik__cfa__noise__filter__t.html#a009cc9603f33948e915e6852f12afe99", null ],
+    [ "selectivity_fine", "de/d6e/structik__cfa__noise__filter__t.html#ac3519e1f3ecba5ee7b4f40ca520204fa", null ],
+    [ "selectivity_regular", "de/d6e/structik__cfa__noise__filter__t.html#a4620c4e7c248b8462bd7594c87059283", null ],
+    [ "strength_fine", "de/d6e/structik__cfa__noise__filter__t.html#ac559dd7784c4e019eb28f6ca2f2a4bb0", null ]
+];

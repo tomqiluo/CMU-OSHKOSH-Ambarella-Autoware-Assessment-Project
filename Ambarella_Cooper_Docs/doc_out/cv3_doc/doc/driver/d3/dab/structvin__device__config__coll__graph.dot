@@ -1,0 +1,9 @@
+digraph "vin_device_config"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_device_config\n|+ interface_type\l+ video_format\l+ bit_resolution\l+ sensor_id\l+ bayer_pattern\l+ input_format\l+ readout_mode\l+ yuv_pixel_order\l+ sync_mode\l+ input_mode\l+ line_reorder\l+ reserved0\l+ delayed_vs_dly\l+ lane_number\l+ sync_code_style\l+ lane_mux_0\l+ lane_mux_1\l+ lane_mux_2\l+ lane_mux_3\l+ slvds_cfg\l+ data_edge\l+ data_rate\l+ emb_sync_loc\l+ a8_mode\l+ hw_specific\l+ reserved1\l+ reserved2\l+ plvds_cfg\l+ paralle_sync_type\l+ vs_hs_polarity\l+ plvcmos_cfg\l+ bit_rate\l+ data_type\l+ clk_mode\l+ vc_pattern\l+ phy_type\l+ ed_dt_pat\l+ ed_dt_mask\l+ reserved\l+ mipi_cfg\l+ compression\l+ act_width\l+ dual_link\l+ slvsec_cfg\l+ @8\l+ x\l+ y\l+ width\l+ height\l+ act_win\l+ split_width\l+ num_splits\l+ expo_num_m1\l+ expo_offset_2nd\l+ expo_offset_3rd\l+ expo_offset_4th\l+ hdr_cfg\l+ cap_win\l+ aux_win\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

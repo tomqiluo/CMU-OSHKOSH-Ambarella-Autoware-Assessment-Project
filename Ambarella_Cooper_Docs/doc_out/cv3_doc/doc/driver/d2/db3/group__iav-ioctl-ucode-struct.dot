@@ -1,0 +1,10 @@
+digraph "IAV IOCTL Ucode Struct"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="IAV UCODE IOCTL Helper",height=0.2,width=0.4,color="black",URL="$d3/d8e/group__iav-ioctl-ucode.html",tooltip="IAV IOCTL API Helper: Load Ucode, in file iav_ucode_ioctl.h."];
+  Node1 [label="IAV IOCTL Ucode Struct",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="IAV IOCTL Load Ucode API: Structs used in API."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

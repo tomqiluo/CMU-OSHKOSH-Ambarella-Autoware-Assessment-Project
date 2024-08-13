@@ -1,0 +1,9 @@
+digraph "iav_bitrate"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_bitrate\n|+ id\l+ average_bitrate\l+ vbr_setting\l+ qp_min_on_I\l+ qp_max_on_I\l+ qp_min_on_P\l+ qp_max_on_P\l+ qp_min_on_B\l+ qp_max_on_B\l+ i_qp_reduce\l+ p_qp_reduce\l+ adapt_qp\l+ skip_flag\l+ q_qp_reduce\l+ qp_max_on_Q\l+ qp_min_on_Q\l+ log_q_num_minus_1\l+ skip_flag_mode\l+ max_skip_num\l+ reserved0\l+ max_i_size_KB\l+ qp_min_on_C\l+ qp_max_on_C\l+ qp_min_on_D\l+ qp_max_on_D\l+ b_qp_reduce\l+ c_qp_reduce\l+ cbr_stable_br_adjust\l+ reserved1\l+ vbr_min_bitrate\l+ vbr_max_bitrate\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

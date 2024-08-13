@@ -1,0 +1,13 @@
+digraph "packages/idsp/img_header/img_cv3/imgkernel"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_d51e3805f87d0919b6cedec81f0dab7f {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="img_cv3", fontname="Helvetica", fontsize="10", URL="dir_d51e3805f87d0919b6cedec81f0dab7f.html"]
+  dir_f6e415cb416cf97a93cb6c4848a81df2 [shape=box, label="imgkernel", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_f6e415cb416cf97a93cb6c4848a81df2.html"];
+  }
+}

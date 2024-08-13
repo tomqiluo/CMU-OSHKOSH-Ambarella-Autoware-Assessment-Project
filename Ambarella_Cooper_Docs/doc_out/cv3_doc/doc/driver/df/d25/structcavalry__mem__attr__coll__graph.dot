@@ -1,0 +1,9 @@
+digraph "cavalry_mem_attr"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_mem_attr\n|+ cache_en\l+ no_recycle\l+ share_to_dsp\l+ reserved1\l+ reserved2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

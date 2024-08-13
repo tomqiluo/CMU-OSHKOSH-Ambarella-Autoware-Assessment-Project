@@ -1,0 +1,36 @@
+               BOOT COMMAND
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+
+I - Introduction
+----------------
+
+Amboot supports many commands, normaly they need users to input command manually
+to execute. But sometimes it's required to execute some commands automatically
+before booting into Kernel, we term these commands as "boot command", abbreviated
+to "bootcmd".
+
+
+
+II - Usage
+----------
+
+Users can specify multiple commands in "bootcmd", and each commands are seperated
+by semicolon.
+
+There are below ways to setup "bootcmd":
+
+1) Use "setenv" command, e.g., setenv bootcmd COMMAND[;COMMAND]
+   PS: "setenv bootcmd" without COMMAND will clear the boot command.
+
+2) Call env_set_bootcmd() to change the contents of the "bootcmd" storage directly.
+
+3) If FLEXIBLE_FIRMWARE_LAYOUT is selcted, "bootcmd" is stored in env partition, so
+   users can change the env partition to change "bootcmd".
+

@@ -1,0 +1,49 @@
+                PTB BACKUP
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+I- PTB Backup Description
+--------------------------
+
+PTB contents backup is introduced into Amboot, so even though current PTB is
+broken, Amboot still can use the second/backup PTB to fix the first one and
+boot system into Linux.
+
+On NAND, the first/original PTB contents are stored in the first block of PTB
+partition, and the second/backup PTB contents are stored in the second block of
+PTB partition. Similar with other media like eMMC, SPINOR and etc.
+
+Since both of the PTB contents are stored in the PTB partition, so if you enter
+into Amboot and "erase ptb", then all of PTB contents will be erased, so that
+the PTB backup will NOT work.
+
+The second/backup PTB contens will be always updated whenever the original one
+is changed, so the two of the PTB contents will always keep the same.
+
+When Amboot read PTB, it will read the first/original PTB contents first, followed
+by checking with the magic number, crc and other checkable message to determine
+if this PTB contents are OK or broken.
+If it's broken, Amboot will continue to read next block of the PTB partition to
+find the good second/backup PTB contents, and then use it to fix the first/original
+one and boot system into Linux.
+
+
+II - PTB Contents Structure
+----------------------------
+
++-----------------------------+
+|        |       |      |     |
+| header | table | meta | dtb |
+|        |       |      |     |
++-----------------------------+
+
+header:	fixed in 64 Bytes, please see ptb_header_t for details
+table:	fixed in 4096 Bytes, please see flpart_table_t for details
+meta:	fixed in 2048 Bytes, please see flpart_meta_t for details
+dtb:	device tree blob
+

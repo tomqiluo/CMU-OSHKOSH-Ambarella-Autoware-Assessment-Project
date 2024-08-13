@@ -1,0 +1,9 @@
+digraph "af_tile_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{af_tile_info_t\n|+ af_enable\l+ af_tile_num_col\l+ af_tile_num_row\l+ skip11\l+ af_tile_col_start\l+ af_tile_row_start\l+ skip12\l+ af_tile_width\l+ af_tile_height\l+ skip13\l+ af_tile_active_width\l+ af_tile_active_height\l+ skip14\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

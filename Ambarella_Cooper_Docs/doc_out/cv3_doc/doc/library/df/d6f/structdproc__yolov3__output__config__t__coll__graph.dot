@@ -1,0 +1,9 @@
+digraph "dproc_yolov3_output_config_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dproc_yolov3_output\l_config_t\n|+ img_width\l+ img_height\l+ num_classes\l+ conf_threshold\l+ nms_threshold\l+ anchors\l+ tiny_enable\l+ unnormalized\l+ padding_disable\l+ pitch_align\l+ yolov5_enable\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of the configuration of YOLOV3 and YOLOV5 detection output."];
+}

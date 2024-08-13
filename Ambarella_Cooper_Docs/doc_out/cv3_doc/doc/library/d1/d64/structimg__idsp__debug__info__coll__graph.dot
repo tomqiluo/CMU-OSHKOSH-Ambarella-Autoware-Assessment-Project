@@ -1,0 +1,13 @@
+digraph "img_idsp_debug_info"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{img_idsp_debug_info\n|+ chan_id\l+ slice_num\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +sec_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{img_sec_debug_info\n|+ cap_seq_no\l+ sec_debug_phys\l|}",height=0.2,width=0.4,color="black",URL="$da/d92/structimg__sec__debug__info.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +pic_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{img_pic_buf_info\n|+ cap_seq_no\l+ buf_phys_addr\l+ width\l+ height\l+ pitch\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d2/d51/structimg__pic__buf__info.html",tooltip=" "];
+}

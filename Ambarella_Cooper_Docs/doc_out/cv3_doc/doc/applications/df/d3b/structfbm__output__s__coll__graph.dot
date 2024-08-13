@@ -1,0 +1,9 @@
+digraph "fbm_output_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fbm_output_s\n|+ depth_w\l+ depth_h\l+ depth_p_u8\l+ depth_p_fp32\l+ depth_full_u8\l+ depth_roi_u8\l+ depth_full_fp32\l+ depth_roi_fp32\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

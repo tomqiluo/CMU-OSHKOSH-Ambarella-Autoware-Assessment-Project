@@ -1,0 +1,11 @@
+digraph "product_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{product_info_t\n|+ version\l+ mod_time\l+ aaa_iq_config_lua_path\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +product_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{product_config_t\n|+ img_virtual_type\l+ is_cus_tml_nuc\l+ is_least_res_proc\l+ is_ik_force_update\l+ reserved32\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$dd/d0e/structproduct__config__t.html",tooltip=" "];
+}

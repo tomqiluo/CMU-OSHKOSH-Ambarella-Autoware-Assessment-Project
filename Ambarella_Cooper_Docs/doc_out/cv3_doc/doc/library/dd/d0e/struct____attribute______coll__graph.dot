@@ -1,0 +1,9 @@
+digraph "__attribute__"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{__attribute__\n|+ awb_enable\l+ awb_tile_num_col\l+ awb_tile_num_row\l+ skip0\l+ awb_tile_col_start\l+ awb_tile_row_start\l+ skip1\l+ awb_tile_width\l+ awb_tile_height\l+ skip2\l+ awb_tile_active_width\l+ awb_tile_active_height\l+ skip3\l+ ae_enable\l+ ae_tile_num_col\l+ ae_tile_num_row\l+ skip6\l+ ae_tile_col_start\l+ ae_tile_row_start\l+ skip7\l+ ae_tile_width\l+ ae_tile_height\l+ skip8\l+ ae_min_thresh\l+ ae_max_thresh\l+ skip9\l+ ae_tile_y_shift\l+ af_enable\l+ af_tile_num_col\l+ af_tile_num_row\l+ skip11\l+ af_tile_col_start\l+ af_tile_row_start\l+ skip12\l+ af_tile_width\l+ af_tile_height\l+ skip13\l+ af_tile_active_width\l+ af_tile_active_height\l+ skip14\l+ bayer_pattern\l+ ir_mode\l+ crop_en\l+ reserved0\l+ crop_col_start\l+ crop_row_start\l+ reserved1\l+ crop_width\l+ crop_height\l+ reserved2\l+ stitch_tile_idx_x\l+ stitch_tile_idx_y\l+ reserved\l+ vin_histogram\l+ awb\l+ cfa_ae\l+ cfa_af\l+ pg_ae\l+ pg_af\l+ cfa_ae_tile_histogram_mask\l+ pg_ae_tile_histogram_mask\l+ awb_rgb_shift\l+ awb_min_max_shift\l+ pg_ae_y_shift\l+ ae_linear_y_shift\l+ ae_min_max_shift\l+ pg_af_y_shift\l+ af_cfa_y_shift\l+ chan_index\l+ vin_stats_type\l+ raw_pic_seq_num\l+ aaa_cfa_mux_sel\l+ reserved2\l+ reserved3\l+ sum_r\l+ sum_g\l+ sum_b\l+ sum_ir\l+ count_min\l+ count_max\l+ lin_y\l+ sum_y\l+ sum_fv1\l+ sum_fv2\l+ his_bin_r\l+ his_bin_g\l+ his_bin_b\l+ his_bin_y\l+ three_a_header\l+ frame_id\l+ awb\l+ ae\l+ af\l+ histogram\l+ af\l+ ae\l+ histogram\l+ histo_bin_r\l+ histo_bin_g\l+ histo_bin_b\l+ histo_bin_ir\l+ cfa_hist\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

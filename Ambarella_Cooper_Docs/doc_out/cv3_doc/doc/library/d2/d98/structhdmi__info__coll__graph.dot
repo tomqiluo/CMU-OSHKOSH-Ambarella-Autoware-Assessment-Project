@@ -1,0 +1,9 @@
+digraph "hdmi_info"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{hdmi_info\n|+ vout_id\l+ connect\l+ output_color_format\l+ phy_version\l+ pib\l+ pib_ib\l+ pre_emp_tap0_cur\l+ pre_emp_tap1_cur\l+ pre_emp_tap2_cur\l+ pos_emp_tap1_cur\l+ bias_control\l+ reserved\l+ termination\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

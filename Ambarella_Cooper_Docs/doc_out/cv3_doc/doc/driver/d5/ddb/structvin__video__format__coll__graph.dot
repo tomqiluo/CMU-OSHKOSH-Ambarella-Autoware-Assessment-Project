@@ -1,0 +1,9 @@
+digraph "vin_video_format"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_video_format\n|+ video_mode\l+ device_mode\l+ pll_idx\l+ width\l+ height\l+ def_start_x\l+ def_start_y\l+ def_width\l+ def_height\l+ format\l+ type\l+ bits\l+ ratio\l+ mirror_pattern\l+ bayer_pattern\l+ hdr_mode\l+ readout_mode\l+ line_time\l+ vb_time\l+ dlyvs_lines\l+ max_fps\l+ default_fps\l+ default_agc\l+ default_shutter_time\l+ default_bayer_pattern\l+ act_start_x\l+ act_start_y\l+ act_width\l+ act_height\l+ hdr_long_offset\l+ hdr_short1_offset\l+ hdr_short2_offset\l+ hdr_short3_offset\l+ dual_gain_mode\l+ gp_ctrl_used\l+ xenon_flash_enable\l+ brg_start_x\l+ brg_start_y\l+ brg_width\l+ brg_height\l+ brg_compress_ratio\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

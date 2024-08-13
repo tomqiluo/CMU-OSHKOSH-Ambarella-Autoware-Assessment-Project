@@ -1,0 +1,9 @@
+digraph "vout_params"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vout_params\n|+ id\l+ vout_win\l+ video_win\l+ osd_win\l+ osd_rescaler_win\l+ fps\l+ video_rotate\l+ video_flip\l+ osd_flip\l+ osd_rescaler_en\l+ video_enable\l+ osd_enable\l+ own_mixer\l+ osd_transparent_color\l_enable\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

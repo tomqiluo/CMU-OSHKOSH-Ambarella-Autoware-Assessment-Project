@@ -1,0 +1,9 @@
+digraph "ea_canvas_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ea_canvas_info_t\n|+ channel_id\l+ source_buffer_id\l+ main_buffer_width\l+ main_buffer_height\l+ fov_x\l+ fov_y\l+ fov_w\l+ fov_h\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

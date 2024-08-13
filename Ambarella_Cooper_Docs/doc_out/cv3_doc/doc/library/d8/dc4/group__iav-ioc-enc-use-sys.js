@@ -1,0 +1,27 @@
+var group__iav_ioc_enc_use_sys =
+[
+    [ "IAV_IOC_ABORT_ENCODE", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga512096ecfc12c443c428513c82296b0f", null ],
+    [ "IAV_IOC_ENABLE_PREVIEW", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga3526e870bab84770d7b8bb6692d6847e", null ],
+    [ "IAV_IOC_ENTER_IDLE", "d8/dc4/group__iav-ioc-enc-use-sys.html#gabdf2a4f5931e685f62b8b0463680f493", null ],
+    [ "IAV_IOC_GDMA_COPY", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga1614f8a413e3258e9fc5532e6770625a", null ],
+    [ "IAV_IOC_GET_AISP_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#gab956fc8bc2c408c7453d94930f17b122", null ],
+    [ "IAV_IOC_GET_CANVAS_CONFIG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga42e4a586b850c72b11d50f6b68de9dd6", null ],
+    [ "IAV_IOC_GET_CHAN_CONFIG", "d8/dc4/group__iav-ioc-enc-use-sys.html#gaa69c00475082a8e88754c644f545c91b", null ],
+    [ "IAV_IOC_GET_ISP_NN_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga0d6ff8378f6345befd197fc7ff0ee38e", null ],
+    [ "IAV_IOC_GET_PYRAMID_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#gae6895f70e85c2580ff95c0cdb0337046", null ],
+    [ "IAV_IOC_GET_STREAM_RESOURCE", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga272cac65d67c750a489973f14dd60f7d", null ],
+    [ "IAV_IOC_GET_SYSTEM_RESOURCE", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga4f47a13420349fa19f760c570b38bd99", null ],
+    [ "IAV_IOC_QUERY_ENC_BUF_CAP", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga3c439ecac375c739a7ba2e8db682e0c1", null ],
+    [ "IAV_IOC_QUERY_ENC_MODE_CAP", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga63be05fed0821e014fa455168f5119e5", null ],
+    [ "IAV_IOC_RESET", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga49f8dbadc6a7c9402284ff3d646dad38", null ],
+    [ "IAV_IOC_SET_AISP_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga78a05664cfc02e4ff0ffb04bf7cd31f9", null ],
+    [ "IAV_IOC_SET_CANVAS_CONFIG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga4942a66cbfe8f986fa195aa27f511901", null ],
+    [ "IAV_IOC_SET_CHAN_CONFIG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga6f0d7ae34d25c1023f52b6828637caa5", null ],
+    [ "IAV_IOC_SET_DSP_BOOT_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga2116e177f87558077fa9b00e90359713", null ],
+    [ "IAV_IOC_SET_ISP_NN_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#gada6214ddfc6139d72329b29e1c2c357e", null ],
+    [ "IAV_IOC_SET_PYRAMID_CFG", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga112d2232182ca4cbcb0f8271d23a4fa6", null ],
+    [ "IAV_IOC_SET_STREAM_RESOURCE", "d8/dc4/group__iav-ioc-enc-use-sys.html#ga206cea50f79d9b450251259884aeb8f8", null ],
+    [ "IAV_IOC_SET_SYSTEM_RESOURCE", "d8/dc4/group__iav-ioc-enc-use-sys.html#gad18932d05335187d9020f88d3cd5d700", null ],
+    [ "IAV_IOC_START_ENCODE", "d8/dc4/group__iav-ioc-enc-use-sys.html#gaaafff500b08109dcdf637605c0e83c09", null ],
+    [ "IAV_IOC_STOP_ENCODE", "d8/dc4/group__iav-ioc-enc-use-sys.html#gac06d8af78a1831faeff9c8c8deb861fc", null ]
+];

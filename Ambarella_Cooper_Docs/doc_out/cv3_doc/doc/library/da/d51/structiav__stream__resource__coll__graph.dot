@@ -1,0 +1,9 @@
+digraph "iav_stream_resource"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_stream_resource\n|+ stream_id\l+ max_M\l+ fast_seek_enable\l+ two_ref_enable\l+ max_svct_layers_minus_1\l+ max_num_minus_1_ltrs\l+ codec_enable\l+ stream_mv_statis_enable\l+ efm_enable\l+ efm_buf_num\l+ efm_skip_waiting\l+ stream_pic_statis_enable\l+ efm_extern_src_enable\l+ efm_extern_src_stream\l+ enc_core_cfg_enable\l+ enc_core_mode\l+ efm_ext_mem\l+ hevc_width_align_enable\l+ custom_sei_possible\l+ reserved0\l+ possible_enc_src_map\l+ max_size\l+ efm_size\l+ custom_sei_buf_num\l+ custom_sei_data_max_size\l+ reserved1\l+ reserved2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

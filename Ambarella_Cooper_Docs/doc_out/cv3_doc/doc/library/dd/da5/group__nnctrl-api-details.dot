@@ -1,0 +1,12 @@
+digraph "NNCtrl Library API details"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="NNCtrl Library API",height=0.2,width=0.4,color="black",URL="$dc/dc8/group__nnctrl-api.html",tooltip="nnctrl Library API, in file nnctrl.h"];
+  Node1 [label="NNCtrl Library API\l details",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="nnctrl API details, in file nnctrl.h"];
+  Node3 [label="NNCtrl Library API\l helper",height=0.2,width=0.4,color="black",URL="$d9/d50/group__nnctrl-helper.html",tooltip="nnctrl Helper, in file nnctrl.h"];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, label="cavalry_run_dags", color="orange", dir="none", style="dashed"];
+}

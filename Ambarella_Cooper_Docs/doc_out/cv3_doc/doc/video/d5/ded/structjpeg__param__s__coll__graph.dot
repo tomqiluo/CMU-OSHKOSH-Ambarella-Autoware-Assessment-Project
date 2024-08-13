@@ -1,0 +1,9 @@
+digraph "jpeg_param_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{jpeg_param_s\n|+ quality\l+ quality_changed_flag\l+ jpeg_chroma_format\l+ jpeg_chroma_format_flag\l+ jpeg_frame_drop_repeat\l_enable\l+ jpeg_drop_frames_flag\l+ jpeg_drop_frames\l+ restart_interval\l+ restart_interval_flag\l+ jpeg_slice_num\l+ jpeg_slice_num_flag\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

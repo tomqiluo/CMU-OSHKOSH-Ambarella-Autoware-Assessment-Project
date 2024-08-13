@@ -1,0 +1,9 @@
+digraph "cavalry_log_entry"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_log_entry\n|+ seq_num\l+ thread_id\l+ slot_id\l+ orc_type\l+ core_id\l+ format_offset\l+ arg1\l+ arg2\l+ arg3\l+ arg4\l+ arg5\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

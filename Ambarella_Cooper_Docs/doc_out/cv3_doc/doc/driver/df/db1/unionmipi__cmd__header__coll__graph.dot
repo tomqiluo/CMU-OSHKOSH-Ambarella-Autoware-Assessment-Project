@@ -1,0 +1,9 @@
+digraph "mipi_cmd_header"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{mipi_cmd_header\n|+ dsi_command_header_1\l+ dsi_command_header_0\l+ dsi_command_di\l+ reserved\l+ dsi_dcs_long_type\l+ s\l+ data\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,13 @@
+digraph "ik_final_sharpen_both_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ik_final_sharpen_both_t\n|+ enable\l+ mode\l+ edge_thresh\l+ wide_edge_detect\l+ narrow_nonsmooth_detect_sub\l+ narrow_nonsmooth_detect\l_shift\l+ method_6_use_local\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +max_change" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{ik_max_change_t\n|+ up5x5\l+ down5x5\l+ up\l+ down\l|}",height=0.2,width=0.4,color="black",URL="$de/da8/structik__max__change__t.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +method_6_lev" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{ik_level_method_t\n|+ low\l+ low_delta\l+ low_strength\l+ mid_strength\l+ high\l+ high_delta\l+ high_strength\l+ method\l|}",height=0.2,width=0.4,color="black",URL="$d9/db3/structik__level__method__t.html",tooltip=" "];
+}

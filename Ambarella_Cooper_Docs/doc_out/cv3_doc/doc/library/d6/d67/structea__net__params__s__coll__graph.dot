@@ -1,0 +1,9 @@
+digraph "ea_net_params_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ea_net_params_t\n|+ verbose_print\l+ split_num\l+ abort_if_preempted\l+ priority\l+ print_time\l+ nvp_affinity\l+ vp_time_us\l+ fp16tofp32_time_us\l+ @6\l+ ades_cmd_file\l+ acinf_gpu_id\l+ @8\l+ disable_output_fp32\l_from_fp16_on_non_fp32_arch\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

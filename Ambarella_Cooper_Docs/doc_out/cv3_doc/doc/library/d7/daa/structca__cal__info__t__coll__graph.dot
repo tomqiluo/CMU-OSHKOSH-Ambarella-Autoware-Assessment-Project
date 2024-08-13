@@ -1,0 +1,9 @@
+digraph "ca_cal_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ca_cal_info_t\n|+ sensor_cellsize\l+ sensor_startx\l+ sensor_starty\l+ sensor_width\l+ sensor_height\l+ tblength\l+ rrealtbl\l+ brealtbl\l+ expectbl\l+ centerx\l+ centery\l+ compensate_ratio\l+ rratio\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

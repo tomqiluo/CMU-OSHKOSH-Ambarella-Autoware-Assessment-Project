@@ -1,0 +1,9 @@
+digraph "ae_flow_func_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ae_flow_func_t\n|+ p_ae_flow_calc_luma_stat\l+ p_ae_flow_calc_target\l+ p_ae_flow_dc_iris_cntl\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of AE flow functions."];
+}

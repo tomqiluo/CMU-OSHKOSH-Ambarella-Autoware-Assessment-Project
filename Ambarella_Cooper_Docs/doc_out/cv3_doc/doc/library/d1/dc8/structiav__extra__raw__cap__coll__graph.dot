@@ -1,0 +1,9 @@
+digraph "iav_extra_raw_cap"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_extra_raw_cap\n|+ vinc_id\l+ reserved\l+ pitch\l+ height\l+ top_lines\l+ bottom_lines\l+ dsp_pts\l+ mono_pts\l+ data_addr_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

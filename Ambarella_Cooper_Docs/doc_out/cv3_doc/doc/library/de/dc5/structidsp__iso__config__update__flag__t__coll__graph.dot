@@ -1,0 +1,9 @@
+digraph "idsp_iso_config_update_flag_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{idsp_iso_config_update\l_flag_t\n|+ iso_config_common_update\l+ iso_config_color_update\l+ iso_config_mctf_update\l+ iso_config_step1_update\l+ iso_config_aaa_update\l+ iso_config_extra_update\l+ iso_config_motion_update\l+ iso_config_exp_update\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

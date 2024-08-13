@@ -1,0 +1,9 @@
+digraph "vin_master_sync"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_master_sync\n|+ hsync_period\l+ hsync_width\l+ hsync_offset\l+ vsync_period\l+ vsync_width\l+ vsync_offset\l+ vs_hs_polarity\l+ vs_dly_id\l+ vs_dly\l+ id\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

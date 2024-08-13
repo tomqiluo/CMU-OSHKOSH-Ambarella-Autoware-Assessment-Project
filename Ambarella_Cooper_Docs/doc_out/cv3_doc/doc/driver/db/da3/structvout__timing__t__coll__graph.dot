@@ -1,0 +1,9 @@
+digraph "vout_timing_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vout_timing_t\n|+ mode\l+ fixed_format\l+ pixel_freq\l+ vfreq\l+ interlaced\l+ width\l+ height\l+ htotal\l+ vtotal\l+ hpol\l+ vpol\l+ vic\l+ hsync_start\l+ hsync_end\l+ hactive_start\l+ hactive_end\l+ vsync_start\l+ vsync_end\l+ vactive_start\l+ vactive_end\l+ fpd_orderreverse\l+ fpd_4thlane_en\l+ fpd_msb_select\l+ mipi_lane_num\l+ mipi_eotp_en\l+ mipi_sync_end_en\l+ mipi_dsi_hbp_wc\l+ mipi_dsi_sync_wc\l+ mipi_dsi_hfp_wc\l+ mipi_dsi_vblank_wc\l+ mipi_phy_freq\l+ mipi_output_mode\l+ hvldpol\l+ vsync_start_col\l+ vsync_end_col\l+ cvbs_blacklevel\l+ cvbs_blanklevel\l+ cvbs_synclevel\l+ cvbs_ygain\l+ cvbs_cgain\l+ reserved_cvbs\l+ mipi_cont_clk_mode\l+ mipi_tx_ibctrl\l+ mipi_tx_vcmset\l+ mipi_tx_pib\l+ mipi_tx_term\l+ mipi_burst_mode\l+ reserved_mipi\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

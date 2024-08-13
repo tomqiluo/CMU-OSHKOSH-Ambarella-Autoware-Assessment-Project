@@ -1,0 +1,9 @@
+digraph "af_statistics_ex_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{af_statistics_ex_t\n|+ af_horizontal_filter1_mode\l+ af_horizontal_filter1\l_stage1_enb\l+ af_horizontal_filter1\l_stage2_enb\l+ af_horizontal_filter1\l_stage3_enb\l+ af_horizontal_filter1_gain\l+ af_horizontal_filter1\l_shift\l+ af_horizontal_filter1\l_bias_off\l+ af_horizontal_filter1\l_thresh\l+ af_horizontal_filter2_mode\l+ af_horizontal_filter2\l_stage1_enb\l+ af_horizontal_filter2\l_stage2_enb\l+ af_horizontal_filter2\l_stage3_enb\l+ af_horizontal_filter2_gain\l+ af_horizontal_filter2\l_shift\l+ af_horizontal_filter2\l_bias_off\l+ af_horizontal_filter2\l_thresh\l+ af_tile_fv1_horizontal\l_shift\l+ af_tile_fv1_vertical\l_shift\l+ af_tile_fv1_horizontal\l_weight\l+ af_tile_fv1_vertical\l_weight\l+ af_tile_fv2_horizontal\l_shift\l+ af_tile_fv2_vertical\l_shift\l+ af_tile_fv2_horizontal\l_weight\l+ af_tile_fv2_vertical\l_weight\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

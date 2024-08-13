@@ -1,0 +1,9 @@
+digraph "lens_dev_drv_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{lens_dev_drv_t\n|+ set_IRCut\l+ set_shutter_speed\l+ lens_init\l+ lens_park\l+ zoom_stop\l+ focus_near\l+ focus_far\l+ zoom_in\l+ zoom_out\l+ focus_stop\l+ set_aperture\l+ set_mechanical_shutter\l+ set_zoom_pi\l+ set_focus_pi\l+ lens_standby\l+ isFocusRuning\l+ isZoomRuning\l+ lens_cali\l+ load_param\l+ get_iris_state\l+ lens_enable\l+ zoom_set\l+ focus_set\l+ iris_IRCut_set\l+ update_status\l+ lens_deinit\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of lens driver functions."];
+}

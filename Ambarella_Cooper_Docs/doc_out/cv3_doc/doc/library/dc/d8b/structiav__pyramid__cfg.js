@@ -1,0 +1,25 @@
+var structiav__pyramid__cfg =
+[
+    [ "cached_items", "dc/d8b/structiav__pyramid__cfg.html#a1f1c2a0258bc91d30b16c17e1c4011c0", null ],
+    [ "chan_id", "dc/d8b/structiav__pyramid__cfg.html#a85599fa0eac7165aaca13aa21f0e6b38", null ],
+    [ "crop_win", "dc/d8b/structiav__pyramid__cfg.html#aa2bf46334c0321de0b00ddf964ca9a96", null ],
+    [ "enable", "dc/d8b/structiav__pyramid__cfg.html#ab4b3cc0eb8d6dbd703f05e219194af8e", null ],
+    [ "enable_frame_tag", "dc/d8b/structiav__pyramid__cfg.html#a6ff06540fb1270e9f6e41ac3bc972068", null ],
+    [ "ext_mem", "dc/d8b/structiav__pyramid__cfg.html#a51993db991a3b2807df9114b0134ffdf", null ],
+    [ "frame_rate", "dc/d8b/structiav__pyramid__cfg.html#a934dbe6cdccbcd99aab0420a975f36c6", null ],
+    [ "frame_rate_hp", "dc/d8b/structiav__pyramid__cfg.html#aae39e0f2db3b263395416c4ade3a2a30", null ],
+    [ "frame_tag", "dc/d8b/structiav__pyramid__cfg.html#a421a77673ea0cf3022c92fda8037314b", null ],
+    [ "input_buf_id", "dc/d8b/structiav__pyramid__cfg.html#ae454fecbfa8025ee2d1d616262a0c80b", null ],
+    [ "item_num", "dc/d8b/structiav__pyramid__cfg.html#a5865d4c940c5e813d45f7fd89c1c0b69", null ],
+    [ "layers_map", "dc/d8b/structiav__pyramid__cfg.html#a4bf896a774a444c0f6a58cae0b309b4a", null ],
+    [ "manual_feed", "dc/d8b/structiav__pyramid__cfg.html#a2a5e13ebe9170301f0a0cba40ad35108", null ],
+    [ "max_layers_map", "dc/d8b/structiav__pyramid__cfg.html#aa9f2da3332deb454ae3cad18620ebada", null ],
+    [ "max_rescale_size", "dc/d8b/structiav__pyramid__cfg.html#ae5857c195e100440d1105b33053713de", null ],
+    [ "min_unlocked_buf_num", "dc/d8b/structiav__pyramid__cfg.html#a218b77347c923f82b98e7c094408be0f", null ],
+    [ "rescale_size", "dc/d8b/structiav__pyramid__cfg.html#ac0cfe9bd3f347e62fd0bd3bceab31284", null ],
+    [ "reserved0", "dc/d8b/structiav__pyramid__cfg.html#aee03509477274f40b568384584388e88", null ],
+    [ "reserved1", "dc/d8b/structiav__pyramid__cfg.html#a04bb2d56146c948328208580316909cb", null ],
+    [ "reserved2", "dc/d8b/structiav__pyramid__cfg.html#a676ac856b15cd371707cfa7601a6c3bc", null ],
+    [ "scale_type", "dc/d8b/structiav__pyramid__cfg.html#a40c53ec8fd00797523bcab66e735a923", null ],
+    [ "set_min_unlocked_buf_num", "dc/d8b/structiav__pyramid__cfg.html#a9db36da7f77c042da881925e0b1ddbdb", null ]
+];

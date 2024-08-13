@@ -1,0 +1,425 @@
+                SDMMC
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+Table of Contents
++++++++++++++++++
+
+  I  - Abbreviations
+  II - Introduction
+  III - SD Memory Card
+  IV - eMMC card
+  V - SDIO card
+  VI - Build Options
+  VII - NOTE
+
+
+
+I - Abbreviations
+-----------------
+
+SD:   Secure Digital
+SDIO: Secure Digital Input Output
+SDXC: Secure Digital eXtended Capacity
+SDHC: Secure Digital High Capacity
+SDSC: Secure Digital Standard Capacity
+MMC:  MultiMediaCard
+eMMC: Embeded MultiMediaCard
+SDR:  Single Data Rate signaling
+DDR:  Double Data Rate signaling
+UHS:  Ultra High Speed
+
+
+
+II - Introduction
+-- --------------
+
+1) DEVICE
+
+MMC is a memory-card standard used for solid-state storage, SD, SDIO and eMMC are
+all derived from the MMC. The history is:
+
+        |-----> eMMC
+MMC-----|                    |-----> SDHC -----> SDXC
+        |-----> SD/SDSC -----|
+                             |-----> SDIO
+
+The eMMC is Embeded MMC, it puts the MMC components(flash memory plus controller)
+into a small BGA IC package for use in circuit boards as an embedded non-volatile
+memory system.
+The spec for eMMC is JESD84-B51.
+The eMMC card is normally used as a bootable media.
+
+The SDSC, SDHC and SDXC are SD memory card, the main difference among them are
+memory capacity.
+a) SDSC: Up to and including 2GB;
+b) SDHC: More than 2GB and up to and including 32GB;
+c) SDXC: More than 32GB and up to and including 2TB;
+The spec for SD memory card is SDXC_Physical_Layer_Specification_Ver3.00.
+The SD memory cards are normally used as data storage.
+
+The SDIO is an extension of the SD specification to cover I/O functions.
+The spec for SDIO is SD Specifications Part E1 SDIO Simplified Specification.
+The SDIO card normally interfaces to Wi-Fi, Bluetooth, Ethernet and etc.
+
+
+2) HOST
+
+Ambarella provides three SD controllers: SD(SDHC), SDIO and SDXC.
+
+Due to history reason, here (including the PRM) we named the SD controllers as
+SD/SDIO/SDXC controllers. However, in the controller point of view, the functions
+of SD controller are totally equivalent to the SDXC controller, and the functions
+of SDIO controller are almost equivalent to the SD/SDXC controllers, the only two
+limitations for SDIO controller are that it can not support UHS-I mode for SD
+memory card, and it can not support eMMC boot, either.
+
+In other words, both SD controller and SDXC controller can support SD memory card
+(including SDSC card, SDHC card and SDXC card), SDIO card and eMMC card. While for
+SDIO controller, it can also support SD memory card(but NOT support UHS-I mode),
+SDIO card and eMMC card (but NOT support eMMC Boot).
+
+PS: there is a difference between SD controller and SDXC controller, that is, the
+SD controller can support eMMC boot, while the SDXC controller can NOT.
+
+NOTE: Not all Ambarella chips have all of these three SD controllers, that is, some
+      chips have SD(SDHC), SDIO and SDXC, some chips have SD and SDXC, and some
+      chips may only have SD(SDHC). Please check the PRM for details.
+
+
+
+III - SD Memory Card
+--------------------
+
+1) Bus Speed Mode
+
+According to SD spec, SD memory card has below bus speed modes:
+a) DS:    Default Speed up to 25MHz 3.3V signaling, throughput is 12MB/s
+b) HS:    High Speed up to 50MHz 3.3V signaling, throughput is 25MB/s
+c) SDR12: SDR up to 25MHz 1.8V signaling, one of UHS-I mode, throughput is 12MB/s
+d) SDR25: SDR up to 50MHz 1.8V signaling, one of UHS-I mode, throughput is 25MB/s
+e) SDR50: SDR up to 100MHz 1.8V signaling, one of UHS-I mode, throughput is 50MB/s
+f) SDR104:SDR up to 208MHz 1.8V signaling, one of UHS-I mode, throughput is 104MB/s
+g) DDR50: DDR up to 50MHz 1.8V signaling, one of UHS-I mode, throughput is 50MB/s
+
+In device side, SDSC cards cannot support UHS-I mode. SDHC/SDXC must support DS,
+HS, SDR12, SDR25 and SDR50 mode, but may or may not support SDR104 or DDR50 mode.
+PS: actually according to the bus speed modes supported by the cards, SDHC/SDXC
+    cards are divided into three types: Non UHS-I, UHS50 and UHS104. However,
+    Non UHS-I SDHC/SDXC cards should be disappeared in the market, so we can just
+    simply ignore them.
+
+In host side, Ambarella SD/SDXC controller can support all of the bus speed mode
+listed above. However, there are two exceptions:
+a) Because the timing requirement for DDR50 is very restrict, we normally suggest
+   to not use DDR50 mode, but use SDR50 instead. So we disable DDR50 mode in our
+   software. PS: the throughput of SDR50 is the same as DDR50.
+b) The CLK for SDR104 can be up to 208MHz, but due to the IO PAD performance, the
+   chip can only support 150MHz at most. And our software will limit it to 120MHz
+   for safe.
+
+In addition, Ambarella SDIO controller can only support DS and HS mode.
+PS: Actually, in the controller point of view, the SDIO controller can support
+    UHS-I mode, too. But the chip don't have PIN(like SD_HS_SEL or SDXC_HS_SEL)
+    output to switch external IO voltage from 3.3V to 1.8V which is necessary for
+    UHS-I mode. Furthermore, the PHY belonged to SDIO controller cannot support
+    to do timing adjustment.
+
+
+2) Bus Wdith
+
+The max bus width supported by SD Memory cards is 4-bit.
+
+
+3) Voltage
+
+DS and HS modes are always working under 3.3V IO voltage, while all of UHS-I modes
+are initialized under 3.3V IO voltage, but transferring data under 1.8V IO voltage.
+The IO voltage changing is happened when switching to UHS-I mode.
+PS:
+a) SD_HS_SEL/SDXC_HS_SEL is used to switch the IO voltage between 3.3V and 1.8V.
+b) SD_RESET/SDXC_RESET is used to power off/on the voltage to SD Memroy card.
+
+
+
+IV - eMMC card
+--------------
+
+1) Bus Speed mode
+
+According to eMMC spec, eMMC card has below bus speed mode:
+a) Backwards Compatibility with legacy MMC card:
+     IO Voltage: 3V/1.8V/1.2V;
+     Data Rate:  SDR
+     Frequency:  0~26 MHz
+     Throughput: 26 MB/s with 8-bit bus width
+b) High Speed SDR:
+     IO Voltage: 3V/1.8V/1.2V;
+     Data Rate:  SDR
+     Frequency:  0~52 MHz
+     Throughput: 52 MB/s with 8-bit bus width
+c) High Speed DDR:
+     IO Voltage: 3V/1.8V/1.2V;
+     Data Rate:  DDR
+     Frequency:  0~52 MHz
+     Throughput: 104 MB/s with 8-bit bus width
+d) HS200:
+     IO Voltage: 1.8V/1.2V;
+     Data Rate:  SDR
+     Frequency:  0~200 MHz
+     Throughput: 200 MB/s with 8-bit bus width
+e) HS400:
+     IO Voltage: 1.8V/1.2V;
+     Data Rate:  DDR
+     Frequency:  0~200 MHz
+     Throughput: 400 MB/s with 8-bit bus width
+
+PS:
+a) Similar as SD Memory card, we don't support DDR mode, so High Speed DDR and
+   HS400 will be disabled in software. Actually, HS400 is not supported by our
+   SD/SDIO/SDXC controllers.
+b) 1.2V IO Voltage cannot be supported by our SD/SDIO/SDXC controllers.
+c) In Amboot software, Backwards Compatibility with legacy MMC card is named as
+   DS, High Speed SDR is named as HS.
+
+
+2) Bus Width
+
+a) DS:    1/4/8 bits;
+b) HS:    1/4/8 bits;
+c) HS200: 4/8 bits.
+
+
+3) Votage
+
+The eMMC card will be always working under 3V or 1.8V, that is, there is no voltage
+changing happened when eMMC card is switching mode.
+PS: SD_HS_SEL/SDXC_HS_SEL is useless to eMMC card.
+
+In addition, the power to eMMC card including VCC and any pull-up power to CMD,
+DATA, CD and WP pins will never be cut off. The only hardware reset to eMMC card
+is to pull down its RESET signal.
+PS: SD_RESET/SDXC_RESET must connect to the RESET pin of eMMC card.
+
+
+4) Area
+
+eMMC has 4 types of areas: User Data Area, Boot Area Partition1, Boot Area Partition2
+and RPMB Partition. Please see eMMC spec for details.
+
+
+
+V - SDIO card
+-------------
+
+TBD
+
+
+
+VI - Build Options
+------------------
+
+There are several options in menuconfig can be selected when building Amboot.
+
+      [*] Ambarella Firmware Configuration  --->
+             Hardware Options  --->
+                 [*] Support SD Driver  --->
+
+      [*] Ambarella Firmware Configuration  --->
+             AMBoot Options  --->
+                 eMMC Boot Options  --->
+
+1) SD No 1.8V Support(CONFIG_SD_NO_1V8)
+
+This option is only valid for SD Memory card.
+
+Although our SD/SDXC controllers can support UHS-I mode which need to switch to
+1.8V IO voltage, the board may not design such circuit to switch IO voltage from
+3.3V to 1.8V. In this case, this option must be selected, then Amboot can know
+the board doesn't support 1.8V, so that it will not enable UHS-I mode.
+
+
+2) SD/EMMC Enable Tuning(CONFIG_SDMMC_ENABLE_TUNING)
+
+This option is valid for both SD Memory card and eMMC card.
+
+SDR50, SDR104 and DDR50 for SD Memory card can use CMD19 to tune timing.
+HS200 for eMMC card can use CMD21 to tune timing.
+If this option is selected, CMD19 or CMD21 will be issued many times to tune the
+timing when probing the SD Memory card or eMMC card. Then the timing can be set
+correctly and automatically.
+
+This option is useful for eMMC boot, but it will cost 3s~5s extra time to tune
+the timing, so it will slow down the eMMC boot speed.
+
+
+3) Shmoo
+
+This option is valid for both SD Memory card and eMMC card.
+
+There are two ways to adjust the SD/eMMC timing:
+a) PHY:   CONFIG_SD_SHMOO_SD_PHY, tune the PHY registers located in RCT
+b) Delay: CONFIG_SD_SHMOO_SD_DELAY, tune the DELAY registers located in
+          SD/SDXC controller
+We normally use "a) PHY" to tune the timing. "b) Delay" is not widely used.
+
+
+4) EMMC Bus Mode
+
+This option is only valid for eMMC card.
+
+NOTE: This option has nothing to do with the eMMC boot opions. That is, this option
+      control the eMMC bus speed mode in Amboot, while the eMMC boot opions (bus
+      speed mode in ROM and BST) are controlld by the POC setting.
+
+a) AUTO: CONFIG_EMMC_BUS_MODE_AUTO, Amboot will query the eMMC card and then
+         choose the best bus speed mode.
+b) POC:  CONFIG_EMMC_BUS_MODE_POC, Amboot will use the POC setting to determine
+         the bus speed mode, it means that the bus speed mode in Amboot will be
+         the same as in ROM and BST.
+         PS: it's selectable only when CONFIG_BOOT_MEDIA_EMMC is enabled.
+c) DS:   CONFIG_EMMC_BUS_MODE_DS, Amboot will force to use the DS mode.
+d) HS:   CONFIG_EMMC_BUS_MODE_HS, Amboot will force to use the HS mode.
+e) HS200:CONFIG_EMMC_BUS_MODE_HS200, Amboot will force to use the HS200 mode.
+
+PS: If you type "sd" commands with the [mode] argument in Amboot to operate the
+    SD Memory card or eMMC card, this build option will be ignored.
+
+
+5) EMMC Bus Width
+
+This option is only valid for eMMC card.
+
+NOTE: This option has nothing to do with the eMMC boot opions. For details, this
+      option control the eMMC bus width in Amboot, while the eMMC bus width in ROM
+      and BST are controlld by the POC setting.
+
+a) POC: CONFIG_EMMC_BUS_WIDTH_POC, Amboot will use the POC setting to determine
+        the bus width, it means that the bus width in Amboot will be the same as
+        in ROM and BST.
+        PS: it's selectable only when CONFIG_BOOT_MEDIA_EMMC is enabled.
+b) 1:   CONFIG_EMMC_BUS_WIDTH_1, Amboot will force to use 1-bit bus width.
+c) 4:   CONFIG_EMMC_BUS_WIDTH_4, Amboot will force to use 4-bit bus width.
+d) 8:   CONFIG_EMMC_BUS_WIDTH_8, Amboot will force to use 8-bit bus width.
+
+
+6) Boot Area Write Protect
+
+This option is only valid for eMMC card.
+
+a) No Write Protect: CONFIG_EMMC_NO_WP, disable Boot Area WP .
+b) Power-on Write Protect: CONFIG_EMMC_PWR_WP, enable Boot Area WP when power on, but
+   software can disable it later.
+c) Permanent Write Protect: CONFIG_EMMC_PERM_WP, permanently enable Boot Area WP.
+   Note, there is no way to disable WP again if it's permanently enabled.
+
+
+7) Boot Partition
+
+This option is only valid for eMMC boot.
+
+a) Boot Partition1: CONFIG_EMMC_BOOT_PARTITION_BP1, put BST into Boot Area Partition1
+b) Boot Partition2: CONFIG_EMMC_BOOT_PARTITION_BP2, put BST into Boot Area Partition2
+c) User Partition: CONFIG_EMMC_BOOT_PARTITION_USER, put BST into User Data Area
+
+
+8) BLD/ATF With BST In Same Area(CONFIG_EMMC_NEXT_FW_WITH_BST)
+
+This option is only valid for eMMC boot.
+
+
+
+VII - NOTE
+----------
+
+1) There are two ways to do timing shmoo for SD Memory card or eMMC card in Amboot:
+   a) "sd shmoo slot [mode] [clock]": this way can tune timing for every bus speed
+                                      mode, but it will damage the contents in the
+                                      card, and it requires the board to be able to
+                                      cut off the power to SD Memory card or eMMC
+                                      card completely, so that the SD Memory card
+                                      or eMMC card can be reset completely by the
+                                      power cycle.
+      PS: once the SD Memory card or eMMC card is in INACTIVE state, the card can
+          NOT be reset by CMD0.
+   b) "sd tuning slot [mode] [clock]": this way can only tune timing for bus speed
+                                       mode which support CMD19/CMD21, but it will
+                                       not damage the contents in the card and do
+                                       not need the power cycle to reset the card.
+
+2) If you want to cut off the power to SD Memory card, the pull-up voltage to DATA
+   and CMD line must be able to be cut off completely, too. Otherwise there will
+   be current leakage to the SD Memory card. The behaviour is that the VCC of SD
+   Memory card can NOT be pulled low.
+
+3) If you want to have SD Memory card to work in SDR50 or SDR104 mode, or have eMMC
+   card to work in HS200 mode, the timing is probably need to be set correctly.
+
+   You have two ways to set the timing:
+   a) enable CONFIG_SDMMC_ENABLE_TUNING: this will enable auto-tuning, and it can
+                                         fit for almost all of SD Memory cards or
+                                         eMMC card. But it will take extra 3s~5s
+                                         time to initialize the card.
+   b) implement amboot_bsp_sd_phy_init:  normally this function is located in bsp.c
+                                         It will not take extra time to initialize
+                                         the SD Memory card or eMMC card, but the
+                                         timing used in amboot_bsp_sd_phy_init are
+                                         probably NOT fit for all of SD Memory card
+                                         or eMMC card.
+
+4) The extra 3s~5s time for auto timing tuning may be not acceptable in some
+   cases, especially in eMMC boot case. If so, CONFIG_SDMMC_ENABLE_TUNING must
+   be disabled, and amboot_bsp_sd_phy_init must be implemented.
+   In order to implement amboot_bsp_sd_phy_init, you have two ways to know the
+   correct timing setting:
+   a) Burn the Amboot with CONFIG_SDMMC_ENABLE_TUNING enabled, enter Amboot and
+      type "sd init [slot] [mode]", then type "sd show timing".
+   b) Enter Amboot and type "sd shmoo [slot] [mode]" or "sd tuning [slot] [mode]".
+
+   PS:
+   a) You can type "help sd" in Amboot for more details about these commands.
+   b) The first way(auto-tuning with "sd show timing") may be more convenient,
+      but the timing is determined by Amboot automatically, so the timing value
+      may be NOT the best one. The second way will print out all of working
+      timing values, and you can select them manually.
+
+5) eMMC is always working under 3.3V or 1.8V IO voltage, but not change the IO
+   voltage dynamically, so that SD_HS_SEL/SDXC_HS_SEL is useless. However, the
+   IO voltage to eMMC card must keep the same as the IO voltage to host(SD/SDXC
+   controllers). Amboot can NOT detect the IO voltage, so you have to check the
+   hardware manually.
+   PS: If you test eMMC boot with Ambarella EVK boards, the EVK boards probably
+       need to be reworked to make SD_HS_SEL/SDXC_HS_SEL ineffective.
+
+6) For eMMC boot, SD_RESET/SDXC_RESET signal must connect to the RESET pin of eMMC
+   card. Most of mordern eMMC cards can be reset by its RESET pin, but there is
+   a precondition, that is, EXT_CSD[162](RST_n_FUNCTION) must be set as 0x1.
+   NOTE: EXT_CSD[162] will be enabled or disabled PERMANENTLY. Please notice the
+         message when burning the firmware. If EXT_CSD[162] has been already set
+         permanently, and you want to change its value, there will be a warning
+         message printed out:
+           "WARNing: eMMC RST_n has already been disabled permanently,
+                     can NOT be enabled now!"
+   BTW:  SD_RESET/SDXC_RESET will output a low pulse when chip warm boot, i.e.,
+         software reboot or watchdog reboot, but it will NOT output the low pulse
+         if the chip is reset by POR_L. However, later chips than CV22(including)
+         will also output low pulse even the chip is reset by POR_L.
+
+7) For eMMC boot, if CONFIG_SDMMC_ENABLE_TUNING is disabled(disable auto-tuning),
+   but either CONFIG_EMMC_BUS_MODE_AUTO or CONFIG_EMMC_BUS_MODE_HS200 is enabled,
+   then amboot_bsp_sd_phy_init must be implemented in both bsp.c and bsp_fw.c.
+   Again, bsp_fw.c must also implement amboot_bsp_sd_phy_init.
+
+8) For eMMC boot, the POC setting determine the eMMC boot options, once the POC
+   setting is changed(especially the setting for boot bus width), you have to
+   re-burn the firmware to make the eMMC card bootable.
+   PS: the eMMC card stores the boot options in EXT_CSD[177].
+
+9) For eMMC boot, the SD drivers and extX filesystem must be built into Kernel,
+   but must not built as modules.
+

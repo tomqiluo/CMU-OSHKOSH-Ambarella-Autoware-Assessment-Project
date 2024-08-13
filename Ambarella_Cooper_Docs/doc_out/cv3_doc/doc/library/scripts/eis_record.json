@@ -1,0 +1,37 @@
+{
+        "plugin": [
+                {
+                        "path": "/usr/lib/libasf_common.so",
+                        "module": [
+                                {
+                                        "name": "stream",
+                                        "cfg": {
+                                                "id": 0
+                                        }
+                                },
+                                {
+                                        "name": "sensor",
+                                        "cfg": {
+                                                "vsrc_id": 0
+                                        }
+                                },
+                                {
+                                        "name": "gyro",
+                                        "cfg": {
+                                               "id": 0,
+                                               "shift_realtime_enable": 1
+                                        }
+                                }
+                        ]
+                }
+        ],
+        "system": {
+                "db_path": "/tmp/test.db",
+                "file_path": "/tmp",
+                "file_name": "sample.bin",
+                "file_size_limit_MB": 30,
+                "cache_size_limit_MB": 32,
+                "duration_second": 3,
+                "mode": "standard"
+        }
+}

@@ -1,0 +1,9 @@
+digraph "cavalry_run_hotlink_slot"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_run_hotlink_slot\n|+ arg_daddr\l+ slot_id\l+ priority\l+ hw_type\l+ reserved0\l+ affinity\l+ slot_rval\l+ start_tick\l+ end_tick\l+ reserved1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

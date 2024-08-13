@@ -1,0 +1,9 @@
+digraph "net_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{net_cfg\n|+ net_file\l+ net_feed_virt\l+ verbose\l+ reuse_mem\l+ print_time\l+ no_dvi_mprot\l+ no_chip_check\l+ net_all_input_no_mem\l+ net_all_output_no_mem\l+ enable_extra_high_mem\l+ enable_dvi_crc_check\l+ no_recycle_session\l+ separate_intermediate\l_io_mem\l+ reserved_0\l+ net_circle_cnt\l+ net_loop_cnt\l+ net_mem_total\l+ dvi_mem_total\l+ blob_mem_total\l+ bandwidth_total\l+ dvi_num_total\l+ reserved_2\l+ extra_high_mem_total\l+ certificate_virt\l+ dek_encrypt_key_virt\l+ digest_virt\l+ total_extra_poke_num\l+ reserved_3\l+ intermediate_io_mem\l_total\l+ reserved_1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The network configuration in initialization."];
+}

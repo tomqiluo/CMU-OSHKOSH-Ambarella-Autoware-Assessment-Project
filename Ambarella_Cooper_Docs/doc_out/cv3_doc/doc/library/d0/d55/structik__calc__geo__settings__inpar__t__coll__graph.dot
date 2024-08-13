@@ -1,0 +1,55 @@
+digraph "ik_calc_geo_settings_inpar_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ik_calc_geo_settings\l_inpar_t\n|+ flip_mode\l+ yuv_mode\l+ warp_enable\l+ warp_2nd_enable\l+ chroma_filter_radius\l+ use_cawarp\l+ cawarp_enable\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_sensor_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{ik_vin_sensor_info_t\n|+ vin_id\l+ sensor_resolution\l+ sensor_pattern\l+ sensor_mode\l+ compression\l+ compression_offset\l+ sensor_readout_mode\l|}",height=0.2,width=0.4,color="black",URL="$de/d61/structik__vin__sensor__info__t.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_rgb_ir" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{ik_rgb_ir_t\n|+ mode\l+ ircorrect_offset_b\l+ ircorrect_offset_gb\l+ ircorrect_offset_gr\l+ ircorrect_offset_r\l+ mul_base_val\l+ mul_delta_high\l+ mul_high\l+ mul_high_val\l+ ir_only\l|}",height=0.2,width=0.4,color="black",URL="$dd/dd2/structik__rgb__ir__t.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_aaa_stat_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{ik_aaa_stat_info_t\n|+ awb_tile_num_col\l+ awb_tile_num_row\l+ awb_tile_col_start\l+ awb_tile_row_start\l+ awb_tile_width\l+ awb_tile_height\l+ awb_tile_active_width\l+ awb_tile_active_height\l+ awb_pix_min_value\l+ awb_pix_max_value\l+ ae_tile_num_col\l+ ae_tile_num_row\l+ ae_tile_col_start\l+ ae_tile_row_start\l+ ae_tile_width\l+ ae_tile_height\l+ ae_pix_min_value\l+ ae_pix_max_value\l+ af_tile_num_col\l+ af_tile_num_row\l+ af_tile_col_start\l+ af_tile_row_start\l+ af_tile_width\l+ af_tile_height\l+ af_tile_active_width\l+ af_tile_active_height\l+ six_minus_cfa_input\l_shift\l|}",height=0.2,width=0.4,color="black",URL="$d6/d0b/structik__aaa__stat__info__t.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_aaa_pg_af_stat_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{ik_aaa_pg_af_stat_info_t\n|+ af_tile_num_col\l+ af_tile_num_row\l+ af_tile_col_start\l+ af_tile_row_start\l+ af_tile_width\l+ af_tile_height\l+ af_tile_active_width\l+ af_tile_active_height\l|}",height=0.2,width=0.4,color="black",URL="$d4/d9c/structik__aaa__pg__af__stat__info__t.html",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_af_stat_ex_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{ik_af_stat_ex_info_t\n|+ af_horizontal_filter1_mode\l+ af_horizontal_filter1\l_stage1_enb\l+ af_horizontal_filter1\l_stage2_enb\l+ af_horizontal_filter1\l_stage3_enb\l+ af_horizontal_filter1_gain\l+ af_horizontal_filter1\l_shift\l+ af_horizontal_filter1\l_bias_off\l+ af_horizontal_filter1\l_thresh\l+ af_horizontal_filter2_mode\l+ af_horizontal_filter2\l_stage1_enb\l+ af_horizontal_filter2\l_stage2_enb\l+ af_horizontal_filter2\l_stage3_enb\l+ af_horizontal_filter2_gain\l+ af_horizontal_filter2\l_shift\l+ af_horizontal_filter2\l_bias_off\l+ af_horizontal_filter2\l_thresh\l+ af_tile_fv1_horizontal\l_shift\l+ af_tile_fv2_horizontal\l_shift\l|}",height=0.2,width=0.4,color="black",URL="$d5/d48/structik__af__stat__ex__info__t.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_pg_af_stat_ex_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{ik_pg_af_stat_ex_info_t\n|+ af_horizontal_filter1_mode\l+ af_horizontal_filter1\l_stage1_enb\l+ af_horizontal_filter1\l_stage2_enb\l+ af_horizontal_filter1\l_stage3_enb\l+ af_horizontal_filter1_gain\l+ af_horizontal_filter1\l_shift\l+ af_horizontal_filter1\l_bias_off\l+ af_horizontal_filter1\l_thresh\l+ af_vertical_filter1\l_thresh\l+ af_horizontal_filter2_mode\l+ af_horizontal_filter2\l_stage1_enb\l+ af_horizontal_filter2\l_stage2_enb\l+ af_horizontal_filter2\l_stage3_enb\l+ af_horizontal_filter2_gain\l+ af_horizontal_filter2\l_shift\l+ af_horizontal_filter2\l_bias_off\l+ af_horizontal_filter2\l_thresh\l+ af_vertical_filter2\l_thresh\l+ af_tile_fv1_horizontal\l_shift\l+ af_tile_fv1_vertical\l_shift\l+ af_tile_fv1_horizontal\l_weight\l+ af_tile_fv1_vertical\l_weight\l+ af_tile_fv2_horizontal\l_shift\l+ af_tile_fv2_vertical\l_shift\l+ af_tile_fv2_horizontal\l_weight\l+ af_tile_fv2_vertical\l_weight\l|}",height=0.2,width=0.4,color="black",URL="$db/d4d/structik__pg__af__stat__ex__info__t.html",tooltip=" "];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_hist_info\n+p_hist_info_pg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{ik_histogram_info_t\n|+ ae_tile_mask\l|}",height=0.2,width=0.4,color="black",URL="$df/d43/structik__histogram__info__t.html",tooltip=" "];
+  Node9 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_window_size_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{ik_window_size_info_t\n||}",height=0.2,width=0.4,color="black",URL="$d4/dc8/structik__window__size__info__t.html",tooltip=" "];
+  Node10 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +vin_sensor" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node10 [label="{ik_vin_sensor_geometry_t\n|+ start_x\l+ start_y\l+ width\l+ height\l|}",height=0.2,width=0.4,color="black",URL="$d2/d80/structik__vin__sensor__geometry__t.html",tooltip=" "];
+  Node11 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +h_sub_sample\n+v_sub_sample" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 [label="{ik_sensor_subsampling_t\n|+ factor_num\l+ factor_den\l|}",height=0.2,width=0.4,color="black",URL="$da/db4/structik__sensor__subsampling__t.html",tooltip=" "];
+  Node12 -> Node9 [color="grey25",fontsize="10",style="solid",label=" +main_win\n+prev\n+screennail\n+thumbnail" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node12 [label="{ik_window_dimension_t\n|+ width\l+ height\l|}",height=0.2,width=0.4,color="black",URL="$dc/d93/structik__window__dimension__t.html",tooltip=" "];
+  Node13 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_cfa_window_size_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node13 [label="{ik_cfa_window_size\l_info_t\n|+ enable\l|}",height=0.2,width=0.4,color="black",URL="$d2/d2b/structik__cfa__window__size__info__t.html",tooltip=" "];
+  Node12 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +cfa" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node14 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_active_window" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node14 [label="{ik_vin_active_window_t\n|+ enable\l|}",height=0.2,width=0.4,color="black",URL="$dd/d85/structik__vin__active__window__t.html",tooltip=" "];
+  Node15 -> Node14 [color="grey25",fontsize="10",style="solid",label=" +active_geo" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node15 [label="{ik_window_geomery_t\n|+ start_x\l+ start_y\l+ width\l+ height\l|}",height=0.2,width=0.4,color="black",URL="$dd/d48/structik__window__geomery__t.html",tooltip=" "];
+  Node16 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_dmy_range" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node16 [label="{ik_dummy_margin_range_t\n|+ enable\l+ left\l+ right\l+ top\l+ bottom\l|}",height=0.2,width=0.4,color="black",URL="$d5/da5/structik__dummy__margin__range__t.html",tooltip=" "];
+  Node17 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_dzoom_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node17 [label="{ik_dzoom_info_t\n|+ enable\l+ zoom_x\l+ zoom_y\l+ shift_x\l+ shift_y\l|}",height=0.2,width=0.4,color="black",URL="$d2/dd1/structik__dzoom__info__t.html",tooltip=" "];
+  Node18 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_stitch_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node18 [label="{ik_stitch_info_t\n|+ enable\l+ tile_num_x\l+ tile_num_y\l|}",height=0.2,width=0.4,color="black",URL="$d9/d03/structik__stitch__info__t.html",tooltip=" "];
+  Node19 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_calib_warp_info\n+p_calib_warp_info_2nd" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node19 [label="{ik_warp_info_t\n|+ version\l+ hor_grid_num\l+ ver_grid_num\l+ tile_width_exp\l+ tile_height_exp\l+ enb_2_stage_compensation\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d8/d3c/structik__warp__info__t.html",tooltip=" "];
+  Node10 -> Node19 [color="grey25",fontsize="10",style="solid",label=" +vin_sensor_geo" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node20 -> Node19 [color="grey25",fontsize="10",style="solid",label=" +pwarp" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node20 [label="{ik_grid_point_t\n|+ x\l+ y\l|}",height=0.2,width=0.4,color="black",URL="$dc/d59/structik__grid__point__t.html",tooltip=" "];
+  Node21 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_calib_ca_warp_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node21 [label="{ik_cawarp_info_t\n|+ version\l+ hor_grid_num\l+ ver_grid_num\l+ tile_width_exp\l+ tile_height_exp\l+ Enb2StageCompensation\l+ Reserved\l|}",height=0.2,width=0.4,color="black",URL="$db/d58/structik__cawarp__info__t.html",tooltip=" "];
+  Node10 -> Node21 [color="grey25",fontsize="10",style="solid",label=" +vin_sensor_geo" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node20 -> Node21 [color="grey25",fontsize="10",style="solid",label=" +p_cawarp_blue\n+p_cawarp_red" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node22 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_warp_buf_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node22 [label="{ik_warp_buffer_info_t\n|+ dram_efficiency\l+ luma_wait_lines\l+ luma_dma_size\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d2/da0/structik__warp__buffer__info__t.html",tooltip=" "];
+}

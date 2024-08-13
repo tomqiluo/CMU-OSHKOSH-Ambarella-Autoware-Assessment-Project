@@ -1,0 +1,9 @@
+digraph "asf_db_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{asf_db_cfg\n|+ obj\l+ block_insert\l+ mem_block_insert\l+ block_with_time_insert\l+ mem_block_duration\l_query\l+ mem_block_delete\l+ block_time_query\l+ event_insert\l+ event_end_time_update\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

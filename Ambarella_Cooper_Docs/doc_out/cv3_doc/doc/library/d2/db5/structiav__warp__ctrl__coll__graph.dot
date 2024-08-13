@@ -1,0 +1,17 @@
+digraph "iav_warp_ctrl"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_warp_ctrl\n|+ cid\l+ channel_id\l+ warp_area_behavior\l+ reserved\l+ arg\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +main" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{iav_warp_main\n|+ keep_dptz\l+ area_num_per_view\l|}",height=0.2,width=0.4,color="black",URL="$d6/dbb/structiav__warp__main.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +area" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{iav_warp_area\n|+ enable\l+ rotate_flip\l+ warp_pipeline_type\l+ reserved0\l+ input\l+ output\l|}",height=0.2,width=0.4,color="black",URL="$dd/d95/structiav__warp__area.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" +h_map\n+me1_v_map\n+v_map" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{iav_warp_map\n|+ enable\l+ output_grid_col\l+ output_grid_row\l+ h_spacing\l+ v_spacing\l+ reserved\l+ data_addr_offset\l|}",height=0.2,width=0.4,color="black",URL="$db/d84/structiav__warp__map.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +dptz" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{iav_warp_dptz\n|+ buf_id\l+ area_map\l+ input\l+ output\l|}",height=0.2,width=0.4,color="black",URL="$d8/dcb/structiav__warp__dptz.html",tooltip=" "];
+}

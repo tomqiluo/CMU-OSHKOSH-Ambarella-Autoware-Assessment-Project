@@ -1,0 +1,9 @@
+digraph "iav_rawbufdesc"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_rawbufdesc\n|+ vin_id\l+ non_block_flag\l+ is_dsp_hw_pts\l+ format\l+ raw_compressed\l+ packed\l+ bits_per_pixel\l+ skip_cache_sync\l+ reserved1\l+ delay_frames\l+ width\l+ width_in_byte\l+ height\l+ pitch\l+ mono_pts\l+ raw_addr_offset\l+ dsp_pts\l+ ce_addr_offset\l+ ce_pitch\l+ ce_width\l+ ce_width_in_byte\l+ seq_num\l+ feed_seq_num\l+ raw_base_addr_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

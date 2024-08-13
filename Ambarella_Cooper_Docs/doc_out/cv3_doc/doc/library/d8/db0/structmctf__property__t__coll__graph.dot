@@ -1,0 +1,9 @@
+digraph "mctf_property_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{mctf_property_t\n|+ mctf_alpha_ratio\l+ mctf_threshold_ratio\l+ mctf_adv_iso_noise\l_level_ratio\l+ mctf_temporal_max_change\l_ratio\l+ motion_detect_noise\l_base_ratio\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of MCTF property configuration, for each entry, range is [0, 256], unit is 64."];
+}

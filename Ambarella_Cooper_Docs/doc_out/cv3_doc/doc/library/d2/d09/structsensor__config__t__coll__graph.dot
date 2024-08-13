@@ -1,0 +1,23 @@
+digraph "sensor_config_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sensor_config_t\n|+ max_gain_db\l+ max_global_gain_db\l+ max_effective_frames\l+ shutter_delay\l+ agc_delay\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +hdr_delay" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{hdr_delay_t\n||}",height=0.2,width=0.4,color="black",URL="$d9/d20/structhdr__delay__t.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +agc_delay\n+dgain_delay\n+offset_delay\n+sht_delay" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{delay_gp_t\n|+ delay\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$da/da7/structdelay__gp__t.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +hdr_offset_coef" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{raw_offset_coef_t\n|+ long_padding\l+ short_padding\l|}",height=0.2,width=0.4,color="black",URL="$d8/d17/structraw__offset__coef__t.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +vin_dev_aaa_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{vindev_aaa_info\n|+ vsrc_id\l+ sensor_id\l+ bayer_pattern\l+ agc_max\l+ agc_min\l+ agc_step\l+ wdr_again_idx_min\l+ wdr_again_idx_max\l+ wdr_dgain_idx_min\l+ wdr_dgain_idx_max\l+ hdr_mode\l+ hdr_rhs_mode\l+ hdr_long_offset\l+ hdr_short1_offset\l+ hdr_short2_offset\l+ hdr_short3_offset\l+ pixel_size\l+ dual_gain_mode\l+ line_time\l+ vb_time\l+ sht0_max\l+ sht1_max\l+ sht2_max\l+ sht0_min\l+ sht1_min\l+ sht2_min\l+ wdr0_ratio\l+ wdr1_ratio\l+ wdr2_ratio\l+ ll_mode\l+ is_negative_response\l+ reserved\l+ expo_bias_10x\l+ dcg_ratio_10x\l|}",height=0.2,width=0.4,color="black",URL="$d9/d73/structvindev__aaa__info.html",tooltip=" "];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +frame_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{vindev_frame_info\n|+ vsrc_id\l+ frame_num\l+ frame_topology\l+ reserved\l+ index\l+ combine\l+ compress\l+ expo_ratio\l+ ratio_type\l+ bayer_pattern\l|}",height=0.2,width=0.4,color="black",URL="$d9/db0/structvindev__frame__info.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +shutter_limit_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{shutter_limit_config_t\n||}",height=0.2,width=0.4,color="black",URL="$d8/d25/structshutter__limit__config__t.html",tooltip=" "];
+  Node8 -> Node7 [color="grey25",fontsize="10",style="solid",label=" +limit_cfg_2x\n+limit_cfg_3x" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{img_limitation_t\n|+ min\l+ max\l|}",height=0.2,width=0.4,color="black",URL="$dc/d71/structimg__limitation__t.html",tooltip=" "];
+}

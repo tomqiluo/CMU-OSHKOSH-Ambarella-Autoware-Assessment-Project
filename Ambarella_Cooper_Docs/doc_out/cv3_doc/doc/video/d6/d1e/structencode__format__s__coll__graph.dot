@@ -1,0 +1,9 @@
+digraph "encode_format_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{encode_format_s\n|+ type\l+ type_changed_flag\l+ width\l+ height\l+ resolution_changed_flag\l+ offset_x\l+ offset_y\l+ offset_changed_flag\l+ source\l+ source_changed_flag\l+ source_map\l+ source_map_changed_flag\l+ hflip\l+ hflip_flag\l+ vflip\l+ vflip_flag\l+ rotate\l+ rotate_flag\l+ duration\l+ duration_flag\l+ efm_customize_fps\l+ efm_customize_fps_flag\l+ session_id\l+ session_id_flag\l+ fake_avg_pts\l+ fake_avg_pts_flag\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

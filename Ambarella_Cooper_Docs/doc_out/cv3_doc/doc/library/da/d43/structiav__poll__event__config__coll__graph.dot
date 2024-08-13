@@ -1,0 +1,27 @@
+digraph "iav_poll_event_config"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_poll_event_config\n|+ valid_num\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +desc_event" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{iav_querydesc_event\n|+ qid\l+ arg\l|}",height=0.2,width=0.4,color="black",URL="$d3/d28/structiav__querydesc__event.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +frame" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{iav_framedesc_event\n|+ stream_id\l|}",height=0.2,width=0.4,color="black",URL="$d6/dfa/structiav__framedesc__event.html",tooltip=" "];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +slice" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{iav_slicedesc_event\n|+ stream_id\l|}",height=0.2,width=0.4,color="black",URL="$d2/d3c/structiav__slicedesc__event.html",tooltip=" "];
+  Node5 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +statis" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{iav_statisdesc_event\n|+ stream_id\l+ statis_type\l|}",height=0.2,width=0.4,color="black",URL="$d8/d97/structiav__statisdesc__event.html",tooltip=" "];
+  Node6 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +rawbuf" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{iav_rawbufdesc_event\n|+ vin_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d4/dba/structiav__rawbufdesc__event.html",tooltip=" "];
+  Node7 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +rawseq" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{iav_rawseqdesc_event\n|+ vin_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$dd/d71/structiav__rawseqdesc__event.html",tooltip=" "];
+  Node8 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +canvas" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{iav_canvasdesc_event\n|+ canvas_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d1/daf/structiav__canvasdesc__event.html",tooltip=" "];
+  Node9 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +pyramid" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{iav_pyramiddesc_event\n|+ chan_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$de/d03/structiav__pyramiddesc__event.html",tooltip=" "];
+  Node10 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +y12" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node10 [label="{iav_y12desc_event\n|+ chan_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d9/d47/structiav__y12desc__event.html",tooltip=" "];
+}

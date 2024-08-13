@@ -1,0 +1,9 @@
+digraph "ea_env_properties_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ea_env_properties_t\n|+ frame_buffer_color\l_table_size\l+ vout\l+ overlay_max_area_num\l+ dsp_blur_max_area_num\l+ dsp_blur_min_strength\l+ dsp_blur_max_strength\l+ overlay_area_color\l_table_size\l+ dsp_blur_enabled_bitmap\l+ stream\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

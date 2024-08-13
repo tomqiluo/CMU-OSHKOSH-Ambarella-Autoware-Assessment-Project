@@ -1,0 +1,9 @@
+digraph "io_descriptor_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{io_descriptor_s\n|+ port_dim_p\l+ port_dim_d\l+ port_dim_h\l+ port_dim_w\l+ port_pitch\l+ port_pitch_offset\l+ port_drotate\l+ port_hflip\l+ port_vflip\l+ port_dflip\l+ port_pflip\l+ port_is_main_io\l+ port_scalar_init\l+ port_scalar_variable\l+ port_dskip_padding\l+ port_chaining_en\l+ port_xfer_disable\l+ reserve0\l+ port_scalar_var_default\l+ port_direction\l+ port_tile_width\l+ port_tile_height\l+ reserve1\l+ port_dram_format\l+ port_pitch_bsize\l+ reserve2\l+ port_slice_byte_offset\l+ port_slice_parent_name\l+ port_parent_p\l+ port_parent_d\l+ port_parent_h\l+ port_parent_w\l+ port_parent_pitch\l+ port_total_parent_size\l+ port_drotate_bit_offset\l+ port_hflip_bit_offset\l+ port_vflip_bit_offset\l+ port_dflip_bit_offset\l+ port_pflip_bit_offset\l+ port_data_sign\l+ port_data_size\l+ port_data_expoffset\l+ port_data_expbits\l+ port_data_float_flag\l+ port_data_bitvector\l+ port_data_four_bit\l+ port_data_ten_bit\l+ port_data_twelve_bit\l+ reserve3\l+ port_data_bits\l+ reserve4\l+ port_ddi_size\l+ port_ddi_offset\l+ port_byte_offset\l+ port_size\l+ port_xfer_size\l+ port_name\l+ port_demangled_name\l+ port_chaining_name\l+ port_parent_name\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

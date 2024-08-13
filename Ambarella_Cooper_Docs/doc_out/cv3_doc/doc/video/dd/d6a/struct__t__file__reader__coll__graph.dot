@@ -1,0 +1,9 @@
+digraph "_t_file_reader"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{_t_file_reader\n|+ fd\l+ read_buffer_size\l+ file_total_size\l+ file_remainning_size\l+ data_remainning_size\l_in_buffer\l+ p_read_buffer_base\l+ p_read_buffer_end\l+ p_read_buffer_cur_start\l+ p_read_buffer_cur_end\l+ b_alloc_read_buffer\l+ b_opened_file\l+ reserved1\l+ reserved2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

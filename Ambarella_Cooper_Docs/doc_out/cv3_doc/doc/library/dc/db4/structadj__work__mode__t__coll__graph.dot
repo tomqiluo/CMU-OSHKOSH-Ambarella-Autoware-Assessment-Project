@@ -1,0 +1,9 @@
+digraph "adj_work_mode_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adj_work_mode_t\n|+ tone_y_mode\l+ auto_knee_mode\l+ blc_gain_mode\l+ ce_io_str_mode\l+ ce_io_offset_mode\l+ ce_io_gamma_mode\l+ cc_temp_interp_mode\l+ ce_boost_mode\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,27 @@
+var chan__cfg_8c =
+[
+    [ "channel_cfg_s", "dd/d5d/structchannel__cfg__s.html", "dd/d5d/structchannel__cfg__s" ],
+    [ "CHANNEL_EXTRA_DOWNSCALE_OPTIONS", "de/de8/group__te__parm.html#ga361ec09a31b36abce2d4c62291d5ea1c", null ],
+    [ "CHANNEL_ID_OPTIONS", "de/de8/group__te__parm.html#ga52447e23339112b267a4768ead5e6512", null ],
+    [ "CHANNEL_IDSP_FPS_LOCKED_ENABLE_OPTIONS", "de/de8/group__te__parm.html#gafe5d0606bc252dd39443f5f0f7391ddd", null ],
+    [ "CHANNEL_IDSP_FPS_OPTIONS", "de/de8/group__te__parm.html#gab688ae2ba6bdeb89899a1793a3a1e9d0", null ],
+    [ "CHANNEL_INIT_PARAMETERS", "d6/da0/chan__cfg_8c.html#abcb7b998bf92b6738b3527ad12e0ffac", null ],
+    [ "CHANNEL_LENS_WARP_OPTIONS", "de/de8/group__te__parm.html#ga3d8f3b145ffff519077d5b9e0b0afd43", null ],
+    [ "CHANNEL_LONG_OPTIONS", "d6/da0/chan__cfg_8c.html#a74128a72a162240304ff7a74887d1de8", null ],
+    [ "CHANNEL_MAX_MAIN_INPUT_WIDTH_OPTIONS", "de/de8/group__te__parm.html#ga797b3ec84dca1ba437612702a84176fd", null ],
+    [ "CHANNEL_MAX_PADDING_WIDTH_OPTIONS", "de/de8/group__te__parm.html#ga744c635b9930ac0c4a54c3dfcf74f47b", null ],
+    [ "CHANNEL_MAX_VWARP_BLOCK_HEIGHT_OPTIONS", "de/de8/group__te__parm.html#gac7e227b0cbb2431f1abfedecdb4e8da3", null ],
+    [ "CHANNEL_MAX_WARP_REGION_INPUT_WIDTH_OPTIONS", "de/de8/group__te__parm.html#ga68deafacf46eb0879b1ca774938ec9a5", null ],
+    [ "CHANNEL_MAX_WARP_REGION_OUTPUT_WIDTH_OPTIONS", "de/de8/group__te__parm.html#ga1e1c1f813e0f73974bcde9864e88180f", null ],
+    [ "CHANNEL_MCTF_10BIT_REFERENCE_OPTIONS", "de/de8/group__te__parm.html#ga4007a85e190ce253a6352fe2a873a752", null ],
+    [ "CHANNEL_MCTF_COMPRESSION_OPTIONS", "de/de8/group__te__parm.html#gaf2e3a93fdd5d6d51393a91a93896fc76", null ],
+    [ "CHANNEL_NUMVERIC_SHORT_OPTIONS", "d6/da0/chan__cfg_8c.html#a6cc0424a45611ec85815f5e4634853c3", null ],
+    [ "CHANNEL_PARAMETER_HINTS", "d6/da0/chan__cfg_8c.html#a1f21a807237927fed3bbacad7adf0c79", null ],
+    [ "CHANNEL_VWARP_WAITLINES_OPTIONS", "de/de8/group__te__parm.html#ga06167b03542ae37fe675bbf550d6c4e1", null ],
+    [ "VERIFY_CHANNEL_ID", "d6/da0/chan__cfg_8c.html#a1ddd13652dbb4db4bf693530273329d5", null ],
+    [ "channel_cfg_t", "d6/da0/chan__cfg_8c.html#a52aa8e6a6de368eb03e696ee9dfc35ef", null ],
+    [ "update_channel_cfg", "d6/da0/chan__cfg_8c.html#a1a0acf76c25316f3b35f415d003a5167", null ],
+    [ "cfg_changed_channel_map", "d6/da0/chan__cfg_8c.html#a4c6f6d75e1a5a9f534daf18be3761a0d", null ],
+    [ "channel_cfg", "d6/da0/chan__cfg_8c.html#a43c0315207b8e03b071e9746c2115ae0", null ],
+    [ "cur_channel", "d6/da0/chan__cfg_8c.html#acbc25b5e545833d4e47f9122ed92ede8", null ]
+];

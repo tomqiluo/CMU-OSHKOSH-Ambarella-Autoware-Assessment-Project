@@ -1,0 +1,10 @@
+digraph "IAV IOCTL API: Vproc Control"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="IAV IOCTL API",height=0.2,width=0.4,color="black",URL="$d5/d1d/group__iav-api.html",tooltip="IAV IOCTL API."];
+  Node1 [label="IAV IOCTL API: Vproc\l Control",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="IAV IOCTL API: VPROC control ioctl, in file iav_ioctl.h."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

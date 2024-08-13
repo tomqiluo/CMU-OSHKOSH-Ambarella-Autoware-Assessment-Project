@@ -1,0 +1,9 @@
+digraph "cam_calib_data_binary_header_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cam_calib_data_binary\l_header_t\n|+ magic_number\l+ hdr_size\l+ tot_size\l+ version\l+ module_name\l+ sensor_name\l+ data_unit\l+ data_type\l+ mantissa_bits\l+ active_freq_num\l+ modulation_freq_khz\l+ fx\l+ fy\l+ cx\l+ cy\l+ k1\l+ k2\l+ k3\l+ p1\l+ p2\l+ reserved1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

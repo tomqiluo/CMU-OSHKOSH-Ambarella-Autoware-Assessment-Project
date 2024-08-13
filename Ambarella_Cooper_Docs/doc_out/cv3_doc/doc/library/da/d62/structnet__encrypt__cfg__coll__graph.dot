@@ -1,0 +1,9 @@
+digraph "net_encrypt_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{net_encrypt_cfg\n|+ certificate\l+ dek_encrypt_key\l+ digest\l+ no_recycle_session\l+ reserved_0\l+ reserved_1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The network encryption configuration."];
+}

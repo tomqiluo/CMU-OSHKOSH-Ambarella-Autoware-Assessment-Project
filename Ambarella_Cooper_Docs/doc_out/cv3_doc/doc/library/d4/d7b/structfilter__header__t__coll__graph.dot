@@ -1,0 +1,9 @@
+digraph "filter_header_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{filter_header_t\n|+ filter_id\l+ auto_adj_argu\l+ filter_update_freq\l+ filter_update_cnt\l+ filter_update_flag\l+ force_commit_flag\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of header information of filter containers."];
+}

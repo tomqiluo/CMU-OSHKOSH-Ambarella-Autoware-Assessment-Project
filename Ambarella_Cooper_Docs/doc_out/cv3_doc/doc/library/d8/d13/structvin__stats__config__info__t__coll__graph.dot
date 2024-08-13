@@ -1,0 +1,9 @@
+digraph "vin_stats_config_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_stats_config_info_t\n|+ vin_stats_type\l+ chan_index\l+ is_rgbir\l+ fusion_ir_step\l+ reserved_0\l+ total_exposures\l+ blend_index\l+ total_slice_in_x\l+ slice_index_x\l+ total_slice_in_y\l+ slice_index_y\l+ vin_stats_slice_left\l+ vin_stats_slice_width\l+ vin_stats_slice_top\l+ vin_stats_slice_height\l+ reserved\l+ mono_pts\l+ dsp_pts\l+ reserved2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,26 @@
+digraph "setup_resource_limit"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="setup_resource_limit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="get_encode_resource\l_from_lua",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#a694c6df48765653b832c6f42b4efd235",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="get_system_resource",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#a48fbe8aaf2d884f1adcaf43844e4e094",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="get_vcap_cfg_resource",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#acfdd5dddcad99f90ba2c7bcdad10e4d1",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="reset_chan_canvas_resource",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#aa19828d1722390778bd616f9d1faec42",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="update_channel_cfg",height=0.2,width=0.4,color="black",URL="$d6/da0/chan__cfg_8c.html#a1a0acf76c25316f3b35f415d003a5167",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="update_debug_resource",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#a89f5e72bc26e1fa40137f404a6984a91",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="update_stream_rescource",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#ad541e237c96d531de93f005b57ba0887",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="voutcfg_check_mixer",height=0.2,width=0.4,color="black",URL="$de/ddf/vout__init__cfg_8c.html#af2e6255160b8c509981d053ff9c0c808",tooltip=" "];
+}

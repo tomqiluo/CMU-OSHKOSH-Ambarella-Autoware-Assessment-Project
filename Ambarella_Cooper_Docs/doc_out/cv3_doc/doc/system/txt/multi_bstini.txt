@@ -1,0 +1,61 @@
+SIGNLE BST WITH MULTIPLE INI
+============================
+
+
+I - Introduction
+----------------
+
+Sometimes one BST need to support several sets of boot parameters, then a single
+BST can be used to cover several different boards.
+
+Note:
+  a) only the BST provided as source codes can suppor this feature.
+  b) Not all parameters can be multiple, for details please see
+     src/bst/$(CHIP_LO)/parameters.S.
+  c) Due to BST size limitation, the number of INI files is restricted. If too
+     many INI files are provided, you will see build error.
+
+
+II - Usage
+----------
+
+1. Provide multiple INI files:
+   All the INI files must be named as BOARD_N.ini, Here "BOARD" can be arbitrarily,
+   while N is 0, 1, 2, 3, 4, ... and etc.
+
+2. Provide a global subroutine written in assembly codes to get board index which
+   is used to select proper set of parameter. Actually here "index" is the "N" above.
+   This subroutine must be named as bsp_hw_index and written in BOARD/bsp/bsp_bst.S
+   PS:
+      a) There are many ways to distinguish each board, e.g., by GPIO, by OTP, by
+         POC and etc. It's determined by board design, so that "bsp_hw_index" must
+         be provided by customers themselves.
+      b) INVALID INDEX WILL CRASH THE BOOT, so you have to make sure "bsp_hw_index"
+         can always return valid index.
+
+3. Enable CONFIG_AMBST_MULTI_DRAM_INI_SUPPORT by menuconfig
+
+
+III - Example of bsp_bst.S
+--------------------------
+
+Below example shows that GPIO21 is used to distinguish two boards, and the board
+index (0 or 1) is returned in "w0".
+
+Note: .globl below is MUST HAVE.
+
+#include <ambhw/gpio.h>
+
+.globl bsp_hw_index
+
+bsp_hw_index:
+	mov	x29, x30
+	/* use GPIO21 state as index */
+	ldr	w0, =(GPIO0_BASE + 21)
+	bl	gpio_pin_check
+	cbz	w0, 1f
+	mov	w0, #1
+1:	ret	x29
+
+You can also see some examples under bsp directory for our EVK board.
+

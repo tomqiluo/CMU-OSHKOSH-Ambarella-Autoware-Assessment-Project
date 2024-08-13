@@ -1,0 +1,9 @@
+digraph "fbm_para_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fbm_para_t\n|+ in_h\l+ in_w\l+ minDisparity\l+ numDisparities\l+ SAD_thresh\l+ SADWindowSize\l+ uniquenessRatio\l+ texture_threshold\l+ low_disparity_far_dist_flag\l+ reserved_0\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="the configurations of FBM"];
+}

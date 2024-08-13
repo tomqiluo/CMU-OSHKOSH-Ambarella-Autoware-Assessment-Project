@@ -1,0 +1,9 @@
+digraph "fma_user_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fma_user_cfg\n|+ cfg_mask\l+ min_threshold\l+ ratio_threshold\l+ reserved\l+ win_width\l+ win_height\l+ x_threshold_r\l+ x_threshold_l\l+ y_threshold_u\l+ y_threshold_d\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

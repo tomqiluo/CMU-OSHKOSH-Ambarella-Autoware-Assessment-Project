@@ -1,0 +1,9 @@
+digraph "wp_params_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{wp_params_s\n|+ wp_enable\l+ luma_log2_weight_denom\l+ luma_weight\l+ luma_offset\l+ wp_enable_flag\l+ luma_log2_weight_denom_flag\l+ luma_weight_flag\l+ luma_offset_flag\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

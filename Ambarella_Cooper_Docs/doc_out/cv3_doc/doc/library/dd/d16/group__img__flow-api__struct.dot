@@ -1,0 +1,10 @@
+digraph "Image Flow Library API structure"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="Image Flow Library API",height=0.2,width=0.4,color="black",URL="$dc/da6/group__img__flow-api.html",tooltip="Image Flow Library APIs, in file img_flow_api.h."];
+  Node1 [label="Image Flow Library\l API structure",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Image Flow Library structures, in file img_flow_api.h."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

@@ -1,0 +1,47 @@
+digraph "aeb_param_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{aeb_param_t\n|+ cfg_ae_gain_tbl_size\l+ cfg_ae_sht_nl_tbl_size\l+ cfg_ae_ratio_to_gain\l_tbl_size\l+ cfg_ae_gain_tbl\l+ cfg_ae_sht_nl_tbl\l+ cfg_ae_ratio_to_gain_tbl\l+ decompand_table\l+ compand_table\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +aeb_version" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{img_version_t\n|+ mod_date\l+ mod_time\l+ version\l+ sensor_id\l+ chip_id\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$db/dfd/structimg__version__t.html",tooltip="Description of version information for ADJ file."];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +tile_config" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{ik_aaa_stat_info_t\n|+ awb_tile_num_col\l+ awb_tile_num_row\l+ awb_tile_col_start\l+ awb_tile_row_start\l+ awb_tile_width\l+ awb_tile_height\l+ awb_tile_active_width\l+ awb_tile_active_height\l+ awb_pix_min_value\l+ awb_pix_max_value\l+ ae_tile_num_col\l+ ae_tile_num_row\l+ ae_tile_col_start\l+ ae_tile_row_start\l+ ae_tile_width\l+ ae_tile_height\l+ ae_pix_min_value\l+ ae_pix_max_value\l+ af_tile_num_col\l+ af_tile_num_row\l+ af_tile_col_start\l+ af_tile_row_start\l+ af_tile_width\l+ af_tile_height\l+ af_tile_active_width\l+ af_tile_active_height\l+ six_minus_cfa_input\l_shift\l|}",height=0.2,width=0.4,color="black",URL="$d6/d0b/structik__aaa__stat__info__t.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +cfg_ae_lines_for_expo\l_1x\n+cfg_ae_lines_for\l_expo_2x\n+cfg_ae_lines_for\l_expo_3x\n+cfg_ae_lines_for\l_others" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{ae_lines_config_t\n||}",height=0.2,width=0.4,color="black",URL="$df/d66/structae__lines__config__t.html",tooltip="Description of AE LINE configuration."];
+  Node5 -> Node4 [color="grey25",fontsize="10",style="solid",label=" +ae_line_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{ae_line_info_t\n|+ line_num\l+ line_belt\l|}",height=0.2,width=0.4,color="black",URL="$d5/d66/structae__line__info__t.html",tooltip="Description of AE LINE configuration for one exposure frame."];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +lines" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{line_t\n||}",height=0.2,width=0.4,color="black",URL="$dd/d43/structline__t.html",tooltip="Description of an AE LINE."];
+  Node7 -> Node6 [color="grey25",fontsize="10",style="solid",label=" +end\n+start" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{joint_t\n|+ factor\l|}",height=0.2,width=0.4,color="black",URL="$d4/dcd/structjoint__t.html",tooltip="Description of an joint on AE LINE."];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +awb_param" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{img_awb_param_t\n||}",height=0.2,width=0.4,color="black",URL="$d1/d46/structimg__awb__param__t.html",tooltip=" "];
+  Node9 -> Node8 [color="grey25",fontsize="10",style="solid",label=" +menu_gain" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{wb_gain_t\n|+ r_gain\l+ g_gain\l+ b_gain\l|}",height=0.2,width=0.4,color="black",URL="$df/d9f/structwb__gain__t.html",tooltip="Description of wb_gain."];
+  Node10 -> Node8 [color="grey25",fontsize="10",style="solid",label=" +wr_table" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node10 [label="{awb_lut_t\n|+ lut_no\l|}",height=0.2,width=0.4,color="black",URL="$d4/d6b/structawb__lut__t.html",tooltip=" "];
+  Node11 -> Node10 [color="grey25",fontsize="10",style="solid",label=" +awb_lut" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 [label="{awb_lut_unit_t\n|+ gr_min\l+ gr_max\l+ gb_min\l+ gb_max\l+ y_a_min_slope\l+ y_a_min\l+ y_a_max_slope\l+ y_a_max\l+ y_b_min_slope\l+ y_b_min\l+ y_b_max_slope\l+ y_b_max\l+ weight\l|}",height=0.2,width=0.4,color="black",URL="$d1/d9d/structawb__lut__unit__t.html",tooltip=" "];
+  Node12 -> Node8 [color="grey25",fontsize="10",style="solid",label=" +awb_lut_idx" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node12 [label="{awb_lut_idx_t\n|+ start\l+ num\l|}",height=0.2,width=0.4,color="black",URL="$d2/dcb/structawb__lut__idx__t.html",tooltip=" "];
+  Node13 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +sensor_config" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node13 [label="{sensor_config_t\n|+ max_gain_db\l+ max_global_gain_db\l+ max_effective_frames\l+ shutter_delay\l+ agc_delay\l|}",height=0.2,width=0.4,color="black",URL="$d0/d44/structsensor__config__t.html",tooltip=" "];
+  Node14 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +hdr_delay" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node14 [label="{hdr_delay_t\n||}",height=0.2,width=0.4,color="black",URL="$d9/d20/structhdr__delay__t.html",tooltip=" "];
+  Node15 -> Node14 [color="grey25",fontsize="10",style="solid",label=" +agc_delay\n+dgain_delay\n+offset_delay\n+sht_delay" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node15 [label="{delay_gp_t\n|+ delay\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$da/da7/structdelay__gp__t.html",tooltip=" "];
+  Node16 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +hdr_offset_coef" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node16 [label="{raw_offset_coef_t\n|+ long_padding\l+ short_padding\l|}",height=0.2,width=0.4,color="black",URL="$d8/d17/structraw__offset__coef__t.html",tooltip=" "];
+  Node17 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +vin_dev_aaa_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node17 [label="{vindev_aaa_info\n|+ vsrc_id\l+ sensor_id\l+ bayer_pattern\l+ agc_max\l+ agc_min\l+ agc_step\l+ wdr_again_idx_min\l+ wdr_again_idx_max\l+ wdr_dgain_idx_min\l+ wdr_dgain_idx_max\l+ hdr_mode\l+ hdr_rhs_mode\l+ hdr_long_offset\l+ hdr_short1_offset\l+ hdr_short2_offset\l+ hdr_short3_offset\l+ pixel_size\l+ dual_gain_mode\l+ line_time\l+ vb_time\l+ sht0_max\l+ sht1_max\l+ sht2_max\l+ sht0_min\l+ sht1_min\l+ sht2_min\l+ wdr0_ratio\l+ wdr1_ratio\l+ wdr2_ratio\l+ ll_mode\l+ is_negative_response\l+ reserved\l+ expo_bias_10x\l+ dcg_ratio_10x\l|}",height=0.2,width=0.4,color="black",URL="$d9/d73/structvindev__aaa__info.html",tooltip=" "];
+  Node18 -> Node17 [color="grey25",fontsize="10",style="solid",label=" +frame_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node18 [label="{vindev_frame_info\n|+ vsrc_id\l+ frame_num\l+ frame_topology\l+ reserved\l+ index\l+ combine\l+ compress\l+ expo_ratio\l+ ratio_type\l+ bayer_pattern\l|}",height=0.2,width=0.4,color="black",URL="$d9/db0/structvindev__frame__info.html",tooltip=" "];
+  Node19 -> Node13 [color="grey25",fontsize="10",style="solid",label=" +shutter_limit_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node19 [label="{shutter_limit_config_t\n||}",height=0.2,width=0.4,color="black",URL="$d8/d25/structshutter__limit__config__t.html",tooltip=" "];
+  Node20 -> Node19 [color="grey25",fontsize="10",style="solid",label=" +limit_cfg_2x\n+limit_cfg_3x" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node20 [label="{img_limitation_t\n|+ min\l+ max\l|}",height=0.2,width=0.4,color="black",URL="$dc/d71/structimg__limitation__t.html",tooltip=" "];
+}

@@ -1,0 +1,61 @@
+Lightweight FAT file system
+===========================
+
+What is Lightweight FAT
+-----------------------
+
+Limitation
+----------
+#. Long file Name is not supported.
+
+	1.bin			O
+	1234.bin		O
+	12345678.bin		O
+	123456789.bin		X	- Too long file name, limitated to 8 bytes.
+	12345678.binary		X	- Too long extend name, limitated to 3 bytes.
+
+#. Subdirectory is not supported.
+
+#. TBD
+
+How to generate a firmware.
+------------------------------
+#. NAND
+	$ mkdir rom
+	$ cp $your_file ./rom  -rf
+	$ mkfs.vfat -C rom.lfat 0x4000 -F 32 -S 2048 -s 32	# creat a 16M rom.lfat
+	$ mcopy	-i romfs.lfat -/ rom/*	::
+
+	XXX
+	-F      specify FAT32 format
+	-S      specify sector size, match NAND media
+	-s      specify sectors per cluster. Default value is 1, which is not a good choice.
+	0x4000  number of 4K media size.
+
+#. SD
+	$ mkfs.vfat /dev/sdd1
+
+How to access a file
+--------------------
+
+The LFAT is read-only under current version, write operation is not implemented.
+We may support write operation in the future.
+
+:: code
+
+	#define FILE	"C:Boa.bin"
+	int size, rval;
+	void *mem;
+
+	size = lfat_get_file_proper_size(FILE);
+	if (size < 0) {
+		/* error */
+		return size;
+	}
+
+	mem = malloc(size);
+	lfat_request_file(FILE, mem, size);
+	printf("size of %s is %d\n", FILE, rval);
+
+	free(mem);
+

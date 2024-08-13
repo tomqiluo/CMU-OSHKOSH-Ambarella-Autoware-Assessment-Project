@@ -1,0 +1,10 @@
+digraph "IAV IOCTL VIN Struct"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="IAV VIN IOCTL Helper",height=0.2,width=0.4,color="black",URL="$d4/de2/group__iav-ioctl-vin.html",tooltip="IAV VIN IOCTL API Helper, in file iav_vin_ioctl.h."];
+  Node1 [label="IAV IOCTL VIN Struct",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="IAV IOCTL Video Input API: Structs used in API."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

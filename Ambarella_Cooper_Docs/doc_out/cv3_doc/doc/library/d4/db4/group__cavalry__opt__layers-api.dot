@@ -1,0 +1,12 @@
+digraph "Cavalry Opt Layers Library API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Cavalry Opt Layers\l Library API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="cavalry_opt_layers Library API, in file opt_layers.hpp"];
+  Node2 [label="Cavalry Opt Layers\l Library API details",height=0.2,width=0.4,color="black",URL="$da/dae/group__cavalry__opt__layers-api-details.html",tooltip="cavalry_opt_layers API details, in file opt_layers.hpp"];
+  Node3 [label="Cavalry Opt Layers\l Library API helper",height=0.2,width=0.4,color="black",URL="$d8/dc9/group__cavalry__opt__layers-helper.html",tooltip="cavalry_opt_layers Helper, in file opt_layers.hpp"];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

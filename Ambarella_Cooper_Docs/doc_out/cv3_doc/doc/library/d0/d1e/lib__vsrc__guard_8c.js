@@ -1,0 +1,27 @@
+var lib__vsrc__guard_8c =
+[
+    [ "get_vsrc_num", "d0/d1e/lib__vsrc__guard_8c.html#a780e0f003f563b6d135d325d74f55ca2", null ],
+    [ "is_vsync_detection_disabled", "d0/d1e/lib__vsrc__guard_8c.html#ad4b6c1180264ca85bd6fdf305210c0ae", null ],
+    [ "lib_vg_check_status", "d0/d1e/lib__vsrc__guard_8c.html#ad43e6bcdd960681416b4009e710f0f21", null ],
+    [ "lib_vg_deinit", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#gae8f3501b0cc1410e89d4745edb9dd467", null ],
+    [ "lib_vg_get_status", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#gac586e3f3cdd2a9597f3a151053125daa", null ],
+    [ "lib_vg_get_version", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#gaafa7e7de5170ad29dc359236f6f17969", null ],
+    [ "lib_vg_handler", "d0/d1e/lib__vsrc__guard_8c.html#a3b2310b9392fbd058e8ebc82b46ac852", null ],
+    [ "lib_vg_init", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga69beb560b2e86f1cf15a78b15d35e9a9", null ],
+    [ "lib_vg_join_threads", "d0/d1e/lib__vsrc__guard_8c.html#a56262ba55fa4a22ea420f69558aa39b4", null ],
+    [ "lib_vg_netlink", "d0/d1e/lib__vsrc__guard_8c.html#ab4befb4aa8ca5c10fc6b4447e0044335", null ],
+    [ "lib_vg_nl_msg", "d0/d1e/lib__vsrc__guard_8c.html#a18959fbede07ac3cc727fcdcb33e9d0a", null ],
+    [ "lib_vg_send_disconnect", "d0/d1e/lib__vsrc__guard_8c.html#a13f5fdeff25d992c10f344b69445ff4c", null ],
+    [ "lib_vg_set_log_level", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga8059b99be90a4e95371d5baee73dfe73", null ],
+    [ "lib_vg_set_timeout_sec", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga1203ea604f57c73478d33810189a61f7", null ],
+    [ "lib_vg_start", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga555a1854e78bf261b3aa0688b5a12424", null ],
+    [ "lib_vg_stop", "d8/dab/group__VSRC__GUARD__FUNCTION__GROUP.html#ga3f357804a2de736735e8b794f4ef9e66", null ],
+    [ "process_nl_msg", "d0/d1e/lib__vsrc__guard_8c.html#af8682557ae8bf64bf66abce34f3a654e", null ],
+    [ "pthread_setname_np", "d0/d1e/lib__vsrc__guard_8c.html#aa21465e084e7185bfbb94bb50d60cd08", null ],
+    [ "vsrc_guard_print", "d0/d1e/lib__vsrc__guard_8c.html#ae29cbf038ce14d3e1d29786f8f98e415", null ],
+    [ "vsrc_to_vinc", "d0/d1e/lib__vsrc__guard_8c.html#aa013cf929b1cf3098c000245d0b21288", null ],
+    [ "G_ctx", "d0/d1e/lib__vsrc__guard_8c.html#a4bded4ea2a0866bbdd89009c40e3e8b6", null ],
+    [ "G_version", "d0/d1e/lib__vsrc__guard_8c.html#a9c4b36e38b900f475cfeed59bf60f1b4", null ],
+    [ "vg_log_level", "d0/d1e/lib__vsrc__guard_8c.html#a8322ef49663737386aae4ab107eb0152", null ],
+    [ "vg_timeout_sec", "d0/d1e/lib__vsrc__guard_8c.html#a7cf3719ba40051cc780f65598c525dde", null ]
+];

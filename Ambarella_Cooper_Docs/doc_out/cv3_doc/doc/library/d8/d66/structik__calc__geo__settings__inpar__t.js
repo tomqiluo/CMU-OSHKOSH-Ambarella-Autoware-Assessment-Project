@@ -1,0 +1,28 @@
+var structik__calc__geo__settings__inpar__t =
+[
+    [ "cawarp_enable", "d8/d66/structik__calc__geo__settings__inpar__t.html#ad4a3f350eca367cef4f7d8f0ef4ca4c0", null ],
+    [ "chroma_filter_radius", "d8/d66/structik__calc__geo__settings__inpar__t.html#ac35a4078013fc2678ef73db62e45b1fc", null ],
+    [ "flip_mode", "d8/d66/structik__calc__geo__settings__inpar__t.html#a9fc808510608fcfc13caf7ce3305b4b1", null ],
+    [ "p_aaa_pg_af_stat_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a1c9de61c2b364ea84b48387d33686b6a", null ],
+    [ "p_aaa_stat_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a30d5aba61c7cbd99f2661f9ee1e87630", null ],
+    [ "p_active_window", "d8/d66/structik__calc__geo__settings__inpar__t.html#aad842c391ed91e6d9d0a59af3f698cc4", null ],
+    [ "p_af_stat_ex_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#ab8748812ee80c6f324b6c7385aa9c58f", null ],
+    [ "p_calib_ca_warp_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a91643c6f4a9a01916b337a5239dfba0f", null ],
+    [ "p_calib_warp_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#ace4c97c914f226337bacc6f74e401804", null ],
+    [ "p_calib_warp_info_2nd", "d8/d66/structik__calc__geo__settings__inpar__t.html#aad9803cfc0ebb3f3706fe528fdebb70d", null ],
+    [ "p_cfa_window_size_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#ac15cbf748e834f9a9b1e890a9c7b273a", null ],
+    [ "p_dmy_range", "d8/d66/structik__calc__geo__settings__inpar__t.html#a488f6883d2475797f08f7ac13887f09f", null ],
+    [ "p_dzoom_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a67adc59f16f6f7ea74a4042a417c9a15", null ],
+    [ "p_hist_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#aff6e50ae660c6db6babd0aed87ff17ac", null ],
+    [ "p_hist_info_pg", "d8/d66/structik__calc__geo__settings__inpar__t.html#a3c3b73167b3b3488762bc91e40a63a68", null ],
+    [ "p_pg_af_stat_ex_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a41ae2705a6473b3fcb0cbce2591138fb", null ],
+    [ "p_rgb_ir", "d8/d66/structik__calc__geo__settings__inpar__t.html#af2b39e78f85f1c1d5f6c8b75f4f37540", null ],
+    [ "p_sensor_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a5fa083f01ec8ded01d2c9e30addaeaa7", null ],
+    [ "p_stitch_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#ac9cacaf99965f9f9f27c1284d6b05e80", null ],
+    [ "p_warp_buf_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#accd2a44c9af247a6a9bdcb0fb237ac06", null ],
+    [ "p_window_size_info", "d8/d66/structik__calc__geo__settings__inpar__t.html#a0b039865d6aaaf72e160691fbd6ed15d", null ],
+    [ "use_cawarp", "d8/d66/structik__calc__geo__settings__inpar__t.html#a4aa204b294eebe04e89eb474edf24547", null ],
+    [ "warp_2nd_enable", "d8/d66/structik__calc__geo__settings__inpar__t.html#a03801dc57e4912b5ce1da2fe2ec9603e", null ],
+    [ "warp_enable", "d8/d66/structik__calc__geo__settings__inpar__t.html#a75d354a1dfcd12ce8a06e9d28567a06d", null ],
+    [ "yuv_mode", "d8/d66/structik__calc__geo__settings__inpar__t.html#a73e9af0d681bcbb6dcff25c76b5fc03c", null ]
+];

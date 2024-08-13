@@ -1,0 +1,9 @@
+digraph "ik_cawarp_internal_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ik_cawarp_internal\l_info_t\n|+ horz_warp_enable\l+ vert_warp_enable\l+ horz_pass_grid_array\l_width\l+ horz_pass_grid_array\l_height\l+ horz_pass_horz_grid\l_spacing_exponent\l+ horz_pass_vert_grid\l_spacing_exponent\l+ vert_pass_grid_array\l_width\l+ vert_pass_grid_array\l_height\l+ vert_pass_horz_grid\l_spacing_exponent\l+ vert_pass_vert_grid\l_spacing_exponent\l+ warp_horztable_red\l+ warp_verttable_red\l+ warp_horztable_blue\l+ warp_verttable_blue\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,14 @@
+digraph "IAV IOCTL Encoder Helper"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="IAV API Helper",height=0.2,width=0.4,color="black",URL="$d8/d1e/group__iav-helper.html",tooltip="IAV IOCTL API Structs, Enumerations and Macros."];
+  Node1 [label="IAV IOCTL Encoder Helper",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="IAV IOCTL Encoder API Helper, in file iav_ioctl.h."];
+  Node4 [label="IAV IOCTL Encoder Macros\l and Enumerations",height=0.2,width=0.4,color="black",URL="$d3/de3/group__iav-ioctl-general-helper.html",tooltip="IAV IOCTL Encoder API: Macros and Enumerations."];
+  Node3 [label="IAV IOCTL Encoder Struct",height=0.2,width=0.4,color="black",URL="$d5/d90/group__iav-ioctl-general-struct.html",tooltip="IAV IOCTL Encoder Struct used in API."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

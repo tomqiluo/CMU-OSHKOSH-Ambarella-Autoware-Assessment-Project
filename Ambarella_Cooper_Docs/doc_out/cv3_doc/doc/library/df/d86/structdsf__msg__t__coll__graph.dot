@@ -1,0 +1,9 @@
+digraph "dsf_msg_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dsf_msg_t\n|+ code\l+ p_extra\l+ p1\l+ p2\l+ p3\l+ p4\l+ p64_1\l+ p64_2\l+ p64_3\l+ p64_4\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

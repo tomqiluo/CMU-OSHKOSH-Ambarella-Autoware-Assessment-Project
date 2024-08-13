@@ -1,0 +1,9 @@
+digraph "img_idsp_debug_setup"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{img_idsp_debug_setup\n|+ chan_id\l+ report_enable\l+ break_point_enable\l+ reserved0\l+ break_point_cfg_id\l+ break_point_tile_id\l+ break_point_frame_num\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

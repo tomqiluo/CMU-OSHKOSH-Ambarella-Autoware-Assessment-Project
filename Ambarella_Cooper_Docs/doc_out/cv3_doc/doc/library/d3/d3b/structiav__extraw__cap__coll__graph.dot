@@ -1,0 +1,9 @@
+digraph "iav_extraw_cap"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_extraw_cap\n|+ width\l+ height\l+ pitch\l+ seq_num\l+ dsp_pts\l+ reserved\l+ mono_pts\l+ raw_addr_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

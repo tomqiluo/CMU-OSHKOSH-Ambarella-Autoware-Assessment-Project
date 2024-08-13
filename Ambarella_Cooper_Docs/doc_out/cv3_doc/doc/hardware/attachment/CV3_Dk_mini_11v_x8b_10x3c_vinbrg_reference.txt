@@ -1,0 +1,51 @@
+vinbrg0 {
+	compatible = "ambarella,vinbrg";
+	brgrst-ios = <&gpio 156 0>;
+	bus-addr = <0x20008452>;
+	vinc-id = <0>;
+	ser-reset-ios = <0>;
+	map-ios = <2 8>;
+	ambrg,vc;
+};
+
+vinbrg1 {
+	compatible = "ambarella,vinbrg";
+	/*brgrst-ios = <&gpio 156 0>;*/
+	bus-addr = <0x30008052>;
+	vinc-id = <1>;
+	ser-reset-ios = <8>;
+	map-ios = <2 0>;
+	data-rate-mhz = <2500000000>;
+	ambrg,vc;
+};
+
+vinbrg2 {
+	compatible = "ambarella,vinbrg";
+	/*brgrst-ios = <&gpio 156 0>;*/
+	bus-addr = <0x30008052>;
+	vinc-id = <2>;
+	ser-reset-ios = <8>;
+	map-ios = <2 0>;
+	ambrg,vc;
+	data-rate-mhz = <2500000000>;
+};
+
+vinbrg3 {
+	compatible = "ambarella,vinbrg";
+	brgrst-ios = <&gpio 53 0>;
+	bus-addr = <0x30018052>;
+	vinc-id = <12>;
+	ser-reset-ios = <8>;
+	map-ios = <2 0>;
+	data-rate-mhz = <2500000000>;
+};
+
+vinbrg4 {
+	compatible = "ambarella,vinbrg";
+	brgrst-ios = <&gpio 54 0>;
+	bus-addr = <0x300180d6>;
+	vinc-id = <16>;
+	ser-reset-ios = <8>;
+	map-ios = <2 0>;
+	data-rate-mhz = <2500000000>;
+};

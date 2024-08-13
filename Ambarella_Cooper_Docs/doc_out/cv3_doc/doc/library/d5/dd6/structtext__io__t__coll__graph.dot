@@ -1,0 +1,9 @@
+digraph "text_io_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{text_io_t\n|+ mem_need_free\l+ reserved0\l+ reserved1\l+ reserved2\l+ p_str_content\l+ str_content_len\l+ line_number\l+ cur_read_line\l+ pp_line_header\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

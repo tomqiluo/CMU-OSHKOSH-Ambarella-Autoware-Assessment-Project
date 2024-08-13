@@ -1,0 +1,12 @@
+digraph "Cavalry IOCTL API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Cavalry IOCTL API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Cavalry IOCTL API, in file cavalry_ioctl.h."];
+  Node2 [label="Cavalry IOCTL API details",height=0.2,width=0.4,color="black",URL="$d9/d15/group__cavalry-ioctl-api.html",tooltip="Cavalry IOCTL API, in file cavalry_ioctl.h."];
+  Node3 [label="Cavalry IOCTL Helper",height=0.2,width=0.4,color="black",URL="$d6/d9f/group__cavalry-ioctl-helper.html",tooltip="Cavalry IOCTL API Structs, Enumerations and Macros, in file cavalry_ioctl.h."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

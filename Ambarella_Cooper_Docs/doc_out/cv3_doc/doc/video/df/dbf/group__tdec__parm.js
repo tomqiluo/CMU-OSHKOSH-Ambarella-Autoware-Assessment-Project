@@ -1,0 +1,26 @@
+var group__tdec__parm =
+[
+    [ "DEBUG_LOG_OPTION", "df/dbf/group__tdec__parm.html#gaa43330bf2d3260a45acb19a51342f98b", null ],
+    [ "DECODE_TYPE_264_OPTION", "df/dbf/group__tdec__parm.html#ga030b4947abc0ee0558ade2b255697671", null ],
+    [ "DECODE_TYPE_265_OPTION", "df/dbf/group__tdec__parm.html#ga78388a0fcab4513008dc2c30423628ac", null ],
+    [ "DIRECT_READ_OPTION", "df/dbf/group__tdec__parm.html#gaf02d149c5d7da59383706efc314960ae", null ],
+    [ "DISABLE_RUNTIME_CMD", "df/dbf/group__tdec__parm.html#ga159a93801cce7ff819415789626284d9", null ],
+    [ "DUMP_INPUT_OPTION", "df/dbf/group__tdec__parm.html#gad6a9e9f17cc873690a34363f2c272e6f", null ],
+    [ "FAST_NAVI_BACKWARD_OPTION", "df/dbf/group__tdec__parm.html#ga2480e91dc88984c70f1ae7b7c14a9a39", null ],
+    [ "FAST_NAVI_FORWARD_OPTION", "df/dbf/group__tdec__parm.html#gadb40744ede11013839e167f0c4631cf9", null ],
+    [ "FAST_NAVI_OPTION", "df/dbf/group__tdec__parm.html#ga7bdae24b8a32478a032d7f416ee7a4df", null ],
+    [ "FILE_OPTION", "df/dbf/group__tdec__parm.html#gabb4dc969f1217a8f301c9100ed554742", null ],
+    [ "FRAMERATE_DEN_OPTION", "df/dbf/group__tdec__parm.html#ga89b674edaac8d9fe786f2c8a6877f029", null ],
+    [ "GOP_M_OPTION", "df/dbf/group__tdec__parm.html#gaef437306113784678fa2144745822097", null ],
+    [ "GOP_N_OPTION", "df/dbf/group__tdec__parm.html#ga7f50108e4aa7a820f7145937fc8f7e74", null ],
+    [ "IDLE_OPTION", "df/dbf/group__tdec__parm.html#ga39ea0d7a0f6041fb6a107a550e6a51d3", null ],
+    [ "LUA_SCRIPT_OPTION", "df/dbf/group__tdec__parm.html#ga1c72e06bec08c38eb4923275a8bd0b6d", null ],
+    [ "MAX_BITRATE_OPTION", "df/dbf/group__tdec__parm.html#ga9c7793acfb8de66d2efbb16afd2f6eaa", null ],
+    [ "MAX_HEIGHT_OPTION", "df/dbf/group__tdec__parm.html#ga8db0152f265fab919ae8705a75ab7508", null ],
+    [ "MAX_WIDTH_OPTION", "df/dbf/group__tdec__parm.html#ga563105502341b29d224f3d510f5c0d26", null ],
+    [ "PREFETCH_OPTION", "df/dbf/group__tdec__parm.html#ga88836b1236e230e9d04bce2ff55bf436", null ],
+    [ "REPEAT_OPTION", "df/dbf/group__tdec__parm.html#ga99474d3a4cde0a57ae9a70b4ef3cecaa", null ],
+    [ "RESET_VOUT_OPTION", "df/dbf/group__tdec__parm.html#gac9c9f73fc656002416e86badb80cad09", null ],
+    [ "RETURN_IDLE_OPTION", "df/dbf/group__tdec__parm.html#ga38b5604aa12fc6320ba469b3fe36389c", null ],
+    [ "WATCH_LAST_PTS_OPTION", "df/dbf/group__tdec__parm.html#ga7dcbe14b843f4aa1b833501c62549457", null ]
+];

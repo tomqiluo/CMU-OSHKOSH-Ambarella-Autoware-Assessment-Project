@@ -1,0 +1,9 @@
+digraph "io_dim"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{io_dim\n|+ plane\l+ depth\l+ height\l+ width\l+ pitch\l+ bitvector\l+ is_variable\l+ is_loop_pair\l+ reserved_0\l+ dram_fmt\l+ loop_cnt\l+ reserved_2\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The io dimension description."];
+}

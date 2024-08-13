@@ -1,0 +1,16 @@
+digraph "EazyAI library API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="EazyAI library API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="EazyAI library API."];
+  Node2 [label="EazyAI library functions",height=0.2,width=0.4,color="black",URL="$da/d24/group__eazyai-api-details.html",tooltip="Definition of functions in EazyAI library."];
+  Node3 [label="EazyAI library macros,\l enumerations and structures",height=0.2,width=0.4,color="black",URL="$de/d5b/group__eazyai-api-helper.html",tooltip="Definition of macros, enumerations and structures in EazyAI library."];
+  Node4 [label="EazyAI Arm Postprocess\l library functions",height=0.2,width=0.4,color="black",URL="$d6/db5/group__eazyai__arm__postprocess-api-details.html",tooltip="EazyAI Arm Postprocess API details, in file nn_arm.h."];
+  Node5 [label="EazyAI Arm Postporcess\l structures",height=0.2,width=0.4,color="black",URL="$d9/dd3/group__eazyai__arm__postprocess-helper.html",tooltip="Definition of EazyAI Arm Postprocess library structures."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+}

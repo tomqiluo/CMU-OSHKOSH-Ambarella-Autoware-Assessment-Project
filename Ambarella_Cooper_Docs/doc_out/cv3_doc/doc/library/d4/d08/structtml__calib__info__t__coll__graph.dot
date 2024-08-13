@@ -1,0 +1,9 @@
+digraph "tml_calib_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{tml_calib_info_t\n|+ calib_raw_in\l+ active_calib_frame_num\l+ calib_raw_width\l+ calib_raw_height\l+ calib_raw_pitch\l+ calib_hds_width\l+ calib_hds_height\l+ calib_hds_pitch\l+ average\l+ calib_raw_out\l+ calib_hds_out\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

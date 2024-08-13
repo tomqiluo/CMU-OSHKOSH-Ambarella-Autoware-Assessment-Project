@@ -1,0 +1,9 @@
+digraph "sharpen_property_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sharpen_property_t\n|+ cfa_noise_level_ratio\l+ cfa_extent_regular\l_ratio\l+ both_max_change_ratio\l+ sharpen_CoringidxScale\l_ratio\l+ sharpen_fractionalBits\l+ asf_alpha_max_ratio\l+ asf_level_str_adj_str\l_ratio\l+ asf_directional_decide\l_ratio\l+ final_sharpen_fir_specify\l_ratio\l+ final_sharpen_fir_str\l_dir_ratio\l+ final_sharpen_fir_str\l_iso_ratio\l+ final_sharpen_sacle\l_coring_ratio\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of sharpeness property configuration."];
+}

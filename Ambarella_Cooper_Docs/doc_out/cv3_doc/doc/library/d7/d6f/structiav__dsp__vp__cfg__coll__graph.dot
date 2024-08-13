@@ -1,0 +1,9 @@
+digraph "iav_dsp_vp_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_dsp_vp_cfg\n|+ vp_enable\l+ reserved\l+ cmd_addr\l+ cmd_size\l+ msg_addr\l+ msg_size\l+ vp_algo_id\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

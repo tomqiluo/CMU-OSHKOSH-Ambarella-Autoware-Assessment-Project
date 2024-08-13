@@ -1,0 +1,15 @@
+digraph "ik_video_mctf_ta_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ik_video_mctf_ta_t\n|+ edge_adjust_b\l+ edge_adjust_l\l+ edge_adjust_r\l+ edge_adjust_t\l+ slow_mo_sensitivity\l+ score_noise_robust\l+ lev_adjust_low\l+ lev_adjust_low_delta\l+ lev_adjust_low_strength\l+ lev_adjust_mid_strength\l+ lev_adjust_high\l+ lev_adjust_high_delta\l+ lev_adjust_high_strength\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +y_mctf_ta" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{ik_video_mctf_ta_y_t\n|+ max\l+ min\l+ motion_response\l+ noise_base\l+ still_thresh\l|}",height=0.2,width=0.4,color="black",URL="$dc/d9f/structik__video__mctf__ta__y__t.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +cb_mctf_ta" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{ik_video_mctf_ta_cb_t\n|+ max\l+ min\l+ motion_response\l+ noise_base\l+ still_thresh\l|}",height=0.2,width=0.4,color="black",URL="$d7/d7b/structik__video__mctf__ta__cb__t.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +cr_mctf_ta" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{ik_video_mctf_ta_cr_t\n|+ max\l+ min\l+ motion_response\l+ noise_base\l+ still_thresh\l|}",height=0.2,width=0.4,color="black",URL="$db/d9a/structik__video__mctf__ta__cr__t.html",tooltip=" "];
+}

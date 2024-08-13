@@ -1,0 +1,10 @@
+digraph "Cavalry_Mem Library API details"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="Cavalry_Mem Library API",height=0.2,width=0.4,color="black",URL="$d9/d04/group__cavalry__mem-api.html",tooltip="cavalry_mem Library API, in file cavalry_mem.h"];
+  Node1 [label="Cavalry_Mem Library\l API details",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="cavalry_mem API details, in file cavalry_mem.h"];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

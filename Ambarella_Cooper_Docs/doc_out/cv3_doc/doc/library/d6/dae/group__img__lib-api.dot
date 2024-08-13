@@ -1,0 +1,14 @@
+digraph "Image Library API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="Advanced Image Library\l API details",height=0.2,width=0.4,color="black",URL="$dd/d7c/group__img__lib-adv-api-details.html",tooltip="Advanced Image Library APIs, in file img_customer_interface_arch.h."];
+  Node1 [label="Image Library API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Image Library APIs, in file img_api_arch.h and file img_customer_interface_arch.h."];
+  Node4 [label="Image Library API helper",height=0.2,width=0.4,color="black",URL="$d1/d7e/group__img__lib-helper.html",tooltip="Image Library Helper, in file img_struct_arch.h and ambas_imgproc_arch.h."];
+  Node2 [label="High level Image Library\l API details",height=0.2,width=0.4,color="black",URL="$d9/dc1/group__img__lib-high-level-api-details.html",tooltip="High level Image Library APIs, in file img_api_arch.h."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

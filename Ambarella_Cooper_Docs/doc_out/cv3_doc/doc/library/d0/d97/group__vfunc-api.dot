@@ -1,0 +1,12 @@
+digraph "VFunc Library API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="VFunc Library API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="VFunc Library API, in file vfunc.h."];
+  Node2 [label="VFunc Library API details",height=0.2,width=0.4,color="black",URL="$d7/d6d/group__vfunc-api-details.html",tooltip="VFunc API details, in file vfunc.h."];
+  Node3 [label="VFunc Library API helper",height=0.2,width=0.4,color="black",URL="$d4/d71/group__vfunc-helper.html",tooltip="VFunc Helper, in file vfunc.h."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

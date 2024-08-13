@@ -1,0 +1,9 @@
+digraph "ea_orb_extractor_params_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ea_orb_extractor_params_t\n|+ fast_cavalry_binary_path\l+ angle_cavalry_binary_path\l+ blur_cavalry_binary_path\l+ brief_cavalry_binary_path\l+ fast_patch_size\l+ orb_patch_size\l+ orb_patch_radius\l+ min_area\l+ cpu_bitmap\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

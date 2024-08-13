@@ -1,0 +1,13 @@
+digraph "prebuild/library/dewarp/dsp_v6/include"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_5e82b8365bebe8aa73c83fab74d40735 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="dsp_v6", fontname="Helvetica", fontsize="10", URL="dir_5e82b8365bebe8aa73c83fab74d40735.html"]
+  dir_d13a79b26825dda84da4e3101d14c543 [shape=box, label="include", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_d13a79b26825dda84da4e3101d14c543.html"];
+  }
+}

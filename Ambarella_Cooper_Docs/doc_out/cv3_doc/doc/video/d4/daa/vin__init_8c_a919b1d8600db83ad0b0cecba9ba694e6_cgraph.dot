@@ -1,0 +1,27 @@
+digraph "init_vin"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="init_vin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="check_source_info",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a74f50c133d1a3b813f8108315733790d",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="test_print_video_info",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a02f460511009d5f670730db8dfd585f7",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="change_fps_to_hz",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a682a6cf83fa03f28d5d665ce254f4a50",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="config_vin",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#aa59d1aba234e8a6d54c1896c62794b7f",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="set_vin_dev_info",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a5f1e74be3c1434ec49bfa23eba07ca30",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="set_vin_frame_rate",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a4a489b83ce8927f206a3d10925e547df",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="set_vin_mirror_mode",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a9287a612a332536481b2b5d5a551aedd",tooltip=" "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="config_vin_calib_data",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#ad680a2056829b349a81b7ff7b54a3451",tooltip=" "];
+}

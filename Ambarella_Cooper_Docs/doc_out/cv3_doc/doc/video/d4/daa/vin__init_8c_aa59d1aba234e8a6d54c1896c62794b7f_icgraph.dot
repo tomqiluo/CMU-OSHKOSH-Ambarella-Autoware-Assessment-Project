@@ -1,0 +1,14 @@
+digraph "config_vin"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="config_vin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="init_vin",height=0.2,width=0.4,color="black",URL="$d4/daa/vin__init_8c.html#a919b1d8600db83ad0b0cecba9ba694e6",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="do_vin_setup",height=0.2,width=0.4,color="black",URL="$d8/df2/resource__cfg_8c.html#a6e004c3ee4f8089c9a9141565057fc20",tooltip=" "];
+}

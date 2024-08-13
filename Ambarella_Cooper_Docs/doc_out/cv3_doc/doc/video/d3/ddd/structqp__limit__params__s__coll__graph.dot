@@ -1,0 +1,9 @@
+digraph "qp_limit_params_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{qp_limit_params_s\n|+ qp_min_i\l+ qp_max_i\l+ qp_min_p\l+ qp_max_p\l+ qp_min_b\l+ qp_max_b\l+ qp_min_c\l+ qp_max_c\l+ qp_min_d\l+ qp_max_d\l+ qp_min_q\l+ qp_max_q\l+ adapt_qp\l+ i_qp_reduce\l+ p_qp_reduce\l+ q_qp_reduce\l+ b_qp_reduce\l+ c_qp_reduce\l+ skip_frame\l+ skip_frame_mode\l+ log_q_num_minus_1\l+ max_skip_num\l+ max_i_size_KB\l+ qp_i_flag\l+ qp_p_flag\l+ qp_b_flag\l+ qp_c_flag\l+ qp_d_flag\l+ qp_q_flag\l+ adapt_qp_flag\l+ i_qp_reduce_flag\l+ p_qp_reduce_flag\l+ q_qp_reduce_flag\l+ b_qp_reduce_flag\l+ c_qp_reduce_flag\l+ skip_frame_flag\l+ skip_frame_mode_flag\l+ log_q_num_minus_1_flag\l+ max_i_size_KB_flag\l+ max_skip_num_flag\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

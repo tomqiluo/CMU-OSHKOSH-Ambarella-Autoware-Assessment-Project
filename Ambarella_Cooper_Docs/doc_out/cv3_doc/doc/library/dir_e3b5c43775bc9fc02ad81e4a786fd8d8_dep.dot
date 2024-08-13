@@ -1,0 +1,17 @@
+digraph "packages/video_sharing_service"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_93501a11e921083efbd154e0cdff5f10 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="packages", fontname="Helvetica", fontsize="10", URL="dir_93501a11e921083efbd154e0cdff5f10.html"]
+  subgraph clusterdir_e3b5c43775bc9fc02ad81e4a786fd8d8 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_e3b5c43775bc9fc02ad81e4a786fd8d8.html"]
+    dir_e3b5c43775bc9fc02ad81e4a786fd8d8 [shape=plaintext, label="video_sharing_service"];
+  dir_7727cf1f49bd0ccc9ca48c52f3d0c936 [shape=box, label="include", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_7727cf1f49bd0ccc9ca48c52f3d0c936.html"];
+  }
+  }
+}

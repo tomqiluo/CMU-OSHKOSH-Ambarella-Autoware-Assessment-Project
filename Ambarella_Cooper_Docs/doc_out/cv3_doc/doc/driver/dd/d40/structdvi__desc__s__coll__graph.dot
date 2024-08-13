@@ -1,0 +1,9 @@
+digraph "dvi_desc_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dvi_desc_s\n|+ dvi_id\l+ graph_node_id\l+ vproc_id\l+ dvi_ppv\l+ reserve0\l+ coproc_type\l+ reserve1\l+ dvi_img_vaddr\l+ dvi_img_size\l+ dvi_dag_vaddr\l+ input_num\l+ output_num\l+ ddi_img_size\l+ dvi_pkg_size\l+ dag_name\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

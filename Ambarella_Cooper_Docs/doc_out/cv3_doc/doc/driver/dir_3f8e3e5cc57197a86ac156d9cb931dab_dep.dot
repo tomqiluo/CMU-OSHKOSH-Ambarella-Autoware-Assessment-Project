@@ -1,0 +1,16 @@
+digraph "drv_modules"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_3f8e3e5cc57197a86ac156d9cb931dab {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_3f8e3e5cc57197a86ac156d9cb931dab.html"]
+    dir_3f8e3e5cc57197a86ac156d9cb931dab [shape=plaintext, label="drv_modules"];
+  dir_6497235554c8bcb42f125b6cc355242b [shape=box, label="private", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_6497235554c8bcb42f125b6cc355242b.html"];
+  }
+  dir_93501a11e921083efbd154e0cdff5f10 [shape=box, label="packages", style="", fillcolor="#edf0f7", color="red", URL="dir_93501a11e921083efbd154e0cdff5f10.html"];
+  dir_6497235554c8bcb42f125b6cc355242b->dir_93501a11e921083efbd154e0cdff5f10 [headlabel="1", labeldistance=1.5 headhref="dir_000015_000014.html"];
+}

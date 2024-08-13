@@ -1,0 +1,12 @@
+digraph "CGPP Library API"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="CGPP Library API",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="CGPP Library API, in file cnngen_prep.h."];
+  Node2 [label="CGPP Library API details",height=0.2,width=0.4,color="black",URL="$d3/d06/group__cgpp-api-details.html",tooltip="CGPP API details, in file cnngen_prep.h."];
+  Node3 [label="CGPP Library API helper",height=0.2,width=0.4,color="black",URL="$dc/da7/group__cgpp-helper.html",tooltip="CGPP Helper, in file cnngen_prep.h."];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

@@ -1,0 +1,9 @@
+digraph "smartrc_qp_params_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{smartrc_qp_params_t\n|+ bitrate\l+ adapt_qp\l+ I_qp_reduce\l+ P_qp_reduce\l+ Q_qp_reduce\l+ I_qp_limit_min\l+ I_qp_limit_max\l+ P_qp_limit_min\l+ P_qp_limit_max\l+ B_qp_limit_min\l+ B_qp_limit_max\l+ Q_qp_limit_min\l+ Q_qp_limit_max\l+ max_i_size_KB\l+ skip_frame_mode\l+ log_q_num_minus_1\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,9 @@
+digraph "otp_version"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{otp_version\n|+ api_ver_major\l+ api_ver_minor\l+ api_ver_patch\l+ driver_ver_major\l+ driver_ver_minor\l+ driver_ver_patch\l+ date_year\l+ date_month\l+ date_day\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

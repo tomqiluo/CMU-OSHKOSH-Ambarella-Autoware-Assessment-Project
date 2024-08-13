@@ -1,0 +1,313 @@
+	AMRTOS
+=========================
+This document describes some details about AMRTOS. It is helpful for developer to program
+some software on it.
+
+What is AMRTOS
+--------------
+AMRTOS is a lite OS in Amboot. It supports mutilple threads, mutilple cores,
+spin lock, mutex, semaphore and event mechanism. We are focusing on `arm64`
+architecture, so more and more update and effort are on `arm64`.
+
+Memory layout in AMRTOS
+-----------------------
+Understanding the memory layout is very important when programing in AMRTOS, because
+all memory is accessible in AMRTOS. Unpredictable exception will be happened if cross-access
+the memory.
+
+A = AMBOOT_BLD_RAM_START	(AMRTOS start address)
+B = KERNEL_RAM_START		(Linux kernel load address)
+D = IDSP_RAM_START		(DSP work memory)
+E = DRAM_END
+? = CONFIG_AMRTOS_WRKMEM_SIZE	(AMRTOS work memory size)
+! = MEMFWPROG_RAM_START		(Firmware Load address for burning with AMBAUSB)
+
+* All above need be configured by `make menuconfig`.
+
+#.
+    A          B          C         D               E
+    ^----------^----------^---------^---------------^
+    |  AMRTOS  |  LINUX   |   DTB   |   DSP memory  |
+    *---------- ---------- --------- ---------------*
+    |           \
+    |            \
+    |             \
+    |              \
+    ^---------------^ ----------------------------------> AMBOOT_BLD_RAM_START
+    |               |                                              |
+    |  AMRTOS text* |                                              |
+    |               |                                              |
+    * --------------* ---> bld_buf_addr                            |
+    |               |                                              |
+    |  malloc heap  |                                              |
+    |               |                                              |
+    * --------------* ---> bld_buf_end                             |
+    |     ---       |                                              |
+    * --------------* ---> log_buf                                 * ==> CONFIG_AMRTOS_WRKMEM_SIZE
+    |               |                                              |
+    | pr_log buffer |                                              |
+    |               |                                              |
+    * --------------* ---> amrtos_help_mem                         |
+    |               |                                              |
+    | rt_alloc heap |                                              |
+    |               |                                              |
+    * --------------*                                              |
+    |     ---       |                                              |
+    * --------------* ----------------------------------> AMBOOT_BLD_RAM_END
+
+#.Snapshot of bld_release.map
+....
+
+0000000000073400 B bld_buf_addr
+00000000000d3400 B bld_buf_end
+0000000000200000 d log_buf
+0000000000400000 d amrtos_heap_mem
+0000000001000000 ? bld_hugebuf_addr
+
+#.Limitation
+	a. A + CONFIG_AMRTOS_WRKMEM_SIZE < B
+	b. A + CONFIG_AMRTOS_WRKMEM_SIZE <= MEMFWPROG_RAM_START
+	c. CONFIG_AMRTOS_WRKMEM_SIZE = AMBOOT_BLD_RAM_END - AMBOOT_BLD_RAM_START
+
+Mechanism in AMRTOS
+-------------------
+
+#.Spin lock
+The spin lock is to protect some resource for exclusive access between multiple cores.
+The user application is recommended to use `mutex` mechanism, and has no necessary to
+care about it, so skip this section.
+
+#. Mutex
+To prevent race conditions between tasks, mutex is useful.
+
+	`mutex_init(mutex_t *);`		- dynamic initialization
+	`DEF_MUTEX_INITIALIZATION(mutex_t )`	- static initialization
+	`mutex_lock(mutex_t *);`		- lock. BLOCK until getting the mutex.
+	`mutex_unlock(mutex_t *);`		- unlock
+
+!!! WARNING: It can not be executed when the ARM IRQ is disabled.
+	Ex:
+		`disable_interrupts();` \    /
+		` ...`                   \  /
+		`mutex_lock(&m);`         \/
+		`...`                     /\
+		`enable_interrupts();`   /  \
+		`...`                   /    \
+
+^^^
+                  t0  t1           t2      t3
+                  ^   ^            ^       ^
+task A  ----------XXXXXXXXXXXXXXXXX--------------------------------------->
+
+task B  --------------BBBBBBBBBBBBBXXXXXXXX------------------------------->
+
+*t0: task A requests and gets mutex.
+*t1: task B requests the mutex, blocked and schedule out.
+*t2: task A releases mutex, task B gets the mutex.
+*t3: task B releases mutex.
+*X : task is running.
+*B : task is blocked.
+
+#.Event
+
+	`event_init(event_t *);`
+		- dynamic initialization
+	`DEF_EVET_INITIALIZATION(event_t);`
+		- static initialization
+	`event_wait(event_t *, u32 wait_bit, unsigned long timeout);`
+		- BLOCK to wait for 'wait_bit == set_bit'. if timeout is '0',
+		BLOCK forever until 'wait_bit == set_bit'. The unit of timeout is (1/HZ) second.
+	`event_wakeup(event_t *, u32 set_bit);`
+
+
+#. Semaphore
+	`sem_init()`
+		- initialization
+	`sem_put()`
+		- put and increase the semaphore
+	`sem_get()`
+		- get and decrease the semaphore, if semaphore is 0, be blocked here.
+
+#. Miscellaneous.
+	`gettimeus()`				- get the system time. The unit is 'us'.
+	`pr_log()`				- print the message into the log buffer.
+	`msleep()`				-
+	`wait_task_complete_by_name(name)`	-
+	`task_resume(name)`			- resume a task which is in BLOCK state.
+	`get_current()`				- get current task
+
+
+Scheduler
+---------
+#. 6 task priority level
+'0' is the highest, and '6' is for 'idle' task.
+Only `0` ~ `5` can be used for user application !!!
+
+#. 4 task state
+	TASK_STATE_DEKETE
+	TASK_STATE_BLOCK
+	TASK_STATE_READY
+	TASK_STATE_ACTIVE
+
+#. HOW-TO-DO: declare a task
+Only support static task declaration.
+
+	EX.
+		// special declaration
+		DECLARE_MT_TASK("boot_kernel",
+			DEF_TASK_AFFINITY(1) |
+			DEF_TASK_STATE(TASK_STATE_BLOCK) |
+			DEF_TASK_PRIOR(TASK_PRIOR_BOOT),
+			TASK_DEFAULT_STACK_SIZE,
+			boot_kernel_task, NULL);
+
+		- DEF_TASK_STATE(TASK_STATE_BLOCK): it is blocked when scheduler is enabled. it can be triggered to execute by
+			task_resume("boot_kernel");
+		- DEF_TASK_PRIOR(TASK_PRIOR_BOOT): priority is TASK_PRIOR_BOOT.
+		- DEF_TASK_AFFINITY(1): it only run on core0.
+		- TASK_DEFAULT_STACK_SIZE: specify the task's stack size
+		- boot_kernel_task: callee
+
+		// normal declaration
+		DECLARE_MT_TASK("game",
+			TASK_PRIOR_BOOT,
+			TASK_DEFAULT_STACK_SIZE,
+			game_boy, NULL);
+
+HOW-TO-DO: debug an exception
+-----------------------------
+
+#.Step 0: Exception message in console
+/*----- System Synchronous Exception ----*/
+
+Exception trap at CPU: 0         task: 'boot'
+x0 : 0x00000000         x1 : 0xec1700c0
+x2 : 0x5a5a5a02         x3 : 0x5a5a5a03
+x4 : 0x5a5a5a04         x5 : 0x5a5a5a05
+x6 : 0x5a5a5a06         x7 : 0x5a5a5a07
+x8 : 0x5a5a5a08         x9 : 0x5a5a5a09
+x10: 0x5a5a5a0a         x11: 0x5a5a5a0b
+x12: 0x5a5a5a0c         x13: 0x5a5a5a0d
+x14: 0x5a5a5a0e         x15: 0x5a5a5a0f
+x16: 0x00001010         x17: 0x5a5a5a11
+x18: 0x5a5a5a12         x19: 0x5a5a5a13
+x20: 0x5a5a5a14         x21: 0x5a5a5a15
+x22: 0x5a5a5a16         x23: 0x5a5a5a17
+x24: 0x5a5a5a18         x25: 0x5a5a5a19
+x26: 0x5a5a5a1a         x27: 0x5a5a5a1b
+x28: 0x5a5a5a1c         x29: 0x00fdc1f0
+x30: 0x00105dfc
+elr: 0x00105dfc
+
+* Exception PC is stored in `elr`, which is `0x00105dfc`.
+
+#. Step 1: Search the Exception function in `bld_release.dump`
+
+0000000000105ddc <boot_task>:
+  105ddc:	d2820210 	mov	x16, #0x1010                	// #4112
+  105de0:	cb3063ff 	sub	sp, sp, x16
+  105de4:	f0000380 	adrp	x0, 178000 <crc32_tab+0x3a0>
+  105de8:	a9007bfd 	stp	x29, x30, [sp]
+  105dec:	910003fd 	mov	x29, sp
+  105df0:	f945b000 	ldr	x0, [x0, #2912]
+  105df4:	b4000040 	cbz	x0, 105dfc <boot_task+0x20>
+  105df8:	94004f27 	bl	119a94 <amboot_bsp_hw_init>
+  105dfc:	d4200000 	brk	#0x0
+  105e00:	9401bb96 	bl	174c58 <boot_secondary>
+  105e04:	910043e0 	add	x0, sp, #0x10
+
+* Function name is `boot_task`, PC is executing
+  105dfc:	d4200000 	brk	#0x0
+
+
+#. Step 2: Review the source code
+static void boot_task(void *unused)
+{
+	flpart_table_t ptb;
+	u32 entry;
+
+	if (amboot_bsp_hw_init != NULL) {
+		amboot_bsp_hw_init();
+	}
+
+	__asm__ volatile("brk #0");	// Exception over here. !!!
+
+	...
+
+Suspend & Resume
+-----------------
+Amrtos can do suspend & resume ops when `CONFIG_DEVPM_SRS=y`.
+It stop the running device and save context into DDR and configure
+dram run into self-refresh state and restore context content after resume.
+
+It provide 4 suspend & resume level and at each stage there is 3 orders
+for device driver used.  it traversal DEVICE_LEVEL->SUBBUS_LEVEL->BUS_LEVEL->SYSCORE_LEVEL
+call its suspend function with the required order.
+when resume it travel SYSCORE_LEVEL->BUS_LEVEL->SUBBUS_LEVEL->DEVICE_LEVEL and call related resume
+function with required order.
+
+4 levels for system
+SYSCORE_LEVEL	: very basic like io, clock
+BUS_LEVEL	: like i2c/spi/uart/i2s/sdio/pcm/usb/ir/rng
+SUBBUS_LEVEL	: baseon bus, but act as bridge for others like pca953x i2c-io_expander is subbus
+DEVICE_LEVEL	: normal device like flash/sdcard/emmc/audiocard/ethernet
+
+3 orders for each level
+PM_SUSPEND_EARLY	: suspend early and resume late
+PM_SUSPEND_NORMAL	: suspend nomal and resume normal
+PM_SUSPEND_LATE		: suspend later and resume early
+
+HOW-TO-USE: export suspend & resume functions
+----------------------------------------------
+
+syscore level	: DEVPM_SYSCORE_EXPORT(name, order, suspend, resume)
+bus level	: DEVPM_BUS_EXPORT(name, order, suspend, resume)
+subbus level	: DEVPM_SUBBUS_EXPORT(name, order, suspend, resume)
+normal ldevel	: DEVPM_DEV_EXPORT(name, order, suspend, resume)
+
+example of syscore level suspend & resume ops
+
+#if defined(CONFIG_DEVPM_SRS)
+static void io_suspend(void)
+{
+	/* saveup all io state */
+}
+
+static void io_resume(void)
+{
+	/* io restore its state */
+}
+
+DEVPM_SYSCORE_EXPORT(io, PM_SUSPEND_LATE, io_suspend, io_resume)
+#endif
+
+
+example of device level suspend & resume ops
+
+#if defined(CONFIG_DEVPM_SRS)
+static void nand_devpm_suspend(void)
+{
+	irq_disable(FIO_IRQ);
+}
+
+static void nand_devpm_resume(void)
+{
+	u32 id = 0, id5 = 0;
+
+	nand_init_hw();
+	writel(FIO_INT_ENABLE_REG, FIO_INT_OPERATION_DONE
+			| FIO_INT_SND_LOOP_TIMEOUT
+			| FIO_INT_ECC_RPT_UNCORR
+			| FIO_INT_ECC_RPT_THRESH);
+
+	request_irq(FIO_IRQ, IRQ_LEVEL_HIGH, nand_fio_irq_handler, NULL, "FIO");
+	nand_reset_device();
+	nand_read_id(&id, &id5);
+	BUG_ON(id == 0, "NAND chip absence?\n");
+	(void)id5;
+	nand_set_device_config(nand_db);
+	nand_set_timing(&flnand, nand_db);
+}
+
+DEVPM_DEV_EXPORT(nand, PM_SUSPEND_NORMAL, nand_devpm_suspend, nand_devpm_resume);
+#endif

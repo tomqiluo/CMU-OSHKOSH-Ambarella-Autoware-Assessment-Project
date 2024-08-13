@@ -1,0 +1,9 @@
+digraph "awb_lut_unit_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{awb_lut_unit_t\n|+ gr_min\l+ gr_max\l+ gb_min\l+ gb_max\l+ y_a_min_slope\l+ y_a_min\l+ y_a_max_slope\l+ y_a_max\l+ y_b_min_slope\l+ y_b_min\l+ y_b_max_slope\l+ y_b_max\l+ weight\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

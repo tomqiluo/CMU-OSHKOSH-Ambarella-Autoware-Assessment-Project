@@ -1,0 +1,43 @@
+        Boot CortexM3
+=================================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+
+=================================================
+
+
+Table of Contents
++++++++++++++++++
+
+  I - Introduction
+  II - Build Options
+  III - NOTE
+
+
+
+I - Introduction
+------------------
+
+CV72 Soc has cortex-M3 inside and can be used as mcu on chip.
+Cortex-M3 default boot from secureSRAM and CPU(like CV72) must
+prepare and load the CM3 code into SRAM and then release CM3 to run.
+
+
+II - Build Options
+------------------
+
+There is one option in menuconfig can be selected when building Amboot.
+			Ambarella Boot Configuration  --->
+				Cortex-M3 Configuration  --->
+					[*] BOOT Cortex-M3
+					(0xffe0040000) Cortex-M3 Boot Address (NEW)
+					(1) Cortex-M3 Log Console (NEW)
+
+III - Note
+------------------
+1. CV72_EVK use UART1 as CM3 log console.  console configured as 115200 8 n 1
+2. The default boot address is 0xffe0040000. don't change if not sure
+3. Build and flash the firmware, you can check the CM3 console log. [amboot auto load and boot cm3]
+4. CM3 cross-compiler is gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 installed under /usr/local
+   check CM3_CROSS in sdk/ambarella/boot/cm3/Makefile for detaile
+   Toolchain can download from https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-aarch64-linux.tar.bz2

@@ -1,0 +1,159 @@
+                RECOVERY
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+
+I - Introduction
+----------------
+
+RECOVERY is used to restore the whole system into factory setting when the system
+is broken. As RECOVERY will always use BAK parition to store the backup data, BAK
+partition is reserved and dedicated for RECOVERY usage.
+
+In general, as long as BST and BAK partitions are not broken, everything can be
+recovered.
+
+
+
+II - Build
+----------
+
+1) modify AMBOOT_BAK_SIZE in $BOARD/bsp/bsp.h to proper size which depends on how
+   much data you want to back up.
+2) set gpio for recovery usage in the related ini file.
+   Format as this: (For example, use gpio 135 to recovery notification)
+   <RECOVERY_GPIO value="135"/>
+3) make menuconfig:
+      [*] Ambarella Firmware Configuration  --->
+             AMBoot (boot loader)  --->
+                [*] Build Recovery Firmware Images
+                    Persistent BIOS App Partition  --->
+                        [ ] Build PBA to Recovery Image
+                    Primary Partition  --->
+                        [*] Build Kernel to Recovery Image
+                        [ ]   Build Compressed Recovery Firmware Images
+                    ......
+4) selelect  "[*]   Build Compressed Recovery Firmware Images" to compress backup
+   partition.
+5) make
+
+PS:
+a) When building is done, you will see xxx_backup_xxx.bin in out/$BOARD/images.
+b) BST, BLD, ATF(if exist) and DTB will be always built into "backup" image, but
+   others can be selected by make menuconfig.
+
+
+
+III - Usage
+-----------
+
+0) enter into Amboot
+1) show recovery - show recovery image header.
+2) recovery [PARTITION] - Restore paritions as specified to factory setting.
+3) example for recover bld and pri
+   3.1) recover bld:
+        amboot> recovery bld
+        load recovery firmware from backup partition ...
+
+        restore bld ...
+
+        bld code found in bakfw
+                crc32:          0x1c36f3e5
+                ver_num:        3.7
+                ver_date:       2018/12/26
+                img_len:        232248
+                mem_addr:       0x01000000
+                flag:           0x00000000
+                magic:          0xa324eb90
+        verifying image crc ... done
+        program bld into NAND
+        progress: 100%
+        program ok
+
+   3.2) recover pri without "Build Compressed Recovery Firmware Images"
+        amboot> recovery pri
+        load recovery firmware from backup partition ...
+
+        restore pri ...
+
+        pri code found in bakfw
+                crc32:          0x37d0609c
+                ver_num:        3.7
+                ver_date:       2018/12/27
+                img_len:        7501832
+                mem_addr:       0x01280000
+                flag:           0x00000000
+                magic:          0xa324eb90
+        verifying image crc ... done
+        program pri into NAND
+        progress: 100%
+        program ok
+
+   3.3) recover pri with "Build Compressed Recovery Firmware Images"
+        amboot> recovery pri
+        load recovery firmware from backup partition ...
+
+        restore pri ...
+
+        pri code found in bakfw
+                crc32:          0x4971d1fa
+                ver_num:        3.7
+                ver_date:       2018/12/26
+                img_len:        4768551
+                mem_addr:       0x01280000
+                flag:           0x00000000
+                magic:          0xa324eb90
+        verifying image crc ... done
+        decompress......done            [note: here is decompress .... for this partition]
+        verifying image crc ... done
+        program pri into NAND
+        progress: 100%
+        program ok
+
+
+
+
+
+IV - PTB Recovery
+------------------
+
+PTB partition contains ptb and dtb, but ptb content has strong relationship with
+the burned images, so we will only recover dtb when recovering PTB, i.e., type
+"recovery ptb" in Amboot.
+
+If you also want to recover the whole PTB parition including ptb content, you have
+to recover the whole system, i.e., type "recovery all" in Amboot.
+
+
+
+V - Boot with backup BLD
+-------------------------
+
+BLD may be broken, or a problematic BLD may be burned, then you should use the
+backup BLD instead in this case. There are two ways to enter into the backup BLD:
+1) pull high on setting RECOVERY_GPIO, and then hardware reboot, or
+2) enter into Amboot and type "reboot recovery"
+
+PS:
+a) This feature is only available on S5L currently.
+b) You will see the string "RECOVERY" at the end of AMBOOT logo.
+
+
+
+VI - Recovery Firmware Structure
+---------------------------------
+Backup partition contain the following partitions base on your selection;
+header, dtb, BST, BLD are always in backup area
++----------------------------------------------------------------------+
+|        |     |     |     |     |     |     |     |     |     |       |
+| header | dtb | BST | BLD | ATF | PBA | PRI | SEC | RMD | ROM | ......|
+|        |     |     |     |     |     |     |     |     |     |       |
++----------------------------------------------------------------------+
+
+Heaer is fixed with 512 Bytes, please see src/bld/header.S for details.
+

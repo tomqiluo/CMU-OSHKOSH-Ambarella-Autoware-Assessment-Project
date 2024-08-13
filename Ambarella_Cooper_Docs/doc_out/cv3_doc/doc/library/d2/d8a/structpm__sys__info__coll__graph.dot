@@ -1,0 +1,15 @@
+digraph "pm_sys_info"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{pm_sys_info\n|+ channel_num\l+ enc_mode\l+ canvas_num\l+ reserved\l+ pm_domain_size\l+ main_domain_size\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +canvas" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{iav_canvas_cfg\n|+ canvas_id\l+ extra_dram_buf\l+ vout_id\l+ vout_YUV422\l+ manual_feed\l+ feed_frame_num\l+ enc_dummy_latency\l+ disable_yuv_dram\l+ set_min_unlocked_buf_num\l+ enable_frame_tag\l+ zero_fps\l+ fps_locked_enable\l+ ext_mem\l+ blend_stitch_type\l+ clear_background\l+ buf_offset_enable\l+ blur_enable\l+ max_blur_area_num\l+ frame_rate\l+ cached_items\l+ min_unlocked_buf_num\l+ blend_copy_num_minus_1\l+ vout_back_pressure\l_margin\l+ blend_warp_enable\l+ disable_me_dram\l+ enc_extra_padding_enable\l+ hevc_width_align_enable\l+ low_delay_enable\l+ reserved0\l+ type\l+ max\l+ frame_rate_hp\l+ blend_stitch_circular\l_margin\l+ reserved1\l+ reserved2\l|}",height=0.2,width=0.4,color="black",URL="$dd/d01/structiav__canvas__cfg.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +frame_tag" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{iav_frame_tag\n|+ value\l+ mask\l|}",height=0.2,width=0.4,color="black",URL="$d6/db0/structiav__frame__tag.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +mask_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{iav_privacy_mask_info\n|+ channel_id\l+ multi_factor\l+ buffer_width\l+ buffer_height\l+ buffer_pitch\l|}",height=0.2,width=0.4,color="black",URL="$dc/dfa/structiav__privacy__mask__info.html",tooltip=" "];
+}

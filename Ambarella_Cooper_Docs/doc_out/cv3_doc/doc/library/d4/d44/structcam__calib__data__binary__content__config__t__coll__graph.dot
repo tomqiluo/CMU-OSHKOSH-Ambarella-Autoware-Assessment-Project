@@ -1,0 +1,11 @@
+digraph "cam_calib_data_binary_content_config_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cam_calib_data_binary\l_content_config_t\n|+ thermal_method\l+ reserved_bits\l+ global_offset\l+ themal_flop\l+ p_wiggling_table_addr\l_offset\l+ perpixel_num\l+ p_perpixel_table_addr\l_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +p_wiggling_header" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{wiggling_lut_header_t\n|+ reserved_bits\l+ populated_from_mem\l+ include_v_end\l+ interp_type\l+ v_in_base\l+ v_in_step\l+ v_in_num\l|}",height=0.2,width=0.4,color="black",URL="$d2/daf/structwiggling__lut__header__t.html",tooltip=" "];
+}

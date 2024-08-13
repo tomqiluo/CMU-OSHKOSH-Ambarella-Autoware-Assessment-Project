@@ -1,0 +1,9 @@
+digraph "bw_cfg_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{bw_cfg_t\n|+ with_abs\l+ bw_threshold\l+ compare_method\l+ black_value\l+ white_value\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The configuration of image binarization."];
+}

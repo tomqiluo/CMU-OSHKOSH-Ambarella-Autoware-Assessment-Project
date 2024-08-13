@@ -1,0 +1,18 @@
+digraph "vin_sht_agc_gp_info"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_sht_agc_gp_info\n|+ update_flag\l+ @21\l+ shutter\l+ again\l+ linear_update_flag\l+ @23\l+ wait_sof\l+ kthread\l+ wake_flag\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +again_gp\n+dgain_gp\n+rhs_gp\n+shutter_gp" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{vindev_wdr_gp_s\n|+ vsrc_id\l+ vsrc_ctx\l+ l\l+ s1\l+ s2\l+ s3\l+ s1_offset\l+ s2_offset\l|}",height=0.2,width=0.4,color="black",URL="/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/out/doc_out/cv3_doc/doc/library/library.tag$df/d81/structvindev__wdr__gp__s",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +wdr_cfg_array" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{vin_wdr_cfg_array_s\n|+ update_flag\l+ cur_idx\l|}",height=0.2,width=0.4,color="black",URL="$d4/d82/structvin__wdr__cfg__array__s.html",tooltip=" "];
+  Node2 -> Node3 [color="grey25",fontsize="10",style="solid",label=" +again_gps\n+dgain_gps\n+rhs_gps\n+shutter_gps" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +linear_cfg_array" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{vin_linear_cfg_array_s\n|+ shutters\l+ agains\l+ update_flag\l+ cur_idx\l|}",height=0.2,width=0.4,color="black",URL="$d9/d29/structvin__linear__cfg__array__s.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +apply_sht_agc_ctx" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{vin_apply_sht_agc\n|+ kthread\l+ is_sht_agc_applying\l+ sht_agc_wq\l|}",height=0.2,width=0.4,color="black",URL="$d1/d5e/structvin__apply__sht__agc.html",tooltip=" "];
+}

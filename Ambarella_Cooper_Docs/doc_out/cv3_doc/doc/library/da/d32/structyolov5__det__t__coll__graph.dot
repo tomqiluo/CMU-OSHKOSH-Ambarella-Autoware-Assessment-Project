@@ -1,0 +1,9 @@
+digraph "yolov5_det_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{yolov5_det_t\n|+ score\l+ id\l+ label\l+ x_start\l+ y_start\l+ x_end\l+ y_end\l+ depth_mm\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

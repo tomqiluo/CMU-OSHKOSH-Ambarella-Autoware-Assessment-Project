@@ -1,0 +1,9 @@
+digraph "iav_dsp_boot_params"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_dsp_boot_params\n|+ debug_chip_id_flag\l+ vout_osd_rescale_flag\l+ vout_possible_map_flag\l+ reserved0\l+ debug_chip_id\l+ vout_osd_rescale_disable\l+ vout_possible_map\l+ reserved1\l+ reserved2\l+ reserved3\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

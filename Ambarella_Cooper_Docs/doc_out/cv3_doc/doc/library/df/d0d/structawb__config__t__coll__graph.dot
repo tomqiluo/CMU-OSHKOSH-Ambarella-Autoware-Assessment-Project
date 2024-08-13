@@ -1,0 +1,22 @@
+digraph "awb_config_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{awb_config_t\n|+ awb_pre_ratio\l+ pre_awb_log_level\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +api_awb_stuff" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{api_awb_stuff_t\n|+ awb_enable\l+ awb_env\l+ awb_mode\l+ awb_method\l+ awb_failure_remedy\l+ awb_speed\l+ awb_roi\l|}",height=0.2,width=0.4,color="black",URL="$d5/d21/structapi__awb__stuff__t.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +cus_gain" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{wb_gain_t\n|+ r_gain\l+ g_gain\l+ b_gain\l|}",height=0.2,width=0.4,color="black",URL="$df/d9f/structwb__gain__t.html",tooltip="Description of wb_gain."];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +awb_cali_info" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{awb_cali_info_t\n|+ awb_cali_thre_r\l+ awb_cali_thre_b\l|}",height=0.2,width=0.4,color="black",URL="$d8/d19/structawb__cali__info__t.html",tooltip="Description of AWB calibration information."];
+  Node3 -> Node4 [color="grey25",fontsize="10",style="solid",label=" +awb_cali_shift_org\l_gain\n+awb_cali_shift\l_ref_gain" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +pre_awb_calib_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{img_wb_calib_stuff_t\n|+ num\l|}",height=0.2,width=0.4,color="black",URL="$da/db0/structimg__wb__calib__stuff__t.html",tooltip=" "];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +pre_awb_calib_data" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{img_wb_calib_data\n|+ ct\l|}",height=0.2,width=0.4,color="black",URL="$de/da1/structimg__wb__calib__data.html",tooltip=" "];
+  Node3 -> Node6 [color="grey25",fontsize="10",style="solid",label=" +pre_awb_ratio" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +awb_pre_init_point" ,arrowhead="odiamond",fontname="Helvetica"];
+}

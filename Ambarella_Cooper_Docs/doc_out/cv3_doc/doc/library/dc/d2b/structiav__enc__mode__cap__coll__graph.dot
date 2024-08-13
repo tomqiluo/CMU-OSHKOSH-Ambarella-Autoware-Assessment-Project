@@ -1,0 +1,9 @@
+digraph "iav_enc_mode_cap"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_enc_mode_cap\n|+ encode_mode\l+ max_streams_num\l+ reserved0\l+ max_encode_MB\l+ max_h26x_encode_MB\l+ raw_cap_possible\l+ lens_warp_possible\l+ iso_type_possible\l+ enc_raw_rgb_possible\l+ high_mp_possible\l+ linear_possible\l+ hdr_2x_possible\l+ hdr_3x_possible\l+ wcr_possible\l+ me0_possible\l+ enc_from_mem_possible\l+ enc_raw_yuv_possible\l+ ce_possible\l+ stitch_hor_possible\l+ stitch_ver_possible\l+ eis_delay_cnt_possible\l+ dvr_possible\l+ vwarp_wait_lines_possible\l+ multi_pass_possible\l+ chan_rotate_possible\l+ multi_yuv_input_possible\l+ canvas_manual_feed\l_possible\l+ raw_manual_feed_possible\l+ reserved_possible\l+ min_main\l+ max_main\l+ min_enc\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

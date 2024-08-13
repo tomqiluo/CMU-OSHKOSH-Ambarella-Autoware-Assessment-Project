@@ -1,0 +1,9 @@
+digraph "amba_hdmi_video_timing_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{amba_hdmi_video_timing_t\n|+ vmode\l+ name\l+ pixel_clock\l+ hsync_offset\l+ hsync_width\l+ h_blanking\l+ h_active\l+ vsync_offset\l+ vsync_width\l+ v_blanking\l+ v_active\l+ interlace\l+ hsync_polarity\l+ vsync_polarity\l+ pixel_repetition\l+ aspect_ratio\l+ colorimetry\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

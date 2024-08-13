@@ -1,0 +1,9 @@
+digraph "fbm_config_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fbm_config_s\n|+ maxspecklesize\l+ maxspecklediff\l+ sad_win_size\l+ sad_thresh\l+ uniqueratio\l+ texture_threshold\l+ fbm_baseline\l+ lens_focal_len\l+ stereo_ref_dist\l+ disparity_num\l+ min_disparity\l+ detect_near_depth\l+ detect_far_depth\l+ prefilter_type\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

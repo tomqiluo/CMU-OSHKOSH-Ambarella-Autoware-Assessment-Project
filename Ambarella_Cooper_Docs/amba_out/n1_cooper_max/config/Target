@@ -1,0 +1,830 @@
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/access_control:	acc-ctrl-test:	board generic-header ambvideo-header libutils libeazyai libeazyai-utils libeazyai-comm prebuild-opencv ambcavalry-header libcavalrymem libnnctrl libvproc prebuild-dewarp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/ai_cam/cvflow:	cvflow-test:	board generic-header ambvideo-header ambcavalry-header libcavalrymem libnnctrl libvproc libsmartfb prebuild-freetype prebuild-libarmcompute prebuild-cavalry-opt-layers libcnngenprep libeazyai libeazyai-utils libeazyai-arm-postprocess prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/aibox/multi_dec_vca:	multidec-vca:	generic-header ambvideo-header ambcavalry-header liblwmedia libcavalrymem libvproc libnnctrl prebuild-cyclonedds prebuild-zlib prebuild-openssl prebuild-iceoryx-binding-c prebuild-iceoryx-posh prebuild-iceoryx-utils prebuild-acl prebuild-attr
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/amba_scripts:	amba-scripts:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/ddrc_tool/dsp_v6:	ddrc-tool:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/dng_tool:	dng-tool:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/dsp/dsp_monitor_service/dsp_v6:	dsp-monitor-service:	board generic-header ambvideo-header prebuild-dsp-monitor
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/dsp/dsplog_cap:	dsplog-cap:	generic-header ambvideo-header libdatatx
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/dsp/load_ucode/dsp_v6:	load-ucode:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/jpg_enc:	jpg-enc-utils:	generic-header ambvideo-header libdatatx prebuild-libjpeg-turbo libtextinsert
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/mfn_db_tool:	mfn-db-tool:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/upgrade_partition/app:	upgrade-partition:	board generic-header libfdt
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/upgrade_partition/libfdt:	libfdt:	generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/video_conference/bytetrack:	test-bytetrack-vc:	board generic-header libeazyai libeazyai-utils prebuild-eigen libsmr
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/video_conference/stitch_multi_roi_combine:	stitch-multi-roi-combine:	libsmr board generic-header ambvideo-header libiav-efm libeazyai libeazyai-utils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/video_conference/stitch_multi_roi_combine:	libsmr:	board generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boards:	board:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boards/n1_cooper_max/rootfs:	board-rootfs:	board skeleton busybox-sysvinit prebuild-systemd
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk:	ambfw:	rootfs amboot uboot backup-cpio
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk:	amboot:	rootfs backup-cpio
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk:	uboot:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk:	ambust:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk:	cm3:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/tee/ambamk:	arm-tf:	boot-security optee-os
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/tee/ambamk:	optee-os:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/tee/ambamk:	optee-test:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/tee/ambamk:	optee-client:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/firmware/cavalry:	firmware-cavalry:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/firmware/dsp/dsp_v6:	firmware-dsp:	board generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/bootstat:	kernel-module-bootstat:	linux
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/debug:	kernel-module-ambad:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/dram_statis:	kernel-module-ambdram-statis:	linux
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/dsplog:	kernel-module-dsplog:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/eis:	kernel-module-eis-mc:	linux ambeis-header generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/eis:	ambeis-header:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/bmi270:	kernel-module-bmi270:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/icm20648:	kernel-module-icm20648:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/icm20648_spi:	kernel-module-icm20648-spi:	linux generic-header ambvideo-header ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/icm40608:	kernel-module-icm40608:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/icm42605:	kernel-module-icm42605:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/icm42670:	kernel-module-icm42670:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/lsm6dsr:	kernel-module-lsm6dsr:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/gyro/mpu9250:	kernel-module-mpu9250:	linux generic-header ambvideo-header kernel-module-ambvideo ambeis-header kernel-module-eis-mc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/imuc:	kernel-module-imuc:	linux
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/kmsg:	kernel-module-kmsg:	linux generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/led/lm3643:	kernel-module-lm3643:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/ambrg:	kernel-module-ambrg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-vin-vout-monitor
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/b5:	kernel-module-b5:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/b6:	kernel-module-b6:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/b8:	kernel-module-b8:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/maxim_9286:	kernel-module-max9286:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/maxim_9288:	kernel-module-max9288:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/maxim_9296:	kernel-module-max9296:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/maxim_96712:	kernel-module-max96712:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/maxim_96716:	kernel-module-max96716:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/nextchip_n4:	kernel-module-n4:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/techpoint_tp2855:	kernel-module-tp2855:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/ti_ds90ub954:	kernel-module-ds90ub954:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/bridges/ti_ds90ub964:	kernel-module-ds90ub964:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/adv7441a:	kernel-module-adv7441a:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/ambdd:	kernel-module-ambdd:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/lt6911:	kernel-module-lt6911:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/lt6911uxc:	kernel-module-lt6911uxc:	kernel-module-ambvideo linux
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/pr2000:	kernel-module-pr2000:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/decoders/tc358840:	kernel-module-tc358840:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/altera_fpga:	kernel-module-fpga:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/ambds:	kernel-module-ambds:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/ambds_brg:	kernel-module-ambds-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/b5_ar0230:	kernel-module-b5-ar0230:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/b5_ar0237:	kernel-module-b5-ar0237:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/b5_imx274:	kernel-module-b5-imx274:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/b5_imx290:	kernel-module-b5-imx290:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/brillnics_brv0200_mipi:	kernel-module-brv0200-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/brillnics_brv0500_mipi:	kernel-module-brv0500-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/cista_c2390_mipi:	kernel-module-c2390-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/cista_c2390_parallel:	kernel-module-c2390_parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc13a2:	kernel-module-gc13a2-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc2093:	kernel-module-gc2093-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc2145:	kernel-module-gc2145-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc2385:	kernel-module-gc2385-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc4663:	kernel-module-gc4663-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/galaxycore_gc8034:	kernel-module-gc8034:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/himax_hm2140:	kernel-module-hm2140:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/himax_hm5532:	kernel-module-hm5532:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0130:	kernel-module-ar0130:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0141:	kernel-module-ar0141:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0230:	kernel-module-ar0230:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0230_brg:	kernel-module-ar0230-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0230_parallel:	kernel-module-ar0230-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_ar0331:	kernel-module-ar0331:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_mt9t002:	kernel-module-mt9t002:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_mt9t002_mipi:	kernel-module-mt9t002-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/micron_mt9t002_parallel:	kernel-module-mt9t002-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_og01a1b:	kernel-module-og01a1b:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02a1q:	kernel-module-os02a1q:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02c10:	kernel-module-os02c10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02f10:	kernel-module-os02f10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02h10:	kernel-module-os02h10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02h10_mipi_brg:	kernel-module-os02h10-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os02k10:	kernel-module-os02k10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os04a10:	kernel-module-os04a10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os04c10_mipi:	kernel-module-os04c10-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os04e10_mipi:	kernel-module-os04e10-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os05a10:	kernel-module-os05a10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os05a10_mipi_brg:	kernel-module-os05a10-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os05b10:	kernel-module-os05b10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os08a10:	kernel-module-os08a10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os08a10_mipi_brg:	kernel-module-os08a10-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_os08b10:	kernel-module-os08b10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov02k10:	kernel-module-ov02k10:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov10640_brg:	kernel-module-ov10640-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov10823:	kernel-module-ov10823:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2311_mipi:	kernel-module-ov2311-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2311_mipi_brg:	kernel-module-ov2311-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2710_parallel:	kernel-module-ov2710-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2718_mipi:	kernel-module-ov2718-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2718_mipi_brg:	kernel-module-ov2718-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2718_parallel_brg:	kernel-module-ov2718-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2732_mipi:	kernel-module-ov2732-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2732_parallel:	kernel-module-ov2732-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2735_mipi:	kernel-module-ov2735-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2735_parallel:	kernel-module-ov2735-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2736_mipi:	kernel-module-ov2736-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2770_mipi:	kernel-module-ov2770-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2775_mipi:	kernel-module-ov2775-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2775_mipi_brg:	kernel-module-ov2775-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2778_mipi:	kernel-module-ov2778-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2778_mipi_brg:	kernel-module-ov2778-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov2778_parallel_brg:	kernel-module-ov2778-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov4689_mipi:	kernel-module-ov4689-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov5653:	kernel-module-ov5653:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov5658_mipi:	kernel-module-ov5658-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov7251_mipi:	kernel-module-ov7251-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov8856_mipi:	kernel-module-ov8856-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9281:	kernel-module-ov9281:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9281_brg:	kernel-module-ov9281-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9284_brg:	kernel-module-ov9284-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9284_mipi_brg:	kernel-module-ov9284-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9706_parallel_brg:	kernel-module-ov9706-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9710:	kernel-module-ov9710:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9718_mipi:	kernel-module-ov9718-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9732_mipi:	kernel-module-ov9732-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9732_parallel:	kernel-module-ov9732-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9750_mipi:	kernel-module-ov9750-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9750_parallel:	kernel-module-ov9750-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ov9755_mipi:	kernel-module-ov9755-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ovm7690_parallel:	kernel-module-ovm7690-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox01a10_mipi:	kernel-module-ox01a10-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox03c10_mipi:	kernel-module-ox03c10-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox03c10_mipi_brg:	kernel-module-ox03c10-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox03f10_mipi_brg:	kernel-module-ox03f10-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox05b1s_mipi:	kernel-module-ox05b1s-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox05b1s_mipi_brg:	kernel-module-ox05b1s-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox08b40_mipi:	kernel-module-ox08b40-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox08b40_mipi_brg:	kernel-module-ox08b40-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox08c4c_mipi_brg:	kernel-module-ox08c4c-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/omnivision_ox08d10_mipi:	kernel-module-ox08d10-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0132_parallel:	kernel-module-ar0132-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0132_parallel_brg:	kernel-module-ar0132-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0135_parallel_brg:	kernel-module-ar0135-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0138_mipi:	kernel-module-ar0138-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0143_parallel:	kernel-module-ar0143-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0144_mipi:	kernel-module-ar0144-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0144_mipi_brg:	kernel-module-ar0144-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0144_parallel:	kernel-module-ar0144-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0144_parallel_brg:	kernel-module-ar0144-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0147_mipi:	kernel-module-ar0147-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0147_mipi_brg:	kernel-module-ar0147-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0147_parallel_brg:	kernel-module-ar0147-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0220_mipi:	kernel-module-ar0220-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0220_mipi_brg:	kernel-module-ar0220-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0221_mipi:	kernel-module-ar0221-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0231_mipi:	kernel-module-ar0231-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0231_mipi_brg:	kernel-module-ar0231-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0231_parallel:	kernel-module-ar0231-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0231_parallel_brg:	kernel-module-ar0231-parallel-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0233_mipi:	kernel-module-ar0233-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0233_mipi_brg:	kernel-module-ar0233-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0234_mipi:	kernel-module-ar0234-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0234_mipi_brg:	kernel-module-ar0234-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0237:	kernel-module-ar0237:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0237_brg:	kernel-module-ar0237-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0237_parallel:	kernel-module-ar0237-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0239:	kernel-module-ar0239:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0239_mipi:	kernel-module-ar0239-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0239_mipi_brg:	kernel-module-ar0239-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0323_mipi:	kernel-module-ar0323-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0323_mipi_brg:	kernel-module-ar0323-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0341_mipi_brg:	kernel-module-ar0341-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0431_mipi:	kernel-module-ar0431-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0432_mipi:	kernel-module-ar0432-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0521:	kernel-module-ar0521:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0521_mipi:	kernel-module-ar0521-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0820_mipi_brg:	kernel-module-ar0820-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0822_mipi:	kernel-module-ar0822-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0822_mipi_brg:	kernel-module-ar0822-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar0830_mipi:	kernel-module-ar0830-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_ar2020_mipi:	kernel-module-ar2020-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/onsemi_xgs12000_mipi:	kernel-module-xgs12000-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34041pl:	kernel-module-mn34041pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34210pl:	kernel-module-mn34210pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34220pl:	kernel-module-mn34220pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34227pl:	kernel-module-mn34227pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34420pl:	kernel-module-mn34420pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34422pl:	kernel-module-mn34422pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/panasonic_mn34424pl:	kernel-module-mn34424pl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/primesensor_ps5250:	kernel-module-ps5250:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/primesensor_ps5270:	kernel-module-ps5270:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/samsung_s5k1h1_mipi_brg:	kernel-module-s5k1h1-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc130gs_mipi:	kernel-module-sc130gs-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc200ai_mipi:	kernel-module-sc200ai-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc2135_parallel:	kernel-module-sc2135-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc2235_parallel:	kernel-module-sc2235-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc230ai_mipi:	kernel-module-sc230ai-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc2310_mipi:	kernel-module-sc2310-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc2315_mipi:	kernel-module-sc2315-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc2332_mipi:	kernel-module-sc2332-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc301iot_mipi:	kernel-module-sc301iot-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc410gs:	kernel-module-sc410gs:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc4210_mipi:	kernel-module-sc4210-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc500ai_mipi:	kernel-module-sc500ai-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc5238_mipi:	kernel-module-sc5238-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc5300_mipi:	kernel-module-sc5300-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc530ai_mipi:	kernel-module-sc530ai-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc533at_mipi:	kernel-module-sc533at-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc533at_mipi_brg:	kernel-module-sc533at-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc630ai_mipi:	kernel-module-sc630ai-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc8235_mipi:	kernel-module-sc8235-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/smartsens_sc850sl_mipi:	kernel-module-sc850sl-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f22_mipi:	kernel-module-jx-f22-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f23_mipi:	kernel-module-jx-f23-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f32_mipi:	kernel-module-jx-f32-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f35_mipi:	kernel-module-jx-f35-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f53_mipi:	kernel-module-jx-f53-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_k02_mipi:	kernel-module-jx-k02-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_k308_mipi:	kernel-module-jx-k308-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_k351_mipi:	kernel-module-jx-k351-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx104:	kernel-module-imx104:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx117:	kernel-module-imx117:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx122:	kernel-module-imx122:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx123:	kernel-module-imx123:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx123_mipi:	kernel-module-imx123-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx124:	kernel-module-imx124:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx136:	kernel-module-imx136:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx136_parallel:	kernel-module-imx136-parallel:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx172:	kernel-module-imx172:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx174:	kernel-module-imx174:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx178:	kernel-module-imx178:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx183:	kernel-module-imx183:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx185:	kernel-module-imx185:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx185_mipi:	kernel-module-imx185-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx185_plvds:	kernel-module-imx185-plvds:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx224:	kernel-module-imx224:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx224_mipi:	kernel-module-imx224-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx226:	kernel-module-imx226:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx250:	kernel-module-imx250:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx264:	kernel-module-imx264:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx265:	kernel-module-imx265:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx274:	kernel-module-imx274:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx274_mipi:	kernel-module-imx274-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx274_mipi_brg:	kernel-module-imx274-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx277:	kernel-module-imx277:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx290:	kernel-module-imx290:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx290_brg:	kernel-module-imx290-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx290_mipi:	kernel-module-imx290-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx290_mipi_brg:	kernel-module-imx290-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx291:	kernel-module-imx291:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx291_mipi:	kernel-module-imx291-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx296_mipi:	kernel-module-imx296-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx296_mipi_brg:	kernel-module-imx296-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx299_mipi:	kernel-module-imx299-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx305:	kernel-module-imx305:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx307:	kernel-module-imx307:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx307_mipi:	kernel-module-imx307-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx307_mipi_brg:	kernel-module-imx307-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx322:	kernel-module-imx322:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx326:	kernel-module-imx326:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx326_mipi:	kernel-module-imx326-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx327:	kernel-module-imx327:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx327_mipi:	kernel-module-imx327-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx327_mipi_brg:	kernel-module-imx327-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx334_mipi:	kernel-module-imx334-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx335_mipi:	kernel-module-imx335-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx335_mipi_brg:	kernel-module-imx335-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx347_mipi:	kernel-module-imx347-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx377_mipi:	kernel-module-imx377-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx385:	kernel-module-imx385:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx385_mipi:	kernel-module-imx385-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx390_mipi:	kernel-module-imx390-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx390_mipi_brg:	kernel-module-imx390-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx408_mipi:	kernel-module-imx408-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx412_mipi:	kernel-module-imx412-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx415_mipi:	kernel-module-imx415-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx415_mipi_brg:	kernel-module-imx415-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx422:	kernel-module-imx422:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx424_mipi_brg:	kernel-module-imx424-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx455:	kernel-module-imx455:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx462_mipi:	kernel-module-imx462-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx462_mipi_brg:	kernel-module-imx462-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx464_mipi:	kernel-module-imx464-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx485_mipi:	kernel-module-imx485-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx490_mipi_brg:	kernel-module-imx490-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx492:	kernel-module-imx492:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx515_mipi:	kernel-module-imx515-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx542:	kernel-module-imx542:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx566_mipi:	kernel-module-imx566-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx568_mipi:	kernel-module-imx568-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx571:	kernel-module-imx571:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx577_mipi:	kernel-module-imx577-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx585_mipi:	kernel-module-imx585-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx586_mipi:	kernel-module-imx586-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx623_mipi:	kernel-module-imx623-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx623_mipi_brg:	kernel-module-imx623-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx662_mipi:	kernel-module-imx662-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx662_mipi_brg:	kernel-module-imx662-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx664_mipi:	kernel-module-imx664-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx675_mipi:	kernel-module-imx675-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx675_mipi_brg:	kernel-module-imx675-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx676_mipi:	kernel-module-imx676-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx678_mipi:	kernel-module-imx678-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx715_mipi:	kernel-module-imx715-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx728_mipi_brg:	kernel-module-imx728-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/sony_imx989_mipi:	kernel-module-imx989-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/st_vb1940_mipi_brg:	kernel-module-vb1940-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/st_vg1762_mipi_brg:	kernel-module-vg1762-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/st_vg5761_mipi:	kernel-module-vg5761-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/st_vg5761_mipi_brg:	kernel-module-vg5761-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/superpix_sp2309_mipi:	kernel-module-sp2309-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/adi_adsd3500:	kernel-module-adsd3500:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/gp_tof75027_mipi_brg:	kernel-module-tof75027-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/gp_tof9043_mipi_brg:	kernel-module-tof9043-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/infineon_irs2877a_brg:	kernel-module-irs2877a-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/infineon_irs2877c:	kernel-module-irs2877c:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/infineon_irs2877c_brg:	kernel-module-irs2877c-mipi-brg:	linux generic-header ambvideo-header kernel-module-ambvideo kernel-module-ambrg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/panasonic_mn34906bl:	kernel-module-mn34906bl:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/sony_cxd5639_imx570_mipi:	kernel-module-cxd5639-imx570:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/sony_imx316_mipi:	kernel-module-imx316-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/sony_imx456_mipi:	kernel-module-imx456-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/tof_sensors/sony_imx528_mipi:	kernel-module-imx528-mipi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/ambdve:	kernel-module-ambdve:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/ambhdmi:	kernel-module-ambhdmi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/amblcd/ams700vs13:	kernel-module-oled-ams700vs13:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/amblcd/digital:	kernel-module-digital-vout:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/amblcd/mipi_csi:	kernel-module-mipi-csi:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/amblcd/mipi_dsi_lcd_r69429:	kernel-module-mipi-dsi-lcd-r69429:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/amblcd/mipi_dsi_lcd_r9611:	kernel-module-mipi-dsi-lcd-r9611:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/it66121:	kernel-module-it66121:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/max96717:	kernel-module-max96717:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/max96751:	kernel-module-max96751:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/max96755:	kernel-module-max96755:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/max96785:	kernel-module-max96785:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vout/ti_ds90ub941:	kernel-module-ti-ds90ub941:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/amba_otp/dsp_v6:	kernel-module-ambotp:	generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/cavalry:	kernel-module-ambcavalry:	linux ambcavalry-header generic-header firmware-cavalry
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/cavalry:	ambcavalry-header:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/cavalry:	cavalry-ucode-api:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6:	kernel-module-ambvideo:	linux ambvideo-header generic-header firmware-dsp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6:	ambvideo-header:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/vin_vout_monitor:	kernel-module-vin-vout-monitor:	linux generic-header ambvideo-header kernel-module-ambvideo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel:	linux:	board initramfs linux-patch-uvac linux-unpatch-uvac linux-patch-rmem-dio linux-unpatch-rmem-dio
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel/linux-patch:	linux-patch-uvac:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel/linux-patch:	linux-unpatch-uvac:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel/linux-patch:	linux-patch-rmem-dio:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel/linux-patch:	linux-unpatch-rmem-dio:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/license:	legal-info:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oryx_v2:	oryxv2:	board prebuild-pkgconfig-pc-file generic-header ambvideo-header libcavalrymem libnnctrl libvproc prebuild-libunwind libtextinsert prebuild-libcurl prebuild-libjpeg-turbo prebuild-7zdec prebuild-libarchive prebuild-gstreamer1 prebuild-gstreamer1-plugins-base prebuild-gstreamer1-plugins-good prebuild-gstreamer1-plugins-bad prebuild-gstreamer1-plugins-ugly prebuild-freetype prebuild-dewarp libutils prebuild-smartrc3 prebuild-libpreanalysis prebuild-eis ambeis-header prebuild-alsa-lib prebuild-pulseaudio prebuild-aac-new prebuild-libg7xx prebuild-mpg123 prebuild-libogg prebuild-libopus prebuild-speex prebuild-libgpiod libimgflow prebuild-imgdsp liblwapputils prebuild-libexif prebuild-openssl libfdt prebuild-bzip2 prebuild-xz prebuild-zlib prebuild-libunistring prebuild-glib2 prebuild-pcre prebuild-libffi prebuild-lens libmcl prebuild-libsndfile prebuild-systemd prebuild-libcap prebuild-util-linux-libs prebuild-libarmcompute libiav-blur libiav-pm prebuild-ubi-tools libamba-cap-inspect prebuild-sqlite
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/abseil-cpp:	abseil-cpp-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/abseil-cpp:	abseil-cpp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-lib:	alsa-lib-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-lib:	alsa-lib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-plugins:	alsa-plugins-native:	alsa-lib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-plugins:	alsa-plugins:	alsa-lib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-utils:	alsa-utils-native:	alsa-lib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/alsa-utils:	alsa-utils:	alsa-lib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/busybox:	busybox:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/bzip2:	bzip2-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/bzip2:	bzip2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/cjson:	cjson-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/cjson:	cjson:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/curl:	curl-native:	zlib-native openssl-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/curl:	curl:	zlib openssl
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/dbus:	dbus-native:	expat-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/dbus:	dbus:	expat
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/eigen:	eigen-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/eigen:	eigen:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/exfat-utils:	exfat-utils-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/exfat-utils:	exfat-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/expat:	expat-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/expat:	expat:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/freetype:	freetype-native:	libpng-native zlib-native bzip2-native harfbuzz-without-freetype-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/freetype:	freetype:	zlib prebuild-libpng bzip2 harfbuzz-without-freetype
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/gdb:	gdb:	gmp mpfr mpc isl
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/gflags:	gflags-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/gflags:	gflags:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/glib:	glib-native:	libffi-native zlib-native pcre2-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/glib:	glib:	libffi zlib pcre2
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/gmp:	gmp-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/gmp:	gmp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/harfbuzz:	harfbuzz-without-freetype-native:	icu-native glib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/harfbuzz:	harfbuzz-without-freetype:	icu glib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/harfbuzz:	harfbuzz-native:	icu-native libpng-native freetype-native glib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/harfbuzz:	harfbuzz:	icu glib prebuild-freetype prebuild-libpng
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/hostapd:	hostapd-native:	openssl-native libnl-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/hostapd:	hostapd:	libnl openssl
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/icu:	icu-native:	zlib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/icu:	icu:	zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/iperf:	iperf-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/iperf:	iperf:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/isl:	isl-native:	gmp-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/isl:	isl:	gmp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/iw:	iw-native:	libnl-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/iw:	iw:	libnl
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/json-c:	json-c-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/json-c:	json-c:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libaio:	libaio-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libaio:	libaio:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libcap:	libcap-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libcap:	libcap:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libcap-ng:	libcap-ng-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libcap-ng:	libcap-ng:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libffi:	libffi-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libffi:	libffi:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libiconv:	libiconv-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libiconv:	libiconv:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libidn2:	libidn2-native:	libiconv-native libunistring-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libidn2:	libidn2:	libiconv libunistring
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libjpeg-turbo:	libjpeg-turbo-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libjpeg-turbo:	libjpeg-turbo:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libnice:	libnice-native:	openssl-native glib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libnice:	libnice:	openssl glib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libnl:	libnl-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libnl:	libnl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libpcap:	libpcap-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libpcap:	libpcap:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libpng:	libpng-native:	zlib-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libpng:	libpng:	zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libtasn1:	libtasn1-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libtasn1:	libtasn1:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libunistring:	libunistring-native:	libiconv-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libunistring:	libunistring:	libiconv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libxml2:	libxml2-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/libxml2:	libxml2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/lua:	lua-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/lua:	lua:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/mpc:	mpc-native:	gmp-native mpfr-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/mpc:	mpc:	gmp mpfr
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/mpfr:	mpfr-native:	gmp-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/mpfr:	mpfr:	gmp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/ncurses:	ncurses-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/ncurses:	ncurses:	ncurses-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/openssl:	openssl-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/openssl:	openssl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/pcre2:	pcre2-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/pcre2:	pcre2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/protobuf:	protobuf-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/protobuf:	protobuf:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/tbb:	tbb-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/tbb:	tbb:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/tcpdump:	tcpdump-native:	libpcap-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/tcpdump:	tcpdump:	libpcap
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/uvc-gadget:	uvc-gadget:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/v4l-utils:	v4l-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/wireless-tools:	wireless-tools-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/wireless-tools:	wireless-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/wpa-supplicant:	wpa-supplicant-native:	openssl-native libnl-native dbus-native
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/wpa-supplicant:	wpa-supplicant:	libnl openssl dbus
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/x264:	x264-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/x264:	x264:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/x265:	x265-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/x265:	x265:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/xz:	xz-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/xz:	xz:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/zlib:	zlib-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oss/zlib:	zlib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/amba_gst_plugins/src:	libgstamba:	ambcavalry-header libvproc libnnctrl libcavalrymem generic-header ambvideo-header prebuild-alsa-lib liblwapputils prebuild-libpng prebuild-libjpeg-turbo libmcl prebuild-lua lua prebuild-gstreamer1 prebuild-gstreamer1-plugins-bad prebuild-gstreamer1-plugins-base prebuild-gstreamer1-plugins-good prebuild-gstreamer1-plugins-ugly prebuild-gstreamer1-rtsp-server prebuild-freetype
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/amba_gst_plugins/unit_test:	ambagst-test:	libgstamba
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/asf:	libasf:	generic-header ambvideo-header ambeis-header prebuild-sqlite prebuild-zlib prebuild-cjson
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/asf:	asf-test:	libasf prebuild-sqlite prebuild-cjson
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/autocalib:	libautocalib:	generic-header ambcavalry-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/cap_inspect:	libamba-cap-inspect:	prebuild-libcap lua prebuild-lua
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/cavalry_mem:	libcavalrymem:	generic-header ambcavalry-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/cnngen_prep:	libcnngenprep:	generic-header ambcavalry-header libcavalrymem
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/data_process:	libdata-process:	board generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/data_transfer:	libdatatx:	generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/depth_sensing_framework/source:	libambadsf:	board generic-header ambvideo-header ambcavalry-header libnnctrl libcavalrymem libvproc prebuild-zlib prebuild-opencv prebuild-tbb prebuild-freetype prebuild-libjpeg-turbo prebuild-libpng prebuild-cvlib prebuild-amba-opt-sc-algos
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/depth_sensing_framework/unit_test:	dsf-test:	libambadsf board generic-header ambvideo-header ambcavalry-header libnnctrl libcavalrymem libvproc prebuild-zlib prebuild-opencv prebuild-tbb prebuild-freetype prebuild-libjpeg-turbo prebuild-libpng prebuild-amba-opt-sc-algos prebuild-cvlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/dewarp_lua_parser/dsp_v6:	libdewarp-lua:	board prebuild-lua lua generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazy_dds:	libeazy-dds:	prebuild-cyclonedds generic-header prebuild-openssl prebuild-iceoryx-binding-c prebuild-iceoryx-posh prebuild-iceoryx-utils prebuild-acl prebuild-attr
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/bodypix:	eazyai-apps-test-bodypix:	board generic-header ambvideo-header libeazyai libeazyai-utils prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/bytetrack:	eazyai-apps-test-bytetrack:	board generic-header ambvideo-header libeazyai libeazyai-utils prebuild-opencv prebuild-eigen
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/face:	eazyai-apps-test-face:	board generic-header ambvideo-header libeazyai libeazyai-utils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/hand:	eazyai-apps-test-hand:	board generic-header ambvideo-header libvproc libcavalrymem libeazyai libeazyai-utils prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/hitnet:	eazyai-apps-test-hitnet:	board generic-header ambvideo-header libeazyai libeazyai-utils prebuild-opencv libeazyai-comm
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/ssd:	eazyai-apps-test-ssd:	board generic-header ambvideo-header libeazyai libeazyai-utils libdata-process prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/video_matting:	eazyai-apps-test-video-matting:	board generic-header ambvideo-header libeazyai libeazyai-utils libeazyai-comm prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/yolo:	eazyai-apps-test-yolov3-mono-depth:	board generic-header ambvideo-header libeazyai libeazyai-utils libdata-process prebuild-opencv libamba-mono-depth
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/yolo:	eazyai-apps-test-yolo-smtrc:	board generic-header ambvideo-header libeazyai libeazyai-utils libdata-process prebuild-smartrc3
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/lib_amba_mk:	libeazyai:	board generic-header ambvideo-header ambcavalry-header libnnctrl libcavalrymem libvproc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/lib_amba_mk:	libeazyai-comm:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/lib_amba_mk:	libeazyai-accl:	libeazyai
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/lib_amba_mk:	libeazyai-utils:	board generic-header ambvideo-header libeazyai libeazyai-accl libeazyai-comm libtextinsert prebuild-opencv prebuild-freetype
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/lib_amba_mk:	libeazyai-io:	generic-header ambvideo-header libeazyai prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test:	eazyai-unit-test:	board generic-header ambvideo-header libeazyai libeazyai-accl libeazyai-comm libeazyai-utils libeazyai-arm-postprocess ambcavalry-header libcavalrymem libvproc prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test:	libeazyai-arm-postprocess:	board generic-header ambvideo-header libeazyai libeazyai-utils prebuild-lua lua prebuild-opencv prebuild-eigen
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test:	eazyai-video:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test:	cnngui:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/generic:	generic-header:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/gst-interpipe/gst/interpipe:	libgstinterpipe:	prebuild-json-c prebuild-json-glib prebuild-libxml2 prebuild-libdaemon prebuild-libffi prebuild-util-linux prebuild-xz prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/gstd-0.14.0/gst_client:	gst-client-test:	libgstc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/gstd-0.14.0/gstd:	gstd-test:	libgstd
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/gstd-0.14.0/libgstc/c:	libgstc:	prebuild-json-c prebuild-gstreamer1 prebuild-json-glib prebuild-libsoup prebuild-libxml2 prebuild-libdaemon prebuild-libffi prebuild-libselinux prebuild-util-linux-libs prebuild-sqlite prebuild-xz prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/gstd-0.14.0/libgstd:	libgstd:	prebuild-json-c prebuild-gstreamer1 prebuild-json-glib prebuild-libsoup prebuild-libxml2 prebuild-libdaemon prebuild-libffi prebuild-libselinux prebuild-util-linux-libs prebuild-sqlite prebuild-xz prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/arbitrary_blur:	libiav-blur:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/efm:	libiav-efm:	libutils generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/lib_vsrc_guard:	libiav-vsrc-guard:	generic-header ambvideo-header libeazy-dds prebuild-cyclonedds libutils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/privacymask:	libiav-pm:	generic-header ambvideo-header libutils prebuild-dewarp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/iav_utils/dsp_v6/service_vsrc_guard:	vsrc-guard-service:	generic-header ambvideo-header libeazy-dds libiav-vsrc-guard prebuild-zlib libutils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/ADAS/imx728:	adas-imx728-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/ADAS/ox08b40:	adas-ox08b40-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/ADAS/yuv:	adas-yuv-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/GENERIC/def_iq_data:	def-iq-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/ROBOT/os08a10:	robot-os08a10-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/STEREO/imx390:	stereo-imx390-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/data/img_cv3/STEREO/yuv:	stereo-yuv-datas:	generic-header ambvideo-header ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_flow:	libimgflow:	board prebuild-lua lua generic-header ambvideo-header prebuild-libimgalgo ambaimg-header ambcavalry-header libnnctrl prebuild-libimgnnctrl libcavalrymem
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/idsp/img_header:	ambaimg-header:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/libmcl/dsp_v6:	libmcl:	prebuild-lua lua generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/lw_app_utils:	liblwapputils:	board generic-header ambvideo-header prebuild-libjpeg-turbo prebuild-freetype prebuild-zlib prebuild-bzip2 prebuild-libpng
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/lw_media/source:	liblwmedia:	board prebuild-alsa-lib prebuild-aac-new generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/lw_media/unit_test:	lwmedia-test:	board liblwmedia
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/mnnstreamer:	libgstnnstreamer:	generic-header ambvideo-header ambcavalry-header libcavalrymem libvproc libnnctrl liblwapputils prebuild-freetype
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/mono_depth/armv8-a:	libamba-mono-depth:	generic-header ambvideo-header libutils prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/nnctrl:	libnnctrl:	generic-header ambcavalry-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/sensor_calib_ini_parser/armv8-a:	libmsc:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/smartfb/lib_amba_mk:	libsmartfb:	generic-header ambvideo-header libtextinsert prebuild-fonts
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/smartfb/unit_test:	smartfb-test:	board generic-header ambvideo-header libsmartfb
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/stereo_helper:	libstereohelper:	ambcavalry-header libvproc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/textinsert:	libtextinsert:	board prebuild-freetype
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/textinsert/unit_test/dsp_v6:	textinsert-test:	libtextinsert board generic-header ambvideo-header prebuild-freetype libeazy-dds
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/configfs:	usb-gadget-configfs:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/ffs_test/device:	test-ffs-device:	libaio usb-gadget-configfs
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/ffs_test/host:	test-ffs-host:	prebuild-libusbx
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/ffs_test/host:	test-ffs-host-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/libuvc:	libuvc:	linux-patch-uvac
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/unit_test:	uvc-stream:	libuvc usb-gadget-configfs generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/uvc_host:	test-uvc-host:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/usb_gadget/uvc_host:	test-uvc-host-native:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/utils:	libutils:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/video_sharing_service:	libvss:	generic-header ambvideo-header prebuild-lua lua libeazy-dds
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/video_sharing_service:	vss-test:	libvss generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/vproc:	libvproc:	generic-header ambcavalry-header libcavalrymem
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/aac-new/armv8-a:	prebuild-aac-new:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/ai_cam/amba_opt_sc_algos:	prebuild-amba-opt-sc-algos:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/ai_cam/cvlib:	prebuild-cvlib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/amba_tof:	prebuild-amba-tof:	libnnctrl libcavalrymem
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/autocalib_v2:	prebuild-autocalib-v2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/cavalry_opt_layers:	prebuild-cavalry-opt-layers:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/dewarp/dsp_v6:	prebuild-dewarp:	libutils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/dewarp/dsp_v6:	dewarp-test:	prebuild-dewarp generic-header ambvideo-header libutils prebuild-lens libdewarp-lua
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/dsp_monitor/dsp_v6:	prebuild-dsp-monitor:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/eis/dsp_v6:	prebuild-eis:	libutils ambeis-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/eis/dsp_v6:	eis-test:	prebuild-eis generic-header ambvideo-header libutils ambeis-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/idsp/img_algo:	prebuild-libimgalgo:	generic-header ambvideo-header prebuild-imgdsp prebuild-libimgnnctrl
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/idsp/img_dsp:	prebuild-imgdsp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/idsp/img_nnctrl:	prebuild-libimgnnctrl:	generic-header ambvideo-header ambcavalry-header libnnctrl libcavalrymem ambaimg-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/lens:	prebuild-lens:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/multi_sensor_calib/dsp_v6:	prebuild-sensorcalib:	libutils prebuild-opencv prebuild-apriltag
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/multi_sensor_calib/dsp_v6:	sensorcalib-test:	prebuild-sensorcalib generic-header ambvideo-header prebuild-opencv libutils libmsc prebuild-apriltag
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/preanalysis/dsp_v6:	prebuild-libpreanalysis:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6:	prebuild-smartrc3:	prebuild-libpreanalysis prebuild-lua lua
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/smartrc3/dsp_v6:	smartrc3-test:	ambcavalry-header libvproc prebuild-smartrc3 generic-header ambvideo-header libdata-process libsmartfb
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/stitch_algo/dsp_v6:	prebuild-stitch:	libutils prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/stitch_algo/dsp_v6:	stitch-test:	prebuild-stitch generic-header ambvideo-header prebuild-opencv libutils prebuild-sensorcalib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/7zdec:	prebuild-7zdec:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ComputeLibrary:	prebuild-libarmcompute:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ElectricFence:	prebuild-ElectricFence:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/MNN:	prebuild-MNN:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/NetworkManager:	prebuild-networkmanager:	skeleton prebuild-glib2 prebuild-libndp prebuild-libcurl prebuild-systemd prebuild-udev prebuild-util-linux-libs prebuild-gnutls
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/abseil-cpp:	prebuild-abseil-cpp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/acl:	prebuild-acl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-lib:	prebuild-alsa-lib:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-plugins:	prebuild-alsa-plugins:	prebuild-alsa-lib prebuild-pulseaudio prebuild-libsamplerate prebuild-speex
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-state:	prebuild-alsa-state:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-utils:	prebuild-alsa-utils:	prebuild-alsa-lib prebuild-libsamplerate prebuild-ncurses
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/apriltag:	prebuild-apriltag:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/armnn:	prebuild-armnn:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/attr:	prebuild-attr:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/audiofile:	prebuild-audiofile:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/audit:	prebuild-audit:	board prebuild-libev
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/avahi:	prebuild-avahi:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/bind99:	prebuild-bind99:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/bluez:	prebuild-bluez:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/bluez-tools:	prebuild-bluez-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/boost:	prebuild-boost:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/busybox:	prebuild-busybox:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/bzip2:	prebuild-bzip2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cairo:	prebuild-cairo:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/can-utils:	prebuild-can-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cartographer:	prebuild-cartographer:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ceres-solver:	prebuild-ceres-solver:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/checkpolicy:	prebuild-checkpolicy:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cjson:	prebuild-cjson:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/clearsilver:	prebuild-clearsilver:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cryptsetup:	prebuild-cryptsetup:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/curl:	prebuild-libcurl:	prebuild-libnghttp2 prebuild-libidn2 prebuild-libssh2 prebuild-openssl prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cyclictest:	prebuild-cyclictest:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cyclonedds:	prebuild-cyclonedds:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cyclonedds-cxx:	prebuild-cyclonedds-cxx:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dbus:	prebuild-dbus:	skeleton prebuild-expat prebuild-systemd prebuild-udev
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dbus-glib:	prebuild-dbus-glib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/device-mapper:	prebuild-device-mapper:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dhcp:	prebuild-dhcp:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dhcpcd:	prebuild-dhcpcd:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dnsmasq:	prebuild-dnsmasq:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/e2fsprogs:	prebuild-e2fsprogs:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/eigen:	prebuild-eigen:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/elfutils:	prebuild-elfutils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/elfutils-libelf:	prebuild-elfutils-libelf:	prebuild-zlib prebuild-bzip2
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ethtool:	prebuild-ethtool:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/exfat-utils:	prebuild-exfat-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/expat:	prebuild-expat:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/f2fs-tools:	prebuild-f2fs-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/faad2:	prebuild-faad2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fcgi:	prebuild-fcgi:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fcgiwrap:	prebuild-fcgiwrap:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fipscheck:	prebuild-fipscheck:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/freetype:	prebuild-freetype:	prebuild-zlib prebuild-bzip2 prebuild-libpng
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fuse:	prebuild-fuse:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fuse-exfat:	prebuild-fuse-exfat:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fuse-sshfs:	prebuild-fuse-sshfs:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/g2o:	prebuild-g2o:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gflags:	prebuild-gflags:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/glib-networking:	prebuild-glib-networking:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/glib2:	prebuild-glib2:	prebuild-libffi prebuild-pcre
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/glog:	prebuild-glog:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gmp:	prebuild-libgmp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gnutls:	prebuild-gnutls:	prebuild-libidn2 prebuild-libunistring prebuild-nettle prebuild-libgmp prebuild-libtasn1
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gpsd:	prebuild-gpsd:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1:	prebuild-gstreamer1:	prebuild-glib2
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-bad:	prebuild-gstreamer1-plugins-bad:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-base:	prebuild-gstreamer1-plugins-base:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-good:	prebuild-gstreamer1-plugins-good:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-ugly:	prebuild-gstreamer1-plugins-ugly:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-rtsp-server:	prebuild-gstreamer1-rtsp-server:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/harfbuzz:	prebuild-harfbuzz:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/hostapd:	prebuild-hostapd:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/htop:	prebuild-htop:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/i2c-tools:	prebuild-i2c-tools:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iceoryx-binding-c:	prebuild-iceoryx-binding-c:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iceoryx-posh:	prebuild-iceoryx-posh:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iceoryx-utils:	prebuild-iceoryx-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/icu:	prebuild-icu:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iniparser:	prebuild-iniparser:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iozone:	prebuild-iozone:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iperf:	prebuild-iperf:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iperf3:	prebuild-iperf3:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iproute:	prebuild-iproute:	prebuild-libmnl prebuild-libselinux prebuild-elfutils-libelf
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iptables:	prebuild-iptables:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/iw:	prebuild-iw:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/jimtcl:	prebuild-jimtcl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/json-c:	prebuild-json-c:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/json-glib:	prebuild-json-glib:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/keyutils:	prebuild-keyutils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/kmod:	prebuild-kmod:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lame:	prebuild-lame:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lcm:	prebuild-lcm:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libNE10:	prebuild-libNE10:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libarchive:	prebuild-libarchive:	prebuild-xz prebuild-zlib prebuild-bzip2
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libcap:	prebuild-libcap:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libcap-ng:	prebuild-libcap-ng:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libdaemon:	prebuild-libdaemon:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libeXosip2:	prebuild-libeXosip2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libedit:	prebuild-libedit:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libell:	prebuild-libell:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libev:	prebuild-libev:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libevent:	prebuild-libevent:	prebuild-openssl prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libexif:	prebuild-libexif:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libffi:	prebuild-libffi:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libfixmath:	prebuild-libfixmath:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libg7xx:	prebuild-libg7xx:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgcrypt:	prebuild-libgcrypt:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgpg-error:	prebuild-libgpg-error:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgpiod:	prebuild-libgpiod:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libical:	prebuild-libical:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libidn2:	prebuild-libidn2:	prebuild-libunistring
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libjpeg-turbo:	prebuild-libjpeg-turbo:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libmad:	prebuild-libmad:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libmicrohttpd:	prebuild-libmicrohttpd:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libmnl:	prebuild-libmnl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libmtp:	prebuild-libmtp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libndp:	prebuild-libndp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libnghttp2:	prebuild-libnghttp2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libnice:	prebuild-libnice:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libnl3:	prebuild-libnl:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libogg:	prebuild-libogg:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libopusenc:	prebuild-libopusenc:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libosip2:	prebuild-libosip2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libpcap:	prebuild-libpcap:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libpng:	prebuild-libpng:	prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsamplerate:	prebuild-libsamplerate:	board prebuild-libsndfile
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libselinux:	prebuild-libselinux:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsemanage:	prebuild-libsemanage:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsepol:	prebuild-libsepol:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsndfile:	prebuild-libsndfile:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsoup:	prebuild-libsoup:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsrtp:	prebuild-libsrtp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libssh2:	prebuild-libssh2:	prebuild-openssl prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libtasn1:	prebuild-libtasn1:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libtirpc:	prebuild-libtirpc:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libtool:	prebuild-libtool:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libunistring:	prebuild-libunistring:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libunwind:	prebuild-libunwind:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libusb-compat:	prebuild-libusb-compat:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libusbx:	prebuild-libusbx:	prebuild-systemd prebuild-udev
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libvpx:	prebuild-libvpx:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libxml2:	prebuild-libxml2:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libyuv:	prebuild-libyuv:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lighttpd:	prebuild-lighttpd:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/linuxptp:	prebuild-linuxptp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lmbench:	prebuild-lmbench:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ltrace:	prebuild-ltrace:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lua:	prebuild-lua:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lz4:	prebuild-lz4:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lzo:	prebuild-lzo:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mDNSResponder:	prebuild-mDNSResponder:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mmc-utils:	prebuild-mmc-utils:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mpg123:	prebuild-mpg123:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mtd-utils:	prebuild-mtd-utils:	prebuild-util-linux-libs prebuild-zlib prebuild-lzo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mtr:	prebuild-mtr:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mxml:	prebuild-mxml:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ncnn:	prebuild-ncnn:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ncurses:	prebuild-ncurses:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/nettle3:	prebuild-nettle:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/nfs-utils:	prebuild-nfs-utils:	prebuild-rpcbind prebuild-libtirpc prebuild-libevent prebuild-device-mapper prebuild-util-linux-libs prebuild-keyutils prebuild-sqlite
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/nginx:	prebuild-nginx:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/nss-mdns:	prebuild-nss-mdns:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ntp:	prebuild-ntp:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/openblas:	prebuild-openblas:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opencv:	prebuild-opencv:	board prebuild-tbb prebuild-libjpeg-turbo prebuild-zlib prebuild-libpng
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opencv3:	prebuild-opencv3:	prebuild-tbb prebuild-libjpeg-turbo
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/openssh:	prebuild-openssh:	board prebuild-fipscheck
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/openssl:	prebuild-openssl:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opus:	prebuild-libopus:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opus-tools:	prebuild-opus-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opusfile:	prebuild-opusfile:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pam:	prebuild-pam:	prebuild-audit prebuild-libselinux
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pcre:	prebuild-pcre:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pinfo:	prebuild-pinfo:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pixman:	prebuild-pixman:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pkgconfig-pc-file:	prebuild-pkgconfig-pc-file:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/policycoreutils:	prebuild-policycoreutils:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/popt:	prebuild-popt:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/portaudio:	prebuild-portaudio:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pps-tools:	prebuild-pps-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/procps-ng:	prebuild-procps-ng:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/protobuf:	prebuild-protobuf:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pulseaudio:	prebuild-pulseaudio:	board prebuild-libtool prebuild-soxr prebuild-webrtc-audio-processing prebuild-speex prebuild-alsa-lib prebuild-libcap prebuild-libsndfile prebuild-systemd prebuild-glib2
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/python3:	prebuild-python3:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/rpcbind:	prebuild-rpcbind:	prebuild-libtirpc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/sbc:	prebuild-sbc:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/soxr:	prebuild-soxr:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/spawn-fcgi:	prebuild-spawn-fcgi:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/speex:	prebuild-speex:	board prebuild-alsa-lib prebuild-libogg
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/sqlite:	prebuild-sqlite:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/strace:	prebuild-strace:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/suitesparse:	prebuild-suitesparse:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/systemd:	prebuild-systemd:	skeleton prebuild-busybox busybox
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/systemd:	prebuild-udev:	skeleton
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/taglib:	prebuild-taglib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/tbb:	prebuild-tbb:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/tcpdump:	prebuild-tcpdump:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/telnet-server:	prebuild-telnet-server:	prebuild-systemd
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/tslib:	prebuild-tslib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ubi-tools:	prebuild-ubi-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/usb-modeswitch:	prebuild-usb-modeswitch:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/util-linux:	prebuild-util-linux:	prebuild-busybox busybox
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/util-linux-libs:	prebuild-util-linux-libs:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/uvc-gadget:	prebuild-uvc-gadget:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/vsomeip:	prebuild-vsomeip:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/vtable-dumper:	prebuild-vtable-dumper:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/wavpack:	prebuild-wavpack:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/webrtc-audio-processing:	prebuild-webrtc-audio-processing:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/wireless-tools:	prebuild-wireless-tools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/wpa_supplicant:	prebuild-wpa_supplicant:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/x265:	prebuild-x265:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/xz:	prebuild-xz:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/zbar:	prebuild-zbar:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/zlib:	prebuild-zlib:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/noarch/font:	prebuild-fonts:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/noarch/locale:	prebuild-locale:	skeleton
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/noarch/media-automount:	prebuild-media-automount:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/tools/public/cavalry_gen:	prebuild-cavalry-gen:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/backup-cpio:	backup-cpio:	board rootfs
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/initramfs:	initramfs:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/network/inetd-init:	inetd-init:	network-init
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/network/network-init:	network-init:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/skeleton:	skeleton:	board
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/system:	rootfs:	board skeleton prebuild-busybox busybox
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/system-init/busybox-sysvinit:	busybox-sysvinit:	skeleton
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/boot_security:	boot-security:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/crypto_engine:	cryptoengine:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/lw_cryptography:	liblwcryptography:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/security_tools_library:	libsecuritytool:	prebuild-openssl liblwcryptography
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/ulp_nmp:	ulp-nmp:	prebuild-openssl prebuild-zlib libsecuritytool liblwcryptography generic-header ambvideo-header libcavalrymem prebuild-amba-opt-sc-algos
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/validation/crypto_performance/openssl:	cryptoperf:	prebuild-openssl prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/validation/rng_quality:	rngtest:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/audio:	test-audio:	prebuild-alsa-lib generic-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/bandwidth:	test-bandwidth:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/coremark-pro:	coremark-pro:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/cpulimit:	cpulimit:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/dhrystone:	test-dhrystone:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/memtester:	test-memtester:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/benchmark/sd_benchmark:	sd-benchmark:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/i2ctools:	i2ctools:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/misc:	misctools:	generic-header libtextinsert
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/linux/pci:	pcitests:
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/amba_debug:	amba-debug:	generic-header kernel-module-ambad
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/audio_test:	audio-test:	board generic-header prebuild-aac-new
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-test:	board generic-header ambcavalry-header libnnctrl libcavalrymem libvproc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-cavalry-tool:	generic-header ambcavalry-header libcavalrymem
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-vproc-test:	board generic-header ambcavalry-header libcavalrymem libvproc
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-vproc-algo-test:	board generic-header ambcavalry-header ambvideo-header libeazyai libcavalrymem libvproc libsmartfb prebuild-libarmcompute prebuild-opencv
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-stereo-test:	generic-header ambcavalry-header ambvideo-header libnnctrl libcavalrymem libvproc libsmartfb libdatatx libutils prebuild-dewarp
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-fex-test:	generic-header ambcavalry-header ambvideo-header libcavalrymem libsmartfb
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3:	cv-fma-test:	generic-header ambcavalry-header ambvideo-header libcavalrymem libsmartfb
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/iav_test/dsp_v6:	iav-test:	generic-header ambvideo-header libmcl prebuild-lua lua libiav-blur libutils prebuild-dewarp libiav-pm libiav-efm libdatatx libtextinsert prebuild-zlib
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/idsp_test/img_cv3:	idsp-test:	generic-header ambvideo-header prebuild-lua lua ambaimg-header libimgflow libeazy-dds
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/otp_test:	otp-test:	generic-header ambvideo-header
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/sw_scale_jpeg:	test-sw-scale-jpeg:	generic-header ambvideo-header prebuild-libjpeg-turbo prebuild-cvlib liblwapputils
+/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/vsync_test:	vsync-test:	generic-header ambvideo-header

@@ -1,0 +1,9 @@
+digraph "vp_algo_env_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vp_algo_env_t\n|+ algo_id\l+ pyrmd1_width\l+ pyrmd1_height\l+ pyrmd2_width\l+ pyrmd2_height\l+ vp_cmd_addr\l+ vp_cmd_size\l+ vp_msg_addr\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

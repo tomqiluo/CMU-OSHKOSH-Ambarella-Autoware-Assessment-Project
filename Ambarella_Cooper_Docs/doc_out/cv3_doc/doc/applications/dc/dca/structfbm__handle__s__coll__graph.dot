@@ -1,0 +1,17 @@
+digraph "fbm_handle_s"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fbm_handle_s\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +in" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{fbm_input_s\n|+ ref_yuv\l+ virt\l+ phys\l+ ref_w\l+ ref_h\l+ ref_p\l+ height\l+ width\l+ pitch\l|}",height=0.2,width=0.4,color="black",URL="$d9/d55/structfbm__input__s.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +det_roi\n+face_roi" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{fbm_roi_s\n|+ x\l+ y\l+ w\l+ h\l|}",height=0.2,width=0.4,color="black",URL="$d8/d1f/structfbm__roi__s.html",tooltip=" "];
+  Node4 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +param_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{fbm_config_s\n|+ maxspecklesize\l+ maxspecklediff\l+ sad_win_size\l+ sad_thresh\l+ uniqueratio\l+ texture_threshold\l+ fbm_baseline\l+ lens_focal_len\l+ stereo_ref_dist\l+ disparity_num\l+ min_disparity\l+ detect_near_depth\l+ detect_far_depth\l+ prefilter_type\l|}",height=0.2,width=0.4,color="black",URL="$dd/d1f/structfbm__config__s.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +out" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{fbm_output_s\n|+ depth_w\l+ depth_h\l+ depth_p_u8\l+ depth_p_fp32\l+ depth_full_u8\l+ depth_roi_u8\l+ depth_full_fp32\l+ depth_roi_fp32\l|}",height=0.2,width=0.4,color="black",URL="$d6/deb/structfbm__output__s.html",tooltip=" "];
+}

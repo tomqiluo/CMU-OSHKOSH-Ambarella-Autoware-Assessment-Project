@@ -1,0 +1,13 @@
+digraph "smartfb_context_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{smartfb_context_t\n|+ fb_mem\l+ init_done\l+ cycle_buffer_num\l+ cur_cycle_buffer\l+ drawed_cycle_buffer\l+ mode_name\l+ reserved\l+ fb\l+ var\l+ fix\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +saved_areas" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{smartfb_saved_cap_area_t\n|+ used_map\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$d3/dd7/structsmartfb__saved__cap__area__t.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +params" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{smartfb_saved_cap_area\l_params_t\n|+ offset_x\l+ offset_y\l+ width\l+ height\l+ name\l+ buffer\l|}",height=0.2,width=0.4,color="black",URL="$d4/d6a/structsmartfb__saved__cap__area__params__t.html",tooltip=" "];
+}

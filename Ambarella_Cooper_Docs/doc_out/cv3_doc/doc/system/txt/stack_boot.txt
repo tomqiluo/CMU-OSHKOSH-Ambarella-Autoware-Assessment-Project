@@ -1,0 +1,113 @@
+          Stack Boot with SPINOR+eMMC
+=================================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+
+=================================================
+
+
+Table of Contents
++++++++++++++++++
+
+  I - Introduction
+  II - Build Options
+  III - NOTE
+
+
+
+I - Introduction
+------------------
+
+1) DEVICE
+
+Use spinor + eMMC for system usage.
+spinor flash as the boot device for storing the bst/bld/ptb/atf/pba partitions.
+eMMC as the storage device for storing the ptb/pri/sec/bak/rmd/lnx...
+
+2) POC setting
+using the SPINOR boot mode poc setting.
+
+
+II - Build Options
+------------------
+
+There are several options in menuconfig can be selected when building Amboot.
+      [*] Ambarella Firmware Configuration  --->
+                Hardware Options
+					[ ] Support Nand Driver  --->
+                    [*] Support SD Driver  --->
+					[*] Support SPI NOR Driver  --->
+				AMBoot (boot loader)  --->
+					Boot Media (Boot From SPI NOR with EMMC stack)
+
+please use the cvxx_board_stack_config.
+For example, cv25_hazelnut_stack_config in the SDK.
+
+III - Note
+------------------
+1) Please make sure the fixed-cd is set as 1 when using media stack in board dts
+   file as follows:
+		sdmmc0: sdmmc0@e0004000 {
+			pwr-gpios = <&gpio 81 0x1>;
+			v18-gpios = <&gpio 105 0x1>;
+#if defined(CONFIG_BOOT_MEDIA_EMMC) || defined(CONFIG_BOOT_MEDIA_STACK)
+			amb,fixed-cd = <1>;
+#endif
+
+2) Please disable the nand node in the dts as follows:
+	#if defined(CONFIG_BOOT_MEDIA_STACK)
+		nand0: nand@e0002000 {
+			status = "disabled";
+		};
+	#endif
+
+3) set the partition in the bsp.h as follows: (macro definition CONFIG_BOOT_MEDIA_STACK)
+	a) Legacy Firmware
+#ifdef CONFIG_BOOT_MEDIA_SPINOR
+#include "partition/spinor.h"
+#elif defined(CONFIG_AMBARELLA_ROOTFS_CPIO)
+#include "partition/cpio.h"
+#elif defined(CONFIG_BOOT_MEDIA_EMMC)
+#include "partition/emmc.h"
+#elif defined(CONFIG_BOOT_MEDIA_STACK)
+#include "partition/spinorstack.h"
+#else
+#define AMBOOT_BST_SIZE		(MBOOT_BST_FIXED_SIZE)
+#define AMBOOT_BLD_SIZE		(AMBOOT_MIN_PART_SIZE * 8)
+#define AMBOOT_PTB_SIZE		(AMBOOT_MIN_PART_SIZE * 7)
+#define AMBOOT_ATF_SIZE		(AMBOOT_MIN_PART_SIZE * 8)
+#define AMBOOT_PBA_SIZE		(16 * 1024 * 1024)
+#define AMBOOT_PRI_SIZE		(16 * 1024 * 1024)
+#define AMBOOT_SEC_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_BAK_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_RMD_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_ROM_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_DSP_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_LNX_SIZE		(128 * 1024 * 1024)
+#define AMBOOT_SWP_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_ADD_SIZE		(0  * 1024 * 1024)
+#define AMBOOT_ADC_SIZE		(0  * 1024 * 1024)
+#endif
+
+	b) Flexible Firmware
+#if defined(CONFIG_BOOT_MEDIA_SPINOR) || defined(CONFIG_BOOT_MEDIA_STACK)
+#define MEDIA_DEV		"dev=snor:"
+#elif defined(CONFIG_BOOT_MEDIA_EMMC)
+#define MEDIA_DEV		"dev=emmc:"
+#else
+#define MEDIA_DEV		"dev=nand:"
+#endif
+
+...
+#elif defined(CONFIG_BOOT_MEDIA_STACK)
+#define AMBOOT_PARTITION_LAYOUT	\
+				MEDIA_DEV \
+				"128k(bst),1024k(bld),896k(dtb),896k(env);" \
+				"dev=emmc:64m@0x1300000(kernel),512m(rootfs),-(raw)"
+...
+#endif
+and Boot cmdline in dts
+...
+#elif defined(CONFIG_BOOT_MEDIA_STACK)
+		bootargs = "console=ttyS0 noinitrd root=/dev/mmcblk0p2 rw rootfstype=ext4 rw rootfstype=ext4 init=/linuxrc rootwait pci=nomsi pcie_aspm=off";
+#endif

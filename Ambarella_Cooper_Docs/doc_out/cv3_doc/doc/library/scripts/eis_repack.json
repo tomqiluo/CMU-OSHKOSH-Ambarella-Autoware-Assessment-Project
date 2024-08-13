@@ -1,0 +1,59 @@
+{
+	"preprocess": {
+		"action": [
+			{
+				"name": "decode",
+				"cfg": {
+					"input": [{
+						"data_type": 3,
+						"dev_id": 0,
+						"slice": {
+							"type": "item",
+							"duration": 120
+						}
+					}],
+					"output": [{
+						"data_type": 2,
+						"dev_id": 0
+					}]
+				}
+			}
+		],
+		"cfg": {
+				"tmp_folder": "tmp",
+				"tmp_bin_size_limit_MB": 100
+		}
+	},
+	"repack" : {
+		"input": [
+			{
+				"data_type": 2,
+				"dev_id": 0
+			},
+			{
+				"data_type": 0,
+				"dev_id": 0
+			},
+			{
+				"data_type": 1,
+				"dev_id": 0,
+				"slice": {
+					"type": "time",
+					"start": 1,
+					"duration": 5
+				}
+			}
+		],
+		"cfg": {
+			"output_name": "sample_output.bin",
+			"output_size_limit_MB": 150,
+			"repack_pts_delta_factor": 0.49
+		}
+	},
+	"system": {
+		"event_id": [0],
+		"work_folder": "./sample",
+		"db_name": "test.db",
+		"statis_delta_factor": 0.2
+	}
+}

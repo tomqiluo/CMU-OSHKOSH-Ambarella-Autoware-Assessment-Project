@@ -1,0 +1,9 @@
+digraph "asf_buf_pool"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{asf_buf_pool\n|+ read_idx\l+ write_idx\l+ unit_cnt\l+ unit_size\l+ reserved\l+ base_addr\l+ mutex\l+ ready_write\l+ ready_read\l+ cond_attr\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

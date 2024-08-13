@@ -1,0 +1,294 @@
+             FLEXIBLE FIRMWARE
+===========================================
+
+Copyright (C) 2018-2048, Ambarella, Inc.
+Author: Cao Rongrong <rrcao@ambarella.com>
+
+===========================================
+
+
+
+I - Introduction
+----------------
+
+Amboot supports two styles of firmware layout: legacy and flexible. The former
+is a traditional firmware layout which can only support following partitions:
+bst, bld, ptb, atf, pba, pri, sec, bak, rmd, rom, dsp, lnx, swp, add, adc, cfg,
+raw. It's not allowed to add other more partitions, and each partition's name
+is also unchangeable. In addition, the legacy firmware has some other limitations.
+
+Therefore, we implement flexible firmware layout in Amboot which has below merits:
+a) Supports up to 128 partitions, and easy to support more.
+b) Supports to determine each partition's name by user.
+c) Supports partition size larger than 4GB.
+d) Supports multi images per partition.
+e) Supports multi kernel images and multi dtb binaries.
+f) Supports to generate images that burners can use directly, i.e., no need binsplit.
+
+Abbreviations:
+a) binary: it's executable code, data, filesystem or others.
+b) image: will be burned into storage media, consists of header and several binaries.
+c) firmware: it's used by AmbaUSB and consists of executable code and several images.
+
+To use flexible firmware layout, below CONFIG must be selected/configured by menuconfig:
+a) FLEXIBLE_FIRMWARE_LAYOUT
+b) CONFIG_AMBFW_PROFILE
+
+Note:
+CONFIG_AMBFW_PROFILE is used by ambarella/boot/ambfw menuconfig to generate firmware
+used by AmbaUSB. So it means flexible firmware layout must be used together with ambfw.
+Please refer to ambarella/boot/ambfw/doc/firmware.txt for details about ambfw.
+
+This doc will ONLY describe flexible firmware layout, i.e., FLEXIBLE_FIRMWARE_LAYOUT
+is selected by menuconfig.
+
+
+
+II - Partition and Image
+------------------------
+
+"Firmware Layout" has two concepts: partition layout and image information.
+
+No matter the storage media is NAND, NOR or eMMC, they have to be partitioned before
+using. And each partition may or may not contain images.
+
+
+1) Partition Layout
+
+The partition layout is determined by AMBOOT_PARTITION_LAYOUT which is defined in
+bsp.h, and the format is:
+  parts=<devdef>[;<devdef>]
+    <devdef> := dev=<dev>:<partdef>[,<partdef>]
+      <partdef> := <size>[@<offset>](part-name)
+
+Note:
+  a) "dev" in <devdef> must be nand, snor or emmc.
+  b) "part-name" in <partdef> can be arbitrarily, but must be unique.
+
+Actually the format of this string is most like the command line option used in
+Linux Kernel, you can refer to $LINUX/Documentation/block/cmdline-partition.rst
+for more details.
+
+Example:
+"dev=nand:128k(bst),1024k(bld),896k(dtb),16M@0x1300000(kernel),128m(rootfs),-(raw)"
+
+
+2) Image information
+
+Each image has some information that must be specified. E.g.:
+  a) How many binaries does the image contain.
+  b) Which partition does the image be burned into.
+  c) Where does the binary contained in the image load and jump.
+  d) Whether retain the image header when burning into storage media.
+  e) Whether verify the binary's integrity after it is loaded.
+  f) Whether the binary be compressed.
+  g) Others
+
+Users must provide a firmware profile file to describe the image information above,
+the file name can be arbitrarily, and assigned to CONFIG_AMBFW_PROFILE by menuconfig.
+
+The firmware profile file is actually part of Ambfw Makefile, so that its syntax
+is the same as Makefile.
+
+Please see "Firmware Profile" section below for details.
+
+
+
+III - Firmware Profile
+----------------------
+
+The firmware profile file is to desribe the information for each images in firmware.
+
+In most cases, users shall provide profile for specific system by themselves and
+put the profile under bsp directory, but we also provide some predefined profiles
+under ambfw/profile directory for users' reference. Users can use one of those
+profiles directly if their firmware layout is the same as the description in the
+predefined profiles.
+
+Below variables can be defined in the firmware profile for each images:
+IMAGE_n_NAME, IMAGE_n_FILE, IMAGE_n_ADDR, IMAGE_n_ENTRY, IMAGE_n_FLAG, IMAGE_FWPROG
+and PARTITION.
+Here n is an integer and it's in the range of [0, 127].
+
+
+1) IMAGE_n_NAME
+
+IMAGE_n_NAME specify the name of the image, it must be identical to one of the
+partition name, i.e., one of "part-name" in <partdef>.
+
+When burning the firmware, each image will be burned into the partition specified
+by the image name.
+
+Example:
+  IMAGE_0_NAME := bst
+Here "bst" must be one of partition name.
+
+
+2) IMAGE_n_FILE
+
+IMAGE_n_FILE specifies which binaries the image consists of. Each image may contain
+more than one binary, so it's allowed to specify multiple binaries in IMAGE_n_FILE,
+and each binary is separated by blank spaces
+
+Example:
+  IMAGE_3_FILE := $(AMB_BOARD_OUT)/kernel/Image $(DTB_BIN)
+
+3) IMAGE_n_ADDR
+
+IMAGE_n_ADDR specifies where the binary is loaded into memory. If it's no need to
+load the binary, or the load address is determined by Amboot, IMAGE_n_ADDR can be
+set to -1. As each image may contain more than one binary, so it's allowed to specify
+multiple addresses in IMAGE_n_ADDR, and each address is separated by blank spaces.
+
+Note:
+  The number of address must be equal to the number of binary.
+  Users must specify IMAGE_n_ADDR as -1 for the images which is NOT loaded by Amboot.
+  E.g., BST, BL2, UBIFS and so on.
+
+Example:
+  IMAGE_3_FILE := $(AMB_BOARD_OUT)/kernel/Image $(DTBX_BIN) $(DTBY_BIN)
+  IMAGE_3_ADDR := $(KERNEL_RAM_START) -1 -1
+
+In this example kernel image must be placed at KERNEL_RAM_START. DTBX_BIN, DTBY_BIN
+can be placed at any property address determined by Amboot at runtime.
+
+4) IMAGE_n_ENTRY
+
+IMAGE_n_ENTRY specifies where to jump to execute the binary, normally IMAGE_n_ENTRY
+is identical to IMAGE_n_ADDR, hence IMAGE_n_ENTRY will be assigned to the same value
+as IMAGE_n_ADDR if IMAGE_n_ENTRY is not specified.
+
+
+5) IMAGE_n_FLAG
+
+IMAGE_n_FLAG specifies the information/flag for each image. Each flag is separated
+by blank spaces.
+
+Currently only below flags are supported: force, raw, verify, backup, compressed.
+
+
+a) force:
+   Specified if the image must be generated.
+   PS:
+      if "force" is not specified, and the corresponding binaries for the image
+      are absent, the image will NOT be generated.
+
+b) raw:
+   Specified if the image header cannot be burned into storage media.
+   PS:
+      bst is loaded by ROM, so "raw" must be specified for bst image.
+      bld is loaded by BST, so "raw" must be specified for bld image.
+      atf is loaded by BST, so "raw" must be specified for atf image.
+      In addition, "raw" must be specified for images not loaded by bld, like ubifs.
+      env requires CRC to verify, it means env image must contain the CRC info, so
+      "raw" must NOT be specified for env image.
+
+c) verify:
+   Specified if the binary's integrity(through CRC) needs to be verified after loading.
+
+d) backup:
+   Specified if the partition needs to be backed up to support recovery.
+   the profile must contains bak partition if used.
+
+e) compressed:
+   Specified if the binaries in the image are compressed.
+
+Note:
+  1. IMAGE_n_FLAG specifies the flags for the image, and will apply to all the
+     binaries contained in this partiton.
+  2. verify and compressed can't be used together with raw. Because "raw" image
+     don't have header to contain relative info.
+  3. if backup and compressed are used at the same time, then the binary will be
+     compressed before backup when generating image.
+  4. env image can chang dynamicly during each boot, so don't specify compressed
+     for env image.
+
+Example:
+  IMAGE_3_FILE := Image DTB
+  IMAGE_3_FLAG := backup compressed
+
+
+6) IMAGE_FWPROG
+
+IMAGE_FWPROG specifies the firmware programmer(fwprog) which is used to burn the
+firmware into flash. If IMAGE_FWPROG isn't specified, ambfw will only generate
+*.fw files. Please refer to ambarella/boot/ambfw/doc/firmware.txt for details.
+
+Note:
+Normally the firmware programmer is built from Amboot, but it's not only used for
+firmware with Amboot, but also can be used for firmware with Uboot or Amrtos.
+In addition, users can also specify IMAGE_FWPROG to their own firmware programmer.
+
+
+7) PARTITION
+
+When the firmware programmer(fwprog) is burning firmware, it needs the partition
+layout information to know where each images are burned.
+
+By default, the firmware programmer(fwprog) will use the partition layout defined
+in bsp.h, but if new partition layout is specified by PARTITION, fwprog will this
+partition layout instead. PS: this is normally used when fwprog burns the firmware
+with uboot or amrtos.
+
+The format specified in PARTITION is totally the same as the partition in bsp.h
+Please refer to "1) Partition Layout" above.
+
+
+8) UPGRADE
+
+When using flexible firmware, the partition image could be upgraded by 'dd' command for
+eMMC or via Ambarella 'upgrade_partition' tool for eMMC and NAND in userspace.
+
+a) 'dd' command
+
+    The usage of 'dd' could refer to the Linux manual.
+
+b) 'upgrade_partition' tool
+
+    1. Upgrade the IMAGE
+       The upgrade_partition could upgrade the image by using the following command format.
+       For NAND:
+       #upgrade_partition /dev/mtdX /image.file.
+       For eMMC:
+       #upgrade_partition /dev/mmcblkXYYYY /image.file.
+
+       The image.file is the corresponding PARTITION IMAGE file that could be written to the
+       flash media and RUN.
+       The image files have different types according to the Firmware Profile.
+       The detail of Firmware Profile could refer to the description above.
+
+       If the partition image with 'raw' of IMAGE_n_FLAG, such as bst/bld/atf/rootfs,
+       the image.file for upgrade tool should be raw image file.
+       This type of image.file could be found at:
+       #ls ambarella/out/amba_out/BOARDS_XX/images/*.bin
+       bld.bin  bst.bin  rootfs.bin
+
+       In addition to the partition image with 'raw', there is the other partiton image file,
+       such as dtb/env/kernel.
+       This type of image.file could be found at:
+       #ls ambarella/out/amba_out/BOARDS_XX/objects/boot/ambfw/*.img
+       dtb.img  env.img  kernel.img
+
+    2. Upgrade the Environment Variables
+       The Environment Variables could refer to the ambarella/boot/amboot/doc/env.txt.
+       The detail of 'upgrade_partition' command set could refer to the command
+       '#upgrade_partition -h'.
+
+    3. A/B Upgrade.
+       The user could update the Environment Variables to switch the boot PARTIOTION IMAGE of
+       kernel/rootfs/ramdisk/dtb, and then implement the A/B upgrade function after upgrading
+       the corresponding PARTITION IMAGE.
+
+Note:
+Please DO NOT upgrade file system of oneself.
+Example: If the system is running on the file system A, and then the user could NOT upgrade the
+         file system A.
+
+
+IV - Usage
+----------
+
+As mentioned above, we provide some predefined profiles, they are profile.normal,
+profile.secure. Normally profile.normal is used with CONFIG_AARCH64_TRUSTZONE
+disabled, while profile.secure is used with CONFIG_AARCH64_TRUSTZONE enabled.
+

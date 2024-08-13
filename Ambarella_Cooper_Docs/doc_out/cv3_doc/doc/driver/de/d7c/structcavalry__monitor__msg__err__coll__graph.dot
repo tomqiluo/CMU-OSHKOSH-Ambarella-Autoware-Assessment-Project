@@ -1,0 +1,9 @@
+digraph "cavalry_monitor_msg_err"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{cavalry_monitor_msg_err\n|+ tv_sec\l+ tv_usec\l+ err_code\l+ line_num\l+ func_name\l+ msg_string\l+ extra_size\l+ extra_data\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

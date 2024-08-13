@@ -1,0 +1,10 @@
+digraph "ea_img_resource functions"
+{
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="EazyAI library functions",height=0.2,width=0.4,color="black",URL="$da/d24/group__eazyai-api-details.html",tooltip="Definition of functions in EazyAI library."];
+  Node1 [label="ea_img_resource functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Definition of ea_img_resource functions."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

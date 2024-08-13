@@ -1,0 +1,32 @@
+digraph "lib_vg_start"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="lib_vg_start",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="is_vsync_detection\l_disabled",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#ad4b6c1180264ca85bd6fdf305210c0ae",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="lib_vg_check_status",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#ad43e6bcdd960681416b4009e710f0f21",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="get_vsrc_num",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a780e0f003f563b6d135d325d74f55ca2",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="vsrc_to_vinc",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#aa013cf929b1cf3098c000245d0b21288",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="lib_vg_handler",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a3b2310b9392fbd058e8ebc82b46ac852",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="lib_vg_join_threads",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a56262ba55fa4a22ea420f69558aa39b4",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="lib_vg_send_disconnect",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a13f5fdeff25d992c10f344b69445ff4c",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="lib_vg_netlink",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#ab4befb4aa8ca5c10fc6b4447e0044335",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="lib_vg_nl_msg",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a18959fbede07ac3cc727fcdcb33e9d0a",tooltip=" "];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="process_nl_msg",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#af8682557ae8bf64bf66abce34f3a654e",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="pthread_setname_np",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#aa21465e084e7185bfbb94bb50d60cd08",tooltip=" "];
+}

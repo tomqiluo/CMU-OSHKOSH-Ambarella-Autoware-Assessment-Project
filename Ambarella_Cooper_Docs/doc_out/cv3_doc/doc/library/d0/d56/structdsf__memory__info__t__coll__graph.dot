@@ -1,0 +1,9 @@
+digraph "dsf_memory_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dsf_memory_info_t\n|+ mem_part_id\l+ is_anon\l+ need_free\l+ mem_from_iav_partition\l+ reserved_bits\l+ tot_mem_size\l+ p_virt_mem_base\l+ p_phy_mem_base\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

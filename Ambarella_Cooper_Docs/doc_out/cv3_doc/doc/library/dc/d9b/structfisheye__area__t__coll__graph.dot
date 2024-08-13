@@ -1,0 +1,9 @@
+digraph "fisheye_area_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{fisheye_area_t\n|+ wall_rect_max_area_num\l+ wall_pano_max_area_num\l+ wall_cylinder_max_area_num\l+ wall_mercator_max_area_num\l+ wall_equirectangular\l_max_area_num\l+ wall_squircular_max\l_area_num\l+ wall_ver_pano_max_area_num\l+ wall_transverse_mercator\l_max_area_num\l+ ceiling_rect_max_area_num\l+ ceiling_pano_max_area_num\l+ ceiling_pano_fulfrm\l_max_area_num\l+ ceiling_sub_max_area_num\l+ desktop_rect_max_area_num\l+ desktop_pano_max_area_num\l+ desktop_pano_fulfrm\l_max_area_num\l+ desktop_sub_max_area_num\l+ warp_copy_max_area_num\l+ wall_pannini_max_area_num\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="multi-region-warp, max area number in one view for specific correction."];
+}

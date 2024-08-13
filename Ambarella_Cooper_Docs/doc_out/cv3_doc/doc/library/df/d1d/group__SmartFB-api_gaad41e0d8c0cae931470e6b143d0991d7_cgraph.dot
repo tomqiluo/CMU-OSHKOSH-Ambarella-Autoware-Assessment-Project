@@ -1,0 +1,12 @@
+digraph "smartfb_restore_all_capture_area_buffer"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="smartfb_restore_all\l_capture_area_buffer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="smartfb_restore_capture\l_drawed_area_buffer",height=0.2,width=0.4,color="black",URL="$d6/dfc/lib__smartfb_8c.html#a3b62f2c14d334b2ea73b1b315f446bd7",tooltip=" "];
+}

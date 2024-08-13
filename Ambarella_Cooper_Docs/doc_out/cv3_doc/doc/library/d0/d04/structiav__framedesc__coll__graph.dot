@@ -1,0 +1,9 @@
+digraph "iav_framedesc"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_framedesc\n|+ id\l+ time_ms\l+ stream_type\l+ pic_type\l+ stream_end\l+ reserved0\l+ jpeg_quality\l+ bitrate_kbps\l+ reserved1\l+ session_id\l+ size\l+ slice_id\l+ slice_num\l+ tile_id\l+ tile_num\l+ is_ltr_frame\l+ force_frame_skip\l+ reserved2\l+ arm_pts\l+ dsp_pts\l+ enc_done_ts\l+ reso\l+ data_addr_offset\l+ mv_data_offset\l+ cap_seq_no\l+ sliceheader_offset\l+ encoded_frame_num\l+ frame_num\l+ custom_sei_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,31 @@
+digraph "packages"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_93501a11e921083efbd154e0cdff5f10 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_93501a11e921083efbd154e0cdff5f10.html"]
+    dir_93501a11e921083efbd154e0cdff5f10 [shape=plaintext, label="packages"];
+  dir_b7697b0185a51715c264a99a502fafbf [shape=box, label="asf", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_b7697b0185a51715c264a99a502fafbf.html"];
+  dir_18f1e9e685e34a8021f601007a704634 [shape=box, label="cavalry_mem", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_18f1e9e685e34a8021f601007a704634.html"];
+  dir_9325d09f9e2b3e0d3d9a7e02d157f94c [shape=box, label="cnngen_prep", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_9325d09f9e2b3e0d3d9a7e02d157f94c.html"];
+  dir_e24ca66bce208f9a2a46f1bc00e7519f [shape=box, label="data_process", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e24ca66bce208f9a2a46f1bc00e7519f.html"];
+  dir_e725c5e5e99a0346aa8f92bd7c41c50b [shape=box, label="depth_sensing_framework", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e725c5e5e99a0346aa8f92bd7c41c50b.html"];
+  dir_0801e060350be025f0cd7dbb784f4930 [shape=box, label="eazyai", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_0801e060350be025f0cd7dbb784f4930.html"];
+  dir_d105f4986db140ebbb18ac63f686f6c2 [shape=box, label="iav_utils", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_d105f4986db140ebbb18ac63f686f6c2.html"];
+  dir_71b570d8105990a6f6d32850836c305e [shape=box, label="idsp", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_71b570d8105990a6f6d32850836c305e.html"];
+  dir_def776de19a375ed35ebccf34a6f9703 [shape=box, label="nnctrl", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_def776de19a375ed35ebccf34a6f9703.html"];
+  dir_4f84cd42d1634389d370c25a7417dae4 [shape=box, label="smartfb", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_4f84cd42d1634389d370c25a7417dae4.html"];
+  dir_e3b5c43775bc9fc02ad81e4a786fd8d8 [shape=box, label="video_sharing_service", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_e3b5c43775bc9fc02ad81e4a786fd8d8.html"];
+  dir_720a8d47c2d5a565119b3b623c19013c [shape=box, label="vproc", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_720a8d47c2d5a565119b3b623c19013c.html"];
+  }
+  dir_3f8e3e5cc57197a86ac156d9cb931dab [shape=box, label="drv_modules", style="", fillcolor="#edf0f7", color="red", URL="dir_3f8e3e5cc57197a86ac156d9cb931dab.html"];
+  dir_f6e9262795688d5cd1daee5088492cb3 [shape=box, label="prebuild", style="", fillcolor="#edf0f7", color="red", URL="dir_f6e9262795688d5cd1daee5088492cb3.html"];
+  dir_d105f4986db140ebbb18ac63f686f6c2->dir_3f8e3e5cc57197a86ac156d9cb931dab [headlabel="3", labeldistance=1.5 headhref="dir_000021_000015.html"];
+  dir_d105f4986db140ebbb18ac63f686f6c2->dir_f6e9262795688d5cd1daee5088492cb3 [headlabel="2", labeldistance=1.5 headhref="dir_000021_000047.html"];
+  dir_71b570d8105990a6f6d32850836c305e->dir_3f8e3e5cc57197a86ac156d9cb931dab [headlabel="2", labeldistance=1.5 headhref="dir_000022_000015.html"];
+  dir_4f84cd42d1634389d370c25a7417dae4->dir_3f8e3e5cc57197a86ac156d9cb931dab [headlabel="2", labeldistance=1.5 headhref="dir_000050_000015.html"];
+}

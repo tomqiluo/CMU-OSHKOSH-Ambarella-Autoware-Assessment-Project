@@ -1,0 +1,9 @@
+digraph "hdr_prop_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{hdr_prop_info_t\n|+ hdr_blend_thre\l+ hdr_flicker_thre\l+ hdr_prop_c\l+ hdr_prop_d\l+ a0\l+ a1\l+ b0\l+ b1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of blending configuration for HDR mode."];
+}

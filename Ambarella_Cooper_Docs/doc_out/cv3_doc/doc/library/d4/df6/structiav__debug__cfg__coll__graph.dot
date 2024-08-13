@@ -1,0 +1,23 @@
+digraph "iav_debug_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_debug_cfg\n|+ id\l+ cid\l+ enable\l+ arg\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +module" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{iav_debug_module\n|+ enable\l+ reserved\l+ flags\l+ args\l|}",height=0.2,width=0.4,color="black",URL="$db/d17/structiav__debug__module.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +audit\n+vv_audit" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{iav_debug_audit\n|+ id\l+ enable\l+ reserved0\l+ cnt\l+ sum\l+ max\l+ min\l+ cur\l+ reserved1\l|}",height=0.2,width=0.4,color="black",URL="$d3/dc7/structiav__debug__audit.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +idsp_audit" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{iav_debug_idsp_audit\n|+ enable\l+ reserved\l+ idsp_frm_drop_cnt\l+ inc\l|}",height=0.2,width=0.4,color="black",URL="$d3/d54/structiav__debug__idsp__audit.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +enc_audit" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{iav_debug_enc_audit\n|+ enable\l+ reserved\l+ enc_frm_drop_cnt\l+ inc\l|}",height=0.2,width=0.4,color="black",URL="$d0/d6d/structiav__debug__enc__audit.html",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +vout_audit" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{iav_debug_vout_audit\n|+ enable\l+ reserved\l+ vout_uf_cnt\l+ inc\l|}",height=0.2,width=0.4,color="black",URL="$d7/dab/structiav__debug__vout__audit.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +skip_irq" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{iav_debug_skip_dsp_irq\n|+ skip_cnt\l+ dsp_port\l+ reserved\l|}",height=0.2,width=0.4,color="black",URL="$db/d10/structiav__debug__skip__dsp__irq.html",tooltip=" "];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +eis_sync_audit\n+enc_sync_audit" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{iav_debug_sync_audit\n|+ enable\l+ reserved\l+ sync_fail_cnt\l+ inc\l|}",height=0.2,width=0.4,color="black",URL="$dc/dbf/structiav__debug__sync__audit.html",tooltip=" "];
+}

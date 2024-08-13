@@ -1,0 +1,9 @@
+digraph "api_hdr_ae_proc_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{api_hdr_ae_proc_t\n|+ hdr_ae_method\l+ histo_cntl_speed_level\l+ saturated_target_ratio\l+ saturated_bin_threshold\l_ratio\l+ histo_cntl_ratio_min\l_scale\l+ histo_cntl_ratio_max\l_scale\l+ highlight_sensitive\l_ratio\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

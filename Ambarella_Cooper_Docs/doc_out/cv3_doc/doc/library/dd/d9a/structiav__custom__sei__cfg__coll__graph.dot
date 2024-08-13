@@ -1,0 +1,9 @@
+digraph "iav_custom_sei_cfg"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_custom_sei_cfg\n|+ stream_id\l+ enable\l+ insert_I_only\l+ repeat\l+ dynamic_size_enable\l+ data_size\l+ reserved\l+ dsp_pts\l+ data_offset\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

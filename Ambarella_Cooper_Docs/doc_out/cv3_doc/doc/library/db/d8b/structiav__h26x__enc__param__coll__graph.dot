@@ -1,0 +1,9 @@
+digraph "iav_h26x_enc_param"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_h26x_enc_param\n|+ id\l+ user1_intra_bias\l+ user1_direct_bias\l+ user2_intra_bias\l+ user2_direct_bias\l+ intra_bias_override_usr1\l+ direct_bias_override_usr1\l+ intra_bias_override_usr2\l+ direct_bias_override_usr2\l+ reserved0\l+ reserved1\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

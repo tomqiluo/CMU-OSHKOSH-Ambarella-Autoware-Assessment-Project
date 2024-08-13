@@ -1,0 +1,9 @@
+digraph "hdr_delay_check_cfg_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{hdr_delay_check_cfg_t\n|+ mode\l+ long_shutter\l+ long_agc\l+ long_dgain\l+ fp_log\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

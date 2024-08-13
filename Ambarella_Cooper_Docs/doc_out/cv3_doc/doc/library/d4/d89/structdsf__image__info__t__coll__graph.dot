@@ -1,0 +1,9 @@
+digraph "dsf_image_info_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dsf_image_info_t\n|+ width\l+ height\l+ pitch\l+ pixel_format\l+ channel_num\l+ channel_interleave\l+ alignment\l+ is_in_iav_mem_partition\l+ reserved_bits\l+ iav_mem_partition_id\l+ buf_aligned_size\l+ p_partition_base\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

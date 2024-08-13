@@ -1,0 +1,6139 @@
+mainmenu "Build Configuration"
+
+menu "app"
+
+menuconfig CONFIG_ACC_CTRL_TEST
+	bool "acc-ctrl-test (app/access_control)"
+	default n
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBUTILS
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBEAZYAI_COMM
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBVPROC
+	select CONFIG_PREBUILD_DEWARP
+
+if CONFIG_ACC_CTRL_TEST
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/access_control/amba.kconf"
+endif
+
+menu "ai_cam"
+
+menuconfig CONFIG_CVFLOW_TEST
+	bool "cvflow-test (app/ai_cam/cvflow)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBSMARTFB
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_PREBUILD_LIBARMCOMPUTE
+	select CONFIG_PREBUILD_CAVALRY_OPT_LAYERS
+	select CONFIG_LIBCNNGENPREP
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBEAZYAI_ARM_POSTPROCESS
+	select CONFIG_PREBUILD_OPENCV
+
+if CONFIG_CVFLOW_TEST
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/ai_cam/cvflow/amba.kconf"
+endif
+
+endmenu
+
+menu "aibox"
+
+config CONFIG_MULTIDEC_VCA
+	bool "multidec-vca (app/aibox/multi_dec_vca)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBLWMEDIA
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBNNCTRL
+	select CONFIG_PREBUILD_CYCLONEDDS
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ICEORYX_BINDING_C
+	select CONFIG_PREBUILD_ICEORYX_POSH
+	select CONFIG_PREBUILD_ICEORYX_UTILS
+	select CONFIG_PREBUILD_ACL
+	select CONFIG_PREBUILD_ATTR
+
+endmenu
+
+menu "utility"
+
+menuconfig CONFIG_AMBA_SCRIPTS
+	bool "amba-scripts (app/utility/amba_scripts)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_AMBA_SCRIPTS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/app/utility/amba_scripts/amba.kconf"
+endif
+
+config CONFIG_DDRC_TOOL
+	bool "ddrc-tool (app/utility/ddrc_tool/dsp_v6)"
+	default y
+
+config CONFIG_DNG_TOOL
+	bool "dng-tool (app/utility/dng_tool)"
+	default y
+
+menu "dsp"
+
+config CONFIG_DSP_MONITOR_SERVICE
+	bool "dsp-monitor-service (app/utility/dsp/dsp_monitor_service/dsp_v6)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_DSP_MONITOR
+
+config CONFIG_DSPLOG_CAP
+	bool "dsplog-cap (app/utility/dsp/dsplog_cap)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBDATATX
+
+config CONFIG_LOAD_UCODE
+	bool "load-ucode (app/utility/dsp/load_ucode/dsp_v6)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+endmenu
+
+config CONFIG_JPG_ENC_UTILS
+	bool "jpg-enc-utils (app/utility/jpg_enc)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBDATATX
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_LIBTEXTINSERT
+
+config CONFIG_MFN_DB_TOOL
+	bool "mfn-db-tool (app/utility/mfn_db_tool)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+menu "upgrade_partition"
+
+config CONFIG_UPGRADE_PARTITION
+	bool "upgrade-partition (app/utility/upgrade_partition/app)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_LIBFDT
+
+config CONFIG_LIBFDT
+	bool "libfdt (app/utility/upgrade_partition/libfdt)"
+	default y
+	select CONFIG_GENERIC_HEADER
+
+endmenu
+
+endmenu
+
+menu "video_conference"
+
+config CONFIG_TEST_BYTETRACK_VC
+	bool "test-bytetrack-vc (app/video_conference/bytetrack)"
+	default n
+	depends on CONFIG_BOARD && ($(AMBA_SOC)="cv5")
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_EIGEN
+	select CONFIG_LIBSMR
+
+config CONFIG_STITCH_MULTI_ROI_COMBINE
+	bool "stitch-multi-roi-combine (app/video_conference/stitch_multi_roi_combine)"
+	default n
+	depends on CONFIG_LIBSMR && CONFIG_BOARD && ($(AMBA_DSP_ARCH)="v6")
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBIAV_EFM
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+
+config CONFIG_LIBSMR
+	bool "libsmr (app/video_conference/stitch_multi_roi_combine)"
+	default n
+	depends on CONFIG_BOARD && ($(AMBA_DSP_ARCH)="v6")
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+endmenu
+
+endmenu
+
+menuconfig CONFIG_BOARD
+	bool "board (boards)"
+	default y
+
+if CONFIG_BOARD
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boards/amba.kconf"
+endif
+
+menu "boards"
+
+menu "n1_cooper_max"
+
+config CONFIG_BOARD_ROOTFS
+	bool "board-rootfs (boards/n1_cooper_max/rootfs)"
+	default y
+	depends on CONFIG_BOARD && CONFIG_SKELETON && (CONFIG_BUSYBOX_SYSVINIT || CONFIG_PREBUILD_SYSTEMD)
+
+endmenu
+
+endmenu
+
+menu "boot"
+
+menuconfig CONFIG_AMBFW
+	bool "ambfw (boot/ambamk)"
+	default n
+	depends on CONFIG_ROOTFS
+
+if CONFIG_AMBFW
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk/ambfw.kconf"
+endif
+
+menuconfig CONFIG_AMBOOT
+	bool "amboot (boot/ambamk)"
+	default y
+	depends on CONFIG_ROOTFS
+
+if CONFIG_AMBOOT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk/amboot.kconf"
+endif
+
+menuconfig CONFIG_AMBUST
+	bool "ambust (boot/ambamk)"
+	default n
+
+if CONFIG_AMBUST
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk/ambust.kconf"
+endif
+
+menuconfig CONFIG_CM3
+	bool "cm3 (boot/ambamk)"
+	default n
+
+if CONFIG_CM3
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk/cm3.kconf"
+endif
+
+menuconfig CONFIG_UBOOT
+	bool "uboot (boot/ambamk)"
+	default n
+
+if CONFIG_UBOOT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/boot/ambamk/uboot.kconf"
+endif
+
+menu "tee"
+
+config CONFIG_ARM_TF
+	bool "arm-tf (boot/tee/ambamk)"
+	default n
+
+config CONFIG_OPTEE_CLIENT
+	bool "optee-client (boot/tee/ambamk)"
+	default n
+
+config CONFIG_OPTEE_OS
+	bool "optee-os (boot/tee/ambamk)"
+	default n
+
+config CONFIG_OPTEE_TEST
+	bool "optee-test (boot/tee/ambamk)"
+	default n
+
+endmenu
+
+endmenu
+
+menu "drv_modules"
+
+menu "firmware"
+
+config CONFIG_FIRMWARE_CAVALRY
+	bool "firmware-cavalry (drv_modules/firmware/cavalry)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+
+menuconfig CONFIG_FIRMWARE_DSP
+	bool "firmware-dsp (drv_modules/firmware/dsp/dsp_v6)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+
+if CONFIG_FIRMWARE_DSP
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/firmware/dsp/dsp_v6/amba.kconf"
+endif
+
+endmenu
+
+menu "platform"
+
+config CONFIG_KERNEL_MODULE_BOOTSTAT
+	bool "kernel-module-bootstat (drv_modules/platform/bootstat)"
+	default y
+	depends on CONFIG_LINUX
+
+config CONFIG_KERNEL_MODULE_AMBAD
+	bool "kernel-module-ambad (drv_modules/platform/debug)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBDRAM_STATIS
+	bool "kernel-module-ambdram-statis (drv_modules/platform/dram_statis)"
+	default y
+	depends on CONFIG_LINUX
+
+menuconfig CONFIG_KERNEL_MODULE_DSPLOG
+	bool "kernel-module-dsplog (drv_modules/platform/dsplog)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+if CONFIG_KERNEL_MODULE_DSPLOG
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/dsplog/amba.kconf"
+endif
+
+config CONFIG_KERNEL_MODULE_EIS_MC
+	bool "kernel-module-eis-mc (drv_modules/platform/eis)"
+	default y
+	depends on CONFIG_LINUX && CONFIG_AMBEIS_HEADER
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_AMBEIS_HEADER
+	bool "ambeis-header (drv_modules/platform/eis)"
+	default y
+	depends on CONFIG_BOARD
+
+menu "gyro"
+
+config CONFIG_KERNEL_MODULE_BMI270
+	bool "kernel-module-bmi270 (drv_modules/platform/gyro/bmi270)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_ICM20648
+	bool "kernel-module-icm20648 (drv_modules/platform/gyro/icm20648)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_ICM20648_SPI
+	bool "kernel-module-icm20648-spi (drv_modules/platform/gyro/icm20648_spi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_ICM40608
+	bool "kernel-module-icm40608 (drv_modules/platform/gyro/icm40608)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_ICM42605
+	bool "kernel-module-icm42605 (drv_modules/platform/gyro/icm42605)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_ICM42670
+	bool "kernel-module-icm42670 (drv_modules/platform/gyro/icm42670)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_LSM6DSR
+	bool "kernel-module-lsm6dsr (drv_modules/platform/gyro/lsm6dsr)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+config CONFIG_KERNEL_MODULE_MPU9250
+	bool "kernel-module-mpu9250 (drv_modules/platform/gyro/mpu9250)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_KERNEL_MODULE_EIS_MC
+
+endmenu
+
+config CONFIG_KERNEL_MODULE_IMUC
+	bool "kernel-module-imuc (drv_modules/platform/imuc)"
+	default y
+	depends on CONFIG_LINUX
+
+config CONFIG_KERNEL_MODULE_KMSG
+	bool "kernel-module-kmsg (drv_modules/platform/kmsg)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+
+menu "led"
+
+config CONFIG_KERNEL_MODULE_LM3643
+	bool "kernel-module-lm3643 (drv_modules/platform/led/lm3643)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+menu "vin"
+
+menu "bridges"
+
+config CONFIG_KERNEL_MODULE_AMBRG
+	bool "kernel-module-ambrg (drv_modules/platform/vin/bridges/ambrg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_VIN_VOUT_MONITOR
+
+config CONFIG_KERNEL_MODULE_B5
+	bool "kernel-module-b5 (drv_modules/platform/vin/bridges/b5)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_B6
+	bool "kernel-module-b6 (drv_modules/platform/vin/bridges/b6)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_B8
+	bool "kernel-module-b8 (drv_modules/platform/vin/bridges/b8)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MAX9286
+	bool "kernel-module-max9286 (drv_modules/platform/vin/bridges/maxim_9286)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MAX9288
+	bool "kernel-module-max9288 (drv_modules/platform/vin/bridges/maxim_9288)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MAX9296
+	bool "kernel-module-max9296 (drv_modules/platform/vin/bridges/maxim_9296)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MAX96712
+	bool "kernel-module-max96712 (drv_modules/platform/vin/bridges/maxim_96712)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MAX96716
+	bool "kernel-module-max96716 (drv_modules/platform/vin/bridges/maxim_96716)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_N4
+	bool "kernel-module-n4 (drv_modules/platform/vin/bridges/nextchip_n4)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_TP2855
+	bool "kernel-module-tp2855 (drv_modules/platform/vin/bridges/techpoint_tp2855)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_DS90UB954
+	bool "kernel-module-ds90ub954 (drv_modules/platform/vin/bridges/ti_ds90ub954)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_DS90UB964
+	bool "kernel-module-ds90ub964 (drv_modules/platform/vin/bridges/ti_ds90ub964)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+endmenu
+
+menu "decoders"
+
+config CONFIG_KERNEL_MODULE_ADV7441A
+	bool "kernel-module-adv7441a (drv_modules/platform/vin/decoders/adv7441a)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBDD
+	bool "kernel-module-ambdd (drv_modules/platform/vin/decoders/ambdd)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_LT6911
+	bool "kernel-module-lt6911 (drv_modules/platform/vin/decoders/lt6911)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_LT6911UXC
+	bool "kernel-module-lt6911uxc (drv_modules/platform/vin/decoders/lt6911uxc)"
+	default n
+	depends on CONFIG_KERNEL_MODULE_AMBVIDEO && CONFIG_LINUX
+
+config CONFIG_KERNEL_MODULE_PR2000
+	bool "kernel-module-pr2000 (drv_modules/platform/vin/decoders/pr2000)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_TC358840
+	bool "kernel-module-tc358840 (drv_modules/platform/vin/decoders/tc358840)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+choice CONFIG_SENSOR_NUMBER_CHOICE
+	prompt "sensor-number-choice@virtual (drv_modules/platform/vin/sensors)"
+	default CONFIG_SINGLE_SENSOR
+
+config CONFIG_SINGLE_SENSOR
+	bool "single-sensor@virtual"
+
+config CONFIG_DUAL_SENSOR
+	bool "dual-sensor@virtual"
+
+config CONFIG_QUAD_SENSOR_IMX274
+	bool "quad-sensor-imx274@virtual"
+
+config CONFIG_QUAD_SENSOR_IMX678
+	bool "quad-sensor-imx678@virtual"
+
+config CONFIG_B8N_QUAD_SENSOR
+	bool "b8n-quad-sensor@virtual"
+	depends on $(AMBA_SOC)="cv72"
+
+config CONFIG_HEXA_SENSOR
+	bool "hexa-sensor@virtual"
+	depends on $(AMBA_SOC)="cv2"
+
+endchoice
+
+menu "sensors"
+
+config CONFIG_KERNEL_MODULE_FPGA
+	bool "kernel-module-fpga (drv_modules/platform/vin/sensors/altera_fpga)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBDS
+	bool "kernel-module-ambds (drv_modules/platform/vin/sensors/ambds)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBDS_BRG
+	bool "kernel-module-ambds-brg (drv_modules/platform/vin/sensors/ambds_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_B5_AR0230
+	bool "kernel-module-b5-ar0230 (drv_modules/platform/vin/sensors/b5_ar0230)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_B5_AR0237
+	bool "kernel-module-b5-ar0237 (drv_modules/platform/vin/sensors/b5_ar0237)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_B5_IMX274
+	bool "kernel-module-b5-imx274 (drv_modules/platform/vin/sensors/b5_imx274)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_B5_IMX290
+	bool "kernel-module-b5-imx290 (drv_modules/platform/vin/sensors/b5_imx290)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_BRV0200_MIPI
+	bool "kernel-module-brv0200-mipi (drv_modules/platform/vin/sensors/brillnics_brv0200_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_BRV0500_MIPI
+	bool "kernel-module-brv0500-mipi (drv_modules/platform/vin/sensors/brillnics_brv0500_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_C2390_MIPI
+	bool "kernel-module-c2390-mipi (drv_modules/platform/vin/sensors/cista_c2390_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_C2390_PARALLEL
+	bool "kernel-module-c2390_parallel (drv_modules/platform/vin/sensors/cista_c2390_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC13A2_MIPI
+	bool "kernel-module-gc13a2-mipi (drv_modules/platform/vin/sensors/galaxycore_gc13a2)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC2093_MIPI
+	bool "kernel-module-gc2093-mipi (drv_modules/platform/vin/sensors/galaxycore_gc2093)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC2145_MIPI
+	bool "kernel-module-gc2145-mipi (drv_modules/platform/vin/sensors/galaxycore_gc2145)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC2385_MIPI
+	bool "kernel-module-gc2385-mipi (drv_modules/platform/vin/sensors/galaxycore_gc2385)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC4663_MIPI
+	bool "kernel-module-gc4663-mipi (drv_modules/platform/vin/sensors/galaxycore_gc4663)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_GC8034
+	bool "kernel-module-gc8034 (drv_modules/platform/vin/sensors/galaxycore_gc8034)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_HM2140
+	bool "kernel-module-hm2140 (drv_modules/platform/vin/sensors/himax_hm2140)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_HM5532
+	bool "kernel-module-hm5532 (drv_modules/platform/vin/sensors/himax_hm5532)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0130
+	bool "kernel-module-ar0130 (drv_modules/platform/vin/sensors/micron_ar0130)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0141
+	bool "kernel-module-ar0141 (drv_modules/platform/vin/sensors/micron_ar0141)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0230
+	bool "kernel-module-ar0230 (drv_modules/platform/vin/sensors/micron_ar0230)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0230_BRG
+	bool "kernel-module-ar0230-brg (drv_modules/platform/vin/sensors/micron_ar0230_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0230_PARALLEL
+	bool "kernel-module-ar0230-parallel (drv_modules/platform/vin/sensors/micron_ar0230_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0331
+	bool "kernel-module-ar0331 (drv_modules/platform/vin/sensors/micron_ar0331)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MT9T002
+	bool "kernel-module-mt9t002 (drv_modules/platform/vin/sensors/micron_mt9t002)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MT9T002_MIPI
+	bool "kernel-module-mt9t002-mipi (drv_modules/platform/vin/sensors/micron_mt9t002_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MT9T002_PARALLEL
+	bool "kernel-module-mt9t002-parallel (drv_modules/platform/vin/sensors/micron_mt9t002_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OG01A1B
+	bool "kernel-module-og01a1b (drv_modules/platform/vin/sensors/omnivision_og01a1b)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS02A1Q
+	bool "kernel-module-os02a1q (drv_modules/platform/vin/sensors/omnivision_os02a1q)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS02C10
+	bool "kernel-module-os02c10 (drv_modules/platform/vin/sensors/omnivision_os02c10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS02F10
+	bool "kernel-module-os02f10 (drv_modules/platform/vin/sensors/omnivision_os02f10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS02H10
+	bool "kernel-module-os02h10 (drv_modules/platform/vin/sensors/omnivision_os02h10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS02H10_MIPI_BRG
+	bool "kernel-module-os02h10-mipi-brg (drv_modules/platform/vin/sensors/omnivision_os02h10_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OS02K10
+	bool "kernel-module-os02k10 (drv_modules/platform/vin/sensors/omnivision_os02k10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS04A10
+	bool "kernel-module-os04a10 (drv_modules/platform/vin/sensors/omnivision_os04a10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS04C10_MIPI
+	bool "kernel-module-os04c10-mipi (drv_modules/platform/vin/sensors/omnivision_os04c10_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS04E10_MIPI
+	bool "kernel-module-os04e10-mipi (drv_modules/platform/vin/sensors/omnivision_os04e10_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS05A10
+	bool "kernel-module-os05a10 (drv_modules/platform/vin/sensors/omnivision_os05a10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS05A10_MIPI_BRG
+	bool "kernel-module-os05a10-mipi-brg (drv_modules/platform/vin/sensors/omnivision_os05a10_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OS05B10
+	bool "kernel-module-os05b10 (drv_modules/platform/vin/sensors/omnivision_os05b10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS08A10
+	bool "kernel-module-os08a10 (drv_modules/platform/vin/sensors/omnivision_os08a10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OS08A10_MIPI_BRG
+	bool "kernel-module-os08a10-mipi-brg (drv_modules/platform/vin/sensors/omnivision_os08a10_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OS08B10
+	bool "kernel-module-os08b10 (drv_modules/platform/vin/sensors/omnivision_os08b10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV02K10
+	bool "kernel-module-ov02k10 (drv_modules/platform/vin/sensors/omnivision_ov02k10)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV10640_BRG
+	bool "kernel-module-ov10640-brg (drv_modules/platform/vin/sensors/omnivision_ov10640_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV10823
+	bool "kernel-module-ov10823 (drv_modules/platform/vin/sensors/omnivision_ov10823)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2311_MIPI
+	bool "kernel-module-ov2311-mipi (drv_modules/platform/vin/sensors/omnivision_ov2311_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2311_MIPI_BRG
+	bool "kernel-module-ov2311-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ov2311_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV2710_PARALLEL
+	bool "kernel-module-ov2710-parallel (drv_modules/platform/vin/sensors/omnivision_ov2710_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2718_MIPI
+	bool "kernel-module-ov2718-mipi (drv_modules/platform/vin/sensors/omnivision_ov2718_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2718_MIPI_BRG
+	bool "kernel-module-ov2718-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ov2718_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV2718_PARALLEL_BRG
+	bool "kernel-module-ov2718-parallel-brg (drv_modules/platform/vin/sensors/omnivision_ov2718_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV2732_MIPI
+	bool "kernel-module-ov2732-mipi (drv_modules/platform/vin/sensors/omnivision_ov2732_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2732_PARALLEL
+	bool "kernel-module-ov2732-parallel (drv_modules/platform/vin/sensors/omnivision_ov2732_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2735_MIPI
+	bool "kernel-module-ov2735-mipi (drv_modules/platform/vin/sensors/omnivision_ov2735_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2735_PARALLEL
+	bool "kernel-module-ov2735-parallel (drv_modules/platform/vin/sensors/omnivision_ov2735_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2736_MIPI
+	bool "kernel-module-ov2736-mipi (drv_modules/platform/vin/sensors/omnivision_ov2736_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2770_MIPI
+	bool "kernel-module-ov2770-mipi (drv_modules/platform/vin/sensors/omnivision_ov2770_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2775_MIPI
+	bool "kernel-module-ov2775-mipi (drv_modules/platform/vin/sensors/omnivision_ov2775_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2775_MIPI_BRG
+	bool "kernel-module-ov2775-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ov2775_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV2778_MIPI
+	bool "kernel-module-ov2778-mipi (drv_modules/platform/vin/sensors/omnivision_ov2778_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV2778_MIPI_BRG
+	bool "kernel-module-ov2778-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ov2778_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV2778_PARALLEL_BRG
+	bool "kernel-module-ov2778-parallel-brg (drv_modules/platform/vin/sensors/omnivision_ov2778_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV4689_MIPI
+	bool "kernel-module-ov4689-mipi (drv_modules/platform/vin/sensors/omnivision_ov4689_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV5653
+	bool "kernel-module-ov5653 (drv_modules/platform/vin/sensors/omnivision_ov5653)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV5658_MIPI
+	bool "kernel-module-ov5658-mipi (drv_modules/platform/vin/sensors/omnivision_ov5658_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV7251_MIPI
+	bool "kernel-module-ov7251-mipi (drv_modules/platform/vin/sensors/omnivision_ov7251_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV8856_MIPI
+	bool "kernel-module-ov8856-mipi (drv_modules/platform/vin/sensors/omnivision_ov8856_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9281
+	bool "kernel-module-ov9281 (drv_modules/platform/vin/sensors/omnivision_ov9281)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9281_BRG
+	bool "kernel-module-ov9281-brg (drv_modules/platform/vin/sensors/omnivision_ov9281_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV9284_BRG
+	bool "kernel-module-ov9284-brg (drv_modules/platform/vin/sensors/omnivision_ov9284_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV9284_MIPI_BRG
+	bool "kernel-module-ov9284-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ov9284_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV9706_PARALLEL_BRG
+	bool "kernel-module-ov9706-parallel-brg (drv_modules/platform/vin/sensors/omnivision_ov9706_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OV9710
+	bool "kernel-module-ov9710 (drv_modules/platform/vin/sensors/omnivision_ov9710)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9718_MIPI
+	bool "kernel-module-ov9718-mipi (drv_modules/platform/vin/sensors/omnivision_ov9718_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9732_MIPI
+	bool "kernel-module-ov9732-mipi (drv_modules/platform/vin/sensors/omnivision_ov9732_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9732_PARALLEL
+	bool "kernel-module-ov9732-parallel (drv_modules/platform/vin/sensors/omnivision_ov9732_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9750_MIPI
+	bool "kernel-module-ov9750-mipi (drv_modules/platform/vin/sensors/omnivision_ov9750_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9750_PARALLEL
+	bool "kernel-module-ov9750-parallel (drv_modules/platform/vin/sensors/omnivision_ov9750_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OV9755_MIPI
+	bool "kernel-module-ov9755-mipi (drv_modules/platform/vin/sensors/omnivision_ov9755_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OVM7690_PARALLEL
+	bool "kernel-module-ovm7690-parallel (drv_modules/platform/vin/sensors/omnivision_ovm7690_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OX01A10_MIPI
+	bool "kernel-module-ox01a10-mipi (drv_modules/platform/vin/sensors/omnivision_ox01a10_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OX03C10_MIPI
+	bool "kernel-module-ox03c10-mipi (drv_modules/platform/vin/sensors/omnivision_ox03c10_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OX03C10_MIPI_BRG
+	bool "kernel-module-ox03c10-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ox03c10_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OX03F10_MIPI_BRG
+	bool "kernel-module-ox03f10-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ox03f10_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OX05B1S_MIPI
+	bool "kernel-module-ox05b1s-mipi (drv_modules/platform/vin/sensors/omnivision_ox05b1s_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OX05B1S_MIPI_BRG
+	bool "kernel-module-ox05b1s-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ox05b1s_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OX08B40_MIPI
+	bool "kernel-module-ox08b40-mipi (drv_modules/platform/vin/sensors/omnivision_ox08b40_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_OX08B40_MIPI_BRG
+	bool "kernel-module-ox08b40-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ox08b40_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OX08C4C_MIPI_BRG
+	bool "kernel-module-ox08c4c-mipi-brg (drv_modules/platform/vin/sensors/omnivision_ox08c4c_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_OX08D10_MIPI
+	bool "kernel-module-ox08d10-mipi (drv_modules/platform/vin/sensors/omnivision_ox08d10_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0132_PARALLEL
+	bool "kernel-module-ar0132-parallel (drv_modules/platform/vin/sensors/onsemi_ar0132_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0132_PARALLEL_BRG
+	bool "kernel-module-ar0132-parallel-brg (drv_modules/platform/vin/sensors/onsemi_ar0132_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0135_PARALLEL_BRG
+	bool "kernel-module-ar0135-parallel-brg (drv_modules/platform/vin/sensors/onsemi_ar0135_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0138_MIPI
+	bool "kernel-module-ar0138-mipi (drv_modules/platform/vin/sensors/onsemi_ar0138_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0143_PARALLEL
+	bool "kernel-module-ar0143-parallel (drv_modules/platform/vin/sensors/onsemi_ar0143_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0144_MIPI
+	bool "kernel-module-ar0144-mipi (drv_modules/platform/vin/sensors/onsemi_ar0144_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0144_MIPI_BRG
+	bool "kernel-module-ar0144-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0144_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0144_PARALLEL
+	bool "kernel-module-ar0144-parallel (drv_modules/platform/vin/sensors/onsemi_ar0144_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0144_PARALLEL_BRG
+	bool "kernel-module-ar0144-parallel-brg (drv_modules/platform/vin/sensors/onsemi_ar0144_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0147_MIPI
+	bool "kernel-module-ar0147-mipi (drv_modules/platform/vin/sensors/onsemi_ar0147_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0147_MIPI_BRG
+	bool "kernel-module-ar0147-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0147_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0147_PARALLEL_BRG
+	bool "kernel-module-ar0147-parallel-brg (drv_modules/platform/vin/sensors/onsemi_ar0147_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0220_MIPI
+	bool "kernel-module-ar0220-mipi (drv_modules/platform/vin/sensors/onsemi_ar0220_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0220_MIPI_BRG
+	bool "kernel-module-ar0220-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0220_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0221_MIPI
+	bool "kernel-module-ar0221-mipi (drv_modules/platform/vin/sensors/onsemi_ar0221_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0231_MIPI
+	bool "kernel-module-ar0231-mipi (drv_modules/platform/vin/sensors/onsemi_ar0231_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0231_MIPI_BRG
+	bool "kernel-module-ar0231-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0231_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0231_PARALLEL
+	bool "kernel-module-ar0231-parallel (drv_modules/platform/vin/sensors/onsemi_ar0231_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0231_PARALLEL_BRG
+	bool "kernel-module-ar0231-parallel-brg (drv_modules/platform/vin/sensors/onsemi_ar0231_parallel_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0233_MIPI
+	bool "kernel-module-ar0233-mipi (drv_modules/platform/vin/sensors/onsemi_ar0233_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0233_MIPI_BRG
+	bool "kernel-module-ar0233-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0233_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0234_MIPI
+	bool "kernel-module-ar0234-mipi (drv_modules/platform/vin/sensors/onsemi_ar0234_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0234_MIPI_BRG
+	bool "kernel-module-ar0234-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0234_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0237
+	bool "kernel-module-ar0237 (drv_modules/platform/vin/sensors/onsemi_ar0237)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0237_BRG
+	bool "kernel-module-ar0237-brg (drv_modules/platform/vin/sensors/onsemi_ar0237_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0237_PARALLEL
+	bool "kernel-module-ar0237-parallel (drv_modules/platform/vin/sensors/onsemi_ar0237_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0239
+	bool "kernel-module-ar0239 (drv_modules/platform/vin/sensors/onsemi_ar0239)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0239_MIPI
+	bool "kernel-module-ar0239-mipi (drv_modules/platform/vin/sensors/onsemi_ar0239_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0239_MIPI_BRG
+	bool "kernel-module-ar0239-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0239_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0323_MIPI
+	bool "kernel-module-ar0323-mipi (drv_modules/platform/vin/sensors/onsemi_ar0323_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0323_MIPI_BRG
+	bool "kernel-module-ar0323-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0323_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0341_MIPI_BRG
+	bool "kernel-module-ar0341-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0341_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0431_MIPI
+	bool "kernel-module-ar0431-mipi (drv_modules/platform/vin/sensors/onsemi_ar0431_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0432_MIPI
+	bool "kernel-module-ar0432-mipi (drv_modules/platform/vin/sensors/onsemi_ar0432_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0521
+	bool "kernel-module-ar0521 (drv_modules/platform/vin/sensors/onsemi_ar0521)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0521_MIPI
+	bool "kernel-module-ar0521-mipi (drv_modules/platform/vin/sensors/onsemi_ar0521_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0820_MIPI_BRG
+	bool "kernel-module-ar0820-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0820_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0822_MIPI
+	bool "kernel-module-ar0822-mipi (drv_modules/platform/vin/sensors/onsemi_ar0822_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR0822_MIPI_BRG
+	bool "kernel-module-ar0822-mipi-brg (drv_modules/platform/vin/sensors/onsemi_ar0822_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_AR0830_MIPI
+	bool "kernel-module-ar0830-mipi (drv_modules/platform/vin/sensors/onsemi_ar0830_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AR2020_MIPI
+	bool "kernel-module-ar2020-mipi (drv_modules/platform/vin/sensors/onsemi_ar2020_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_XGS12000_MIPI
+	bool "kernel-module-xgs12000-mipi (drv_modules/platform/vin/sensors/onsemi_xgs12000_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34041PL
+	bool "kernel-module-mn34041pl (drv_modules/platform/vin/sensors/panasonic_mn34041pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34210PL
+	bool "kernel-module-mn34210pl (drv_modules/platform/vin/sensors/panasonic_mn34210pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34220PL
+	bool "kernel-module-mn34220pl (drv_modules/platform/vin/sensors/panasonic_mn34220pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34227PL
+	bool "kernel-module-mn34227pl (drv_modules/platform/vin/sensors/panasonic_mn34227pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34420PL
+	bool "kernel-module-mn34420pl (drv_modules/platform/vin/sensors/panasonic_mn34420pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34422PL
+	bool "kernel-module-mn34422pl (drv_modules/platform/vin/sensors/panasonic_mn34422pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MN34424PL
+	bool "kernel-module-mn34424pl (drv_modules/platform/vin/sensors/panasonic_mn34424pl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_PS5250
+	bool "kernel-module-ps5250 (drv_modules/platform/vin/sensors/primesensor_ps5250)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_PS5270
+	bool "kernel-module-ps5270 (drv_modules/platform/vin/sensors/primesensor_ps5270)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_S5K1H1_MIPI_BRG
+	bool "kernel-module-s5k1h1-mipi-brg (drv_modules/platform/vin/sensors/samsung_s5k1h1_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_SC130GS_MIPI
+	bool "kernel-module-sc130gs-mipi (drv_modules/platform/vin/sensors/smartsens_sc130gs_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC200AI_MIPI
+	bool "kernel-module-sc200ai-mipi (drv_modules/platform/vin/sensors/smartsens_sc200ai_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC2135_PARALLEL
+	bool "kernel-module-sc2135-parallel (drv_modules/platform/vin/sensors/smartsens_sc2135_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC2235_PARALLEL
+	bool "kernel-module-sc2235-parallel (drv_modules/platform/vin/sensors/smartsens_sc2235_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC230AI_MIPI
+	bool "kernel-module-sc230ai-mipi (drv_modules/platform/vin/sensors/smartsens_sc230ai_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC2310_MIPI
+	bool "kernel-module-sc2310-mipi (drv_modules/platform/vin/sensors/smartsens_sc2310_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC2315_MIPI
+	bool "kernel-module-sc2315-mipi (drv_modules/platform/vin/sensors/smartsens_sc2315_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC2332_MIPI
+	bool "kernel-module-sc2332-mipi (drv_modules/platform/vin/sensors/smartsens_sc2332_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC301IOT_MIPI
+	bool "kernel-module-sc301iot-mipi (drv_modules/platform/vin/sensors/smartsens_sc301iot_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC410GS
+	bool "kernel-module-sc410gs (drv_modules/platform/vin/sensors/smartsens_sc410gs)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC4210_MIPI
+	bool "kernel-module-sc4210-mipi (drv_modules/platform/vin/sensors/smartsens_sc4210_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC500AI_MIPI
+	bool "kernel-module-sc500ai-mipi (drv_modules/platform/vin/sensors/smartsens_sc500ai_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC5238_MIPI
+	bool "kernel-module-sc5238-mipi (drv_modules/platform/vin/sensors/smartsens_sc5238_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC5300_MIPI
+	bool "kernel-module-sc5300-mipi (drv_modules/platform/vin/sensors/smartsens_sc5300_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC530AI_MIPI
+	bool "kernel-module-sc530ai-mipi (drv_modules/platform/vin/sensors/smartsens_sc530ai_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC533AT_MIPI
+	bool "kernel-module-sc533at-mipi (drv_modules/platform/vin/sensors/smartsens_sc533at_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC533AT_MIPI_BRG
+	bool "kernel-module-sc533at-mipi-brg (drv_modules/platform/vin/sensors/smartsens_sc533at_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_SC630AI_MIPI
+	bool "kernel-module-sc630ai-mipi (drv_modules/platform/vin/sensors/smartsens_sc630ai_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC8235_MIPI
+	bool "kernel-module-sc8235-mipi (drv_modules/platform/vin/sensors/smartsens_sc8235_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_SC850SL_MIPI
+	bool "kernel-module-sc850sl-mipi (drv_modules/platform/vin/sensors/smartsens_sc850sl_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_F22_MIPI
+	bool "kernel-module-jx-f22-mipi (drv_modules/platform/vin/sensors/soi_jx_f22_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_F23_MIPI
+	bool "kernel-module-jx-f23-mipi (drv_modules/platform/vin/sensors/soi_jx_f23_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+menuconfig CONFIG_KERNEL_MODULE_JX_F32_MIPI
+	bool "kernel-module-jx-f32-mipi (drv_modules/platform/vin/sensors/soi_jx_f32_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+if CONFIG_KERNEL_MODULE_JX_F32_MIPI
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/platform/vin/sensors/soi_jx_f32_mipi/amba.kconf"
+endif
+
+config CONFIG_KERNEL_MODULE_JX_F35_MIPI
+	bool "kernel-module-jx-f35-mipi (drv_modules/platform/vin/sensors/soi_jx_f35_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_F53_MIPI
+	bool "kernel-module-jx-f53-mipi (drv_modules/platform/vin/sensors/soi_jx_f53_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_K02_MIPI
+	bool "kernel-module-jx-k02-mipi (drv_modules/platform/vin/sensors/soi_jx_k02_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_K308_MIPI
+	bool "kernel-module-jx-k308-mipi (drv_modules/platform/vin/sensors/soi_jx_k308_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_JX_K351_MIPI
+	bool "kernel-module-jx-k351-mipi (drv_modules/platform/vin/sensors/soi_jx_k351_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX104
+	bool "kernel-module-imx104 (drv_modules/platform/vin/sensors/sony_imx104)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX117
+	bool "kernel-module-imx117 (drv_modules/platform/vin/sensors/sony_imx117)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX122
+	bool "kernel-module-imx122 (drv_modules/platform/vin/sensors/sony_imx122)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX123
+	bool "kernel-module-imx123 (drv_modules/platform/vin/sensors/sony_imx123)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX123_MIPI
+	bool "kernel-module-imx123-mipi (drv_modules/platform/vin/sensors/sony_imx123_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX124
+	bool "kernel-module-imx124 (drv_modules/platform/vin/sensors/sony_imx124)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX136
+	bool "kernel-module-imx136 (drv_modules/platform/vin/sensors/sony_imx136)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX136_PARALLEL
+	bool "kernel-module-imx136-parallel (drv_modules/platform/vin/sensors/sony_imx136_parallel)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX172
+	bool "kernel-module-imx172 (drv_modules/platform/vin/sensors/sony_imx172)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX174
+	bool "kernel-module-imx174 (drv_modules/platform/vin/sensors/sony_imx174)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX178
+	bool "kernel-module-imx178 (drv_modules/platform/vin/sensors/sony_imx178)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX183
+	bool "kernel-module-imx183 (drv_modules/platform/vin/sensors/sony_imx183)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX185
+	bool "kernel-module-imx185 (drv_modules/platform/vin/sensors/sony_imx185)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX185_MIPI
+	bool "kernel-module-imx185-mipi (drv_modules/platform/vin/sensors/sony_imx185_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX185_PLVDS
+	bool "kernel-module-imx185-plvds (drv_modules/platform/vin/sensors/sony_imx185_plvds)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX224
+	bool "kernel-module-imx224 (drv_modules/platform/vin/sensors/sony_imx224)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX224_MIPI
+	bool "kernel-module-imx224-mipi (drv_modules/platform/vin/sensors/sony_imx224_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX226
+	bool "kernel-module-imx226 (drv_modules/platform/vin/sensors/sony_imx226)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX250
+	bool "kernel-module-imx250 (drv_modules/platform/vin/sensors/sony_imx250)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX264
+	bool "kernel-module-imx264 (drv_modules/platform/vin/sensors/sony_imx264)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX265
+	bool "kernel-module-imx265 (drv_modules/platform/vin/sensors/sony_imx265)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX274
+	bool "kernel-module-imx274 (drv_modules/platform/vin/sensors/sony_imx274)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX274_MIPI
+	bool "kernel-module-imx274-mipi (drv_modules/platform/vin/sensors/sony_imx274_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX274_MIPI_BRG
+	bool "kernel-module-imx274-mipi-brg (drv_modules/platform/vin/sensors/sony_imx274_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX277
+	bool "kernel-module-imx277 (drv_modules/platform/vin/sensors/sony_imx277)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX290
+	bool "kernel-module-imx290 (drv_modules/platform/vin/sensors/sony_imx290)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX290_BRG
+	bool "kernel-module-imx290-brg (drv_modules/platform/vin/sensors/sony_imx290_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX290_MIPI
+	bool "kernel-module-imx290-mipi (drv_modules/platform/vin/sensors/sony_imx290_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX290_MIPI_BRG
+	bool "kernel-module-imx290-mipi-brg (drv_modules/platform/vin/sensors/sony_imx290_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX291
+	bool "kernel-module-imx291 (drv_modules/platform/vin/sensors/sony_imx291)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX291_MIPI
+	bool "kernel-module-imx291-mipi (drv_modules/platform/vin/sensors/sony_imx291_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX296_MIPI
+	bool "kernel-module-imx296-mipi (drv_modules/platform/vin/sensors/sony_imx296_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX296_MIPI_BRG
+	bool "kernel-module-imx296-mipi-brg (drv_modules/platform/vin/sensors/sony_imx296_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX299_MIPI
+	bool "kernel-module-imx299-mipi (drv_modules/platform/vin/sensors/sony_imx299_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX305
+	bool "kernel-module-imx305 (drv_modules/platform/vin/sensors/sony_imx305)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX307
+	bool "kernel-module-imx307 (drv_modules/platform/vin/sensors/sony_imx307)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX307_MIPI
+	bool "kernel-module-imx307-mipi (drv_modules/platform/vin/sensors/sony_imx307_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX307_MIPI_BRG
+	bool "kernel-module-imx307-mipi-brg (drv_modules/platform/vin/sensors/sony_imx307_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX322
+	bool "kernel-module-imx322 (drv_modules/platform/vin/sensors/sony_imx322)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX326
+	bool "kernel-module-imx326 (drv_modules/platform/vin/sensors/sony_imx326)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX326_MIPI
+	bool "kernel-module-imx326-mipi (drv_modules/platform/vin/sensors/sony_imx326_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX327
+	bool "kernel-module-imx327 (drv_modules/platform/vin/sensors/sony_imx327)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX327_MIPI
+	bool "kernel-module-imx327-mipi (drv_modules/platform/vin/sensors/sony_imx327_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX327_MIPI_BRG
+	bool "kernel-module-imx327-mipi-brg (drv_modules/platform/vin/sensors/sony_imx327_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX334_MIPI
+	bool "kernel-module-imx334-mipi (drv_modules/platform/vin/sensors/sony_imx334_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX335_MIPI
+	bool "kernel-module-imx335-mipi (drv_modules/platform/vin/sensors/sony_imx335_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX335_MIPI_BRG
+	bool "kernel-module-imx335-mipi-brg (drv_modules/platform/vin/sensors/sony_imx335_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX347_MIPI
+	bool "kernel-module-imx347-mipi (drv_modules/platform/vin/sensors/sony_imx347_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX377_MIPI
+	bool "kernel-module-imx377-mipi (drv_modules/platform/vin/sensors/sony_imx377_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX385
+	bool "kernel-module-imx385 (drv_modules/platform/vin/sensors/sony_imx385)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX385_MIPI
+	bool "kernel-module-imx385-mipi (drv_modules/platform/vin/sensors/sony_imx385_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX390_MIPI
+	bool "kernel-module-imx390-mipi (drv_modules/platform/vin/sensors/sony_imx390_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX390_MIPI_BRG
+	bool "kernel-module-imx390-mipi-brg (drv_modules/platform/vin/sensors/sony_imx390_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX408_MIPI
+	bool "kernel-module-imx408-mipi (drv_modules/platform/vin/sensors/sony_imx408_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX412_MIPI
+	bool "kernel-module-imx412-mipi (drv_modules/platform/vin/sensors/sony_imx412_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX415_MIPI
+	bool "kernel-module-imx415-mipi (drv_modules/platform/vin/sensors/sony_imx415_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX415_MIPI_BRG
+	bool "kernel-module-imx415-mipi-brg (drv_modules/platform/vin/sensors/sony_imx415_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX422
+	bool "kernel-module-imx422 (drv_modules/platform/vin/sensors/sony_imx422)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX424_MIPI_BRG
+	bool "kernel-module-imx424-mipi-brg (drv_modules/platform/vin/sensors/sony_imx424_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX455
+	bool "kernel-module-imx455 (drv_modules/platform/vin/sensors/sony_imx455)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX462_MIPI
+	bool "kernel-module-imx462-mipi (drv_modules/platform/vin/sensors/sony_imx462_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX462_MIPI_BRG
+	bool "kernel-module-imx462-mipi-brg (drv_modules/platform/vin/sensors/sony_imx462_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX464_MIPI
+	bool "kernel-module-imx464-mipi (drv_modules/platform/vin/sensors/sony_imx464_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX485_MIPI
+	bool "kernel-module-imx485-mipi (drv_modules/platform/vin/sensors/sony_imx485_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX490_MIPI_BRG
+	bool "kernel-module-imx490-mipi-brg (drv_modules/platform/vin/sensors/sony_imx490_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX492
+	bool "kernel-module-imx492 (drv_modules/platform/vin/sensors/sony_imx492)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX515_MIPI
+	bool "kernel-module-imx515-mipi (drv_modules/platform/vin/sensors/sony_imx515_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX542
+	bool "kernel-module-imx542 (drv_modules/platform/vin/sensors/sony_imx542)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX566_MIPI
+	bool "kernel-module-imx566-mipi (drv_modules/platform/vin/sensors/sony_imx566_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX568_MIPI
+	bool "kernel-module-imx568-mipi (drv_modules/platform/vin/sensors/sony_imx568_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX571
+	bool "kernel-module-imx571 (drv_modules/platform/vin/sensors/sony_imx571)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX577_MIPI
+	bool "kernel-module-imx577-mipi (drv_modules/platform/vin/sensors/sony_imx577_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX585_MIPI
+	bool "kernel-module-imx585-mipi (drv_modules/platform/vin/sensors/sony_imx585_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX586_MIPI
+	bool "kernel-module-imx586-mipi (drv_modules/platform/vin/sensors/sony_imx586_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX623_MIPI
+	bool "kernel-module-imx623-mipi (drv_modules/platform/vin/sensors/sony_imx623_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX623_MIPI_BRG
+	bool "kernel-module-imx623-mipi-brg (drv_modules/platform/vin/sensors/sony_imx623_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX662_MIPI
+	bool "kernel-module-imx662-mipi (drv_modules/platform/vin/sensors/sony_imx662_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX662_MIPI_BRG
+	bool "kernel-module-imx662-mipi-brg (drv_modules/platform/vin/sensors/sony_imx662_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX664_MIPI
+	bool "kernel-module-imx664-mipi (drv_modules/platform/vin/sensors/sony_imx664_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX675_MIPI
+	bool "kernel-module-imx675-mipi (drv_modules/platform/vin/sensors/sony_imx675_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX675_MIPI_BRG
+	bool "kernel-module-imx675-mipi-brg (drv_modules/platform/vin/sensors/sony_imx675_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX676_MIPI
+	bool "kernel-module-imx676-mipi (drv_modules/platform/vin/sensors/sony_imx676_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX678_MIPI
+	bool "kernel-module-imx678-mipi (drv_modules/platform/vin/sensors/sony_imx678_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX715_MIPI
+	bool "kernel-module-imx715-mipi (drv_modules/platform/vin/sensors/sony_imx715_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX728_MIPI_BRG
+	bool "kernel-module-imx728-mipi-brg (drv_modules/platform/vin/sensors/sony_imx728_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IMX989_MIPI
+	bool "kernel-module-imx989-mipi (drv_modules/platform/vin/sensors/sony_imx989_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_VB1940_MIPI_BRG
+	bool "kernel-module-vb1940-mipi-brg (drv_modules/platform/vin/sensors/st_vb1940_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_VG1762_MIPI_BRG
+	bool "kernel-module-vg1762-mipi-brg (drv_modules/platform/vin/sensors/st_vg1762_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_VG5761_MIPI
+	bool "kernel-module-vg5761-mipi (drv_modules/platform/vin/sensors/st_vg5761_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_VG5761_MIPI_BRG
+	bool "kernel-module-vg5761-mipi-brg (drv_modules/platform/vin/sensors/st_vg5761_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_SP2309_MIPI
+	bool "kernel-module-sp2309-mipi (drv_modules/platform/vin/sensors/superpix_sp2309_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+menuconfig CONFIG_TOF_SENSOR
+	bool "tof_sensor@virtual (drv_modules/platform/vin/tof_sensors)"
+	default n
+
+if CONFIG_TOF_SENSOR
+
+config CONFIG_KERNEL_MODULE_ADSD3500
+	bool "kernel-module-adsd3500 (drv_modules/platform/vin/tof_sensors/adi_adsd3500)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_TOF75027_MIPI_BRG
+	bool "kernel-module-tof75027-mipi-brg (drv_modules/platform/vin/tof_sensors/gp_tof75027_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_TOF9043_MIPI_BRG
+	bool "kernel-module-tof9043-mipi-brg (drv_modules/platform/vin/tof_sensors/gp_tof9043_mipi_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IRS2877A_MIPI_BRG
+	bool "kernel-module-irs2877a-mipi-brg (drv_modules/platform/vin/tof_sensors/infineon_irs2877a_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_IRS2877C
+	bool "kernel-module-irs2877c (drv_modules/platform/vin/tof_sensors/infineon_irs2877c)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IRS2877C_MIPI_BRG
+	bool "kernel-module-irs2877c-mipi-brg (drv_modules/platform/vin/tof_sensors/infineon_irs2877c_brg)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+	select CONFIG_KERNEL_MODULE_AMBRG
+
+config CONFIG_KERNEL_MODULE_MN34906BL
+	bool "kernel-module-mn34906bl (drv_modules/platform/vin/tof_sensors/panasonic_mn34906bl)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_CXD5639_IMX570
+	bool "kernel-module-cxd5639-imx570 (drv_modules/platform/vin/tof_sensors/sony_cxd5639_imx570_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX316_MIPI
+	bool "kernel-module-imx316-mipi (drv_modules/platform/vin/tof_sensors/sony_imx316_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX456_MIPI
+	bool "kernel-module-imx456-mipi (drv_modules/platform/vin/tof_sensors/sony_imx456_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_IMX528_MIPI
+	bool "kernel-module-imx528-mipi (drv_modules/platform/vin/tof_sensors/sony_imx528_mipi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endif
+
+endmenu
+
+menu "vout"
+
+config CONFIG_KERNEL_MODULE_AMBDVE
+	bool "kernel-module-ambdve (drv_modules/platform/vout/ambdve)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBHDMI
+	bool "kernel-module-ambhdmi (drv_modules/platform/vout/ambhdmi)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+menu "amblcd"
+
+config CONFIG_KERNEL_MODULE_OLED_AMS700VS13
+	bool "kernel-module-oled-ams700vs13 (drv_modules/platform/vout/amblcd/ams700vs13)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_DIGITAL_VOUT
+	bool "kernel-module-digital-vout (drv_modules/platform/vout/amblcd/digital)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MIPI_CSI
+	bool "kernel-module-mipi-csi (drv_modules/platform/vout/amblcd/mipi_csi)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MIPI_DSI_LCD_R69429
+	bool "kernel-module-mipi-dsi-lcd-r69429 (drv_modules/platform/vout/amblcd/mipi_dsi_lcd_r69429)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MIPI_DSI_LCD_R9611
+	bool "kernel-module-mipi-dsi-lcd-r9611 (drv_modules/platform/vout/amblcd/mipi_dsi_lcd_r9611)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+config CONFIG_KERNEL_MODULE_IT66121
+	bool "kernel-module-it66121 (drv_modules/platform/vout/it66121)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MAX96717
+	bool "kernel-module-max96717 (drv_modules/platform/vout/max96717)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MAX96751
+	bool "kernel-module-max96751 (drv_modules/platform/vout/max96751)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MAX96755
+	bool "kernel-module-max96755 (drv_modules/platform/vout/max96755)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_MAX96785
+	bool "kernel-module-max96785 (drv_modules/platform/vout/max96785)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_TI_DS90UB941
+	bool "kernel-module-ti-ds90ub941 (drv_modules/platform/vout/ti_ds90ub941)"
+	default n
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+endmenu
+
+menu "private"
+
+config CONFIG_KERNEL_MODULE_AMBOTP
+	bool "kernel-module-ambotp (drv_modules/private/amba_otp/dsp_v6)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+config CONFIG_KERNEL_MODULE_AMBCAVALRY
+	bool "kernel-module-ambcavalry (drv_modules/private/cavalry)"
+	default y
+	depends on CONFIG_LINUX && CONFIG_AMBCAVALRY_HEADER && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_FIRMWARE_CAVALRY
+
+config CONFIG_AMBCAVALRY_HEADER
+	bool "ambcavalry-header (drv_modules/private/cavalry)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+
+config CONFIG_CAVALRY_UCODE_API
+	bool "cavalry-ucode-api (drv_modules/private/cavalry)"
+	default n
+	depends on $(AMBA_SOC)!="s6lm"
+
+config CONFIG_KERNEL_MODULE_AMBVIDEO
+	bool "kernel-module-ambvideo (drv_modules/private/video/dsp_v6)"
+	default y
+	depends on CONFIG_LINUX && CONFIG_AMBVIDEO_HEADER
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_FIRMWARE_DSP
+
+menuconfig CONFIG_AMBVIDEO_HEADER
+	bool "ambvideo-header (drv_modules/private/video/dsp_v6)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_AMBVIDEO_HEADER
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/drv_modules/private/video/dsp_v6/amba.kconf"
+endif
+
+config CONFIG_KERNEL_MODULE_VIN_VOUT_MONITOR
+	bool "kernel-module-vin-vout-monitor (drv_modules/private/vin_vout_monitor)"
+	default y
+	depends on CONFIG_LINUX
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_KERNEL_MODULE_AMBVIDEO
+
+endmenu
+
+endmenu
+
+menu "kernel"
+
+choice CONFIG_LINUX_PATCH_UVAC_CHOICE
+	prompt "linux-patch-uvac-choice@virtual (kernel/linux-patch)"
+	default CONFIG_LINUX_UNPATCH_UVAC
+
+config CONFIG_LINUX_PATCH_UVAC
+	bool "linux-patch-uvac"
+
+config CONFIG_LINUX_UNPATCH_UVAC
+	bool "linux-unpatch-uvac"
+
+endchoice
+
+choice CONFIG_LINUX_PATCH_RMEM_DIO_CHOICE
+	prompt "linux-patch-rmem-dio-choice@virtual (kernel/linux-patch)"
+	default CONFIG_LINUX_UNPATCH_RMEM_DIO
+
+config CONFIG_LINUX_PATCH_RMEM_DIO
+	bool "linux-patch-rmem-dio"
+
+config CONFIG_LINUX_UNPATCH_RMEM_DIO
+	bool "linux-unpatch-rmem-dio"
+
+endchoice
+
+menuconfig CONFIG_LINUX
+	bool "linux (kernel)"
+	default y
+	depends on CONFIG_BOARD && (CONFIG_LINUX_PATCH_UVAC || CONFIG_LINUX_UNPATCH_UVAC) && (CONFIG_LINUX_PATCH_RMEM_DIO || CONFIG_LINUX_UNPATCH_RMEM_DIO)
+
+if CONFIG_LINUX
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/kernel/amba.kconf"
+endif
+
+endmenu
+
+config CONFIG_LEGAL_INFO
+	bool "legal-info (license)"
+	default y
+
+menuconfig CONFIG_ORYXV2
+	bool "oryxv2 (oryx_v2)"
+	default n
+	depends on CONFIG_BOARD && CONFIG_PREBUILD_PKGCONFIG_PC_FILE
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+if CONFIG_ORYXV2
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/oryx_v2/amba.kconf"
+endif
+
+menu "oss"
+
+config CONFIG_ABSEIL_CPP_NATIVE
+	bool "abseil-cpp-native (oss/abseil-cpp)"
+	default n
+
+config CONFIG_ABSEIL_CPP
+	bool "abseil-cpp (oss/abseil-cpp)"
+	default n
+
+config CONFIG_ALSA_LIB_NATIVE
+	bool "alsa-lib-native (oss/alsa-lib)"
+	default n
+
+config CONFIG_ALSA_LIB
+	bool "alsa-lib (oss/alsa-lib)"
+	default n
+
+config CONFIG_ALSA_PLUGINS_NATIVE
+	bool "alsa-plugins-native (oss/alsa-plugins)"
+	default n
+	depends on CONFIG_ALSA_LIB_NATIVE
+
+config CONFIG_ALSA_PLUGINS
+	bool "alsa-plugins (oss/alsa-plugins)"
+	default n
+	select CONFIG_ALSA_LIB
+
+config CONFIG_ALSA_UTILS_NATIVE
+	bool "alsa-utils-native (oss/alsa-utils)"
+	default n
+	depends on CONFIG_ALSA_LIB_NATIVE
+
+config CONFIG_ALSA_UTILS
+	bool "alsa-utils (oss/alsa-utils)"
+	default n
+	select CONFIG_ALSA_LIB
+
+config CONFIG_BUILD_BUSYBOX
+	bool "build-busybox@virtual (oss/busybox)"
+	default y
+
+choice CONFIG_BUILD_BUSYBOX_CHOICE
+	prompt "build-busybox-choice@virtual (oss/busybox)"
+	default CONFIG_PREBUILD_BUSYBOX
+	depends on CONFIG_BUILD_BUSYBOX
+
+config CONFIG_BUSYBOX
+	bool "busybox"
+
+config CONFIG_PREBUILD_BUSYBOX
+	bool "prebuild-busybox"
+	depends on CONFIG_BOARD
+
+endchoice
+
+config CONFIG_BZIP2_NATIVE
+	bool "bzip2-native (oss/bzip2)"
+	default n
+
+config CONFIG_BZIP2
+	bool "bzip2 (oss/bzip2)"
+	default n
+
+config CONFIG_CJSON_NATIVE
+	bool "cjson-native (oss/cjson)"
+	default n
+
+config CONFIG_CJSON
+	bool "cjson (oss/cjson)"
+	default n
+
+config CONFIG_CURL_NATIVE
+	bool "curl-native (oss/curl)"
+	default n
+	depends on CONFIG_ZLIB_NATIVE && CONFIG_OPENSSL_NATIVE
+
+config CONFIG_CURL
+	bool "curl (oss/curl)"
+	default n
+	select CONFIG_ZLIB
+	select CONFIG_OPENSSL
+
+config CONFIG_DBUS_NATIVE
+	bool "dbus-native (oss/dbus)"
+	default n
+	depends on CONFIG_EXPAT_NATIVE
+
+config CONFIG_DBUS
+	bool "dbus (oss/dbus)"
+	default n
+	select CONFIG_EXPAT
+
+config CONFIG_EIGEN_NATIVE
+	bool "eigen-native (oss/eigen)"
+	default n
+
+config CONFIG_EIGEN
+	bool "eigen (oss/eigen)"
+	default n
+
+config CONFIG_EXFAT_UTILS_NATIVE
+	bool "exfat-utils-native (oss/exfat-utils)"
+	default n
+
+config CONFIG_EXFAT_UTILS
+	bool "exfat-utils (oss/exfat-utils)"
+	default n
+
+config CONFIG_EXPAT_NATIVE
+	bool "expat-native (oss/expat)"
+	default n
+
+config CONFIG_EXPAT
+	bool "expat (oss/expat)"
+	default n
+
+config CONFIG_FREETYPE_NATIVE
+	bool "freetype-native (oss/freetype)"
+	default n
+	depends on CONFIG_LIBPNG_NATIVE && CONFIG_ZLIB_NATIVE && CONFIG_BZIP2_NATIVE && CONFIG_HARFBUZZ_WITHOUT_FREETYPE_NATIVE
+
+config CONFIG_FREETYPE
+	bool "freetype (oss/freetype)"
+	default n
+	select CONFIG_ZLIB
+	select CONFIG_PREBUILD_LIBPNG
+	select CONFIG_BZIP2
+	select CONFIG_HARFBUZZ_WITHOUT_FREETYPE
+
+config CONFIG_GDB
+	bool "gdb (oss/gdb)"
+	default n
+	select CONFIG_GMP
+	select CONFIG_MPFR
+	select CONFIG_MPC
+	select CONFIG_ISL
+
+config CONFIG_GFLAGS_NATIVE
+	bool "gflags-native (oss/gflags)"
+	default n
+
+config CONFIG_GFLAGS
+	bool "gflags (oss/gflags)"
+	default n
+
+config CONFIG_GLIB_NATIVE
+	bool "glib-native (oss/glib)"
+	default n
+	depends on CONFIG_LIBFFI_NATIVE && CONFIG_ZLIB_NATIVE && CONFIG_PCRE2_NATIVE
+
+config CONFIG_GLIB
+	bool "glib (oss/glib)"
+	default n
+	select CONFIG_LIBFFI
+	select CONFIG_ZLIB
+	select CONFIG_PCRE2
+
+config CONFIG_GMP_NATIVE
+	bool "gmp-native (oss/gmp)"
+	default n
+
+config CONFIG_GMP
+	bool "gmp (oss/gmp)"
+	default n
+
+config CONFIG_HARFBUZZ_WITHOUT_FREETYPE_NATIVE
+	bool "harfbuzz-without-freetype-native (oss/harfbuzz)"
+	default n
+	depends on CONFIG_ICU_NATIVE && CONFIG_GLIB_NATIVE
+
+config CONFIG_HARFBUZZ_WITHOUT_FREETYPE
+	bool "harfbuzz-without-freetype (oss/harfbuzz)"
+	default n
+	select CONFIG_ICU
+	select CONFIG_GLIB
+
+config CONFIG_HARFBUZZ_NATIVE
+	bool "harfbuzz-native (oss/harfbuzz)"
+	default n
+	depends on CONFIG_ICU_NATIVE && CONFIG_LIBPNG_NATIVE && CONFIG_FREETYPE_NATIVE && CONFIG_GLIB_NATIVE
+
+config CONFIG_HARFBUZZ
+	bool "harfbuzz (oss/harfbuzz)"
+	default n
+	select CONFIG_ICU
+	select CONFIG_GLIB
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_PREBUILD_LIBPNG
+
+config CONFIG_HOSTAPD_NATIVE
+	bool "hostapd-native (oss/hostapd)"
+	default n
+	depends on CONFIG_OPENSSL_NATIVE && CONFIG_LIBNL_NATIVE
+
+config CONFIG_HOSTAPD
+	bool "hostapd (oss/hostapd)"
+	default n
+	select CONFIG_LIBNL
+	select CONFIG_OPENSSL
+
+config CONFIG_ICU_NATIVE
+	bool "icu-native (oss/icu)"
+	default n
+	depends on CONFIG_ZLIB_NATIVE
+
+config CONFIG_ICU
+	bool "icu (oss/icu)"
+	default n
+	select CONFIG_ZLIB
+
+config CONFIG_IPERF_NATIVE
+	bool "iperf-native (oss/iperf)"
+	default n
+
+config CONFIG_IPERF
+	bool "iperf (oss/iperf)"
+	default n
+
+config CONFIG_ISL_NATIVE
+	bool "isl-native (oss/isl)"
+	default n
+	depends on CONFIG_GMP_NATIVE
+
+config CONFIG_ISL
+	bool "isl (oss/isl)"
+	default n
+	select CONFIG_GMP
+
+config CONFIG_IW_NATIVE
+	bool "iw-native (oss/iw)"
+	default n
+	depends on CONFIG_LIBNL_NATIVE
+
+config CONFIG_IW
+	bool "iw (oss/iw)"
+	default n
+	select CONFIG_LIBNL
+
+config CONFIG_JSON_C_NATIVE
+	bool "json-c-native (oss/json-c)"
+	default n
+
+config CONFIG_JSON_C
+	bool "json-c (oss/json-c)"
+	default n
+
+config CONFIG_LIBAIO_NATIVE
+	bool "libaio-native (oss/libaio)"
+	default n
+
+config CONFIG_LIBAIO
+	bool "libaio (oss/libaio)"
+	default n
+
+config CONFIG_LIBCAP_NATIVE
+	bool "libcap-native (oss/libcap)"
+	default n
+
+config CONFIG_LIBCAP
+	bool "libcap (oss/libcap)"
+	default n
+
+config CONFIG_LIBCAP_NG_NATIVE
+	bool "libcap-ng-native (oss/libcap-ng)"
+	default n
+
+config CONFIG_LIBCAP_NG
+	bool "libcap-ng (oss/libcap-ng)"
+	default n
+
+config CONFIG_LIBFFI_NATIVE
+	bool "libffi-native (oss/libffi)"
+	default n
+
+config CONFIG_LIBFFI
+	bool "libffi (oss/libffi)"
+	default n
+
+config CONFIG_LIBICONV_NATIVE
+	bool "libiconv-native (oss/libiconv)"
+	default n
+
+config CONFIG_LIBICONV
+	bool "libiconv (oss/libiconv)"
+	default n
+
+config CONFIG_LIBIDN2_NATIVE
+	bool "libidn2-native (oss/libidn2)"
+	default n
+	depends on CONFIG_LIBICONV_NATIVE && CONFIG_LIBUNISTRING_NATIVE
+
+config CONFIG_LIBIDN2
+	bool "libidn2 (oss/libidn2)"
+	default n
+	select CONFIG_LIBICONV
+	select CONFIG_LIBUNISTRING
+
+config CONFIG_LIBJPEG_TURBO_NATIVE
+	bool "libjpeg-turbo-native (oss/libjpeg-turbo)"
+	default n
+
+config CONFIG_LIBJPEG_TURBO
+	bool "libjpeg-turbo (oss/libjpeg-turbo)"
+	default n
+
+config CONFIG_LIBNICE_NATIVE
+	bool "libnice-native (oss/libnice)"
+	default n
+	depends on CONFIG_OPENSSL_NATIVE && CONFIG_GLIB_NATIVE
+
+config CONFIG_LIBNICE
+	bool "libnice (oss/libnice)"
+	default n
+	select CONFIG_OPENSSL
+	select CONFIG_GLIB
+
+config CONFIG_LIBNL_NATIVE
+	bool "libnl-native (oss/libnl)"
+	default n
+
+config CONFIG_LIBNL
+	bool "libnl (oss/libnl)"
+	default n
+
+config CONFIG_LIBPCAP_NATIVE
+	bool "libpcap-native (oss/libpcap)"
+	default n
+
+config CONFIG_LIBPCAP
+	bool "libpcap (oss/libpcap)"
+	default n
+
+config CONFIG_LIBPNG_NATIVE
+	bool "libpng-native (oss/libpng)"
+	default n
+	depends on CONFIG_ZLIB_NATIVE
+
+config CONFIG_LIBPNG
+	bool "libpng (oss/libpng)"
+	default n
+	select CONFIG_ZLIB
+
+config CONFIG_LIBTASN1_NATIVE
+	bool "libtasn1-native (oss/libtasn1)"
+	default n
+
+config CONFIG_LIBTASN1
+	bool "libtasn1 (oss/libtasn1)"
+	default n
+
+config CONFIG_LIBUNISTRING_NATIVE
+	bool "libunistring-native (oss/libunistring)"
+	default n
+	depends on CONFIG_LIBICONV_NATIVE
+
+config CONFIG_LIBUNISTRING
+	bool "libunistring (oss/libunistring)"
+	default n
+	select CONFIG_LIBICONV
+
+config CONFIG_LIBXML2_NATIVE
+	bool "libxml2-native (oss/libxml2)"
+	default n
+
+config CONFIG_LIBXML2
+	bool "libxml2 (oss/libxml2)"
+	default n
+
+config CONFIG_BUILD_LUA
+	bool "build-lua@virtual (oss/lua)"
+	default y
+
+choice CONFIG_BUILD_LUA_CHOICE
+	prompt "build-lua-choice@virtual (oss/lua)"
+	default CONFIG_PREBUILD_LUA
+	depends on CONFIG_BUILD_LUA
+
+config CONFIG_LUA
+	bool "lua"
+
+config CONFIG_PREBUILD_LUA
+	bool "prebuild-lua"
+
+endchoice
+
+config CONFIG_LUA_NATIVE
+	bool "lua-native (oss/lua)"
+	default n
+
+config CONFIG_MPC_NATIVE
+	bool "mpc-native (oss/mpc)"
+	default n
+	depends on CONFIG_GMP_NATIVE && CONFIG_MPFR_NATIVE
+
+config CONFIG_MPC
+	bool "mpc (oss/mpc)"
+	default n
+	select CONFIG_GMP
+	select CONFIG_MPFR
+
+config CONFIG_MPFR_NATIVE
+	bool "mpfr-native (oss/mpfr)"
+	default n
+	depends on CONFIG_GMP_NATIVE
+
+config CONFIG_MPFR
+	bool "mpfr (oss/mpfr)"
+	default n
+	select CONFIG_GMP
+
+config CONFIG_NCURSES_NATIVE
+	bool "ncurses-native (oss/ncurses)"
+	default n
+
+config CONFIG_NCURSES
+	bool "ncurses (oss/ncurses)"
+	default n
+	select CONFIG_NCURSES_NATIVE
+
+config CONFIG_OPENSSL_NATIVE
+	bool "openssl-native (oss/openssl)"
+	default n
+
+config CONFIG_OPENSSL
+	bool "openssl (oss/openssl)"
+	default n
+
+config CONFIG_PCRE2_NATIVE
+	bool "pcre2-native (oss/pcre2)"
+	default n
+
+config CONFIG_PCRE2
+	bool "pcre2 (oss/pcre2)"
+	default n
+
+config CONFIG_PROTOBUF_NATIVE
+	bool "protobuf-native (oss/protobuf)"
+	default n
+
+config CONFIG_PROTOBUF
+	bool "protobuf (oss/protobuf)"
+	default n
+
+config CONFIG_TBB_NATIVE
+	bool "tbb-native (oss/tbb)"
+	default n
+
+config CONFIG_TBB
+	bool "tbb (oss/tbb)"
+	default n
+
+config CONFIG_TCPDUMP_NATIVE
+	bool "tcpdump-native (oss/tcpdump)"
+	default n
+	depends on CONFIG_LIBPCAP_NATIVE
+
+config CONFIG_TCPDUMP
+	bool "tcpdump (oss/tcpdump)"
+	default n
+	select CONFIG_LIBPCAP
+
+config CONFIG_UVC_GADGET
+	bool "uvc-gadget (oss/uvc-gadget)"
+	default n
+
+config CONFIG_V4L_UTILS
+	bool "v4l-utils (oss/v4l-utils)"
+	default n
+
+config CONFIG_WIRELESS_TOOLS_NATIVE
+	bool "wireless-tools-native (oss/wireless-tools)"
+	default n
+
+config CONFIG_WIRELESS_TOOLS
+	bool "wireless-tools (oss/wireless-tools)"
+	default n
+
+config CONFIG_WPA_SUPPLICANT_NATIVE
+	bool "wpa-supplicant-native (oss/wpa-supplicant)"
+	default n
+	depends on CONFIG_OPENSSL_NATIVE && CONFIG_LIBNL_NATIVE && CONFIG_DBUS_NATIVE
+
+config CONFIG_WPA_SUPPLICANT
+	bool "wpa-supplicant (oss/wpa-supplicant)"
+	default n
+	select CONFIG_LIBNL
+	select CONFIG_OPENSSL
+	select CONFIG_DBUS
+
+config CONFIG_X264_NATIVE
+	bool "x264-native (oss/x264)"
+	default n
+
+config CONFIG_X264
+	bool "x264 (oss/x264)"
+	default n
+
+config CONFIG_X265_NATIVE
+	bool "x265-native (oss/x265)"
+	default n
+
+config CONFIG_X265
+	bool "x265 (oss/x265)"
+	default n
+
+config CONFIG_XZ_NATIVE
+	bool "xz-native (oss/xz)"
+	default n
+
+config CONFIG_XZ
+	bool "xz (oss/xz)"
+	default n
+
+config CONFIG_ZLIB_NATIVE
+	bool "zlib-native (oss/zlib)"
+	default n
+
+config CONFIG_ZLIB
+	bool "zlib (oss/zlib)"
+	default n
+
+endmenu
+
+menu "packages"
+
+menu "amba_gst_plugins"
+
+menuconfig CONFIG_LIBGSTAMBA
+	bool "libgstamba (packages/amba_gst_plugins/src)"
+	default n
+	depends on CONFIG_AMBCAVALRY_HEADER && CONFIG_LIBVPROC && CONFIG_LIBNNCTRL && CONFIG_LIBCAVALRYMEM
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_LIBLWAPPUTILS
+	select CONFIG_PREBUILD_LIBPNG
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_LIBMCL
+	select CONFIG_PREBUILD_GSTREAMER1
+	select CONFIG_PREBUILD_GSTREAMER1_PLUGINS_BAD
+	select CONFIG_PREBUILD_GSTREAMER1_PLUGINS_BASE
+	select CONFIG_PREBUILD_GSTREAMER1_PLUGINS_GOOD
+	select CONFIG_PREBUILD_GSTREAMER1_PLUGINS_UGLY
+	select CONFIG_PREBUILD_GSTREAMER1_RTSP_SERVER
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_BUILD_LUA
+
+if CONFIG_LIBGSTAMBA
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/amba_gst_plugins/src/amba.kconf"
+endif
+
+config CONFIG_AMBAGST_TEST
+	bool "ambagst-test (packages/amba_gst_plugins/unit_test)"
+	default n
+	depends on CONFIG_LIBGSTAMBA
+
+endmenu
+
+config CONFIG_LIBASF
+	bool "libasf (packages/asf)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_PREBUILD_SQLITE
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_CJSON
+
+config CONFIG_ASF_TEST
+	bool "asf-test (packages/asf)"
+	default y
+	depends on CONFIG_LIBASF
+	select CONFIG_PREBUILD_SQLITE
+	select CONFIG_PREBUILD_CJSON
+
+config CONFIG_LIBAUTOCALIB
+	bool "libautocalib (packages/autocalib)"
+	default n
+	depends on $(AMBA_SOC)="cv2"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_LIBAMBA_CAP_INSPECT
+	bool "libamba-cap-inspect (packages/cap_inspect)"
+	default y
+	depends on CONFIG_PREBUILD_LIBCAP && (CONFIG_LUA || CONFIG_PREBUILD_LUA)
+
+config CONFIG_LIBCAVALRYMEM
+	bool "libcavalrymem (packages/cavalry_mem)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+
+config CONFIG_LIBCNNGENPREP
+	bool "libcnngenprep (packages/cnngen_prep)"
+	default n
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+
+config CONFIG_LIBDATA_PROCESS
+	bool "libdata-process (packages/data_process)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+
+config CONFIG_LIBDATATX
+	bool "libdatatx (packages/data_transfer)"
+	default y
+	select CONFIG_GENERIC_HEADER
+
+menu "depth_sensing_framework"
+
+menuconfig CONFIG_LIBAMBADSF
+	bool "libambadsf (packages/depth_sensing_framework/source)"
+	default n
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_TBB
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_PREBUILD_LIBPNG
+	select CONFIG_PREBUILD_CVLIB
+	select CONFIG_PREBUILD_AMBA_OPT_SC_ALGOS
+
+if CONFIG_LIBAMBADSF
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/depth_sensing_framework/source/amba.kconf"
+endif
+
+config CONFIG_DSF_TEST
+	bool "dsf-test (packages/depth_sensing_framework/unit_test)"
+	default n
+	depends on CONFIG_LIBAMBADSF && CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_TBB
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_PREBUILD_LIBPNG
+	select CONFIG_PREBUILD_AMBA_OPT_SC_ALGOS
+	select CONFIG_PREBUILD_CVLIB
+
+endmenu
+
+config CONFIG_LIBDEWARP_LUA
+	bool "libdewarp-lua (packages/dewarp_lua_parser/dsp_v6)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_BUILD_LUA
+
+config CONFIG_LIBEAZY_DDS
+	bool "libeazy-dds (packages/eazy_dds)"
+	default y
+	select CONFIG_PREBUILD_CYCLONEDDS
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ICEORYX_BINDING_C
+	select CONFIG_PREBUILD_ICEORYX_POSH
+	select CONFIG_PREBUILD_ICEORYX_UTILS
+	select CONFIG_PREBUILD_ACL
+	select CONFIG_PREBUILD_ATTR
+
+menu "eazyai"
+
+menu "apps"
+
+config CONFIG_EAZYAI_APPS_TEST_BODYPIX
+	bool "eazyai-apps-test-bodypix (packages/eazyai/apps/bodypix)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_EAZYAI_APPS_TEST_BYTETRACK
+	bool "eazyai-apps-test-bytetrack (packages/eazyai/apps/bytetrack)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_EIGEN
+
+menuconfig CONFIG_EAZYAI_APPS_TEST_FACE
+	bool "eazyai-apps-test-face (packages/eazyai/apps/face)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+
+if CONFIG_EAZYAI_APPS_TEST_FACE
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/face/amba.kconf"
+endif
+
+menuconfig CONFIG_EAZYAI_APPS_TEST_HAND
+	bool "eazyai-apps-test-hand (packages/eazyai/apps/hand)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_OPENCV
+
+if CONFIG_EAZYAI_APPS_TEST_HAND
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/hand/amba.kconf"
+endif
+
+config CONFIG_EAZYAI_APPS_TEST_HITNET
+	bool "eazyai-apps-test-hitnet (packages/eazyai/apps/hitnet)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6ml"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_LIBEAZYAI_COMM
+
+menuconfig CONFIG_EAZYAI_APPS_TEST_SSD
+	bool "eazyai-apps-test-ssd (packages/eazyai/apps/ssd)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBDATA_PROCESS
+	select CONFIG_PREBUILD_OPENCV
+
+if CONFIG_EAZYAI_APPS_TEST_SSD
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/apps/ssd/amba.kconf"
+endif
+
+config CONFIG_EAZYAI_APPS_TEST_VIDEO_MATTING
+	bool "eazyai-apps-test-video-matting (packages/eazyai/apps/video_matting)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBEAZYAI_COMM
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_EAZYAI_APPS_TEST_YOLOV3_MONO_DEPTH
+	bool "eazyai-apps-test-yolov3-mono-depth (packages/eazyai/apps/yolo)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBDATA_PROCESS
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_LIBAMBA_MONO_DEPTH
+
+config CONFIG_EAZYAI_APPS_TEST_YOLO_SMTRC
+	bool "eazyai-apps-test-yolo-smtrc (packages/eazyai/apps/yolo)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBDATA_PROCESS
+	select CONFIG_PREBUILD_SMARTRC3
+
+endmenu
+
+config CONFIG_LIBEAZYAI
+	bool "libeazyai (packages/eazyai/lib_amba_mk)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+
+config CONFIG_LIBEAZYAI_COMM
+	bool "libeazyai-comm (packages/eazyai/lib_amba_mk)"
+	default y
+
+config CONFIG_LIBEAZYAI_ACCL
+	bool "libeazyai-accl (packages/eazyai/lib_amba_mk)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_LIBEAZYAI
+
+config CONFIG_LIBEAZYAI_UTILS
+	bool "libeazyai-utils (packages/eazyai/lib_amba_mk)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_ACCL
+	select CONFIG_LIBEAZYAI_COMM
+	select CONFIG_LIBTEXTINSERT
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_FREETYPE
+
+config CONFIG_LIBEAZYAI_IO
+	bool "libeazyai-io (packages/eazyai/lib_amba_mk)"
+	default n
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_EAZYAI_UNIT_TEST
+	bool "eazyai-unit-test (packages/eazyai/unit_test)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_ACCL
+	select CONFIG_LIBEAZYAI_COMM
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_LIBEAZYAI_ARM_POSTPROCESS
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_PREBUILD_OPENCV
+
+menuconfig CONFIG_LIBEAZYAI_ARM_POSTPROCESS
+	bool "libeazyai-arm-postprocess (packages/eazyai/unit_test)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBEAZYAI_UTILS
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_EIGEN
+	select CONFIG_BUILD_LUA
+
+if CONFIG_LIBEAZYAI_ARM_POSTPROCESS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/eazyai/unit_test/amba.kconf"
+endif
+
+config CONFIG_EAZYAI_VIDEO
+	bool "eazyai-video (packages/eazyai/unit_test)"
+	default y
+
+config CONFIG_CNNGUI
+	bool "cnngui (packages/eazyai/unit_test)"
+	default y
+
+endmenu
+
+config CONFIG_GENERIC_HEADER
+	bool "generic-header (packages/generic)"
+	default y
+
+menu "gst-interpipe"
+
+menu "gst"
+
+config CONFIG_LIBGSTINTERPIPE
+	bool "libgstinterpipe (packages/gst-interpipe/gst/interpipe)"
+	default n
+	select CONFIG_PREBUILD_JSON_C
+	select CONFIG_PREBUILD_JSON_GLIB
+	select CONFIG_PREBUILD_LIBXML2
+	select CONFIG_PREBUILD_LIBDAEMON
+	select CONFIG_PREBUILD_LIBFFI
+	select CONFIG_PREBUILD_UTIL_LINUX
+	select CONFIG_PREBUILD_XZ
+	select CONFIG_PREBUILD_ZLIB
+
+endmenu
+
+endmenu
+
+menu "gstd-0.14.0"
+
+config CONFIG_GST_CLIENT_TEST
+	bool "gst-client-test (packages/gstd-0.14.0/gst_client)"
+	default n
+	select CONFIG_LIBGSTC
+
+config CONFIG_GSTD_TEST
+	bool "gstd-test (packages/gstd-0.14.0/gstd)"
+	default n
+	select CONFIG_LIBGSTD
+
+menu "libgstc"
+
+config CONFIG_LIBGSTC
+	bool "libgstc (packages/gstd-0.14.0/libgstc/c)"
+	default n
+	select CONFIG_PREBUILD_JSON_C
+	select CONFIG_PREBUILD_GSTREAMER1
+	select CONFIG_PREBUILD_JSON_GLIB
+	select CONFIG_PREBUILD_LIBSOUP
+	select CONFIG_PREBUILD_LIBXML2
+	select CONFIG_PREBUILD_LIBDAEMON
+	select CONFIG_PREBUILD_LIBFFI
+	select CONFIG_PREBUILD_LIBSELINUX
+	select CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	select CONFIG_PREBUILD_SQLITE
+	select CONFIG_PREBUILD_XZ
+	select CONFIG_PREBUILD_ZLIB
+
+endmenu
+
+config CONFIG_LIBGSTD
+	bool "libgstd (packages/gstd-0.14.0/libgstd)"
+	default n
+	select CONFIG_PREBUILD_JSON_C
+	select CONFIG_PREBUILD_GSTREAMER1
+	select CONFIG_PREBUILD_JSON_GLIB
+	select CONFIG_PREBUILD_LIBSOUP
+	select CONFIG_PREBUILD_LIBXML2
+	select CONFIG_PREBUILD_LIBDAEMON
+	select CONFIG_PREBUILD_LIBFFI
+	select CONFIG_PREBUILD_LIBSELINUX
+	select CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	select CONFIG_PREBUILD_SQLITE
+	select CONFIG_PREBUILD_XZ
+	select CONFIG_PREBUILD_ZLIB
+
+endmenu
+
+menu "iav_utils"
+
+config CONFIG_LIBIAV_BLUR
+	bool "libiav-blur (packages/iav_utils/dsp_v6/arbitrary_blur)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_LIBIAV_EFM
+	bool "libiav-efm (packages/iav_utils/dsp_v6/efm)"
+	default y
+	depends on CONFIG_LIBUTILS
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_LIBIAV_VSRC_GUARD
+	bool "libiav-vsrc-guard (packages/iav_utils/dsp_v6/lib_vsrc_guard)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZY_DDS
+	select CONFIG_PREBUILD_CYCLONEDDS
+	select CONFIG_LIBUTILS
+
+config CONFIG_LIBIAV_PM
+	bool "libiav-pm (packages/iav_utils/dsp_v6/privacymask)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_DEWARP
+
+config CONFIG_VSRC_GUARD_SERVICE
+	bool "vsrc-guard-service (packages/iav_utils/dsp_v6/service_vsrc_guard)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZY_DDS
+	select CONFIG_LIBIAV_VSRC_GUARD
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_LIBUTILS
+
+endmenu
+
+menu "idsp"
+
+menuconfig CONFIG_SENSOR_DATAS
+	bool "sensor-datas@virtual (packages/idsp/data/img_cv3)"
+	default y
+	select CONFIG_AMBAIMG_HEADER
+
+if CONFIG_SENSOR_DATAS
+
+menuconfig CONFIG_ADAS_SENSOR_DATAS
+	bool "adas-sensor-datas@virtual (packages/idsp/data/img_cv3/ADAS)"
+	default y
+	select CONFIG_AMBAIMG_HEADER
+
+if CONFIG_ADAS_SENSOR_DATAS
+
+config CONFIG_ADAS_IMX728_DATAS
+	bool "adas-imx728-datas (packages/idsp/data/img_cv3/ADAS/imx728)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	imply CONFIG_KERNEL_MODULE_IMX728_MIPI_BRG
+
+config CONFIG_ADAS_OX08B40_DATAS
+	bool "adas-ox08b40-datas (packages/idsp/data/img_cv3/ADAS/ox08b40)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	imply CONFIG_KERNEL_MODULE_OX08B40_MIPI_BRG
+
+config CONFIG_ADAS_YUV_DATAS
+	bool "adas-yuv-datas (packages/idsp/data/img_cv3/ADAS/yuv)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+
+endif
+
+menuconfig CONFIG_STEREO_SENSOR_DATAS
+	bool "stereo-sensor-datas@virtual (packages/idsp/data/img_cv3/STEREO)"
+	default y
+	select CONFIG_AMBAIMG_HEADER
+
+if CONFIG_STEREO_SENSOR_DATAS
+
+config CONFIG_STEREO_IMX390_DATAS
+	bool "stereo-imx390-datas (packages/idsp/data/img_cv3/STEREO/imx390)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	imply CONFIG_KERNEL_MODULE_IMX390_MIPI
+	imply CONFIG_KERNEL_MODULE_IMX390_MIPI_BRG
+
+config CONFIG_STEREO_YUV_DATAS
+	bool "stereo-yuv-datas (packages/idsp/data/img_cv3/STEREO/yuv)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+
+endif
+
+menuconfig CONFIG_DEFAULT_IQ_DATAS
+	bool "default-iq-datas@virtual (packages/idsp/data/img_cv3/GENERIC)"
+	default y
+	select CONFIG_AMBAIMG_HEADER
+
+if CONFIG_DEFAULT_IQ_DATAS
+
+config CONFIG_DEF_IQ_DATAS
+	bool "def-iq-datas (packages/idsp/data/img_cv3/GENERIC/def_iq_data)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+
+endif
+
+config CONFIG_ROBOT_OS08A10_DATAS
+	bool "robot-os08a10-datas (packages/idsp/data/img_cv3/ROBOT/os08a10)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	imply CONFIG_KERNEL_MODULE_OS08A10_MIPI_BRG
+	imply CONFIG_KERNEL_MODULE_OS08A10
+
+endif
+
+config CONFIG_LIBIMGFLOW
+	bool "libimgflow (packages/idsp/img_flow)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	select CONFIG_BUILD_LUA
+	select CONFIG_PREBUILD_LIBIMGALGO
+
+config CONFIG_AMBAIMG_HEADER
+	bool "ambaimg-header (packages/idsp/img_header)"
+	default y
+	depends on CONFIG_BOARD
+
+endmenu
+
+config CONFIG_LIBMCL
+	bool "libmcl (packages/libmcl/dsp_v6)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_BUILD_LUA
+
+config CONFIG_LIBLWAPPUTILS
+	bool "liblwapputils (packages/lw_app_utils)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_BZIP2
+	select CONFIG_PREBUILD_LIBPNG
+
+menu "lw_media"
+
+menuconfig CONFIG_LIBLWMEDIA
+	bool "liblwmedia (packages/lw_media/source)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_PREBUILD_AAC_NEW
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+if CONFIG_LIBLWMEDIA
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/lw_media/source/amba.kconf"
+endif
+
+config CONFIG_LWMEDIA_TEST
+	bool "lwmedia-test (packages/lw_media/unit_test)"
+	default y
+	depends on CONFIG_BOARD && CONFIG_LIBLWMEDIA
+
+endmenu
+
+config CONFIG_LIBGSTNNSTREAMER
+	bool "libgstnnstreamer (packages/mnnstreamer)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBLWAPPUTILS
+	select CONFIG_PREBUILD_FREETYPE
+
+config CONFIG_LIBAMBA_MONO_DEPTH
+	bool "libamba-mono-depth (packages/mono_depth/armv8-a)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_LIBNNCTRL
+	bool "libnnctrl (packages/nnctrl)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+
+config CONFIG_LIBMSC
+	bool "libmsc (packages/sensor_calib_ini_parser/armv8-a)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+menu "smartfb"
+
+config CONFIG_LIBSMARTFB
+	bool "libsmartfb (packages/smartfb/lib_amba_mk)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBTEXTINSERT
+	select CONFIG_PREBUILD_FONTS
+
+config CONFIG_SMARTFB_TEST
+	bool "smartfb-test (packages/smartfb/unit_test)"
+	default n
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBSMARTFB
+
+endmenu
+
+config CONFIG_LIBSTEREOHELPER
+	bool "libstereohelper (packages/stereo_helper)"
+	default n
+	depends on $(AMBA_SOC)="cv2"
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBVPROC
+
+menuconfig CONFIG_LIBTEXTINSERT
+	bool "libtextinsert (packages/textinsert)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_FREETYPE
+
+if CONFIG_LIBTEXTINSERT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/packages/textinsert/amba.kconf"
+endif
+
+menu "textinsert"
+
+config CONFIG_TEXTINSERT_TEST
+	bool "textinsert-test (packages/textinsert/unit_test/dsp_v6)"
+	default y
+	depends on CONFIG_LIBTEXTINSERT && CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_FREETYPE
+	select CONFIG_LIBEAZY_DDS
+
+endmenu
+
+menu "usb_gadget"
+
+config CONFIG_USB_GADGET_CONFIGFS
+	bool "usb-gadget-configfs (packages/usb_gadget/configfs)"
+	default y
+
+menu "ffs_test"
+
+config CONFIG_TEST_FFS_DEVICE
+	bool "test-ffs-device (packages/usb_gadget/ffs_test/device)"
+	default n
+	select CONFIG_LIBAIO
+	select CONFIG_USB_GADGET_CONFIGFS
+
+config CONFIG_TEST_FFS_HOST
+	bool "test-ffs-host (packages/usb_gadget/ffs_test/host)"
+	default n
+	select CONFIG_PREBUILD_LIBUSBX
+
+config CONFIG_TEST_FFS_HOST_NATIVE
+	bool "test-ffs-host-native (packages/usb_gadget/ffs_test/host)"
+	default n
+
+endmenu
+
+config CONFIG_LIBUVC
+	bool "libuvc (packages/usb_gadget/libuvc)"
+	default n
+	depends on CONFIG_LINUX_PATCH_UVAC
+
+config CONFIG_UVC_STREAM
+	bool "uvc-stream (packages/usb_gadget/unit_test)"
+	default n
+	depends on CONFIG_LIBUVC && CONFIG_USB_GADGET_CONFIGFS
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_TEST_UVC_HOST
+	bool "test-uvc-host (packages/usb_gadget/uvc_host)"
+	default n
+
+config CONFIG_TEST_UVC_HOST_NATIVE
+	bool "test-uvc-host-native (packages/usb_gadget/uvc_host)"
+	default n
+
+endmenu
+
+config CONFIG_LIBUTILS
+	bool "libutils (packages/utils)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_LIBVSS
+	bool "libvss (packages/video_sharing_service)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZY_DDS
+	select CONFIG_BUILD_LUA
+
+config CONFIG_VSS_TEST
+	bool "vss-test (packages/video_sharing_service)"
+	default y
+	depends on CONFIG_LIBVSS
+	select CONFIG_GENERIC_HEADER
+
+config CONFIG_LIBVPROC
+	bool "libvproc (packages/vproc)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+
+endmenu
+
+menu "prebuild"
+
+menu "library"
+
+menuconfig CONFIG_PREBUILD_AAC_NEW
+	bool "prebuild-aac-new (prebuild/library/aac-new/armv8-a)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_AAC_NEW
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/library/aac-new/armv8-a/amba.kconf"
+endif
+
+menu "ai_cam"
+
+config CONFIG_PREBUILD_AMBA_OPT_SC_ALGOS
+	bool "prebuild-amba-opt-sc-algos (prebuild/library/ai_cam/amba_opt_sc_algos)"
+	default y
+
+config CONFIG_PREBUILD_CVLIB
+	bool "prebuild-cvlib (prebuild/library/ai_cam/cvlib)"
+	default y
+
+endmenu
+
+config CONFIG_PREBUILD_AMBA_TOF
+	bool "prebuild-amba-tof (prebuild/library/amba_tof)"
+	default n
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+
+config CONFIG_PREBUILD_AUTOCALIB_V2
+	bool "prebuild-autocalib-v2 (prebuild/library/autocalib_v2)"
+	default n
+	depends on $(AMBA_SOC)="cv2"
+
+config CONFIG_PREBUILD_CAVALRY_OPT_LAYERS
+	bool "prebuild-cavalry-opt-layers (prebuild/library/cavalry_opt_layers)"
+	default y
+
+config CONFIG_PREBUILD_DEWARP
+	bool "prebuild-dewarp (prebuild/library/dewarp/dsp_v6)"
+	default y
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_LENS
+
+config CONFIG_DEWARP_TEST
+	bool "dewarp-test (prebuild/library/dewarp/dsp_v6)"
+	default y
+	depends on CONFIG_PREBUILD_DEWARP
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_LENS
+	select CONFIG_LIBDEWARP_LUA
+
+config CONFIG_PREBUILD_DSP_MONITOR
+	bool "prebuild-dsp-monitor (prebuild/library/dsp_monitor/dsp_v6)"
+	default y
+
+config CONFIG_PREBUILD_EIS
+	bool "prebuild-eis (prebuild/library/eis/dsp_v6)"
+	default y
+	select CONFIG_LIBUTILS
+	select CONFIG_AMBEIS_HEADER
+	select CONFIG_PREBUILD_LENS
+
+config CONFIG_EIS_TEST
+	bool "eis-test (prebuild/library/eis/dsp_v6)"
+	default y
+	depends on CONFIG_PREBUILD_EIS
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBUTILS
+	select CONFIG_AMBEIS_HEADER
+
+menu "idsp"
+
+config CONFIG_PREBUILD_LIBIMGALGO
+	bool "prebuild-libimgalgo (prebuild/library/idsp/img_algo)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_IMGDSP
+
+config CONFIG_PREBUILD_IMGDSP
+	bool "prebuild-imgdsp (prebuild/library/idsp/img_dsp)"
+	default y
+
+config CONFIG_PREBUILD_LIBIMGNNCTRL
+	bool "prebuild-libimgnnctrl (prebuild/library/idsp/img_nnctrl)"
+	default y
+	depends on $(AMBA_IMG_ARCH)!="cv2x"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_AMBAIMG_HEADER
+
+endmenu
+
+config CONFIG_PREBUILD_LENS
+	bool "prebuild-lens (prebuild/library/lens)"
+	default y
+
+config CONFIG_PREBUILD_SENSORCALIB
+	bool "prebuild-sensorcalib (prebuild/library/multi_sensor_calib/dsp_v6)"
+	default y
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_APRILTAG
+
+config CONFIG_SENSORCALIB_TEST
+	bool "sensorcalib-test (prebuild/library/multi_sensor_calib/dsp_v6)"
+	default y
+	depends on CONFIG_PREBUILD_SENSORCALIB
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_LIBUTILS
+	select CONFIG_LIBMSC
+	select CONFIG_PREBUILD_APRILTAG
+
+config CONFIG_PREBUILD_LIBPREANALYSIS
+	bool "prebuild-libpreanalysis (prebuild/library/preanalysis/dsp_v6)"
+	default y
+
+config CONFIG_PREBUILD_SMARTRC3
+	bool "prebuild-smartrc3 (prebuild/library/smartrc3/dsp_v6)"
+	default y
+	select CONFIG_PREBUILD_LIBPREANALYSIS
+	select CONFIG_BUILD_LUA
+
+config CONFIG_SMARTRC3_TEST
+	bool "smartrc3-test (prebuild/library/smartrc3/dsp_v6)"
+	default y
+	depends on CONFIG_AMBCAVALRY_HEADER && CONFIG_LIBVPROC && CONFIG_PREBUILD_SMARTRC3
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBDATA_PROCESS
+	select CONFIG_LIBSMARTFB
+
+config CONFIG_PREBUILD_STITCH
+	bool "prebuild-stitch (prebuild/library/stitch_algo/dsp_v6)"
+	default y
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_STITCH_TEST
+	bool "stitch-test (prebuild/library/stitch_algo/dsp_v6)"
+	default y
+	depends on CONFIG_PREBUILD_STITCH
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_OPENCV
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_SENSORCALIB
+
+endmenu
+
+menu "oss"
+
+config CONFIG_PREBUILD_7ZDEC
+	bool "prebuild-7zdec (prebuild/oss/armv8-a/7zdec)"
+	default n
+
+config CONFIG_PREBUILD_LIBARMCOMPUTE
+	bool "prebuild-libarmcompute (prebuild/oss/armv8-a/ComputeLibrary)"
+	default y
+
+config CONFIG_PREBUILD_ELECTRICFENCE
+	bool "prebuild-ElectricFence (prebuild/oss/armv8-a/ElectricFence)"
+	default n
+
+menuconfig CONFIG_PREBUILD_MNN
+	bool "prebuild-MNN (prebuild/oss/armv8-a/MNN)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_MNN
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/MNN/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_NETWORKMANAGER
+	bool "prebuild-networkmanager (prebuild/oss/armv8-a/NetworkManager)"
+	default n
+	depends on CONFIG_SKELETON && (CONFIG_PREBUILD_SYSTEMD || CONFIG_PREBUILD_UDEV)
+	select CONFIG_PREBUILD_GLIB2
+	select CONFIG_PREBUILD_LIBNDP
+	select CONFIG_PREBUILD_LIBCURL
+	select CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	select CONFIG_PREBUILD_GNUTLS
+
+config CONFIG_PREBUILD_ABSEIL_CPP
+	bool "prebuild-abseil-cpp (prebuild/oss/armv8-a/abseil-cpp)"
+	default n
+
+config CONFIG_PREBUILD_ACL
+	bool "prebuild-acl (prebuild/oss/armv8-a/acl)"
+	default n
+
+menuconfig CONFIG_PREBUILD_ALSA_LIB
+	bool "prebuild-alsa-lib (prebuild/oss/armv8-a/alsa-lib)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_ALSA_LIB
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-lib/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_ALSA_PLUGINS
+	bool "prebuild-alsa-plugins (prebuild/oss/armv8-a/alsa-plugins)"
+	default y
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_PREBUILD_PULSEAUDIO
+	select CONFIG_PREBUILD_LIBSAMPLERATE
+	select CONFIG_PREBUILD_SPEEX
+
+if CONFIG_PREBUILD_ALSA_PLUGINS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-plugins/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_ALSA_STATE
+	bool "prebuild-alsa-state (prebuild/oss/armv8-a/alsa-state)"
+	default y
+	depends on CONFIG_BOARD
+
+menuconfig CONFIG_PREBUILD_ALSA_UTILS
+	bool "prebuild-alsa-utils (prebuild/oss/armv8-a/alsa-utils)"
+	default y
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_PREBUILD_LIBSAMPLERATE
+	select CONFIG_PREBUILD_NCURSES
+
+if CONFIG_PREBUILD_ALSA_UTILS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/alsa-utils/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_APRILTAG
+	bool "prebuild-apriltag (prebuild/oss/armv8-a/apriltag)"
+	default n
+
+menuconfig CONFIG_PREBUILD_ARMNN
+	bool "prebuild-armnn (prebuild/oss/armv8-a/armnn)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_ARMNN
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/armnn/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_ATTR
+	bool "prebuild-attr (prebuild/oss/armv8-a/attr)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_ATTR
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/attr/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_AUDIOFILE
+	bool "prebuild-audiofile (prebuild/oss/armv8-a/audiofile)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_AUDIOFILE
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/audiofile/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_AUDIT
+	bool "prebuild-audit (prebuild/oss/armv8-a/audit)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_LIBEV
+
+if CONFIG_PREBUILD_AUDIT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/audit/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_AVAHI
+	bool "prebuild-avahi (prebuild/oss/armv8-a/avahi)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_AVAHI
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/avahi/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_BIND99
+	bool "prebuild-bind99 (prebuild/oss/armv8-a/bind99)"
+	default n
+
+menuconfig CONFIG_PREBUILD_BLUEZ
+	bool "prebuild-bluez (prebuild/oss/armv8-a/bluez)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_BLUEZ
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/bluez/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_BLUEZ_TOOLS
+	bool "prebuild-bluez-tools (prebuild/oss/armv8-a/bluez-tools)"
+	default n
+
+config CONFIG_PREBUILD_BOOST
+	bool "prebuild-boost (prebuild/oss/armv8-a/boost)"
+	default y
+
+config CONFIG_PREBUILD_BZIP2
+	bool "prebuild-bzip2 (prebuild/oss/armv8-a/bzip2)"
+	default y
+
+menuconfig CONFIG_PREBUILD_CAIRO
+	bool "prebuild-cairo (prebuild/oss/armv8-a/cairo)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_CAIRO
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cairo/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_CAN_UTILS
+	bool "prebuild-can-utils (prebuild/oss/armv8-a/can-utils)"
+	default n
+
+menuconfig CONFIG_PREBUILD_CARTOGRAPHER
+	bool "prebuild-cartographer (prebuild/oss/armv8-a/cartographer)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_CARTOGRAPHER
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cartographer/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_CERES_SOLVER
+	bool "prebuild-ceres-solver (prebuild/oss/armv8-a/ceres-solver)"
+	default n
+
+config CONFIG_PREBUILD_CHECKPOLICY
+	bool "prebuild-checkpolicy (prebuild/oss/armv8-a/checkpolicy)"
+	default n
+
+config CONFIG_PREBUILD_CJSON
+	bool "prebuild-cjson (prebuild/oss/armv8-a/cjson)"
+	default n
+
+config CONFIG_PREBUILD_CLEARSILVER
+	bool "prebuild-clearsilver (prebuild/oss/armv8-a/clearsilver)"
+	default n
+
+menuconfig CONFIG_PREBUILD_CRYPTSETUP
+	bool "prebuild-cryptsetup (prebuild/oss/armv8-a/cryptsetup)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_CRYPTSETUP
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/cryptsetup/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBCURL
+	bool "prebuild-libcurl (prebuild/oss/armv8-a/curl)"
+	default y
+	select CONFIG_PREBUILD_LIBNGHTTP2
+	select CONFIG_PREBUILD_LIBIDN2
+	select CONFIG_PREBUILD_LIBSSH2
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ZLIB
+
+config CONFIG_PREBUILD_CYCLICTEST
+	bool "prebuild-cyclictest (prebuild/oss/armv8-a/cyclictest)"
+	default n
+
+config CONFIG_PREBUILD_CYCLONEDDS
+	bool "prebuild-cyclonedds (prebuild/oss/armv8-a/cyclonedds)"
+	default n
+
+config CONFIG_PREBUILD_CYCLONEDDS_CXX
+	bool "prebuild-cyclonedds-cxx (prebuild/oss/armv8-a/cyclonedds-cxx)"
+	default n
+
+config CONFIG_PREBUILD_DBUS
+	bool "prebuild-dbus (prebuild/oss/armv8-a/dbus)"
+	default y
+	depends on CONFIG_SKELETON && (CONFIG_PREBUILD_SYSTEMD || CONFIG_PREBUILD_UDEV)
+	select CONFIG_PREBUILD_EXPAT
+
+config CONFIG_PREBUILD_DBUS_GLIB
+	bool "prebuild-dbus-glib (prebuild/oss/armv8-a/dbus-glib)"
+	default n
+
+menuconfig CONFIG_PREBUILD_DEVICE_MAPPER
+	bool "prebuild-device-mapper (prebuild/oss/armv8-a/device-mapper)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_DEVICE_MAPPER
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/device-mapper/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_DHCP
+	bool "prebuild-dhcp (prebuild/oss/armv8-a/dhcp)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_DHCP
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/dhcp/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_DHCPCD
+	bool "prebuild-dhcpcd (prebuild/oss/armv8-a/dhcpcd)"
+	default n
+
+config CONFIG_PREBUILD_DNSMASQ
+	bool "prebuild-dnsmasq (prebuild/oss/armv8-a/dnsmasq)"
+	default y
+
+config CONFIG_PREBUILD_E2FSPROGS
+	bool "prebuild-e2fsprogs (prebuild/oss/armv8-a/e2fsprogs)"
+	default n
+
+config CONFIG_PREBUILD_EIGEN
+	bool "prebuild-eigen (prebuild/oss/armv8-a/eigen)"
+	default y
+
+config CONFIG_PREBUILD_ELFUTILS
+	bool "prebuild-elfutils (prebuild/oss/armv8-a/elfutils)"
+	default n
+
+config CONFIG_PREBUILD_ELFUTILS_LIBELF
+	bool "prebuild-elfutils-libelf (prebuild/oss/armv8-a/elfutils-libelf)"
+	default n
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_BZIP2
+
+config CONFIG_PREBUILD_ETHTOOL
+	bool "prebuild-ethtool (prebuild/oss/armv8-a/ethtool)"
+	default n
+
+config CONFIG_PREBUILD_EXFAT_UTILS
+	bool "prebuild-exfat-utils (prebuild/oss/armv8-a/exfat-utils)"
+	default n
+
+config CONFIG_PREBUILD_EXPAT
+	bool "prebuild-expat (prebuild/oss/armv8-a/expat)"
+	default y
+
+config CONFIG_PREBUILD_F2FS_TOOLS
+	bool "prebuild-f2fs-tools (prebuild/oss/armv8-a/f2fs-tools)"
+	default n
+
+config CONFIG_PREBUILD_FAAD2
+	bool "prebuild-faad2 (prebuild/oss/armv8-a/faad2)"
+	default y
+
+config CONFIG_PREBUILD_FCGI
+	bool "prebuild-fcgi (prebuild/oss/armv8-a/fcgi)"
+	default n
+
+config CONFIG_PREBUILD_FCGIWRAP
+	bool "prebuild-fcgiwrap (prebuild/oss/armv8-a/fcgiwrap)"
+	default n
+	depends on CONFIG_BOARD
+
+menuconfig CONFIG_PREBUILD_FIPSCHECK
+	bool "prebuild-fipscheck (prebuild/oss/armv8-a/fipscheck)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_FIPSCHECK
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/fipscheck/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_FREETYPE
+	bool "prebuild-freetype (prebuild/oss/armv8-a/freetype)"
+	default y
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_BZIP2
+	select CONFIG_PREBUILD_LIBPNG
+
+config CONFIG_PREBUILD_FUSE
+	bool "prebuild-fuse (prebuild/oss/armv8-a/fuse)"
+	default n
+
+config CONFIG_PREBUILD_FUSE_EXFAT
+	bool "prebuild-fuse-exfat (prebuild/oss/armv8-a/fuse-exfat)"
+	default n
+
+config CONFIG_PREBUILD_FUSE_SSHFS
+	bool "prebuild-fuse-sshfs (prebuild/oss/armv8-a/fuse-sshfs)"
+	default n
+
+config CONFIG_PREBUILD_G2O
+	bool "prebuild-g2o (prebuild/oss/armv8-a/g2o)"
+	default n
+
+config CONFIG_PREBUILD_GFLAGS
+	bool "prebuild-gflags (prebuild/oss/armv8-a/gflags)"
+	default n
+
+config CONFIG_PREBUILD_GLIB_NETWORKING
+	bool "prebuild-glib-networking (prebuild/oss/armv8-a/glib-networking)"
+	default n
+
+config CONFIG_PREBUILD_GLIB2
+	bool "prebuild-glib2 (prebuild/oss/armv8-a/glib2)"
+	default y
+	select CONFIG_PREBUILD_LIBFFI
+	select CONFIG_PREBUILD_PCRE
+
+config CONFIG_PREBUILD_GLOG
+	bool "prebuild-glog (prebuild/oss/armv8-a/glog)"
+	default n
+
+config CONFIG_PREBUILD_LIBGMP
+	bool "prebuild-libgmp (prebuild/oss/armv8-a/gmp)"
+	default y
+
+config CONFIG_PREBUILD_GNUTLS
+	bool "prebuild-gnutls (prebuild/oss/armv8-a/gnutls)"
+	default y
+	select CONFIG_PREBUILD_LIBIDN2
+	select CONFIG_PREBUILD_LIBUNISTRING
+	select CONFIG_PREBUILD_NETTLE
+	select CONFIG_PREBUILD_LIBGMP
+	select CONFIG_PREBUILD_LIBTASN1
+
+config CONFIG_PREBUILD_GPSD
+	bool "prebuild-gpsd (prebuild/oss/armv8-a/gpsd)"
+	default n
+
+config CONFIG_PREBUILD_GSTREAMER1
+	bool "prebuild-gstreamer1 (prebuild/oss/armv8-a/gstreamer1)"
+	default n
+	select CONFIG_PREBUILD_GLIB2
+
+menuconfig CONFIG_PREBUILD_GSTREAMER1_PLUGINS_BAD
+	bool "prebuild-gstreamer1-plugins-bad (prebuild/oss/armv8-a/gstreamer1-plugins-bad)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_GSTREAMER1_PLUGINS_BAD
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-bad/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_GSTREAMER1_PLUGINS_BASE
+	bool "prebuild-gstreamer1-plugins-base (prebuild/oss/armv8-a/gstreamer1-plugins-base)"
+	default n
+
+menuconfig CONFIG_PREBUILD_GSTREAMER1_PLUGINS_GOOD
+	bool "prebuild-gstreamer1-plugins-good (prebuild/oss/armv8-a/gstreamer1-plugins-good)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_GSTREAMER1_PLUGINS_GOOD
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-plugins-good/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_GSTREAMER1_PLUGINS_UGLY
+	bool "prebuild-gstreamer1-plugins-ugly (prebuild/oss/armv8-a/gstreamer1-plugins-ugly)"
+	default n
+
+menuconfig CONFIG_PREBUILD_GSTREAMER1_RTSP_SERVER
+	bool "prebuild-gstreamer1-rtsp-server (prebuild/oss/armv8-a/gstreamer1-rtsp-server)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_GSTREAMER1_RTSP_SERVER
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/gstreamer1-rtsp-server/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_HARFBUZZ
+	bool "prebuild-harfbuzz (prebuild/oss/armv8-a/harfbuzz)"
+	default y
+
+config CONFIG_PREBUILD_HOSTAPD
+	bool "prebuild-hostapd (prebuild/oss/armv8-a/hostapd)"
+	default n
+
+config CONFIG_PREBUILD_HTOP
+	bool "prebuild-htop (prebuild/oss/armv8-a/htop)"
+	default n
+
+menuconfig CONFIG_PREBUILD_I2C_TOOLS
+	bool "prebuild-i2c-tools (prebuild/oss/armv8-a/i2c-tools)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_I2C_TOOLS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/i2c-tools/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_ICEORYX_BINDING_C
+	bool "prebuild-iceoryx-binding-c (prebuild/oss/armv8-a/iceoryx-binding-c)"
+	default n
+
+config CONFIG_PREBUILD_ICEORYX_POSH
+	bool "prebuild-iceoryx-posh (prebuild/oss/armv8-a/iceoryx-posh)"
+	default n
+
+config CONFIG_PREBUILD_ICEORYX_UTILS
+	bool "prebuild-iceoryx-utils (prebuild/oss/armv8-a/iceoryx-utils)"
+	default n
+
+config CONFIG_PREBUILD_ICU
+	bool "prebuild-icu (prebuild/oss/armv8-a/icu)"
+	default y
+
+config CONFIG_PREBUILD_INIPARSER
+	bool "prebuild-iniparser (prebuild/oss/armv8-a/iniparser)"
+	default n
+
+config CONFIG_PREBUILD_IOZONE
+	bool "prebuild-iozone (prebuild/oss/armv8-a/iozone)"
+	default n
+
+config CONFIG_PREBUILD_IPERF
+	bool "prebuild-iperf (prebuild/oss/armv8-a/iperf)"
+	default n
+
+config CONFIG_PREBUILD_IPERF3
+	bool "prebuild-iperf3 (prebuild/oss/armv8-a/iperf3)"
+	default n
+	depends on CONFIG_BOARD
+
+config CONFIG_PREBUILD_IPROUTE
+	bool "prebuild-iproute (prebuild/oss/armv8-a/iproute)"
+	default n
+	select CONFIG_PREBUILD_LIBMNL
+	select CONFIG_PREBUILD_LIBSELINUX
+	select CONFIG_PREBUILD_ELFUTILS_LIBELF
+
+config CONFIG_PREBUILD_IPTABLES
+	bool "prebuild-iptables (prebuild/oss/armv8-a/iptables)"
+	default n
+
+config CONFIG_PREBUILD_IW
+	bool "prebuild-iw (prebuild/oss/armv8-a/iw)"
+	default n
+
+config CONFIG_PREBUILD_JIMTCL
+	bool "prebuild-jimtcl (prebuild/oss/armv8-a/jimtcl)"
+	default n
+
+config CONFIG_PREBUILD_JSON_C
+	bool "prebuild-json-c (prebuild/oss/armv8-a/json-c)"
+	default y
+
+menuconfig CONFIG_PREBUILD_JSON_GLIB
+	bool "prebuild-json-glib (prebuild/oss/armv8-a/json-glib)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_JSON_GLIB
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/json-glib/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_KEYUTILS
+	bool "prebuild-keyutils (prebuild/oss/armv8-a/keyutils)"
+	default n
+
+config CONFIG_PREBUILD_KMOD
+	bool "prebuild-kmod (prebuild/oss/armv8-a/kmod)"
+	default y
+
+menuconfig CONFIG_PREBUILD_LAME
+	bool "prebuild-lame (prebuild/oss/armv8-a/lame)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LAME
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lame/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LCM
+	bool "prebuild-lcm (prebuild/oss/armv8-a/lcm)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LCM
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lcm/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBNE10
+	bool "prebuild-libNE10 (prebuild/oss/armv8-a/libNE10)"
+	default y
+
+config CONFIG_PREBUILD_LIBARCHIVE
+	bool "prebuild-libarchive (prebuild/oss/armv8-a/libarchive)"
+	default n
+	select CONFIG_PREBUILD_XZ
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_BZIP2
+
+menuconfig CONFIG_PREBUILD_LIBCAP
+	bool "prebuild-libcap (prebuild/oss/armv8-a/libcap)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBCAP
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libcap/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LIBCAP_NG
+	bool "prebuild-libcap-ng (prebuild/oss/armv8-a/libcap-ng)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBCAP_NG
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libcap-ng/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBDAEMON
+	bool "prebuild-libdaemon (prebuild/oss/armv8-a/libdaemon)"
+	default y
+
+config CONFIG_PREBUILD_LIBEXOSIP2
+	bool "prebuild-libeXosip2 (prebuild/oss/armv8-a/libeXosip2)"
+	default n
+
+config CONFIG_PREBUILD_LIBEDIT
+	bool "prebuild-libedit (prebuild/oss/armv8-a/libedit)"
+	default n
+
+config CONFIG_PREBUILD_LIBELL
+	bool "prebuild-libell (prebuild/oss/armv8-a/libell)"
+	default n
+
+config CONFIG_PREBUILD_LIBEV
+	bool "prebuild-libev (prebuild/oss/armv8-a/libev)"
+	default y
+
+config CONFIG_PREBUILD_LIBEVENT
+	bool "prebuild-libevent (prebuild/oss/armv8-a/libevent)"
+	default n
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ZLIB
+
+config CONFIG_PREBUILD_LIBEXIF
+	bool "prebuild-libexif (prebuild/oss/armv8-a/libexif)"
+	default n
+
+config CONFIG_PREBUILD_LIBFFI
+	bool "prebuild-libffi (prebuild/oss/armv8-a/libffi)"
+	default y
+
+config CONFIG_PREBUILD_LIBFIXMATH
+	bool "prebuild-libfixmath (prebuild/oss/armv8-a/libfixmath)"
+	default n
+
+config CONFIG_PREBUILD_LIBG7XX
+	bool "prebuild-libg7xx (prebuild/oss/armv8-a/libg7xx)"
+	default n
+	depends on CONFIG_BOARD
+
+menuconfig CONFIG_PREBUILD_LIBGCRYPT
+	bool "prebuild-libgcrypt (prebuild/oss/armv8-a/libgcrypt)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBGCRYPT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgcrypt/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LIBGPG_ERROR
+	bool "prebuild-libgpg-error (prebuild/oss/armv8-a/libgpg-error)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBGPG_ERROR
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgpg-error/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LIBGPIOD
+	bool "prebuild-libgpiod (prebuild/oss/armv8-a/libgpiod)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBGPIOD
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libgpiod/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBICAL
+	bool "prebuild-libical (prebuild/oss/armv8-a/libical)"
+	default n
+
+config CONFIG_PREBUILD_LIBIDN2
+	bool "prebuild-libidn2 (prebuild/oss/armv8-a/libidn2)"
+	default y
+	select CONFIG_PREBUILD_LIBUNISTRING
+
+config CONFIG_PREBUILD_LIBJPEG_TURBO
+	bool "prebuild-libjpeg-turbo (prebuild/oss/armv8-a/libjpeg-turbo)"
+	default y
+
+config CONFIG_PREBUILD_LIBMAD
+	bool "prebuild-libmad (prebuild/oss/armv8-a/libmad)"
+	default n
+
+config CONFIG_PREBUILD_LIBMICROHTTPD
+	bool "prebuild-libmicrohttpd (prebuild/oss/armv8-a/libmicrohttpd)"
+	default n
+
+config CONFIG_PREBUILD_LIBMNL
+	bool "prebuild-libmnl (prebuild/oss/armv8-a/libmnl)"
+	default n
+
+config CONFIG_PREBUILD_LIBMTP
+	bool "prebuild-libmtp (prebuild/oss/armv8-a/libmtp)"
+	default n
+
+config CONFIG_PREBUILD_LIBNDP
+	bool "prebuild-libndp (prebuild/oss/armv8-a/libndp)"
+	default y
+
+config CONFIG_PREBUILD_LIBNGHTTP2
+	bool "prebuild-libnghttp2 (prebuild/oss/armv8-a/libnghttp2)"
+	default y
+
+menuconfig CONFIG_PREBUILD_LIBNICE
+	bool "prebuild-libnice (prebuild/oss/armv8-a/libnice)"
+	default n
+
+if CONFIG_PREBUILD_LIBNICE
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libnice/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LIBNL
+	bool "prebuild-libnl (prebuild/oss/armv8-a/libnl3)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LIBNL
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libnl3/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBOGG
+	bool "prebuild-libogg (prebuild/oss/armv8-a/libogg)"
+	default y
+
+config CONFIG_PREBUILD_LIBOPUSENC
+	bool "prebuild-libopusenc (prebuild/oss/armv8-a/libopusenc)"
+	default n
+
+config CONFIG_PREBUILD_LIBOSIP2
+	bool "prebuild-libosip2 (prebuild/oss/armv8-a/libosip2)"
+	default n
+
+config CONFIG_PREBUILD_LIBPCAP
+	bool "prebuild-libpcap (prebuild/oss/armv8-a/libpcap)"
+	default n
+
+config CONFIG_PREBUILD_LIBPNG
+	bool "prebuild-libpng (prebuild/oss/armv8-a/libpng)"
+	default y
+	select CONFIG_PREBUILD_ZLIB
+
+menuconfig CONFIG_PREBUILD_LIBSAMPLERATE
+	bool "prebuild-libsamplerate (prebuild/oss/armv8-a/libsamplerate)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_LIBSNDFILE
+
+if CONFIG_PREBUILD_LIBSAMPLERATE
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/libsamplerate/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_LIBSELINUX
+	bool "prebuild-libselinux (prebuild/oss/armv8-a/libselinux)"
+	default y
+
+config CONFIG_PREBUILD_LIBSEMANAGE
+	bool "prebuild-libsemanage (prebuild/oss/armv8-a/libsemanage)"
+	default n
+
+config CONFIG_PREBUILD_LIBSEPOL
+	bool "prebuild-libsepol (prebuild/oss/armv8-a/libsepol)"
+	default y
+
+config CONFIG_PREBUILD_LIBSNDFILE
+	bool "prebuild-libsndfile (prebuild/oss/armv8-a/libsndfile)"
+	default y
+
+config CONFIG_PREBUILD_LIBSOUP
+	bool "prebuild-libsoup (prebuild/oss/armv8-a/libsoup)"
+	default y
+
+config CONFIG_PREBUILD_LIBSRTP
+	bool "prebuild-libsrtp (prebuild/oss/armv8-a/libsrtp)"
+	default y
+
+config CONFIG_PREBUILD_LIBSSH2
+	bool "prebuild-libssh2 (prebuild/oss/armv8-a/libssh2)"
+	default y
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ZLIB
+
+config CONFIG_PREBUILD_LIBTASN1
+	bool "prebuild-libtasn1 (prebuild/oss/armv8-a/libtasn1)"
+	default y
+
+config CONFIG_PREBUILD_LIBTIRPC
+	bool "prebuild-libtirpc (prebuild/oss/armv8-a/libtirpc)"
+	default n
+
+config CONFIG_PREBUILD_LIBTOOL
+	bool "prebuild-libtool (prebuild/oss/armv8-a/libtool)"
+	default y
+
+config CONFIG_PREBUILD_LIBUNISTRING
+	bool "prebuild-libunistring (prebuild/oss/armv8-a/libunistring)"
+	default y
+
+config CONFIG_PREBUILD_LIBUNWIND
+	bool "prebuild-libunwind (prebuild/oss/armv8-a/libunwind)"
+	default n
+
+config CONFIG_PREBUILD_LIBUSB_COMPAT
+	bool "prebuild-libusb-compat (prebuild/oss/armv8-a/libusb-compat)"
+	default n
+
+config CONFIG_PREBUILD_LIBUSBX
+	bool "prebuild-libusbx (prebuild/oss/armv8-a/libusbx)"
+	default n
+	depends on CONFIG_PREBUILD_SYSTEMD || CONFIG_PREBUILD_UDEV
+
+config CONFIG_PREBUILD_LIBVPX
+	bool "prebuild-libvpx (prebuild/oss/armv8-a/libvpx)"
+	default n
+
+config CONFIG_PREBUILD_LIBXML2
+	bool "prebuild-libxml2 (prebuild/oss/armv8-a/libxml2)"
+	default y
+
+config CONFIG_PREBUILD_LIBYUV
+	bool "prebuild-libyuv (prebuild/oss/armv8-a/libyuv)"
+	default n
+
+config CONFIG_PREBUILD_LIGHTTPD
+	bool "prebuild-lighttpd (prebuild/oss/armv8-a/lighttpd)"
+	default n
+
+config CONFIG_PREBUILD_LINUXPTP
+	bool "prebuild-linuxptp (prebuild/oss/armv8-a/linuxptp)"
+	default n
+
+config CONFIG_PREBUILD_LMBENCH
+	bool "prebuild-lmbench (prebuild/oss/armv8-a/lmbench)"
+	default n
+
+config CONFIG_PREBUILD_LTRACE
+	bool "prebuild-ltrace (prebuild/oss/armv8-a/ltrace)"
+	default n
+
+menuconfig CONFIG_PREBUILD_LZ4
+	bool "prebuild-lz4 (prebuild/oss/armv8-a/lz4)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LZ4
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lz4/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_LZO
+	bool "prebuild-lzo (prebuild/oss/armv8-a/lzo)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_LZO
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/lzo/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_MDNSRESPONDER
+	bool "prebuild-mDNSResponder (prebuild/oss/armv8-a/mDNSResponder)"
+	default n
+
+config CONFIG_PREBUILD_MMC_UTILS
+	bool "prebuild-mmc-utils (prebuild/oss/armv8-a/mmc-utils)"
+	default n
+
+menuconfig CONFIG_PREBUILD_MPG123
+	bool "prebuild-mpg123 (prebuild/oss/armv8-a/mpg123)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_MPG123
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/mpg123/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_MTD_UTILS
+	bool "prebuild-mtd-utils (prebuild/oss/armv8-a/mtd-utils)"
+	default y
+	select CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_LZO
+
+config CONFIG_PREBUILD_MTR
+	bool "prebuild-mtr (prebuild/oss/armv8-a/mtr)"
+	default n
+
+config CONFIG_PREBUILD_MXML
+	bool "prebuild-mxml (prebuild/oss/armv8-a/mxml)"
+	default n
+
+menuconfig CONFIG_PREBUILD_NCNN
+	bool "prebuild-ncnn (prebuild/oss/armv8-a/ncnn)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_NCNN
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ncnn/amba.kconf"
+endif
+
+menuconfig CONFIG_PREBUILD_NCURSES
+	bool "prebuild-ncurses (prebuild/oss/armv8-a/ncurses)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_NCURSES
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/ncurses/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_NETTLE
+	bool "prebuild-nettle (prebuild/oss/armv8-a/nettle3)"
+	default y
+
+menuconfig CONFIG_PREBUILD_NFS_UTILS
+	bool "prebuild-nfs-utils (prebuild/oss/armv8-a/nfs-utils)"
+	default n
+	select CONFIG_PREBUILD_RPCBIND
+	select CONFIG_PREBUILD_LIBTIRPC
+	select CONFIG_PREBUILD_LIBEVENT
+	select CONFIG_PREBUILD_DEVICE_MAPPER
+	select CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	select CONFIG_PREBUILD_KEYUTILS
+	select CONFIG_PREBUILD_SQLITE
+
+if CONFIG_PREBUILD_NFS_UTILS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/nfs-utils/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_NGINX
+	bool "prebuild-nginx (prebuild/oss/armv8-a/nginx)"
+	default n
+
+config CONFIG_PREBUILD_NSS_MDNS
+	bool "prebuild-nss-mdns (prebuild/oss/armv8-a/nss-mdns)"
+	default n
+
+config CONFIG_PREBUILD_NTP
+	bool "prebuild-ntp (prebuild/oss/armv8-a/ntp)"
+	default n
+
+config CONFIG_PREBUILD_OPENBLAS
+	bool "prebuild-openblas (prebuild/oss/armv8-a/openblas)"
+	default n
+
+menuconfig CONFIG_PREBUILD_OPENCV
+	bool "prebuild-opencv (prebuild/oss/armv8-a/opencv)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_TBB
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_PREBUILD_LIBPNG
+
+if CONFIG_PREBUILD_OPENCV
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/opencv/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_OPENCV3
+	bool "prebuild-opencv3 (prebuild/oss/armv8-a/opencv3)"
+	default n
+	depends on !CONFIG_PREBUILD_OPENCV
+	select CONFIG_PREBUILD_TBB
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+
+menuconfig CONFIG_PREBUILD_OPENSSH
+	bool "prebuild-openssh (prebuild/oss/armv8-a/openssh)"
+	default n
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_FIPSCHECK
+
+if CONFIG_PREBUILD_OPENSSH
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/openssh/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_OPENSSL
+	bool "prebuild-openssl (prebuild/oss/armv8-a/openssl)"
+	default y
+
+config CONFIG_PREBUILD_LIBOPUS
+	bool "prebuild-libopus (prebuild/oss/armv8-a/opus)"
+	default y
+
+config CONFIG_PREBUILD_OPUS_TOOLS
+	bool "prebuild-opus-tools (prebuild/oss/armv8-a/opus-tools)"
+	default n
+
+config CONFIG_PREBUILD_OPUSFILE
+	bool "prebuild-opusfile (prebuild/oss/armv8-a/opusfile)"
+	default n
+
+config CONFIG_PREBUILD_PAM
+	bool "prebuild-pam (prebuild/oss/armv8-a/pam)"
+	default y
+	select CONFIG_PREBUILD_AUDIT
+	select CONFIG_PREBUILD_LIBSELINUX
+
+config CONFIG_PREBUILD_PCRE
+	bool "prebuild-pcre (prebuild/oss/armv8-a/pcre)"
+	default y
+
+config CONFIG_PREBUILD_PINFO
+	bool "prebuild-pinfo (prebuild/oss/armv8-a/pinfo)"
+	default n
+
+config CONFIG_PREBUILD_PIXMAN
+	bool "prebuild-pixman (prebuild/oss/armv8-a/pixman)"
+	default n
+
+config CONFIG_PREBUILD_PKGCONFIG_PC_FILE
+	bool "prebuild-pkgconfig-pc-file (prebuild/oss/armv8-a/pkgconfig-pc-file)"
+	default y
+
+menuconfig CONFIG_PREBUILD_POLICYCOREUTILS
+	bool "prebuild-policycoreutils (prebuild/oss/armv8-a/policycoreutils)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_POLICYCOREUTILS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/policycoreutils/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_POPT
+	bool "prebuild-popt (prebuild/oss/armv8-a/popt)"
+	default n
+
+menuconfig CONFIG_PREBUILD_PORTAUDIO
+	bool "prebuild-portaudio (prebuild/oss/armv8-a/portaudio)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_PORTAUDIO
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/portaudio/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_PPS_TOOLS
+	bool "prebuild-pps-tools (prebuild/oss/armv8-a/pps-tools)"
+	default n
+
+config CONFIG_PREBUILD_PROCPS_NG
+	bool "prebuild-procps-ng (prebuild/oss/armv8-a/procps-ng)"
+	default n
+
+config CONFIG_PREBUILD_PROTOBUF
+	bool "prebuild-protobuf (prebuild/oss/armv8-a/protobuf)"
+	default y
+
+menuconfig CONFIG_PREBUILD_PULSEAUDIO
+	bool "prebuild-pulseaudio (prebuild/oss/armv8-a/pulseaudio)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_LIBTOOL
+	select CONFIG_PREBUILD_SOXR
+	select CONFIG_PREBUILD_WEBRTC_AUDIO_PROCESSING
+	select CONFIG_PREBUILD_SPEEX
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_PREBUILD_LIBCAP
+	select CONFIG_PREBUILD_LIBSNDFILE
+	select CONFIG_PREBUILD_SYSTEMD
+	select CONFIG_PREBUILD_GLIB2
+
+if CONFIG_PREBUILD_PULSEAUDIO
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/pulseaudio/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_PYTHON3
+	bool "prebuild-python3 (prebuild/oss/armv8-a/python3)"
+	default n
+
+config CONFIG_PREBUILD_RPCBIND
+	bool "prebuild-rpcbind (prebuild/oss/armv8-a/rpcbind)"
+	default n
+	select CONFIG_PREBUILD_LIBTIRPC
+
+menuconfig CONFIG_PREBUILD_SBC
+	bool "prebuild-sbc (prebuild/oss/armv8-a/sbc)"
+	default n
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_SBC
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/sbc/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_SOXR
+	bool "prebuild-soxr (prebuild/oss/armv8-a/soxr)"
+	default y
+
+config CONFIG_PREBUILD_SPAWN_FCGI
+	bool "prebuild-spawn-fcgi (prebuild/oss/armv8-a/spawn-fcgi)"
+	default n
+
+menuconfig CONFIG_PREBUILD_SPEEX
+	bool "prebuild-speex (prebuild/oss/armv8-a/speex)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_PREBUILD_LIBOGG
+
+if CONFIG_PREBUILD_SPEEX
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/speex/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_SQLITE
+	bool "prebuild-sqlite (prebuild/oss/armv8-a/sqlite)"
+	default y
+
+config CONFIG_PREBUILD_STRACE
+	bool "prebuild-strace (prebuild/oss/armv8-a/strace)"
+	default n
+
+config CONFIG_PREBUILD_SUITESPARSE
+	bool "prebuild-suitesparse (prebuild/oss/armv8-a/suitesparse)"
+	default n
+
+config CONFIG_PREBUILD_UDEV
+	bool "prebuild-udev (prebuild/oss/armv8-a/systemd)"
+	default y
+	depends on CONFIG_SKELETON && !CONFIG_PREBUILD_SYSTEMD
+
+config CONFIG_PREBUILD_TAGLIB
+	bool "prebuild-taglib (prebuild/oss/armv8-a/taglib)"
+	default y
+
+config CONFIG_PREBUILD_TBB
+	bool "prebuild-tbb (prebuild/oss/armv8-a/tbb)"
+	default y
+
+config CONFIG_PREBUILD_TCPDUMP
+	bool "prebuild-tcpdump (prebuild/oss/armv8-a/tcpdump)"
+	default n
+
+config CONFIG_PREBUILD_TELNET_SERVER
+	bool "prebuild-telnet-server (prebuild/oss/armv8-a/telnet-server)"
+	default n
+	select CONFIG_PREBUILD_SYSTEMD
+
+config CONFIG_PREBUILD_TSLIB
+	bool "prebuild-tslib (prebuild/oss/armv8-a/tslib)"
+	default n
+
+config CONFIG_PREBUILD_UBI_TOOLS
+	bool "prebuild-ubi-tools (prebuild/oss/armv8-a/ubi-tools)"
+	default n
+
+config CONFIG_PREBUILD_USB_MODESWITCH
+	bool "prebuild-usb-modeswitch (prebuild/oss/armv8-a/usb-modeswitch)"
+	default n
+
+config CONFIG_PREBUILD_UTIL_LINUX
+	bool "prebuild-util-linux (prebuild/oss/armv8-a/util-linux)"
+	default y
+	depends on CONFIG_PREBUILD_BUSYBOX || CONFIG_BUSYBOX
+
+config CONFIG_PREBUILD_UTIL_LINUX_LIBS
+	bool "prebuild-util-linux-libs (prebuild/oss/armv8-a/util-linux-libs)"
+	default y
+
+config CONFIG_PREBUILD_UVC_GADGET
+	bool "prebuild-uvc-gadget (prebuild/oss/armv8-a/uvc-gadget)"
+	default n
+	depends on CONFIG_BOARD
+
+config CONFIG_PREBUILD_VSOMEIP
+	bool "prebuild-vsomeip (prebuild/oss/armv8-a/vsomeip)"
+	default n
+
+config CONFIG_PREBUILD_VTABLE_DUMPER
+	bool "prebuild-vtable-dumper (prebuild/oss/armv8-a/vtable-dumper)"
+	default n
+
+config CONFIG_PREBUILD_WAVPACK
+	bool "prebuild-wavpack (prebuild/oss/armv8-a/wavpack)"
+	default y
+
+config CONFIG_PREBUILD_WEBRTC_AUDIO_PROCESSING
+	bool "prebuild-webrtc-audio-processing (prebuild/oss/armv8-a/webrtc-audio-processing)"
+	default y
+
+config CONFIG_PREBUILD_WIRELESS_TOOLS
+	bool "prebuild-wireless-tools (prebuild/oss/armv8-a/wireless-tools)"
+	default n
+
+config CONFIG_PREBUILD_WPA_SUPPLICANT
+	bool "prebuild-wpa_supplicant (prebuild/oss/armv8-a/wpa_supplicant)"
+	default y
+
+config CONFIG_PREBUILD_X265
+	bool "prebuild-x265 (prebuild/oss/armv8-a/x265)"
+	default y
+
+menuconfig CONFIG_PREBUILD_XZ
+	bool "prebuild-xz (prebuild/oss/armv8-a/xz)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_PREBUILD_XZ
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/xz/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_ZBAR
+	bool "prebuild-zbar (prebuild/oss/armv8-a/zbar)"
+	default n
+
+config CONFIG_PREBUILD_ZLIB
+	bool "prebuild-zlib (prebuild/oss/armv8-a/zlib)"
+	default y
+
+menu "noarch"
+
+config CONFIG_PREBUILD_FONTS
+	bool "prebuild-fonts (prebuild/oss/noarch/font)"
+	default y
+
+menuconfig CONFIG_PREBUILD_LOCALE
+	bool "prebuild-locale (prebuild/oss/noarch/locale)"
+	default n
+	depends on CONFIG_SKELETON
+
+if CONFIG_PREBUILD_LOCALE
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/noarch/locale/amba.kconf"
+endif
+
+config CONFIG_PREBUILD_MEDIA_AUTOMOUNT
+	bool "prebuild-media-automount (prebuild/oss/noarch/media-automount)"
+	default y
+
+endmenu
+
+endmenu
+
+menu "tools"
+
+menu "public"
+
+config CONFIG_PREBUILD_CAVALRY_GEN
+	bool "prebuild-cavalry-gen (prebuild/tools/public/cavalry_gen)"
+	default n
+
+endmenu
+
+endmenu
+
+endmenu
+
+menu "rootfs"
+
+menuconfig CONFIG_BACKUP_CPIO
+	bool "backup-cpio (rootfs/backup-cpio)"
+	default n
+	depends on CONFIG_BOARD && CONFIG_ROOTFS
+
+if CONFIG_BACKUP_CPIO
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/backup-cpio/amba.kconf"
+endif
+
+menuconfig CONFIG_INITRAMFS
+	bool "initramfs (rootfs/initramfs)"
+	default y
+	depends on CONFIG_BOARD
+
+if CONFIG_INITRAMFS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/initramfs/amba.kconf"
+endif
+
+menu "network"
+
+config CONFIG_INETD_INIT
+	bool "inetd-init (rootfs/network/inetd-init)"
+	default y
+	select CONFIG_NETWORK_INIT
+
+menuconfig CONFIG_NETWORK_INIT
+	bool "network-init (rootfs/network/network-init)"
+	default y
+
+if CONFIG_NETWORK_INIT
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/network/network-init/amba.kconf"
+endif
+
+endmenu
+
+config CONFIG_SKELETON
+	bool "skeleton (rootfs/skeleton)"
+	default y
+	depends on CONFIG_BOARD
+
+menuconfig CONFIG_ROOTFS
+	bool "rootfs (rootfs/system)"
+	default y
+	depends on CONFIG_BOARD && CONFIG_SKELETON && (CONFIG_PREBUILD_BUSYBOX || CONFIG_BUSYBOX)
+
+if CONFIG_ROOTFS
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/rootfs/system/amba.kconf"
+endif
+
+choice CONFIG_SYSTEM_INIT
+	prompt "system-init@virtual (rootfs/system-init)"
+	default CONFIG_PREBUILD_SYSTEMD
+
+config CONFIG_PREBUILD_SYSTEMD
+	bool "prebuild-systemd"
+	depends on CONFIG_SKELETON && (CONFIG_PREBUILD_BUSYBOX || CONFIG_BUSYBOX)
+
+config CONFIG_BUSYBOX_SYSVINIT
+	bool "busybox-sysvinit"
+	depends on CONFIG_SKELETON
+	select CONFIG_PREBUILD_UDEV
+
+endchoice
+
+if CONFIG_PREBUILD_SYSTEMD
+menu "prebuild-systemd (prebuild/oss/armv8-a/systemd)"
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/prebuild/oss/armv8-a/systemd/amba.kconf"
+endmenu
+endif
+
+
+endmenu
+
+menu "security"
+
+menuconfig CONFIG_BOOT_SECURITY
+	bool "boot-security (security/boot_security)"
+	default y
+
+if CONFIG_BOOT_SECURITY
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/boot_security/amba.kconf"
+endif
+
+config CONFIG_CRYPTOENGINE
+	bool "cryptoengine (security/crypto_engine)"
+	default n
+
+config CONFIG_LIBLWCRYPTOGRAPHY
+	bool "liblwcryptography (security/lw_cryptography)"
+	default n
+
+config CONFIG_LIBSECURITYTOOL
+	bool "libsecuritytool (security/security_tools_library)"
+	default n
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_LIBLWCRYPTOGRAPHY
+
+menuconfig CONFIG_ULP_NMP
+	bool "ulp-nmp (security/ulp_nmp)"
+	default n
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_LIBSECURITYTOOL
+	select CONFIG_LIBLWCRYPTOGRAPHY
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+if CONFIG_ULP_NMP
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/security/ulp_nmp/amba.kconf"
+endif
+
+menu "validation"
+
+menu "crypto_performance"
+
+config CONFIG_CRYPTOPERF
+	bool "cryptoperf (security/validation/crypto_performance/openssl)"
+	default n
+	select CONFIG_PREBUILD_OPENSSL
+	select CONFIG_PREBUILD_ZLIB
+
+endmenu
+
+config CONFIG_RNGTEST
+	bool "rngtest (security/validation/rng_quality)"
+	default n
+
+endmenu
+
+endmenu
+
+menu "unit_test"
+
+menu "linux"
+
+config CONFIG_TEST_AUDIO
+	bool "test-audio (unit_test/linux/audio)"
+	default y
+	select CONFIG_PREBUILD_ALSA_LIB
+	select CONFIG_GENERIC_HEADER
+
+menu "benchmark"
+
+config CONFIG_TEST_BANDWIDTH
+	bool "test-bandwidth (unit_test/linux/benchmark/bandwidth)"
+	default y
+
+config CONFIG_COREMARK_PRO
+	bool "coremark-pro (unit_test/linux/benchmark/coremark-pro)"
+	default n
+
+config CONFIG_CPULIMIT
+	bool "cpulimit (unit_test/linux/benchmark/cpulimit)"
+	default n
+
+config CONFIG_TEST_DHRYSTONE
+	bool "test-dhrystone (unit_test/linux/benchmark/dhrystone)"
+	default y
+
+config CONFIG_TEST_MEMTESTER
+	bool "test-memtester (unit_test/linux/benchmark/memtester)"
+	default y
+
+config CONFIG_SD_BENCHMARK
+	bool "sd-benchmark (unit_test/linux/benchmark/sd_benchmark)"
+	default n
+
+endmenu
+
+config CONFIG_I2CTOOLS
+	bool "i2ctools (unit_test/linux/i2ctools)"
+	default y
+
+config CONFIG_MISCTOOLS
+	bool "misctools (unit_test/linux/misc)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_LIBTEXTINSERT
+
+config CONFIG_PCITESTS
+	bool "pcitests (unit_test/linux/pci)"
+	default n
+
+endmenu
+
+menu "private"
+
+config CONFIG_AMBA_DEBUG
+	bool "amba-debug (unit_test/private/amba_debug)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_KERNEL_MODULE_AMBAD
+
+config CONFIG_AUDIO_TEST
+	bool "audio-test (unit_test/private/audio_test)"
+	default y
+	depends on CONFIG_BOARD
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_PREBUILD_AAC_NEW
+
+menuconfig CONFIG_CV_TEST
+	bool "cv-test (unit_test/private/cv_test/cavalry_v3)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+
+if CONFIG_CV_TEST
+source "/root/CooperSDK1.6_Provided/cooper_linux_sdk_1.6_20240129/cooper_linux_sdk_1.6/ambarella/unit_test/private/cv_test/cavalry_v3/amba.kconf"
+endif
+
+config CONFIG_CV_CAVALRY_TOOL
+	bool "cv-cavalry-tool (unit_test/private/cv_test/cavalry_v3)"
+	default y
+	depends on $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+
+config CONFIG_CV_VPROC_TEST
+	bool "cv-vproc-test (unit_test/private/cv_test/cavalry_v3)"
+	default y
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+
+config CONFIG_CV_VPROC_ALGO_TEST
+	bool "cv-vproc-algo-test (unit_test/private/cv_test/cavalry_v3)"
+	default n
+	depends on CONFIG_BOARD && $(AMBA_SOC)!="s6lm"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBEAZYAI
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBSMARTFB
+	select CONFIG_PREBUILD_LIBARMCOMPUTE
+	select CONFIG_PREBUILD_OPENCV
+
+config CONFIG_CV_STEREO_TEST
+	bool "cv-stereo-test (unit_test/private/cv_test/cavalry_v3)"
+	default n
+	depends on $(AMBA_SOC)="cv3"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBNNCTRL
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBVPROC
+	select CONFIG_LIBSMARTFB
+	select CONFIG_LIBDATATX
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_DEWARP
+
+config CONFIG_CV_FEX_TEST
+	bool "cv-fex-test (unit_test/private/cv_test/cavalry_v3)"
+	default n
+	depends on $(AMBA_SOC)="cv3"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBSMARTFB
+
+config CONFIG_CV_FMA_TEST
+	bool "cv-fma-test (unit_test/private/cv_test/cavalry_v3)"
+	default n
+	depends on $(AMBA_SOC)="cv3"
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBCAVALRY_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBCAVALRYMEM
+	select CONFIG_LIBSMARTFB
+
+config CONFIG_IAV_TEST
+	bool "iav-test (unit_test/private/iav_test/dsp_v6)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_LIBMCL
+	select CONFIG_LIBIAV_BLUR
+	select CONFIG_LIBUTILS
+	select CONFIG_PREBUILD_DEWARP
+	select CONFIG_LIBIAV_PM
+	select CONFIG_LIBIAV_EFM
+	select CONFIG_LIBDATATX
+	select CONFIG_LIBTEXTINSERT
+	select CONFIG_PREBUILD_ZLIB
+	select CONFIG_BUILD_LUA
+
+config CONFIG_IDSP_TEST
+	bool "idsp-test (unit_test/private/idsp_test/img_cv3)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_AMBAIMG_HEADER
+	select CONFIG_LIBIMGFLOW
+	select CONFIG_LIBEAZY_DDS
+	select CONFIG_BUILD_LUA
+
+config CONFIG_OTP_TEST
+	bool "otp-test (unit_test/private/otp_test)"
+	default n
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+config CONFIG_TEST_SW_SCALE_JPEG
+	bool "test-sw-scale-jpeg (unit_test/private/sw_scale_jpeg)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+	select CONFIG_PREBUILD_LIBJPEG_TURBO
+	select CONFIG_PREBUILD_CVLIB
+	select CONFIG_LIBLWAPPUTILS
+
+config CONFIG_VSYNC_TEST
+	bool "vsync-test (unit_test/private/vsync_test)"
+	default y
+	select CONFIG_GENERIC_HEADER
+	select CONFIG_AMBVIDEO_HEADER
+
+endmenu
+
+endmenu
+

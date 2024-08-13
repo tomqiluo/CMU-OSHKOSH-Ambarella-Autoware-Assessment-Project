@@ -1,0 +1,9 @@
+digraph "iav_slicedesc"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_slicedesc\n|+ id\l+ time_ms\l+ stream_type\l+ pic_type\l+ stream_end\l+ reserved0\l+ jpeg_quality\l+ bitrate_kbps\l+ reserved1\l+ session_id\l+ arm_pts\l+ dsp_pts\l+ enc_done_ts\l+ reso\l+ slice_id\l+ slice_num\l+ tile_id\l+ tile_num\l+ encoded_frame_num\l+ size\l+ data_addr_offset\l+ frame_num\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

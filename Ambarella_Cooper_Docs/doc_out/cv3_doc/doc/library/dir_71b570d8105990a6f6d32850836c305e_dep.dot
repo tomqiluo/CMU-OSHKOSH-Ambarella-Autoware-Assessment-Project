@@ -1,0 +1,19 @@
+digraph "packages/idsp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_93501a11e921083efbd154e0cdff5f10 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="packages", fontname="Helvetica", fontsize="10", URL="dir_93501a11e921083efbd154e0cdff5f10.html"]
+  subgraph clusterdir_71b570d8105990a6f6d32850836c305e {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_71b570d8105990a6f6d32850836c305e.html"]
+    dir_71b570d8105990a6f6d32850836c305e [shape=plaintext, label="idsp"];
+  dir_23cb88b85c45744a73038471293be7b5 [shape=box, label="img_header", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_23cb88b85c45744a73038471293be7b5.html"];
+  }
+  }
+  dir_3f8e3e5cc57197a86ac156d9cb931dab [shape=box, label="drv_modules", style="", fillcolor="#edf0f7", color="red", URL="dir_3f8e3e5cc57197a86ac156d9cb931dab.html"];
+  dir_23cb88b85c45744a73038471293be7b5->dir_3f8e3e5cc57197a86ac156d9cb931dab [headlabel="2", labeldistance=1.5 headhref="dir_000024_000015.html"];
+}

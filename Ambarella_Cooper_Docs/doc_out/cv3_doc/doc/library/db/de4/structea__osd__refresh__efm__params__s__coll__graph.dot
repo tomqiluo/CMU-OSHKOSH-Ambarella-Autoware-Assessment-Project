@@ -1,0 +1,9 @@
+digraph "ea_display_efm_frame_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ea_display_efm_frame_t\n|+ mono_pts\l+ y_phys_addr\l+ uv_phys_addr\l+ me0_phys_addr\l+ me1_phys_addr\l+ y_width\l+ y_height\l+ y_pitch\l+ uv_width\l+ uv_height\l+ uv_pitch\l+ me0_width\l+ me0_height\l+ me0_pitch\l+ me1_width\l+ me1_height\l+ me1_pitch\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

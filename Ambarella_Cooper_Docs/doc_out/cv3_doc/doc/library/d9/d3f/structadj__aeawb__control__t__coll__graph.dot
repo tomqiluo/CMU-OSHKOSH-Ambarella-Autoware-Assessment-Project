@@ -1,0 +1,9 @@
+digraph "adj_aeawb_control_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adj_aeawb_control_t\n|+ low_temp_r_target\l+ low_temp_b_target\l+ d50_r_target\l+ d50_b_target\l+ high_temp_r_target\l+ high_temp_b_target\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of AWB controlling configuration."];
+}

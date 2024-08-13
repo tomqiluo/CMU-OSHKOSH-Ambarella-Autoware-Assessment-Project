@@ -1,0 +1,9 @@
+digraph "dproc_run_ssd_detection_output_param_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{dproc_run_ssd_detection\l_output_param_t\n|+ mbox_loc\l+ mbox_conf_flatten\l+ mbox_priorbox\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Output parameters after running SSD."];
+}

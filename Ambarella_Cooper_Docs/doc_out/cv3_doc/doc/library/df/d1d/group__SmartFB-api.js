@@ -1,0 +1,28 @@
+var group__SmartFB_api =
+[
+    [ "smartfb_clear", "df/d1d/group__SmartFB-api.html#ga7da32c1e121c1e82500b464e00fa5aaa", null ],
+    [ "smartfb_clear_buffer", "df/d1d/group__SmartFB-api.html#gae544e9c8eecff31b68c03769939108f5", null ],
+    [ "smartfb_deinit", "df/d1d/group__SmartFB-api.html#gad639e235bdaf61d9f05575b34e40c7a4", null ],
+    [ "smartfb_delete_all_capture_area_buffer", "df/d1d/group__SmartFB-api.html#ga1a8070497ee3d7899caf55c9d15f4aef", null ],
+    [ "smartfb_delete_capture_area_buffer", "df/d1d/group__SmartFB-api.html#ga180963e573389ad3230a2e62be967c22", null ],
+    [ "smartfb_display", "df/d1d/group__SmartFB-api.html#gaed20c8b8a98a2607e3b8441e44b350e5", null ],
+    [ "smartfb_draw_box", "df/d1d/group__SmartFB-api.html#ga46f839acea534de9aee6b2be35bf9f65", null ],
+    [ "smartfb_draw_circle", "df/d1d/group__SmartFB-api.html#ga1131c6fadd1b0e525f5af0a9de892bd7", null ],
+    [ "smartfb_draw_line", "df/d1d/group__SmartFB-api.html#gadd70846df16fa50ece4ef09d533cf380", null ],
+    [ "smartfb_draw_mosaic", "df/d1d/group__SmartFB-api.html#ga1b7b7d3649c2dbd4dc525dcf80d46b79", null ],
+    [ "smartfb_draw_mosaic_with_argb8888", "df/d1d/group__SmartFB-api.html#ga5060041c894a464711a0c3087cc32b68", null ],
+    [ "smartfb_draw_textbox", "df/d1d/group__SmartFB-api.html#gafabe2068c0a376e56c612c215bc286da", null ],
+    [ "smartfb_get_fb_bpp", "df/d1d/group__SmartFB-api.html#gaa0ce988486a6eac7b37be640803889f6", null ],
+    [ "smartfb_get_fb_mem", "df/d1d/group__SmartFB-api.html#ga6f3468196f045c367d16cf3ca73f20d5", null ],
+    [ "smartfb_get_fb_mode_name", "df/d1d/group__SmartFB-api.html#ga0c27d3d65a023592e3775e8e35bce0fc", null ],
+    [ "smartfb_get_fb_yoffset", "df/d1d/group__SmartFB-api.html#ga02db4cdfe6fd0c83ff4a5be33b300bd1", null ],
+    [ "smartfb_get_fix", "df/d1d/group__SmartFB-api.html#ga1308af4034b2a02cb40bb36d5f1ea8d4", null ],
+    [ "smartfb_get_specific_text", "df/d1d/group__SmartFB-api.html#gaae25ed6f8db1b303a98b80a5d1b9bae0", null ],
+    [ "smartfb_get_var", "df/d1d/group__SmartFB-api.html#gace92396e59f4602c2ee9b03d04909a01", null ],
+    [ "smartfb_init", "df/d1d/group__SmartFB-api.html#ga347c0b34a8d388ca39ad2cf7d461e92f", null ],
+    [ "smartfb_modify_capture_area_buffer", "df/d1d/group__SmartFB-api.html#gaeeb35a845e3c52ef7d5a16a340cf158f", null ],
+    [ "smartfb_restore_all_capture_area_buffer", "df/d1d/group__SmartFB-api.html#gaad41e0d8c0cae931470e6b143d0991d7", null ],
+    [ "smartfb_restore_capture_area_buffer", "df/d1d/group__SmartFB-api.html#ga487cd3cfb1d29f1f5129ef6bedbc1567", null ],
+    [ "smartfb_save_capture_area_buffer", "df/d1d/group__SmartFB-api.html#ga30a430d8f0ce139fc7a9c669484761d2", null ],
+    [ "smartfb_set_clut", "df/d1d/group__SmartFB-api.html#ga7a7cc09fd9ab0f9e2fcc33f5f03db008", null ]
+];

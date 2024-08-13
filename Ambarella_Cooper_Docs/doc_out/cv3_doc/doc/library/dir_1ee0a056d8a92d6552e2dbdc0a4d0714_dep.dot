@@ -1,0 +1,13 @@
+digraph "packages/asf/include"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_b7697b0185a51715c264a99a502fafbf {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="asf", fontname="Helvetica", fontsize="10", URL="dir_b7697b0185a51715c264a99a502fafbf.html"]
+  dir_1ee0a056d8a92d6552e2dbdc0a4d0714 [shape=box, label="include", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_1ee0a056d8a92d6552e2dbdc0a4d0714.html"];
+  }
+}

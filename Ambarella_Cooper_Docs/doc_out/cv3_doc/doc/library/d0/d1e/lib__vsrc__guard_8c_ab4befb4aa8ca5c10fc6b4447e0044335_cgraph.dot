@@ -1,0 +1,14 @@
+digraph "lib_vg_netlink"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="lib_vg_netlink",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="lib_vg_nl_msg",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#a18959fbede07ac3cc727fcdcb33e9d0a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="process_nl_msg",height=0.2,width=0.4,color="black",URL="$d0/d1e/lib__vsrc__guard_8c.html#af8682557ae8bf64bf66abce34f3a654e",tooltip=" "];
+}

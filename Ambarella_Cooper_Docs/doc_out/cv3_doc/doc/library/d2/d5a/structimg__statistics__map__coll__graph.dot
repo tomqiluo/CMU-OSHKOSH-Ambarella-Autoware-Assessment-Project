@@ -1,0 +1,9 @@
+digraph "img_statistics_map"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{img_statistics_map\n|+ statis_pts_to_skip\l+ rgb_data_valid\l+ cfa_data_valid\l+ sensor_data_valid\l+ vin_data_valid\l+ rgb_statis_offset\l+ cfa_statis_offset\l+ sensor_statis\l+ vin_statis_offset\l+ resend_all_cfg\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of AAA statistical data map All the addresses are allocated from user space memory...."];
+}

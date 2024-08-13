@@ -1,0 +1,159 @@
+	Secure Boot
+=========================
+
+This document describes how to configure and verify the Secure Boot and Secure
+Device on Amabrella Platform.
+
+
+I - Introducation
+-----------------
+
+The Secure Boot is to authenticate the image of each stage, include BST, BL2, BL31,
+BL32(optee) and BL33(Amboot).
+
+The Secure Device is to prevent secure device from access by non-secure world.
+That is, once a device is configured as secure device, Kernel and Application cannot
+access the registers belong to this secure device.
+
+
+* !!! The ROM code of SecureBoot on `CV2` is not burned by default.
+
+
+II - Secure Boot
+----------------
+
+1. Configuration and build the firmware.
+
+$ make menuconfig
+
+	-*-Amabrella Firmware Configuration
+		--> Memory Options
+			--> AMBoot Memory Options
+				(0x01000000) AMBoot bootloader starting address
+				(0x04000000) Firmware programmer starting address
+			--> RTOS memory Options
+				(0x01280000) Kernel start address
+		--> [*] Build with TrustZone
+			-->[*] Secure Boot with  Signature
+
+$ make clean_arm_tf
+$ make -j4 amboot
+	...
+	Build Amboot ...
+	NOTICE:  CoT Generation Tool: Built : 19:52:53, Mar 28 2019
+	NOTICE:  Target platform: TBBR Generic
+	NOTICE:  Creating new key for 'Trusted World key'
+	NOTICE:  Creating new key for 'Non Trusted World key'
+	NOTICE:  Creating new key for 'SCP Firmware Content Certificate key'
+	NOTICE:  Creating new key for 'SoC Firmware Content Certificate key'
+	NOTICE:  Creating new key for 'Trusted OS Firmware Content Certificate key'
+	NOTICE:  Creating new key for 'Non Trusted Firmware Content Certificate key
+
+2. Media storage layout
+
+        +-------+
+        |  BST  |
+        +-------+       /  BL31
+        |  BLD  | -> FIP - BL32
+        +-------+       \  BL33(Amboot)
+        |  PTB  |
+        +-------+
+        |  ATF  | -> BL2
+        +-------+
+
+3. Setup the POC
+
+POC[6] is the SecureBoot POC defination, it must be turned on.
+
+4. Boot Flow
+
+                   + --------- +
+                   |  Power on |
+                   + --------- +
+                            /
+                           /
+                          /
+                         L
+               + ----------------- +
+               | ROM Process ...   |
+               | Load and Auth BST |
+               + ----------------- +
+                            /
+                           /  pass
+                          /
+                         L
+                + ----------------- +
+                | BST Process ...   |
+                | Load and Auth BL2 |
+                + ----------------- +
+                             /
+                            / pass
+                           /
+                          L
+            + -------------------------- +
+            |  BL2 Process ...           |
+            |  Load and parser FIP IMAGE.|
+            |  Auth each block in FIP    |
+            |  IMAGE, include BL31, BL32,|
+            |  BL33, Signature, pk ...   |
+            + -------------------------- +
+                            /
+                           / pass
+                          /
+                         L
+               + ------------------- +
+               | BL31 Process ...    |
+               | prepare EL3 monitor |
+               | Environment         |
+               + ------------------- +
+                           /
+                          / switch
+                         /
+                        L
+              + ------------------- +
+              | BL33 Process ...    |
+              | Hello! I'm Amboot.  |
+              + ------------------- +
+
+5. What you can GET.
+
+NOTICE:  BL2: v1.5(release):v1.5-37-g70ade18					*a
+NOTICE:  BL2: Built : 10:26:25, Mar 29 2019
+NOTICE:  ROTPK is not deployed on platform. Skipping ROTPK verification.	*b
+NOTICE:  BL2: Booting BL31							*c
+
+NOTICE:  BL31: Secure code at 0x100000
+NOTICE:  BL31: Non Secure code at 0x1000000
+NOTICE:  BL31: v1.5(release):v1.5-37-g70ade18
+NOTICE:  BL31: Built : 10:26:26, Mar 29 2019
+
+*a. BL2 is authenticated successfully.
+*b. Root KEY is empty. IGNORE IT if you just verify the SecureBoot flow.
+    Note:
+       ROTPK is stored in OTP. It's used in the following process if it's present:
+         `ROM Authenticate BST`
+         `BST Authenticate BL2`
+         `BL2 Authenticate FIP parent image`
+*c. BL31, BL32, and BL33(AMBOOT) are authenticated successfully.
+
+
+6. Memory layout
+
+Please see mem_layout.txt
+
+
+III - Secure Device
+-------------------
+
+1. Configuration.
+
+Besides the configuration in Secure Boot, below is also necessary:
+
+	-*-Amabrella Firmware Configuration
+		--> [*] Build with TrustZone
+			-->[*] Support DTB with Signature (SOC Firmware Config)
+
+2. Device Tree setup
+
+Please see "8) - Secure Monitor node" in
+$LINUX/Documentation/devicetree/bindings/arm/ambarella.txt:

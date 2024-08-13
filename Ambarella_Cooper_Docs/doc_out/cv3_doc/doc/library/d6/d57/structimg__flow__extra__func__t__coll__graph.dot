@@ -1,0 +1,9 @@
+digraph "img_flow_extra_func_t"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{img_flow_extra_func_t\n|+ do_update_prepare_aaa_data\l+ do_extra_prepare_aaa\l+ do_extra_start_aaa\l+ do_extra_stop_aaa\l+ do_ir_led_ctrl\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Description of customized 3A flow functions for img_flow library."];
+}

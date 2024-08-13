@@ -1,0 +1,9 @@
+digraph "vin_brg_ops"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vin_brg_ops\n|+ brg_write_reg\l+ brg_read_reg\l+ brg_set_sensor_clk\l+ brg_config\l+ brg_confirm_stream\l+ brg_monitor_task\l+ brg_write_chan_reg\l+ brg_read_chan_reg\l+ brg_hw_init_pre\l+ brg_hw_init_post\l+ brg_irq_callback\l+ brg_get_status\l+ brg_set_gpio_ctrl\l+ brg_get_format\l+ brg_set_clk_si\l+ brg_vin_config_pre\l+ brg_vin_config_post\l+ brg_vout_config\l+ brg_set_stream\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

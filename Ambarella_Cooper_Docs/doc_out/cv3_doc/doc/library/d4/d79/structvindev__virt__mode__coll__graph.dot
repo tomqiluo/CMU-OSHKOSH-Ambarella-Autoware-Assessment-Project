@@ -1,0 +1,9 @@
+digraph "vindev_virt_mode"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{vindev_virt_mode\n|+ vsrc_id\l+ width\l+ height\l+ hdr_mode\l+ bits\l+ max_hp_fps\l+ default_hp_fps\l+ hdr_offset_long\l+ hdr_offset_short1\l+ hdr_offset_short2\l+ hdr_offset_short3\l+ dual_gain_mode\l+ video_type\l+ reserved\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

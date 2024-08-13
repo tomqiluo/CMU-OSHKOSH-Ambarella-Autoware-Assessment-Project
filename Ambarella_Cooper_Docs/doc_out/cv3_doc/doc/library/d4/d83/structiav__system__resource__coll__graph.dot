@@ -1,0 +1,11 @@
+digraph "iav_system_resource"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{iav_system_resource\n|+ encode_mode\l+ max_stream_num\l+ canvas_num\l+ chan_num\l+ mixer_a_enable\l+ mixer_b_enable\l+ osd_from_mixer_a\l+ osd_from_mixer_b\l+ vsync_detection_disable\l+ vsync_loss_dummy_frame\l_enable\l+ me0_scale\l+ hevc_off\l+ chan_vcap_mode_enable\l+ enc_raw_rgb\l+ enc_raw_yuv\l+ enc_raw_nv12\l+ enable_hp_fps\l+ enable_vin_precise_sync\l+ hevc_pjpeg_size_MB\l_per_tile\l+ avc_pjpeg_size_MB_per_tile\l+ img_statis_zero_copy\l_enable\l+ mjpeg_pjpeg_size_MB\l_per_tile\l+ vin_frame_broken_dummy\l_repeat\l+ chan_map\l+ canvas_map\l+ stream_map\l+ extra_raw_dram_buf_num\l+ vout_underflow_prevention\l+ reserved1\l+ reserved2\l+ debug_enable_map\l+ debug_chip_id\l+ debug_break_point\l+ debug_hevc_enc_mode\l+ debug_vsync_loss_timeout\l+ debug_max_chroma_radius\l+ debug_ce_off\l+ debug_perf_opt_enable\l+ debug_low_delay_enable\l+ debug_preblend_only\l_for_aisp\l+ debug_max_tile_num\l+ debug_chan_group_tolerance\l+ reserved3\l+ reserved4\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +img_scale_cfg" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{iav_img_scale_cfg\n|+ enable\l+ format\l+ reserved0\l+ job_queue_depth\l+ reserved1\l+ max_input\l+ max_output\l|}",height=0.2,width=0.4,color="black",URL="$d1/d04/structiav__img__scale__cfg.html",tooltip=" "];
+}
