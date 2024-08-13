@@ -87,10 +87,16 @@ In the second terminal, run
 Once inside docker container, source your workspace
 `source ~/autoware/install/setup.bash`
 
-To test planning simulator
+## Test a planning simulation
+To make sure the autoware version and dependencies are working correctly, try an autonomous path planning simulation
+
 `ros2 launch autoware_launch planning_simulator.launch.xml map _path:=$HOME/autoware_map/sample-map-planning vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit`
 
+## Reaction Analyzer
+Reaction Analyzer benchmarks response times between nodes by spawning a dummy obstacle in front of the ego vehicle.
+
 To run reaction analyzer
+
 `ros2 launch reaction_analyzer reaction_analyzer.launch.xml running_mode:=planning_control vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit map_path:=$HOME/autoware_map/nishishinjuku_autoware_map `
 
 ## Autoware System Monitoring
@@ -124,7 +130,7 @@ chmod +x diagnostics_logger.py
 python3 diagnostics_logger.py
 ```
 
-## Analyzation
+## Analysis
 ### Visualization
 `pip install pandas matplotlib`
 
