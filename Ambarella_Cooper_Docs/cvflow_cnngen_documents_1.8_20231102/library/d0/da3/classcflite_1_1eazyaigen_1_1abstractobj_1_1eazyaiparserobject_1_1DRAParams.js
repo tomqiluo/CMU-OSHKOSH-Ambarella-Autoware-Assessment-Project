@@ -1,0 +1,25 @@
+var classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams =
+[
+    [ "__init__", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a4b71440fe0e20eda3d099f70390e6fbd", null ],
+    [ "set_allow_equalization", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ab76970136679f03de855f94cb7ea107e", null ],
+    [ "set_allow_focused_range", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a87a221d58dd43578cd57bb3028795fe9", null ],
+    [ "set_allow_scaling", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ad0cb6016a4d124831f57fc31cc60372e", null ],
+    [ "set_coverage_recover_th", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a04ddb10a4d4eb8d5b5f26c96de01d053", null ],
+    [ "set_coverage_th", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#abff53f88a31a0c83c36fa30c6edd0ea2", null ],
+    [ "set_device", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ae0367bfba176ee2ea07212dd97d86439", null ],
+    [ "set_slope_pcc_end", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a8c34590e7cf7af6fdbcdd2513fdfa2a6", null ],
+    [ "set_slope_psnr_end", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ac7aa319594ed395f9c1bd3e46eaa3d68", null ],
+    [ "set_strategy", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a07745848b16261c31a1459cf81832265", null ],
+    [ "set_version", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a9a2119c9c632e3b49e95e5bf26b0758a", null ],
+    [ "allow_equalization", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a26cce8da628958fb0ceecda54f54b5e4", null ],
+    [ "allow_focused_range", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#aa1b744973b8ebfcba12e6f98bf4dc4e7", null ],
+    [ "allow_scaling", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a1cd0803289481107ccb55c921478b2cb", null ],
+    [ "coverage_recover_th", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ac23ef5de862eb93f47901a5f8bdca3fb", null ],
+    [ "coverage_th", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a4487afc1a290d0989ce279f7f4f454c2", null ],
+    [ "device", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#adbdec58595587fea1750c91cd18315fb", null ],
+    [ "logger", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a0b14e488ae28d98d262453f3e9cd6e4d", null ],
+    [ "slope_pcc_end", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a30834558e97039597fda26fcc274b87d", null ],
+    [ "slope_psnr_end", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a71f83ff8c5e52dc88f32e63b266c1c77", null ],
+    [ "strategy", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#ab621d71bb2cf38b09419ef3a5047e30c", null ],
+    [ "version", "d0/da3/classcflite_1_1eazyaigen_1_1abstractobj_1_1eazyaiparserobject_1_1DRAParams.html#a4c7a521b8f1a0769c09bfa4a1fca7dab", null ]
+];

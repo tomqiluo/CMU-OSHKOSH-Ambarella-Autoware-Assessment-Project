@@ -1,0 +1,4 @@
+<map id="segmentation_acc" name="segmentation_acc">
+<area shape="rect" id="node1" title="Calculate accuracy ############." alt="" coords="161,5,303,32"/>
+<area shape="rect" id="node2" href="$d1/d35/classcflite_1_1eazyaiutils_1_1eval_1_1evalmiou_1_1AccuracySeg.html#a44579e626f68d3658e868ea8e369fae6" title="Main function (read data&#45;&gt; accuracy calculation&#45;&gt; show result&#45;&gt; save result) ############." alt="" coords="5,5,113,32"/>
+</map>

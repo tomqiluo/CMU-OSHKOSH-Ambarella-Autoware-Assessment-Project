@@ -1,0 +1,124 @@
+html {
+    --side-nav-fixed-width: 376px;
+    --search-box-width: 326px;
+    --menu-display: block;
+    --toc-font-size: 12px;
+    --title-font-size: 20px;
+    --content-maxwidth: calc(90%);
+    --top-height: 160px;
+    --nav-content-search-space: 20px;
+
+    --side-nav-background: #0c82b6;
+    --side-nav-foreground: #b6e3fd;
+    --menu-selected-background: #fff;
+    --menu-selected-foreground: #fff;
+    --toc-background: #fbfbfb;
+    --toc-foreground: var(--page-foreground-color);
+    --header-foreground: #fff;
+
+    --side-nav-arrow-opacity: 1;
+}
+
+#MSearchBox .left, #MSearchBox .right{
+    background: none;
+}
+
+.contents table:not(.memberdecls):not(.mlabels):not(.fieldtable):not(.memname) {
+    display: block;
+}
+
+div.toc h3 {
+    font-size: var(--toc-font-size);
+}
+
+div.toc li {
+    font-size: var(--toc-font-size);
+}
+
+#nav-tree .selected::after {
+    background: var(--menu-selected-foreground);
+}
+
+#nav-tree .selected a {
+    color: var(--menu-selected-foreground) !important;
+}
+
+#projectlogo img {
+    max-height: calc(var(--title-font-size) * 4);
+    margin-right: var(--spacing-small);
+}
+
+#projectname {
+    font-size: var(--title-font-size);
+    white-space: unset;
+}
+
+@media screen and (min-width: 768px) {
+    #doc-content {
+        padding-top: calc(var(--top-height) - 138px);
+    }
+
+    #MSearchBox {
+        width: var(--search-box-width);
+    }
+
+    #main-nav {
+        margin: auto;
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #nav-tree{
+        margin-top: var(--nav-content-search-space);
+        height: calc(100vh - var(--top-height) - var(--nav-content-search-space)) !important;
+        /*border-top: 1px solid var(--side-nav-foreground);*/
+    }
+}
+
+#main-menu > li:last-child {
+    margin-right: calc((var(--side-nav-fixed-width) - var(--search-box-width)) / 2)
+}
+
+.contents hr {
+    box-shadow: unset;
+}
+
+/* Override markdown table by doxtable */
+table.markdownTable, table.fieldtable {
+    box-shadow: unset;
+    border-radius: unset;
+}
+
+table.markdownTable caption {
+    caption-side: top;
+}
+
+table.markdownTable th {
+    background-color: #374F7F;
+    color: #FFFFFF;
+    font-size: 110%;
+    padding-bottom: 4px;
+    padding-top: 5px;
+}
+
+th.markdownTableHeadLeft:last-child, th.markdownTableHeadRight:last-child, th.markdownTableHeadCenter:last-child, th.markdownTableHeadNone:last-child {
+    border-top-right-radius: 0px;
+}
+
+table.markdownTable td, table.markdownTable th, table.fieldtable dt {
+    border: 1px solid #2D4068;
+    padding: var(--spacing-small) var(--spacing-medium);
+}
+
+table.markdownTable td:last-child, table.markdownTable th:last-child, table.fieldtable dt:last-child {
+    border: 1px solid #2D4068;
+}
+
+table.markdownTable tr, table.markdownTable tr {
+    border: 1px solid #2D4068;
+}
+
+table.markdownTable tr:last-child, table.markdownTable tr:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,6 @@
+<map id="run_accuracy" name="run_accuracy">
+<area shape="rect" id="node1" title="Main function (read data&#45;&gt; accuracy calculation&#45;&gt; show result&#45;&gt; save result) ############." alt="" coords="5,56,113,83"/>
+<area shape="rect" id="node2" href="$d1/d35/classcflite_1_1eazyaiutils_1_1eval_1_1evalmiou_1_1AccuracySeg.html#a928a08374b2535f08d9b75486c185e27" title=" " alt="" coords="161,5,312,32"/>
+<area shape="rect" id="node3" href="$d1/d35/classcflite_1_1eazyaiutils_1_1eval_1_1evalmiou_1_1AccuracySeg.html#a1d3c899ae9c8077c17d06612ce79c947" title="Print the accuracy results ############." alt="" coords="176,56,297,83"/>
+<area shape="rect" id="node4" href="$d1/d35/classcflite_1_1eazyaiutils_1_1eval_1_1evalmiou_1_1AccuracySeg.html#a56391fdcd99dcb6c7c9730544e63d5d0" title="Calculate accuracy ############." alt="" coords="166,107,307,133"/>
+</map>
