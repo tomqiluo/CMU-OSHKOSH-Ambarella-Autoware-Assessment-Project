@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="2xLb4AxyvtpYy7dO9mAG">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GywODg0BUScxTKAQ6-5u-32" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 1 Published&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-34" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Spawn Obstacle Timestamp/Publish&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;text-wrap: wrap;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="100" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-35" value="Node 1 Pipeline Latency" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+          <mxGeometry x="370" y="170" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-39" value="Node 1 Total Latency" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-41" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 1 Timestamp&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="150" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-47" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 2 Published&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="300" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-48" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 2 Timestamp&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="250" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-49" value="Node 2&lt;div&gt;&amp;nbsp;Node&lt;/div&gt;&lt;div&gt;&lt;span data-darkreader-inline-color=&quot;&quot; data-darkreader-inline-bgcolor=&quot;&quot; style=&quot;background-color: initial; color: rgb(0, 0, 0); --darkreader-inline-bgcolor: initial; --darkreader-inline-color: #e8e6e3;&quot;&gt;&amp;nbsp;Latency&lt;/span&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.049999999999998865;" vertex="1" parent="1">
+          <mxGeometry x="360" y="170" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-57" value="Node 2 Pipeline Latency" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.33333333333333715;" vertex="1" parent="1">
+          <mxGeometry x="380" y="170" width="90" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-59" value="TL (n)= TL(0) + NL(n-1) + PL(n)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="65" y="18" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-60" value="Node 2&lt;div&gt;&amp;nbsp;Total&amp;nbsp;&lt;/div&gt;&lt;div&gt;Latency&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;size=0.375;" vertex="1" parent="1">
+          <mxGeometry x="90" y="120" width="80" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-63" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 3 Published&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="400" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-64" value="&lt;span style=&quot;text-wrap: wrap;&quot;&gt;Node 3 Timestamp&lt;/span&gt;" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0;dx=30;notch=20.29;" vertex="1" parent="1">
+          <mxGeometry x="180" y="350" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-65" value="Node 3&lt;div&gt;&amp;nbsp;Total&amp;nbsp;&lt;/div&gt;&lt;div&gt;Latency&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;size=0.07692307692307693;" vertex="1" parent="1">
+          <mxGeometry x="20" y="120" width="150" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-66" value="Pipeline 1 Header" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="140" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GywODg0BUScxTKAQ6-5u-69" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="220" as="sourcePoint" />
+            <mxPoint x="370" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
